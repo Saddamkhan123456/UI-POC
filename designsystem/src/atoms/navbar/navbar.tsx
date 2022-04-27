@@ -22,7 +22,7 @@ export const Navbar = ({
 
   return (
     <>
-      <nav className="relative w-full flex flex-wrap items-center justify-between py-4 bg-gray-800 text-gray-500 hover:text-gray-700 focus:text-gray-700 shadow-lg navbar navbar-expand-lg navbar-light">
+      <nav className="relative w-full flex flex-wrap items-center justify-between py-4 bg-slate-700 border text-gray-500 shadow-lg navbar navbar-expand-lg navbar-light">
         <div className="container-fluid w-full flex flex-wrap items-center justify-between px-3 relative">
           <div className="flex items-center">
             <a
@@ -53,54 +53,21 @@ export const Navbar = ({
           </div>
 
           <div className="flex items-center relative">
-            <div className="dropdown relative">
-              <a
-                className="text-gray-500 hover:text-gray-700 focus:text-gray-700 mr-4 dropdown-toggle hidden-arrow flex items-center"
-                href="/"
-                id="dropdownMenuButton1"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <Icon kind="bell" size={20}></Icon>
-                <span className="text-white bg-red-700 absolute rounded-full text-xs -mt-2.5 ml-2 py-0 px-1.5">
-                  1
-                </span>
-              </a>
-            </div>
             <a
-              className="dropdown-toggle flex items-center hidden-arrow"
+              className="text-gray-500 hover:text-gray-700 focus:text-gray-700 mr-4 dropdown-toggle hidden-arrow flex items-center"
               href="/"
-              id="dropdownMenuButton2"
               role="button"
-              data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <img
-                src="https://mdbootstrap.com/img/new/avatars/2.jpg"
-                className="rounded-full h-8 w-8"
-                alt=""
-                loading="lazy"
-              />
+              <Icon kind="bell" size={20}></Icon>
+              <span className="text-white bg-red-700 absolute rounded-full text-xs -mt-2.5 ml-2 py-0 px-1.5">
+                1
+              </span>
             </a>
-            <div className="dropdown relative">
-              <div>
-                <div className="md:hidden">
-                  <button
-                    className="navbar-toggler text-gray-500 border-0 hover:shadow-none hover:no-underline hover:ease-in py-2 pl-2.5 bg-transparent focus:outline-none focus:ring-0 focus:shadow-none focus:no-underline"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                    onClick={() => setIsCollapsed(!isCollapsed)}
-                  >
-                    <Icon kind="hamburger" size={20} />
-                  </button>
-                </div>
-              </div>
-            </div>
+
+            <a className="flex items-center hidden-arrow" href="/">
+              Cart
+            </a>
           </div>
         </div>
         <div className="md:hidden block w-full">
