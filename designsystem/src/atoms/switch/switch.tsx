@@ -1,5 +1,5 @@
 import { HTMLAttributes } from "react";
-import classNames from 'classnames';
+import classNames from "classnames";
 import ReactSwitch from "react-switch";
 
 export interface SwitchProps extends HTMLAttributes<HTMLElement> {
@@ -24,7 +24,7 @@ export interface SwitchProps extends HTMLAttributes<HTMLElement> {
   borderRadius?: number;
   id?: string;
   name?: string;
-  labelPosition?: 'left' | 'right' | 'top' | 'bottom';
+  labelPosition?: "left" | "right" | "top" | "bottom";
 }
 
 export const Switch = ({
@@ -54,15 +54,17 @@ export const Switch = ({
 }: SwitchProps) => {
   return (
     <>
-      <label className={classNames(
-        'switch-container',
-        labelPosition === "top" && 'flex-col',
-        labelPosition === "bottom" && 'flex-col-reverse',
-        labelPosition === "left" && 'flex-row',
-        labelPosition === "right" && 'flex-row-reverse',
-      )}>
+      <label
+        className={classNames(
+          "switch-container",
+          labelPosition === "top" && "flex-col",
+          labelPosition === "bottom" && "flex-col-reverse",
+          labelPosition === "left" && "flex-row",
+          labelPosition === "right" && "flex-row-reverse"
+        )}
+      >
         <span>{label}</span>
-        <ReactSwitch
+        {/* <ReactSwitch
           disabled={disabled}
           offColor={offColor}
           onColor={onColor}
@@ -84,7 +86,7 @@ export const Switch = ({
           onChange={onChange}
           checked={checked}
           {...props}
-        />
+        /> */}
       </label>
     </>
   );

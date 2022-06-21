@@ -33,9 +33,9 @@ export const Navbar = ({
             </a>
             <div className="hidden sm:block sm:ml-6">
               <div className="flex space-x-4">
-                {navigation.map((item) => (
+                {navigation.map((item, index) => (
                   <a
-                    key={item.name}
+                    key={index}
                     href={item.href}
                     className={classNames(
                       item.current
@@ -123,10 +123,9 @@ export const Navbar = ({
 
               <>
                 <ul>
-                  {navigation.map((item) => (
-                    <li className="flex">
+                  {navigation.map((item, index) => (
+                    <li className="flex" key={index}>
                       <a
-                        key={item.name}
                         href={item.href}
                         className={classNames(
                           item.current

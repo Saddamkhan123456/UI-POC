@@ -21,7 +21,7 @@ export const RangeSelect = ({
   const [values, setValues] = useState([50]);
   return (
     <div className="flex justify-center flex-wrap">
-      <Range
+      {/* <Range
         disabled={disabled}
         values={values}
         step={step}
@@ -67,7 +67,7 @@ export const RangeSelect = ({
             </div>}
           </div>
         )}
-      />
+      /> */}
     </div>
   );
 };

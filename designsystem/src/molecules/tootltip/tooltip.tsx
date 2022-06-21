@@ -15,10 +15,10 @@ export interface TooltipProps extends HTMLAttributes<HTMLElement> {
   clickable?: boolean;
   textColor?: string;
   borderColor?: string;
-  border?:boolean;
+  border?: boolean;
   backgroundColor?: string;
   event?: string;
-  arrowColor? : string;
+  arrowColor?: string;
 }
 
 export const Tooltip = ({
@@ -42,10 +42,15 @@ export const Tooltip = ({
 }: TooltipProps) => {
   return (
     <>
-      <a href="javascript:void(0)" data-tip data-for="tooltip" className="cursor-pointer">
+      <a
+        href="javascript:void(0)"
+        data-tip
+        data-for="tooltip"
+        className="cursor-pointer"
+      >
         {text}
       </a>
-      <ReactTooltip
+      {/* <ReactTooltip
         id="tooltip"
         type={type}
         place={place}
@@ -63,7 +68,7 @@ export const Tooltip = ({
         {...props}
       >
         <span>{tooltipContent}</span>
-      </ReactTooltip>
+      </ReactTooltip> */}
     </>
   );
 };
