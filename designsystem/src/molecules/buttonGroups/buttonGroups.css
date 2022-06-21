@@ -1,0 +1,4 @@
+@layer components {
+    .custom-group-button .btn:not(:last-child) {}
+
+}

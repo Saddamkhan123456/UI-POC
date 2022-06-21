@@ -1,0 +1,5 @@
+@layer components {
+  .switch-container {
+    @apply flex items-center gap-1.5
+  }
+}

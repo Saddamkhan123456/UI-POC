@@ -1,0 +1,74 @@
+@tailwind components;
+
+@layer components {
+  .react-stepper .stepper-indicator {
+    @apply flex justify-between items-center relative
+  }
+
+  .react-stepper .stepper-indicator:before {
+    @apply h-px w-full bg-black absolute
+  }
+
+  .react-stepper .stepper-indicator:before {
+    content: '';
+
+  }
+
+  .react-stepper .stepper-indicator .stepper-inner {
+    @apply flex items-center bg-white p-5 z-1
+  }
+
+  .react-stepper .stepper-indicator .stepper-inner .stepper-number {
+    @apply w-8 h-8 flex justify-center items-center rounded-full
+  }
+
+  .react-stepper .stepper-indicator .stepper-inner .stepper-number {
+    border: 1px solid transparent;
+  }
+
+  .react-stepper .stepper-indicator .stepper-inner .stepper-number.step-bg {
+    @apply bg-theme-primary text-white border-white
+  }
+
+  .react-stepper .stepper-indicator .stepper-inner .stepper-number.step-outline {
+    @apply bg-transparent border-pink-800 text-red-700
+  }
+
+  .react-stepper .stepper-indicator .stepper-inner .stepper-label {
+    @apply pl-2 text-blue-600
+  }
+
+  .react-stepper .stepper-indicator .stepper-inner.active .stepper-number.step-bg {
+    @apply bg-gray-400 text-white border-gray-400
+  }
+
+  .react-stepper .stepper-indicator .stepper-inner.active .stepper-number.step-outline {
+    @apply bg-transparent border-yellow-500 text-yellow-500
+  }
+
+  .react-stepper .stepper-indicator .stepper-inner.active .stepper-label {
+    @apply text-gray-900
+  }
+
+  .react-stepper .stepper-indicator .stepper-inner.error .stepper-number.step-bg {
+    @apply bg-red-700 text-white border-red-700
+  }
+
+  .react-stepper .stepper-data {
+    @apply border rounded p-5
+  }
+
+  /* vertical stepper */
+
+  .react-stepper.vertical .stepper-indicator{
+    @apply items-start flex-col;
+  }
+
+  .react-stepper.vertical .stepper-indicator:before{
+    @apply h-full w-px z-10 left-9;
+  }
+  .react-stepper.vertical .stepper-indicator .stepper-inner{
+    @apply z-20;
+  }
+
+}

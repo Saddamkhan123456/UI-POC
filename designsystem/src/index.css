@@ -1,13 +1,32 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* Contains all basic CSS */
+@import "./assets/styles/global.css";
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+/* Atoms Import */
+@import "../src/atoms/button/button.css";
+@import "../src/atoms/input/input.css";
+@import "../src/atoms/loader/loader.css";
+@import "../src/atoms/alert/alerts.css";
+@import "../src/atoms/dropdown/dropdown.css";
+@import "../src/atoms/fileUpload/fileUpload.css";
+@import "../src/atoms/checkbox/checkbox.css";
+@import "../src/atoms/stepper/stepper.css";
+@import "../src/atoms/navbar/navbar.css";
+@import "../src/atoms/switch/switch.css";
+@import "../src/atoms/listGroup/listGroup.css";
+@import "../src/atoms/rangeSelect/rangeSelect.css";
+@import "../src/atoms/breadcrumb/breadcrumb.css";
+
+/* Molecules Import */
+@import "../src/molecules/card/card.css";
+@import "../src/molecules/buttonGroups/buttonGroups.css";
+@import "../src/molecules/datePicker/datePicker.css";
+@import "../src/molecules/searchbox/searchbox.css";
+@import "../src/molecules/tootltip/tooltip.css";
+@import "../src/molecules/popover/popover.css";
+@import "../src/molecules/offCanvas/offCanvas.css";
+
+/* templates Import */
+@import "../src/templates/modal/modal.css";
+
+/* Organisms Import */
+@import "../src/organisms/login/login.css";
