@@ -1,0 +1,67 @@
+
+{ 
+  "Products": [
+    {
+      "id": 1,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "men's clothing",
+      "brand": "Levi's",
+      "thumbnail": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+      "images": [
+        "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+        "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+        "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+        "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+      ],
+      "rating": 3.9,
+      "stock": 120
+    }
+  ],
+  "Orders": [
+    {
+      "id": 1,
+      "products": [
+        {
+          "id": 5,
+          "title": "Spring and summershoes",
+          "price": 2000,
+          "quantity": 3,
+          "total": 6000,
+          "discountPercentage": 8.71,
+          "discountedPrice": 774
+        }
+      ],
+      "total": 6000,
+      "discountedTotal": 774,
+      "userId": 97,
+      "totalProducts": 1,
+      "totalQuantity": 3
+    }
+  ],
+  "Users": [
+    {
+        "id":1,
+        "email":"John@gmail.com",
+        "username":"johnd",
+        "password":"m38rmF$",
+        "name":{
+            "firstname":"John",
+            "lastname":"Doe"
+        },
+        "address": [{
+            "city":"Bengaluru",
+            "street":"7835 new road",
+            "address1":"",
+            "address2": "",
+            "zipcode":"12926-3874",
+            "geolocation":{
+                "lat":"-37.3159",
+                "long":"81.1496"
+            }
+        }],
+        "phone":"1-570-236-7033"
+    }
+  ]
+}
