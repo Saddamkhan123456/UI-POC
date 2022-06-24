@@ -47,7 +47,7 @@ export const Input = ({
     feedbackState === "has-success" && "border-theme-success text-theme-success",
   )
   return (
-    <div className="form-group relative mb-4">
+    <div className="form-group relative">
       {label && (
         <label className={`${disabled ? "text-theme-neutral65" : ""}`}>
           {label}
