@@ -1,0 +1,6 @@
+@layer components {
+  .quantity-input  {
+    @apply border-x-0;
+  }
+ 
+}
