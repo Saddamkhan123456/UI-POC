@@ -23,10 +23,10 @@ export const QuantityBox = ({...props}: QuantityBoxProps) => {
      setNum(e.target.value);
     }
     return (
-       <div className="flex flex-row  w-full rounded-lg relative bg-transparent mt-1">
-          <Button variant="secondary" size="small" onClick={decNum}><span>-</span></Button>
+       <div className="flex flex-row  w-full relative bg-transparent mt-1 quantity-box">
+          <Button variant="secondary" size="small" onClick={decNum} className="minus-button" ><span className="text-xl"> -</span></Button>
           <Input variant="small" type={'number'} className="quantity-input" value={num} onChange={handleChange}/>
-          <Button variant="secondary" size="small" onClick={incNum}><span>+</span></Button>
+          <Button variant="secondary" size="small" onClick={incNum} className="plus-button" ><span className="text-xl">+</span></Button>
        </div>
     )
 }

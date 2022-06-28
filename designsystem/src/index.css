@@ -2,4 +2,13 @@
 @import "./assets/styles/global.css";
 
 
+/* Molecules Import */
+@import "../src/molecules/card/card.css";
+@import "../src/molecules/buttonGroups/buttonGroups.css";
+@import "../src/molecules/datePicker/datePicker.css";
+@import "../src/molecules/searchbox/searchbox.css";
+@import "../src/molecules/tootltip/tooltip.css";
+@import "../src/molecules/popover/popover.css";
+@import "../src/molecules/offCanvas/offCanvas.css";
+@import "../src/molecules/quantityBox/quantitybox.css";
 
