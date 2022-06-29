@@ -84,6 +84,6 @@
     "stylelint-config-recommended": "^4.0.0",
     "stylelint-prettier": "^1.2.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.7",
-    "design-system": "git+https://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@github.com/Talentica/design-system.git"
+    "design-system": "git+https://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@github.com/Talentica/design-system.git#components"
   }
 }

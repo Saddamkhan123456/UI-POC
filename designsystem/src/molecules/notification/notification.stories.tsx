@@ -1,15 +1,22 @@
 import { Story } from "@storybook/react";
 import { NotificationBox, NotificationBoxProps } from "./index";
-import { Button } from "../../atoms/button";
-import { toast } from 'react-toastify';
+import { Button } from "design-system";
+import { toast } from "react-toastify";
 
 const Toast = {
   title: "Design System/Molecules/Notification",
   component: NotificationBox,
   argTypes: {
     position: {
-      type: 'any',
-      options: ['top-right', 'top-center', 'top-left', 'bottom-right', 'bottom-center', 'bottom-left'],
+      type: "any",
+      options: [
+        "top-right",
+        "top-center",
+        "top-left",
+        "bottom-right",
+        "bottom-center",
+        "bottom-left",
+      ],
     },
     autoClose: {
       type: "any",
@@ -34,27 +41,27 @@ const Toast = {
     pauseOnHover: {
       type: "boolean",
       defaultValue: true,
-    }
+    },
   },
 };
 
-export default Toast
+export default Toast;
 
 const Msg = () => (
   <>
-    <p className="text-lg font-medium mb-0 text-theme-neutral10 leading-none">Main title here</p>
-    <span className="text-sm text-theme-neutral35">There seems to be a problem</span>
+    <p className="text-lg font-medium mb-0 text-theme-neutral10 leading-none">
+      Main title here
+    </p>
+    <span className="text-sm text-theme-neutral35">
+      There seems to be a problem
+    </span>
   </>
-)
+);
 
 const TemplateSuccess: Story<NotificationBoxProps> = (args) => {
   return (
     <>
-    <Button
-        size="medium"
-        variant="primary"
-        onClick={notifySuccess}
-      >
+      <Button size="medium" variant="primary" onClick={notifySuccess}>
         Notify Me!
       </Button>
       <NotificationBox {...args} />
@@ -66,15 +73,10 @@ export const Success = TemplateSuccess.bind({});
 const notifySuccess = () => toast.success(<Msg />);
 Success.args = {};
 
-
 const TemplateError: Story<NotificationBoxProps> = (args) => {
   return (
     <>
-    <Button
-        size="medium"
-        variant="danger"
-        onClick={notifyError}
-      >
+      <Button size="medium" variant="danger" onClick={notifyError}>
         Notify Me!
       </Button>
       <NotificationBox {...args} />
@@ -89,11 +91,7 @@ Error.args = {};
 const TemplateAlert: Story<NotificationBoxProps> = (args) => {
   return (
     <>
-    <Button
-        size="medium"
-        variant="danger"
-        onClick={notifyAlert}
-      >
+      <Button size="medium" variant="danger" onClick={notifyAlert}>
         Notify Me!
       </Button>
       <NotificationBox {...args} />
