@@ -48,4 +48,8 @@
           top: 0;
           left: 125px;
         }
+        .drop-left{
+          top: 34px;
+          right:0;
+        }
 }
