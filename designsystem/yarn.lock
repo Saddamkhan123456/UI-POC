@@ -6402,7 +6402,7 @@ des.js@^1.0.0:
 
 "design-system@git+https://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@github.com/Talentica/design-system.git#components":
   version "0.1.0"
-  resolved "git+https://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@github.com/Talentica/design-system.git#3ae1e7155353d33326d7572444f688a63cffe261"
+  resolved "git+https://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@github.com/Talentica/design-system.git#b1ae45f2d2f7b454d2ff4821af333d82f206db64"
   dependencies:
     "@babel/helper-environment-visitor" "^7.16.7"
     "@heroicons/react" "^1.0.4"
@@ -6414,9 +6414,9 @@ des.js@^1.0.0:
     "@testing-library/user-event" "^12.1.10"
     "@types/jest" "^26.0.15"
     "@types/node" "^12.0.0"
-    "@types/react" "17.0.0"
+    "@types/react" "^17.0.0"
     "@types/react-datepicker" "^4.3.4"
-    "@types/react-dom" "17.0.0"
+    "@types/react-dom" "^17.0.0"
     classnames "^2.3.1"
     craco "^0.0.3"
     date-fns "^2.28.0"
@@ -6424,7 +6424,7 @@ des.js@^1.0.0:
     react-datepicker "^4.6.0"
     react-dom "^17.0.2"
     react-popper "^2.2.5"
-    react-range "1.8.12"
+    react-range "^1.8.12"
     react-refresh "^0.14.0"
     react-scripts "4.0.3"
     react-select "^5.2.2"
