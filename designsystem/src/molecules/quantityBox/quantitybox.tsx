@@ -1,6 +1,6 @@
 
-import { Input } from "../../atoms/input"
-import { Button } from "../../atoms/button"
+import { Input } from "design-system";
+import { Button } from "design-system";
 import { useState } from "react";
 
 export interface QuantityBoxProps {}
