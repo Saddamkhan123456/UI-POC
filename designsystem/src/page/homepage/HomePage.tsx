@@ -1,14 +1,12 @@
-import React from "react";
-import { Button } from "design-system";
+import React, { useEffect } from "react";
+import { allProducts } from "../../api/api";
 
 const HomePage = () => {
-  return (
-    <>
-      <Button variant="primary" size="medium">
-        button
-      </Button>
-    </>
-  );
+  useEffect(() => {
+    const result = allProducts();
+    console.log(result);
+  });
+  return <div>homePage</div>;
 };
 
 export default HomePage;
