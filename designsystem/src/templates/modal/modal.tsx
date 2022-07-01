@@ -12,8 +12,8 @@ export interface ModalProps extends HTMLAttributes<HTMLElement> {
   onSave?: any;
   onClose?: any;
   footerAlign?: string;
-  showOnSave?:boolean
-  showOnClose?: boolean
+  showOnSave?: boolean;
+  showOnClose?: boolean;
 }
 
 export const Modal = ({
@@ -73,8 +73,10 @@ export const Modal = ({
                 <div className="modal-body overflow-y-auto">{children}</div>
               </div>
               {showFooter && (
-                <div className={`flex items-center justify-${footerAlign} px-5 py-3 border-t border-solid border-blueGray-200 rounded-b`}>
-                  {showOnClose &&  
+                <div
+                  className={`flex items-center justify-${footerAlign} px-5 py-3 border-t border-solid border-blueGray-200 rounded-b`}
+                >
+                  {showOnClose && (
                     <Button
                       size="small"
                       variant="link"
@@ -83,8 +85,8 @@ export const Modal = ({
                     >
                       Cancel
                     </Button>
-                  }
-                  {showOnSave &&
+                  )}
+                  {showOnSave && (
                     <Button
                       size="small"
                       variant="primary"
@@ -92,7 +94,7 @@ export const Modal = ({
                     >
                       Save
                     </Button>
-                  }
+                  )}
                 </div>
               )}
             </div>
