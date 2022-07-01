@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import React, { useState, HTMLAttributes } from "react";
 import Icon from "../icons/icon";
-import { Button } from "../button/button";
+import { Button } from "design-system";
 
 export interface DropdownProps extends HTMLAttributes<HTMLElement> {
   size?: "small" | "medium" | "large";
@@ -43,7 +43,7 @@ export const DropdownButton = ({
           className={classNames(
             variant === "link" &&
               (!disabled
-                ? "py-2 text-theme-primary  hover:underline hover:text-theme-btnHover active:text-theme-clicked active:no-underline"
+                ? "py-2 hover:underline hover:text-theme-btnHover active:text-theme-clicked active:no-underline"
                 : "text-theme-disabled"),
             className,
             "font-light"
@@ -51,7 +51,17 @@ export const DropdownButton = ({
           disabled={disabled}
         >
           <div className="flex items-center">
-            {dropdownValue === "" ? "Dropdown" : dropdownValue}
+            {dropdownValue === "" ? (
+              <div className="w-4 h-4 rounded-full">
+                <img
+                  src="https://mdbootstrap.com/img/new/avatars/2.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+              </div>
+            ) : (
+              dropdownValue
+            )}
             <span>
               <Icon kind={kind} size={16} className="ml-2" />
             </span>
@@ -60,13 +70,13 @@ export const DropdownButton = ({
         {items && (
           <div
             id="dropdown-container"
-            className={`dropdown-items ${
+            className={`dropdown-items drop-left bg-theme-neutral ${
               dropdownState ? "isVisible" : "isHidden"
             }`}
           >
             {items.map((data) => {
               return (
-                <div className="dropdown-item px-6">
+                <div className="dropdown-item px-6 text-white hover:bg-theme-neutral15 focus:bg-theme-neutral15 hover:text-white">
                   <div
                     className="dropdown__link"
                     onClick={(e) => handleSetDropdownValue(e)}

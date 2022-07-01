@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Story } from "@storybook/react";
-import { Button } from "../../atoms/button";
+import { Button } from "design-system";
 import { ModalProps, Modal } from "./index";
 
 const ModalComponent = {
@@ -32,10 +32,10 @@ const ModalComponent = {
   },
   showOnClose: {
     type: "boolean",
-  }
+  },
 };
 
-export default ModalComponent
+export default ModalComponent;
 
 const Template: Story<ModalProps> = (args) => {
   const [showModal, setShowModal] = useState(false);
@@ -53,7 +53,6 @@ const Template: Story<ModalProps> = (args) => {
         isVisible={showModal}
         onSave={() => setShowModal(false)}
         onClose={() => setShowModal(false)}
-        
       >
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -79,5 +78,5 @@ Default.args = {
   showClose: true,
   footerAlign: "end",
   showOnSave: true,
-  showOnClose: true
+  showOnClose: true,
 };

@@ -1,20 +1,15 @@
 import { Story } from "@storybook/react";
-import {Navbar, NavbarProps } from "./index";
+import Navbar, { NavbarProps } from "./navbar";
 
 const NavbarComponent = {
   title: "Design System/Atoms/Navbar",
   component: Navbar,
-  argTypes: {
-    
-  },
+  argTypes: {},
 };
 
-export default NavbarComponent
+export default NavbarComponent;
 
-const Template: Story<NavbarProps> = (args) => <Navbar  {...args} />;
+const Template: Story<NavbarProps> = (args) => <Navbar {...args} />;
 
 export const BasicNavbar = Template.bind({});
-BasicNavbar.args = {
-    
-};
-
+BasicNavbar.args = {};
