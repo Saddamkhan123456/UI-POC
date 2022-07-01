@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "design-system";
 
 export default function ProductDetails() {
   return (
@@ -48,12 +49,21 @@ export default function ProductDetails() {
 
             <div className="flex items-center space-x-4 my-4">
               <div>
-                <div className="rounded-lg flex px-3">
-                  <span className="text-theme-neutral mr-1 mt-1">₹1000</span>
+                <div className="rounded-lg flex">
+                  <span className="text-theme-neutral mr-1 mt-1 text-3xl font-bold">₹1000</span>
                  
                 </div>
               </div>
               
+            </div>
+            <div className="flex items-center">
+               
+                <Button variant="primary" size="medium" className="mr-2">
+                Add to card
+                </Button>
+                <Button variant="primary" size="medium">
+                  Wishlist
+                </Button>
             </div>
 
            
