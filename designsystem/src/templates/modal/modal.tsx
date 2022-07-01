@@ -1,6 +1,6 @@
 import { HTMLAttributes, useState, useEffect } from "react";
 import classNames from "classnames";
-import { Button } from "../../atoms/button";
+import { Button } from "design-system";
 import Icon from "../../atoms/icons/icon";
 
 export interface ModalProps extends HTMLAttributes<HTMLElement> {
