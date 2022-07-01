@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Story } from "@storybook/react";
-import { Button } from "../../atoms/button";
+import { Button } from "design-system";
 import { ModalProps, Modal } from "./index";
 
 const ModalComponent = {

@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import React, { useState, HTMLAttributes } from "react";
 import Icon from "../icons/icon";
-import { Button } from "../button/button";
+import { Button } from "design-system";
 
 export interface DropdownProps extends HTMLAttributes<HTMLElement> {
   size?: "small" | "medium" | "large";

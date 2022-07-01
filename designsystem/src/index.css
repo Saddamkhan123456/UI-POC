@@ -2,4 +2,6 @@
 @import "./assets/styles/global.css";
 
 
+/* Molecules Import */
+@import "../src/molecules/quantityBox/quantitybox.css";
 
