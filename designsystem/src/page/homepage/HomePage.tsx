@@ -1,12 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { allProducts } from "../../api/api";
 
 const HomePage = () => {
+  const [a, setA] = useState("a");
   useEffect(() => {
-    const result = allProducts();
-    console.log(result);
-  });
-  return <div>homePage</div>;
+    allProducts().then((result) => {
+      result["data"].map((item) => {
+        setA(item.title);
+      });
+    });
+  }, []);
+  return (
+    <>
+      <div>{a}</div>
+    </>
+  );
 };
 
 export default HomePage;
