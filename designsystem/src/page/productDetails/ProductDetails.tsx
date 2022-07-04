@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "design-system";
 import { QuantityBox } from "../../molecules/quantityBox";
+import { Sizes } from "../../atoms/sizes";
 
 export default function ProductDetails() {
   return (
@@ -13,7 +14,7 @@ export default function ProductDetails() {
                 <div className="mb-4 flex items-center justify-center">
                   <img
                     src="https://images.bewakoof.com/t1080/whatever-cat-boyfriend-t-shirt-388114-1655748484-1.jpg"
-                    alt="productImage"
+                    alt="productImage" width="400"
                   />
                 </div>
               </div>
@@ -28,6 +29,9 @@ export default function ProductDetails() {
             </p>
 
             <h5 className="mb-2 text-theme-neutral text-md">Size</h5>
+            <div className="mb-4">
+              <Sizes />
+            </div>
 
             <h5 className="mb-2 text-theme-neutral text-md">Quantity</h5>
             <div className="mb-4">
