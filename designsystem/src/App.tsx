@@ -7,12 +7,12 @@ import RouteConfig from "./Route/RouteConfig";
 function App() {
   return (
     <>
-      <div className="flex flex-col h-full">
+      <div className="flex flex-col h-full overflow-scroll">
         <Navbar />
-        <div className="bg-theme-primary h-full overflow-scroll">
+        <div className="h-full overflow-scroll">
           <RouteConfig />
+          <Footer />
         </div>
-        <Footer />
       </div>
     </>
   );

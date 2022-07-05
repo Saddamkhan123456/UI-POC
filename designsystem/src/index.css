@@ -3,6 +3,8 @@
 
 @import "../src/atoms/dropdown/dropdown.css";
 @import "../src/atoms/sizes/sizes.css";
+@import "../src/atoms/card/card.css";
+
 
 /* Molecules Import */
 @import "../src/molecules/quantityBox/quantitybox.css";
