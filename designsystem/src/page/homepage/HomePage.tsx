@@ -8,14 +8,18 @@ const HomePage = () => {
     allProducts().then((result) => {
       result["data"].map((item) => {
         setA(item.title);
+        console.log(result["data"][0].title);
       });
     });
   }, []);
   return (
     <>
-      <div>{a}</div>
-      <div className="flex flex-col">
-        <CardComponent />
+      {/* <div>{a}</div> */}
+      <div className="flex flex-col p-3">
+        <div className="grid grid-rows-3 grid-flow-col gap-4">
+          <CardComponent />
+          {/* <CardComponent /> */}
+        </div>
       </div>
     </>
   );
