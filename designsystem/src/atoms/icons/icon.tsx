@@ -12,6 +12,7 @@ const iconList = [
   "success",
   "cart",
   "hamburger",
+  "wishlist",
 ];
 
 export interface IconProps {
@@ -234,6 +235,25 @@ export default class Icon extends React.Component<IconProps, {}> {
             viewBox="0 0 448 512"
           >
             <path d="M0 96c0-17.67 14.33-32 32-32h384c17.7 0 32 14.33 32 32 0 17.7-14.3 32-32 32H32c-17.67 0-32-14.3-32-32zm0 160c0-17.7 14.33-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.67 0-32-14.3-32-32zm416 192H32c-17.67 0-32-14.3-32-32s14.33-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32z" />
+          </svg>
+        );
+      case "wishlist":
+        return (
+          <svg
+            id="Layer_1"
+            {...rest}
+            height={height || size}
+            width={width || size}
+            onClick={onClick}
+            style={style}
+            className={className}
+            fill={color}
+            viewBox="0 0 448 512"
+          >
+            <path
+              fill="currentColor"
+              d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"
+            />
           </svg>
         );
 
