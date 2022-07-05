@@ -1,12 +1,18 @@
-import React from "react";
-import { Button } from "design-system";
+import React, { useEffect, useState } from "react";
+import { allProducts } from "../../api/api";
 
 const HomePage = () => {
+  const [a, setA] = useState("a");
+  useEffect(() => {
+    allProducts().then((result) => {
+      result["data"].map((item) => {
+        setA(item.title);
+      });
+    });
+  }, []);
   return (
     <>
-      <Button variant="primary" size="medium">
-        button
-      </Button>
+      <div>{a}</div>
     </>
   );
 };
