@@ -16,7 +16,7 @@ export const Navbar = ({
 }: NavbarProps) => {
   const navigation = [
     { name: "Home", href: "/", current: true },
-    { name: "Settings", href: "#", current: false },
+    { name: "Settings", href: "/settings", current: false },
   ];
 
   const [isCollapsed, setIsCollapsed] = React.useState(collapsed);
@@ -64,7 +64,7 @@ export const Navbar = ({
             />
             <a
               className="flex items-center justify-center text-white hover:text-theme-neutral80 focus:text-theme-neutral80 mr-1 dropdown-toggle hidden-arrow flex items-center"
-              href="#"
+              href="/cart"
               aria-expanded="false"
             >
               <Icon kind="cart" size={20}></Icon>
