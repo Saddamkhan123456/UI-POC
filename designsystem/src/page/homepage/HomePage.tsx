@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { allProducts } from "../../api/api";
+import CardComponent from "../../atoms/card/card";
 
 const HomePage = () => {
   const [a, setA] = useState("a");
@@ -13,6 +14,9 @@ const HomePage = () => {
   return (
     <>
       <div>{a}</div>
+      <div className="flex flex-col">
+        <CardComponent />
+      </div>
     </>
   );
 };
