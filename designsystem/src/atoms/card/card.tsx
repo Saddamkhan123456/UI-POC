@@ -1,6 +1,7 @@
 import React, { HTMLAttributes, useEffect, useState } from "react";
 import { Card, Button } from "design-system";
 import { allProducts } from "../../api/api";
+import { Link } from "react-router-dom";
 
 export interface CardProps extends HTMLAttributes<HTMLElement> {}
 
@@ -21,11 +22,13 @@ function CardComponent() {
             <>
               <Card>
                 <div className="bg-theme-neutral75 p-4 bg-no-repeat bg-center bg-cover rounded-t-md mr-2">
+                <Link to={`/product/${cardData.id}`}>
                   <img
                     src={cardData.thumbnail}
                     alt="productImage"
                     className="object-fill h-48 w-96"
                   />
+                  </Link>
                 </div>
                 <div className="rounded-b-md">
                   <div className="flex justify-between items-start px-2 pt-2 ">
