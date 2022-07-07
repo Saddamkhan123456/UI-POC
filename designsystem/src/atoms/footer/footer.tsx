@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import React from "react";
 import { HTMLAttributes } from "react";
 
@@ -8,11 +7,6 @@ export const Footer = ({ ...props }: FooterProps) => {
     { name: "Men", href: "#" },
     { name: "Women", href: "#" },
     { name: "Kids", href: "#" },
-  ];
-
-  const usefullink = [
-    { name: "Contact Us", href: "#" },
-    { name: "FAQ", href: "#" },
   ];
   return (
     <>
@@ -41,40 +35,7 @@ export const Footer = ({ ...props }: FooterProps) => {
             Amazon
           </a>
         </div>
-        {/* <div className="mx-6 py-10 text-center md:text-left">
-          <div className="grid grid-1 md:grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="">
-              <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
-                Products
-              </h6>
-              <ul>
-                {product.map((item, index) => (
-                  <li className="mb-4" key={index}>
-                    <a href={item.href} className="text-gray-600">
-                      {item.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="">
-              <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
-                Useful links
-              </h6>
-              <ul>
-                {usefullink.map((item, index) => (
-                  <li className="mb-4" key={index}>
-                    <a href={item.href} className="text-gray-600">
-                      {item.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div> */}
-       
-      </footer>
+        </footer>
     </>
   );
 };
