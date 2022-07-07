@@ -14,3 +14,17 @@ export const allProducts = () => {
     } )
   )
 };
+
+export const productDetail = (productId) => {
+  return(
+    axios.get(`${baseURL}/products/${productId}`) //GET
+    .then((response) => {
+      return response
+    })
+    .catch((err) => {
+      return(
+        console.log(err)
+      )
+    } )
+  )
+};

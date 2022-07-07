@@ -8,7 +8,7 @@ const HomePage = () => {
     allProducts().then((result) => {
       result["data"].map((item) => {
         setA(item.title);
-        console.log(result["data"][0].title);
+        // console.log(result["data"][0].title);
       });
     });
   }, []);
