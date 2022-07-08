@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import React from "react";
 import { HTMLAttributes } from "react";
-import { Link } from "react-router-dom";
 import { DropdownButton } from "../dropdown/dropdown";
 import Icon from "../icons/icon";
 
