@@ -4,6 +4,7 @@ import { Card, CardBody } from "design-system";
 export interface CardProps {
   CardPropsSets: CardPropsSets[];
   category?: string;
+  className?: string;
 }
 
 export interface CardPropsSets {
@@ -11,7 +12,11 @@ export interface CardPropsSets {
   Type?: string;
 }
 
-export const CategoryCard = ({ CardPropsSets, category }: CardProps) => {
+export const CategoryCard = ({
+  CardPropsSets,
+  category,
+  className,
+}: CardProps) => {
   return (
     <>
       <h1 className="pb-3 border-b mb-3 capitalize">{category}</h1>
@@ -21,16 +26,16 @@ export const CategoryCard = ({ CardPropsSets, category }: CardProps) => {
           CardPropsSets.map((CardPropsSet: any) => {
             return (
               <>
-                <Card className="cursor-pointer pt-3 bg-theme-neutral">
+                <Card className={`p-3 cursor-pointer ${className}`}>
                   <CardBody className=" ">
+                    <h2 className="font-bold mb-1 text-2xl text-theme-white">
+                      {CardPropsSet.Type}
+                    </h2>
                     <img
                       src={CardPropsSet.Image}
                       alt=""
                       className="object-contain"
                     />
-                    <h2 className="font-bold mt-2 text-2xl text-theme-white">
-                      {CardPropsSet.Type}
-                    </h2>
                   </CardBody>
                 </Card>
               </>
