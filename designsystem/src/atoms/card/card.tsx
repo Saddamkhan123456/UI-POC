@@ -20,14 +20,15 @@ function CardComponent() {
         demoData.map((cardData: any) => {
           return (
             <>
-              <Card>
-                <div className="bg-theme-neutral75 p-4 bg-no-repeat bg-center bg-cover rounded-t-md mr-2">
-                <Link to={`/product/${cardData.id}`}>
-                  <img
-                    src={cardData.thumbnail}
-                    alt="productImage"
-                    className="object-fill h-48 w-96"
-                  />
+              <Card className="bg-transparent  justify-around group box-border overflow-hidden flex rounded-md cursor-pointer pe-0 pb-2 lg:pb-3 flex-col items-start transition duration-200 ease-in-out transform hover:-translate-y-1 hover:md:-translate-y-1.5 hover:shadow-lg">
+                <div className="mb-3 md:mb-3.5 flex w-full justify-center">
+                  <Link to={`/product/${cardData.id}`}>
+                    <img
+                      src={cardData.thumbnail}
+                      alt="productImage"
+                      style={{ width: "200px" }}
+                      className="bg-gray-300 object-cover rounded-s-md rounded-md transition duration-200 ease-in group-hover:rounded-b-none"
+                    />
                   </Link>
                 </div>
                 <div className="rounded-b-md">
