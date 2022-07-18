@@ -1,0 +1,6 @@
+@layer components {
+  .page-banner-bg{
+      background-image:url(../../assets/images/page-header.jpeg);
+  }
+}
+  
