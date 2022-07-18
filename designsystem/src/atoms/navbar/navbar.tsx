@@ -16,7 +16,9 @@ export const Navbar = ({
 }: NavbarProps) => {
   const navigation = [
     { name: "Home", href: "/", current: true },
-    { name: "Settings", href: "/settings", current: false },
+    { name: "Men", href: "/category", current: false },
+    { name: "Women", href: "/category", current: false },
+    { name: "Kids", href: "/category", current: false },
   ];
 
   const [isCollapsed, setIsCollapsed] = React.useState(collapsed);
@@ -40,6 +42,7 @@ export const Navbar = ({
               <div className="flex space-x-4">
                 {navigation.map((item, index) => (
                   <a
+                    onClick={() => filterResult("mens clothing")}
                     key={index}
                     href={item.href}
                     className={classNames(
