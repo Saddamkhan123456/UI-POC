@@ -1,5 +1,5 @@
-import React, { useState } from "react";
 import { Card, CardBody } from "design-system";
+import { useNavigate } from "react-router-dom";
 
 export interface CardProps {
   CardPropsSets: CardPropsSets[];
@@ -10,13 +10,18 @@ export interface CardProps {
 export interface CardPropsSets {
   Image?: string;
   Type?: string;
+  Link? : string;
 }
 
 export const CategoryCard = ({
   CardPropsSets,
   category,
-  className,
+  className
 }: CardProps) => {
+  const navigate = useNavigate();
+  const navigateCategory = (data) => {
+    navigate(data);
+  };
   return (
     <>
       <h1 className="pb-3 border-b mb-3 capitalize">{category}</h1>
@@ -25,8 +30,7 @@ export const CategoryCard = ({
           CardPropsSets.length > 0 &&
           CardPropsSets.map((CardPropsSet: any) => {
             return (
-              <>
-                <Card className={`p-3 cursor-pointer ${className}`}>
+                <Card className={`p-3 cursor-pointer ${className}`} onClick={navigateCategory(CardPropsSet.Link)}>
                   <CardBody className=" ">
                     <h2 className="font-bold mb-1 text-2xl text-theme-white">
                       {CardPropsSet.Type}
@@ -38,7 +42,6 @@ export const CategoryCard = ({
                     />
                   </CardBody>
                 </Card>
-              </>
             );
           })}
       </div>

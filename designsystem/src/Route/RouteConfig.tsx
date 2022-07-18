@@ -3,7 +3,6 @@ import { Route, Routes } from "react-router-dom";
 import HomePage from "../page/homepage/HomePage";
 import Cart from "../page/cart/Cart";
 import ProductDetails from "../page/productDetails/ProductDetails";
-import Settings from "../page/setting/settings";
 import CategoryPage from "../page/category/categoryPage";
 
 export default function RouteConfig() {
@@ -13,7 +12,6 @@ export default function RouteConfig() {
       <Route path="/cart" element={<Cart />} />
       <Route path="/product/:productId" element={<ProductDetails />} />
       <Route path="/product/category" element={<CategoryPage />} />
-      <Route path="/settings" element={<Settings />} />
     </Routes>
   );
 }

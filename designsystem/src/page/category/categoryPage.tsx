@@ -1,21 +1,34 @@
 import React, { useEffect } from "react";
 import { allProducts } from "../../api/api";
+import { CardComponent } from "../../atoms/card";
 
 const CategoryPage = () => {
-  const [data, setData] = React.useState([]);
+  // const [data, setData] = React.useState([]);
   const [menData, setmenData] = React.useState([]);
+  const [womenData, setWomanData] = React.useState([]);
   useEffect(() => {
     allProducts().then((response) => {
-      //   console.log(response["data"]);
-      setData(response["data"]);
+      setmenData(response["data"].filter(dataItem => dataItem.category === "men's clothing"));
+      setWomanData(response["data"].filter(dataItem => dataItem.category === "women's clothing"));
     });
-    setmenData(
-      data.filter((dataItem) => dataItem.category === "men's clothing")
-    );
-  }, []);
-  console.log(menData);
+  }, [allProducts]);
 
-  return <div className="h-full bg-theme-primary flex">C</div>;
+  return <div className="h-full bg-theme-primary flex">
+    {menData && menData.length > 0 && menData.map((menDataItem) => {
+      return (
+        <>
+          <CardComponent id={menDataItem.id} thumbnail={menDataItem.thumbnail} title={menDataItem.title} description={menDataItem.description} category={menDataItem.category} price={menDataItem.price} />
+        </>
+      )
+    })}
+    {womenData && womenData.length > 0 && womenData.map((womenDataItem) => {
+      return (
+        <>
+          <CardComponent id={womenDataItem.id} thumbnail={womenDataItem.thumbnail} title={womenDataItem.title} description={womenDataItem.description} category={womenDataItem.category} price={womenDataItem.price} />
+        </>
+      )
+    })}
+  </div>;
 };
 
 export default CategoryPage;
