@@ -3,16 +3,19 @@ import { Card, Button } from "design-system";
 import { Link } from "react-router-dom";
 
 export interface CardProps {
-  id: string;
+  id: number;
   thumbnail: string;
   title: string;
   description: string;
   category: string;
-  price: string;
+  price: number;
+  brand: string;
+  withBrand: boolean;
 }
 
 
-export const CardComponent = ({ id , thumbnail, title , description, category, price }: CardProps) => {
+
+export const CardComponent = ({ id , thumbnail, title , description, category, price, brand, withBrand }: CardProps) => {
   return (
     <>
           <>
@@ -39,6 +42,11 @@ export const CardComponent = ({ id , thumbnail, title , description, category, p
                     <h3 className="text-theme-neutral line-clamp-2 text-xs capitalize">
                       {category}
                     </h3>
+                    {withBrand ? 
+                     <div className="text-theme-neutral">
+                      {brand}
+                    </div>
+                     : ''}
                   </div>
                   <div className="p-2 text-right">
                     <div className="text-theme-neutral">

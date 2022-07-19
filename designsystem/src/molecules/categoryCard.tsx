@@ -1,5 +1,5 @@
 import { Card, CardBody } from "design-system";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export interface CardProps {
   CardPropsSets: CardPropsSets[];
@@ -18,10 +18,11 @@ export const CategoryCard = ({
   category,
   className
 }: CardProps) => {
-  const navigate = useNavigate();
-  const navigateCategory = (data) => {
-    navigate(data);
-  };
+  // const navigate = useNavigate();
+  // const navigateCategory = (data) => {
+  //   navigate(data);
+  // };
+ 
   return (
     <>
       <h1 className="pb-3 border-b mb-3 capitalize">{category}</h1>
@@ -30,7 +31,8 @@ export const CategoryCard = ({
           CardPropsSets.length > 0 &&
           CardPropsSets.map((CardPropsSet: any) => {
             return (
-                <Card className={`p-3 cursor-pointer ${className}`} onClick={navigateCategory(CardPropsSet.Link)}>
+                <Card className={`p-3 cursor-pointer ${className}`} >
+                   <Link to={`/product/${category}/${CardPropsSet.Type}`}>
                   <CardBody className=" ">
                     <h2 className="font-bold mb-1 text-2xl text-theme-white">
                       {CardPropsSet.Type}
@@ -41,6 +43,7 @@ export const CategoryCard = ({
                       className="object-contain"
                     />
                   </CardBody>
+                  </Link>
                 </Card>
             );
           })}

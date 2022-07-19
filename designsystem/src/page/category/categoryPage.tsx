@@ -17,14 +17,14 @@ const CategoryPage = () => {
     {menData && menData.length > 0 && menData.map((menDataItem) => {
       return (
         <>
-          <CardComponent id={menDataItem.id} thumbnail={menDataItem.thumbnail} title={menDataItem.title} description={menDataItem.description} category={menDataItem.category} price={menDataItem.price} />
+          <CardComponent id={menDataItem.id} thumbnail={menDataItem.thumbnail} title={menDataItem.title} description={menDataItem.description} category={menDataItem.category} price={menDataItem.price} withBrand={true} brand={menDataItem.brand}/>
         </>
       )
     })}
     {womenData && womenData.length > 0 && womenData.map((womenDataItem) => {
       return (
         <>
-          <CardComponent id={womenDataItem.id} thumbnail={womenDataItem.thumbnail} title={womenDataItem.title} description={womenDataItem.description} category={womenDataItem.category} price={womenDataItem.price} />
+          <CardComponent id={womenDataItem.id} thumbnail={womenDataItem.thumbnail} title={womenDataItem.title} description={womenDataItem.description} category={womenDataItem.category} price={womenDataItem.price}  withBrand={true} brand={womenDataItem.brand}/>
         </>
       )
     })}
