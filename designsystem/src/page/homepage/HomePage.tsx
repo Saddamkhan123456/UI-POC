@@ -9,7 +9,7 @@ const HomePage = () => {
   return (
     <>
      
-      {/* <div className="flex flex-col p-3">
+      <div className="flex flex-col p-3">
         <ul>
           {categories.map((categoryName, index) => (
             <li key={index}>
@@ -19,7 +19,7 @@ const HomePage = () => {
             </li>
           ))}
         </ul>
-      </div> */}
+      </div>
        <div>
         <div className="mb-4">
           <CategoryCard
