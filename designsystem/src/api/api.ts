@@ -28,3 +28,7 @@ export const productDetail = (productId) => {
     } )
   )
 };
+
+
+
+
