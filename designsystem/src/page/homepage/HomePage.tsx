@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import CardComponent from "../../atoms/card/card";
+import { CategoryCard } from "../../molecules/categoryCard";
+import { categoryData, brandCategoryData } from '../../constants/constants'
 
 const HomePage = () => {
   const categories = [{ title: "men" }, { title: "women" }, { title: "kids" }];
 
   return (
     <>
-      {/* <div>{a}</div> */}
-      <div className="flex flex-col p-3">
+     
+      {/* <div className="flex flex-col p-3">
         <ul>
           {categories.map((categoryName, index) => (
             <li key={index}>
@@ -18,12 +19,24 @@ const HomePage = () => {
             </li>
           ))}
         </ul>
-      </div>
-      <div className="flex flex-col p-3">
-        <div className="grid grid-rows-3 grid-flow-col gap-4">
-          <CardComponent />
+      </div> */}
+       <div>
+        <div className="mb-4">
+          <CategoryCard
+            category="category"
+            CardPropsSets={categoryData}
+            className="bg-theme-neutral"
+          />
+        </div>
+        <div className="mb-4">
+          <CategoryCard
+            category="brand deals"
+            CardPropsSets={brandCategoryData}
+            className="bg-theme-neutral55"
+          />
         </div>
       </div>
+    
     </>
   );
 };

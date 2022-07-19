@@ -16,7 +16,9 @@ export const Navbar = ({
 }: NavbarProps) => {
   const navigation = [
     { name: "Home", href: "/", current: true },
-    { name: "Settings", href: "/settings", current: false },
+    { name: "Men", href: "/product/category", current: false },
+    { name: "Women", href: "/product/category", current: false },
+    { name: "Kids", href: "/product/category", current: false },
   ];
 
   const [isCollapsed, setIsCollapsed] = React.useState(collapsed);

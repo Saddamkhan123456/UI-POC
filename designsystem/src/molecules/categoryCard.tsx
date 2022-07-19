@@ -1,0 +1,50 @@
+import { Card, CardBody } from "design-system";
+import { useNavigate } from "react-router-dom";
+
+export interface CardProps {
+  CardPropsSets: CardPropsSets[];
+  category?: string;
+  className?: string;
+}
+
+export interface CardPropsSets {
+  Image?: string;
+  Type?: string;
+  Link? : string;
+}
+
+export const CategoryCard = ({
+  CardPropsSets,
+  category,
+  className
+}: CardProps) => {
+  const navigate = useNavigate();
+  const navigateCategory = (data) => {
+    navigate(data);
+  };
+  return (
+    <>
+      <h1 className="pb-3 border-b mb-3 capitalize">{category}</h1>
+      <div className="grid grid-cols-3 gap-3">
+        {CardPropsSets &&
+          CardPropsSets.length > 0 &&
+          CardPropsSets.map((CardPropsSet: any) => {
+            return (
+                <Card className={`p-3 cursor-pointer ${className}`} onClick={navigateCategory(CardPropsSet.Link)}>
+                  <CardBody className=" ">
+                    <h2 className="font-bold mb-1 text-2xl text-theme-white">
+                      {CardPropsSet.Type}
+                    </h2>
+                    <img
+                      src={CardPropsSet.Image}
+                      alt=""
+                      className="object-contain"
+                    />
+                  </CardBody>
+                </Card>
+            );
+          })}
+      </div>
+    </>
+  );
+};
