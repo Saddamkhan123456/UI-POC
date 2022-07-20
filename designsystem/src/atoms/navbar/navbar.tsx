@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import React from "react";
 import { HTMLAttributes } from "react";
-import { Link } from "react-router-dom";
 import { DropdownButton } from "../dropdown/dropdown";
 import Icon from "../icons/icon";
 
@@ -16,9 +15,9 @@ export const Navbar = ({
 }: NavbarProps) => {
   const navigation = [
     { name: "Home", href: "/", current: true },
-    { name: "Men", href: "/product/category", current: false },
-    { name: "Women", href: "/product/category", current: false },
-    { name: "Kids", href: "/product/category", current: false },
+    { name: "Men", href: "/product/category/Men", current: false },
+    { name: "Women", href: "/product/category/Women", current: false },
+    { name: "Kids", href: "/product/category/kids", current: false },
   ];
 
   const [isCollapsed, setIsCollapsed] = React.useState(collapsed);

@@ -1,5 +1,5 @@
 import { Card, CardBody } from "design-system";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export interface CardProps {
   CardPropsSets: CardPropsSets[];
@@ -18,10 +18,6 @@ export const CategoryCard = ({
   category,
   className
 }: CardProps) => {
-  // const navigate = useNavigate();
-  // const navigateCategory = (data) => {
-  //   navigate(data);
-  // };
  
   return (
     <>

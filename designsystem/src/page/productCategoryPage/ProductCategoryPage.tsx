@@ -1,18 +1,14 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Banner } from "../../atoms/banner";
 import { useParams } from "react-router-dom";
 import { allProducts } from "../../api/api";
-import { Card, Button } from "design-system";
-import { Link } from "react-router-dom";
 import { CardComponent } from "../../atoms/card";
 
 const ProductCategoryPage = () => {
   let { categoryId } = useParams();
   const [categoryData, setCategoryData] = useState([]);
-  // console.log(categoryId);
   useEffect(() => {
     allProducts().then((response) => {
-      // console.log(response["data"]);
       setCategoryData(response["data"]);
     });
   }, []);
