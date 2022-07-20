@@ -36,6 +36,6 @@ export const brandCategoryData: CardPropsSets[] = [
   },
   {
     Image: "https://1000logos.net/wp-content/uploads/2021/06/Wrangler-logo.png",
-    Type: "wrangler",
+    Type: "Wrangler",
   },
 ];
