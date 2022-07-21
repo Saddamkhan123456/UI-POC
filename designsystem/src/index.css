@@ -2,8 +2,10 @@
 @import "./assets/styles/global.css";
 
 @import "../src/atoms/dropdown/dropdown.css";
+@import "../src/atoms/sizes/sizes.css";
 
 /* Molecules Import */
 @import "../src/molecules/quantityBox/quantitybox.css";
+
 
 
