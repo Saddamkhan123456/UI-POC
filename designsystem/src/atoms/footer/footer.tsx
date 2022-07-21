@@ -5,15 +5,12 @@ import { HTMLAttributes } from "react";
 export interface FooterProps extends HTMLAttributes<HTMLElement> {}
 export const Footer = ({ ...props }: FooterProps) => {
   const product = [
-    { name: "Men", href: "#" },
-    { name: "Women", href: "#" },
-    { name: "Kids", href: "#" },
+    { name: "Men", href: "/product/category/Men" },
+    { name: "Women", href: "/product/category/Women" },
+    { name: "Kids", href: "/product/category/kids" },
   ];
 
-  const usefullink = [
-    { name: "Contact Us", href: "#" },
-    { name: "FAQ", href: "#" },
-  ];
+ 
   return (
     <>
       <footer className="pt-8 pb-4 px-1 text-center bg-theme-neutral flex flex-col justify-center items-center">
