@@ -23,11 +23,13 @@
     "classnames": "^2.3.1",
     "craco": "^0.0.3",
     "json-server": "^0.17.0",
+    "nice-react-carousel": "^1.1.0",
     "react": "^17.0.2",
     "react-datepicker": "^4.6.0",
     "react-dom": "^17.0.2",
     "react-popper": "^2.2.5",
     "react-range": "^1.8.12",
+    "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.3.0",
     "react-scripts": "4.0.3",
     "react-select": "^5.2.2",
@@ -87,6 +89,5 @@
     "stylelint-config-recommended": "^4.0.0",
     "stylelint-prettier": "^1.2.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.7"
-
   }
 }
