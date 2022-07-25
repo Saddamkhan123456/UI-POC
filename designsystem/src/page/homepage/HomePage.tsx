@@ -1,5 +1,3 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { CategoryCard } from "../../molecules/categoryCard";
 import { categoryData, brandCategoryData } from "../../constants/constants";
 import CarouselComponent from "../../atoms/carousal/carousal";
@@ -14,7 +12,7 @@ const HomePage = () => {
             <CategoryCard
               category="category"
               CardPropsSets={categoryData}
-              className="bg-theme-neutral"
+              className=""
             />
           </div>
           <div className="mb-4">

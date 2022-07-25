@@ -8,10 +8,8 @@ function App() {
     <>
       <div className="flex flex-col h-full overflow-scroll">
         <Navbar />
-        <div className="h-full overflow-scroll">
-          
-            <RouteConfig />
-         
+        <div className="h-full overflow-scroll h-100">
+          <RouteConfig />
           <Footer />
         </div>
       </div>

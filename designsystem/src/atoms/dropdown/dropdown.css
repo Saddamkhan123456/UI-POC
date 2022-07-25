@@ -2,6 +2,7 @@
     .dropdown-items {
         @apply
         w-48 absolute mt-1 flex flex-col rounded border;
+        z-index: 1;
         
       }
       .dropdown-item{
