@@ -14,7 +14,7 @@ export const Navbar = ({
   ...props
 }: NavbarProps) => {
   const navigation = [
-    { name: "Home", href: "/", current: true },
+    // { name: "Home", href: "/", current: true },
     { name: "Men", href: "/product/category/Men", current: false },
     { name: "Women", href: "/product/category/Women", current: false },
     { name: "Kids", href: "/product/category/kids", current: false },
@@ -31,11 +31,7 @@ export const Navbar = ({
               className="mr-3 mt-1 flex-none w-[2.0625rem] overflow-hidden md:w-auto"
               href="/"
             >
-              <img
-                src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
-                alt="logo"
-                width={100}
-              />
+              <Icon kind="logo" size={40} className="text-theme-white" />
             </a>
             <div className="hidden sm:block sm:ml-6">
               <div className="flex space-x-4">
