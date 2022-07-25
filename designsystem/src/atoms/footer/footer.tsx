@@ -1,8 +1,9 @@
 import classNames from "classnames";
 import React from "react";
 import { HTMLAttributes } from "react";
+import Icon from "../icons/icon";
 
-export interface FooterProps extends HTMLAttributes<HTMLElement> {}
+export interface FooterProps extends HTMLAttributes<HTMLElement> { }
 export const Footer = ({ ...props }: FooterProps) => {
   const product = [
     { name: "Men", href: "/product/category/Men" },
@@ -10,21 +11,17 @@ export const Footer = ({ ...props }: FooterProps) => {
     { name: "Kids", href: "/product/category/kids" },
   ];
 
- 
+
   return (
     <>
       <footer className="pt-8 pb-4 px-1 text-center bg-theme-neutral flex flex-col justify-center items-center">
         <div>
-          <img
-            src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
-            alt="logo"
-            width={100}
-          />
+          <Icon kind="logo" size={40} className="text-theme-white" />
         </div>
         <div className="my-4">
           <ul className="flex flex-row">
             {product.map((item, index) => (
-              <li  key={index}>
+              <li key={index}>
                 <a href={item.href} className="px-3 py-2 text-sm font-medium text-theme-neutral65">
                   {item.name}
                 </a>
@@ -33,8 +30,8 @@ export const Footer = ({ ...props }: FooterProps) => {
           </ul>
         </div>
         <div className="text-center text-sm text-theme-neutral65">
-          <span>© 2022 Copyright:</span> 
-          <a className= "text-sm text-theme-neutral65 font-semibold" href="#">
+          <span>© 2022 Copyright:</span>
+          <a className="text-sm text-theme-neutral65 font-semibold" href="#">
             Amazon
           </a>
         </div>
@@ -70,7 +67,7 @@ export const Footer = ({ ...props }: FooterProps) => {
             </div>
           </div>
         </div> */}
-       
+
       </footer>
     </>
   );
