@@ -39,10 +39,10 @@ const ProductDetails = () => {
             </div>
           </div>
           <div className="md:flex-1 px-4">
-            <h1 className="mb-2 text-theme-neutral uppercase text-2xl md:text-3xl">
+            <h1 className="mb-2 text-theme-neutral capitalize text-2xl md:text-3xl">
               {productData.title}
             </h1>
-            <p className="mb-4 text-theme-neutral55">
+            <p className="mb-4 text-theme-neutral55 capitalize">
               {productData.category}
             </p>
 
