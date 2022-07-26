@@ -9,7 +9,7 @@ const SizesComponent = {
 
 export default SizesComponent
 
-const Template: Story<SizesProps> = (args) => <Sizes  {...args} />;
+const Template: Story<SizesProps> = (args) => <Sizes />;
 
 export const BasicSizes = Template.bind({});
 
