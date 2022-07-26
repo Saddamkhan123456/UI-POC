@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import React from "react";
 import { HTMLAttributes } from "react";
+import { Link } from "react-router-dom";
 import { DropdownButton } from "../dropdown/dropdown";
 import Icon from "../icons/icon";
 
@@ -59,16 +60,16 @@ export const Navbar = ({
               items={["My profile", "settings"]}
               className="w-4  rounded-full"
             />
-            <a
+            <Link
               className="flex items-center justify-center text-white hover:text-theme-neutral80 focus:text-theme-neutral80 mr-1 dropdown-toggle hidden-arrow flex items-center"
-              href="/cart"
-              aria-expanded="false"
+             to="/shopping-cart"
+             
             >
               <Icon kind="cart" size={20}></Icon>
               <span className=" w-4 h-4 text-white bg-red-700 absolute rounded-full text-xs -mt-2 ml-2 py-0 px-1.5">
                 1
               </span>
-            </a>
+            </Link>
 
             {/* <a
               className="dropdown-toggle flex items-center hidden-arrow"
