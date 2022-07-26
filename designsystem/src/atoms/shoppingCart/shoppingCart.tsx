@@ -30,6 +30,7 @@ export const ShoppingCart = ({
               <img
                 src={thumbnail}
                 alt={title}
+                
                 className="h-full w-full object-cover object-top"
               />
             </div>

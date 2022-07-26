@@ -6,6 +6,7 @@
 @import "../src/atoms/card/card.css";
 @import "../src/atoms/banner/banner.css";
 @import "../src/atoms/shoppingCart/shoppingCart.css";
+@import "../src/atoms/orderSummary/orderSummary.css";
 
 /* Molecules Import */
 @import "../src/molecules/quantityBox/quantitybox.css";

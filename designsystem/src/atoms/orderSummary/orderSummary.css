@@ -1,4 +1,6 @@
 @layer components {
-  
+  .shoppping-cart .h-36{
+      @apply h-28 w-28;
+  }
 }
   
