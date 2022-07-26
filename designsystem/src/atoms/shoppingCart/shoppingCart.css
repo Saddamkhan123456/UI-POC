@@ -1,6 +1,6 @@
 @layer components {
     .remove-button button {
-        @apply border-0 hover:bg-transparent hover:text-theme-neutral px-0 md:px-4 mt-2 md:mt-0
+        @apply border-0 hover:bg-transparent hover:text-theme-neutral p-0 mt-2 md:mt-0
     }
 }
   
