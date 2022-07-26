@@ -9,10 +9,18 @@ export interface ShoppingCartProps extends HTMLAttributes<HTMLElement> {
   brand: string;
   price: any;
   thumbnail: any;
-
+  qtyUpdate:boolean;
+  showQty: boolean;
 }
 
-export const ShoppingCart = ({title, brand, price, thumbnail }: ShoppingCartProps) => {
+export const ShoppingCart = ({
+  title,
+  brand,
+  price,
+  thumbnail,
+  qtyUpdate,
+  showQty,
+}: ShoppingCartProps) => {
   return (
     <div className="flex flex-col">
       <div className="flow-root">
@@ -26,33 +34,41 @@ export const ShoppingCart = ({title, brand, price, thumbnail }: ShoppingCartProp
               />
             </div>
             <div className="lg:ml-4 sm:ml-0  flex flex-1 ">
-              <div className="w-full">
+              <div className="w-full flex flex-col">
                 <div className="flex justify-between text-base text-theme-neutral  lg:mt-0  mt-2 flex-col md:flex-row">
-                  <div>
-                    <h3 >
+                  
+                    <h3>
                       <a className="font-medium"> {title} </a>
-                      <p className="mt-1 mb-2 text-sm text-theme-neutral55 font-normal">{brand}</p>
-                      <p className="text-sm font-semibold">${price}</p>
+                      <p className="mt-1 mb-2 text-sm text-theme-neutral55 font-normal">
+                        {brand}
+                      </p>
                     </h3>
-                  </div>
+                    <p className="text-lg font-semibold">${price}</p>
+                </div>
+              
+                <div className="flex flex-1 items-end justify-between text-sm">
                   <div>
+                    <p className="text-gray-500">Qty  {showQty ?<span>1</span> :''}</p>
+                    {qtyUpdate ?
                     <QuantityBox />
+                     : ''}
                   </div>
-                  <div className="remove-button">
-                    <Button
-                      variant="secondary"
-                      size="small"
-                      className="font-medium text-theme-primary hover:text-theme-primary"
-                    >
-                      Remove
-                    </Button>
+                  <div className="flex">
+                    <div className="remove-button">
+                     
+                      <Button
+                        variant="secondary"
+                        size="small"
+                        className="font-medium text-theme-primary hover:text-theme-primary p-0"
+                      >
+                        Remove
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </div>
-            
             </div>
           </li>
-          
         </ul>
       </div>
     </div>
