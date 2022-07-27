@@ -1,6 +1,7 @@
 import { CategoryCard } from "../../molecules/categoryCard";
 import { categoryData, brandCategoryData } from "../../constants/constants";
 import CarouselComponent from "../../atoms/carousal/carousal";
+import MyProfile from "../myProfile/myProfile";
 
 const HomePage = () => {
   return (
