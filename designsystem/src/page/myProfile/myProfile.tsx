@@ -1,5 +1,4 @@
 import React from "react";
-import { Card, CardBody } from "design-system";
 import Tab from "../../molecules/tab/tab";
 import TabItem from "../../molecules/tab/tabItem";
 import TabPane from "../../molecules/tab/tabPane";
@@ -11,7 +10,7 @@ const MyProfile = () => {
     setActiveTab(tabIndex);
   };
   return (
-    <div className="p-6 lg:p-6 sm:p-3">
+    <div className="p-6 lg:p-6 sm:p-3 flex flex-col grow h-full">
       <Tab>
         <TabItem
           variant="primary"
@@ -38,9 +37,12 @@ const MyProfile = () => {
           {"Tab 3"}
         </TabItem>
       </Tab>
-      <TabPane className="border mt-2 p-4" active={active === 1}>
+      <TabPane
+        className="border mt-2 p-4 flex align-center justify-center grow h-full"
+        active={active === 1}
+      >
         <div className="flex align-center justify-center">
-          <Account />
+          <Account formPropsSets={[]} />
         </div>
       </TabPane>
       <TabPane className="border mt-2 p-4" active={active === 2}>

@@ -29,6 +29,17 @@ export const productDetail = (productId) => {
   )
 };
 
-
-
-
+export const allUsers = ()=>{
+  return(
+    axios.get(`${baseURL}/Users`) //GET
+    .then((response) => {
+      // console.log(response)
+      return response
+    })
+    .catch((err) => {
+      return(
+        console.log(err)
+      )
+    } )
+  )
+}

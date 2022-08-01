@@ -8,7 +8,7 @@ function App() {
     <>
       <div className="flex flex-col h-full overflow-scroll">
         <Navbar />
-        <div className="h-full overflow-scroll h-100">
+        <div className="h-full overflow-scroll h-100 flex flex-col">
           <RouteConfig />
           <Footer />
         </div>
