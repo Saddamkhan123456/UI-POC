@@ -19,6 +19,8 @@ const MyProfile = () => {
           active={active === 1}
         >
           {"Account"}
+
+          {"Tab 1"}
         </TabItem>
         <TabItem
           variant="primary"
@@ -29,12 +31,19 @@ const MyProfile = () => {
           {"Orders"}
         </TabItem>
         {/* <TabItem
+
+          {"Tab 2"}
+        </TabItem>
+        <TabItem
+
+        
           variant="primary"
           onClick={() => handleTabChange(3)}
           tabIndex={3}
           active={active === 3}
         >
           {"Tab 3"}
+
         </TabItem> */}
       </Tab>
       <TabPane
