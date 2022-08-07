@@ -110,7 +110,7 @@ const Account = ({}: formProps) => {
                       type="email"
                       id="email"
                       name="email"
-                      placeholder="Email"
+                      placeholder="mail"
                       value={email}
                       onChange={(e) => {
                         setEmail(e.target.value);

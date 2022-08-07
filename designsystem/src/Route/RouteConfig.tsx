@@ -4,7 +4,7 @@ import Cart from "../page/cart/Cart";
 import ProductDetails from "../page/productDetails/ProductDetails";
 import ProductCategoryPage from "../page/productCategoryPage/ProductCategoryPage";
 import ProductBrandPage from "../page/productBrandPage/ProductBrandPage";
-import Account from "../page/myProfile/account";
+import MyProfile from "../page/myProfile/myProfile";
 
 export default function RouteConfig() {
   return (
@@ -17,7 +17,7 @@ export default function RouteConfig() {
         element={<ProductCategoryPage />}
       />
       <Route path="/product/brand/:brandId" element={<ProductBrandPage />} />
-      <Route path="/my-profile" element={<Account />} />
+      <Route path="/my-profile" element={<MyProfile />} />
     </Routes>
   );
 }
