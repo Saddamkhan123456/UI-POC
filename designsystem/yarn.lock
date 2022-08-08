@@ -6947,9 +6947,9 @@ des.js@^1.0.0:
     inherits "^2.0.1"
     minimalistic-assert "^1.0.0"
 
-"design-system@git+https://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@github.com/Talentica/design-system.git#master":
+"design-system@git+https://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@github.com/Talentica/design-system.git#master":
   version "0.1.0"
-  resolved "git+https://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@github.com/Talentica/design-system.git#c9ff1fe6d5ad66301a3855d602af3b70b81349ff"
+  resolved "git+https://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@github.com/Talentica/design-system.git#c9ff1fe6d5ad66301a3855d602af3b70b81349ff"
   dependencies:
     "@babel/helper-environment-visitor" "^7.16.7"
     "@heroicons/react" "^1.0.4"
