@@ -9,9 +9,10 @@ export interface OrderSummaryProps extends HTMLAttributes<HTMLElement> {
   tax: any;
   orderTotal:any;
   showShoppingCart:boolean;
+  isCheckout: boolean;
 }
 
-export const OrderSummary = ({subTotal, shippingCharges, tax, orderTotal, showShoppingCart}: OrderSummaryProps) => {
+export const OrderSummary = ({subTotal, shippingCharges, tax, orderTotal, showShoppingCart, isCheckout}: OrderSummaryProps) => {
   return (
     <div className="flex p-8 flex-col bg-theme-neutral85 rounded-sm">
       <h2 className=" mb-4 ">Order Summary</h2>
@@ -54,11 +55,13 @@ export const OrderSummary = ({subTotal, shippingCharges, tax, orderTotal, showSh
         </div>
       </div>
       </div>
-      <div className="flex justify-between py-3">
-        <Button variant="primary" className="block w-full px-3 py-2 rounded-sm font-semibold">
-          Checkout
-        </Button>
-      </div>
+      {isCheckout && (
+         <div className="flex justify-between py-3">
+         <Button variant="primary" className="block w-full px-3 py-2 rounded-sm font-semibold">
+           Checkout
+         </Button>
+       </div>
+      )}
     </div>
   );
 };
