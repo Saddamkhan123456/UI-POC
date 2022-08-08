@@ -30,21 +30,6 @@ const MyProfile = () => {
         >
           {"Orders"}
         </TabItem>
-        {/* <TabItem
-
-          {"Tab 2"}
-        </TabItem>
-        <TabItem
-
-        
-          variant="primary"
-          onClick={() => handleTabChange(3)}
-          tabIndex={3}
-          active={active === 3}
-        >
-          {"Tab 3"}
-
-        </TabItem> */}
       </Tab>
       <TabPane
         className=" mt-4 p-4 flex items-center justify-center flex-col"

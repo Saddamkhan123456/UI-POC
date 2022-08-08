@@ -28,6 +28,7 @@ export const productDetail = (productId) => {
     } )
   )
 };
+
 export const allUsers = () => {
   return(
     axios.get(`${baseURL}/my-profile`) //GET
@@ -41,6 +42,3 @@ export const allUsers = () => {
     } )
   )
 };
-
-
-
