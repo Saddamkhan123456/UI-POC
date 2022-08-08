@@ -31,19 +31,21 @@ export const productDetail = (productId) => {
 
 
 
-export const allUsers = () => {
-  return(
-    axios.get(`${baseURL}/my-profile`) //GET
-    .then((response) => {
-      return response
-    })
-    .catch((err) => {
-      return(
-        console.log(err)
-      )
-    } )
-  )
-};
+// export const allUsers = (data) => {
+//   return(
+//     fetch("http://localhost:8000/Users", {
+//       method: "post",
+//       headers: {
+//         Accept: "application/json",
+//         "content-type": "application/json",
+//       },
+//       body: JSON.stringify(data),
+//     }).then((result) => {
+//       console.log(result, result);
+//       return(result)  
+//     })
+//   )
+// };
 
 
 
