@@ -1,13 +1,13 @@
 import { Story } from "@storybook/react";
 import { ShoppingCart, ShoppingCartProps } from "./index";
 
-const BannerComponent = {
+const ShoppingComponent = {
   title: "Design System/Atoms/ShoppingCart",
   component: ShoppingCart,
   
 };
 
-export default BannerComponent
+export default ShoppingComponent
 
 const Template: Story<ShoppingCartProps> = (args) =>
  <ShoppingCart  {...args}
@@ -18,6 +18,6 @@ const Template: Story<ShoppingCartProps> = (args) =>
 
   />;
 
-export const BasicBanner = Template.bind({});
+export const BasicShopping = Template.bind({});
 
 
