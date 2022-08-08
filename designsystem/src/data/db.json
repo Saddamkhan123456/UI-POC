@@ -646,47 +646,11 @@
   ],
   "Users": [
     {
-      "id": 1,
+      "name": "Palak",
+      "lastName": "amralkar",
+      "mobile": "111111111",
       "email": "John@gmail.com",
-      "password": "m38rmF$",
-      "firstname": "John",
-      "lastname": "Doe",
-      "phone": "1-570-236-7033"
-    },
-    {
-      "firstName": "palak",
-      "lastName": "amralkar",
-      "phone": "08226061462",
-      "email": "amralkar.palak@gmail.com",
-      "id": 2
-    },
-    {
-      "firstName": "jyoti",
-      "lastName": "jyoti",
-      "phone": "1111111111",
-      "email": "jyoti.jyoti@gmai.com",
-      "id": 3
-    },
-    {
-      "firstName": "abhishek",
-      "lastName": "kumar",
-      "phone": "1111111111",
-      "email": "kumar.1905abhishek@gmail.com",
-      "id": 5
-    },
-    {
-      "firstName": "palak",
-      "lastName": "amralkar",
-      "phone": "08226061462",
-      "email": "",
-      "id": 6
-    },
-    {
-      "firstName": "",
-      "lastName": "",
-      "phone": "",
-      "email": "",
-      "id": 7
+      "id": 1
     }
   ]
 }

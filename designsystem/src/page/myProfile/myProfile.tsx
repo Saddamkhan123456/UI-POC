@@ -18,7 +18,7 @@ const MyProfile = () => {
           tabIndex={1}
           active={active === 1}
         >
-          {"Tab 1"}
+          {"Account"}
         </TabItem>
         <TabItem
           variant="primary"
@@ -26,16 +26,16 @@ const MyProfile = () => {
           tabIndex={2}
           active={active === 2}
         >
-          {"Tab 2"}
+          {"Orders"}
         </TabItem>
-        <TabItem
+        {/* <TabItem
           variant="primary"
           onClick={() => handleTabChange(3)}
           tabIndex={3}
           active={active === 3}
         >
           {"Tab 3"}
-        </TabItem>
+        </TabItem> */}
       </Tab>
       <TabPane
         className=" mt-4 p-4 flex items-center justify-center flex-col"
