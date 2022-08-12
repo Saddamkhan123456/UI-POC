@@ -3,6 +3,7 @@ import { HTMLAttributes } from "react";
 import { Button , Hr} from "design-system";
 import { ShoppingCart } from "../shoppingCart";
 
+
 export interface OrderSummaryProps extends HTMLAttributes<HTMLElement> {
   subTotal: any;
   shippingCharges: any;

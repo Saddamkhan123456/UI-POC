@@ -4,6 +4,7 @@ import Cart from "../page/cart/Cart";
 import ProductDetails from "../page/productDetails/ProductDetails";
 import ProductCategoryPage from "../page/productCategoryPage/ProductCategoryPage";
 import ProductBrandPage from "../page/productBrandPage/ProductBrandPage";
+import CheckoutPage from "../page/checkoutPage/CheckoutPage";
 
 export default function RouteConfig() {
   return (
@@ -13,6 +14,7 @@ export default function RouteConfig() {
       <Route path="/product/:productId" element={<ProductDetails />} />
       <Route path="/product/category/:categoryId" element={<ProductCategoryPage />} /> 
       <Route path="/product/brand/:brandId" element={<ProductBrandPage/>} /> 
+      <Route path="/checkout" element={<CheckoutPage/>} />
     </Routes>
   );
 }

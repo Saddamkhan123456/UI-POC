@@ -23,6 +23,7 @@ const CheckoutPage = () => {
               tax='10'
               orderTotal="124"
               showShoppingCart={true}
+              isCheckout={false}
 
               />
             
