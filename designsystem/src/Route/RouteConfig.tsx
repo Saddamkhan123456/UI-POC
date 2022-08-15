@@ -11,7 +11,6 @@ export default function RouteConfig() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/cart" element={<Cart />} />
       <Route path="/product/:productId" element={<ProductDetails />} />
       <Route
         path="/product/category/:categoryId"
