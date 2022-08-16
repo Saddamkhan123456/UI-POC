@@ -23,7 +23,7 @@ const ShoppingCartPage = () => {
           </div>
           <div className="lg:w-1/3 md:w-1/3 sm:w-full">
             <div className="lg:px-6 sm:px-2  w-full">
-              <OrderSummary />
+              <OrderSummary isCheckout={true}/>
             </div>
           </div>
         </div>

@@ -2,13 +2,15 @@ import React from "react";
 import { HTMLAttributes } from "react";
 import { Button } from "design-system";
 
-export interface OrderSummaryProps extends HTMLAttributes<HTMLElement> {}
+export interface OrderSummaryProps extends HTMLAttributes<HTMLElement> {
+  isCheckout: boolean;
+}
 
-export const OrderSummary = ({}: OrderSummaryProps) => {
+export const OrderSummary = ({ isCheckout }: OrderSummaryProps) => {
   return (
     <div className="flex p-8 flex-col bg-theme-neutral85 rounded-sm">
       <h2 className=" pb-3 mb-4 ">Order Summary</h2>
-      
+
       <div className="flex justify-between py-3 border-b border-theme-neutral80 ">
         <div className="text-theme-neutral55 text-sm">Subtotal:</div>
         <div className="text-theme-neutral10 text-sm ">$99.00</div>
@@ -29,11 +31,18 @@ export const OrderSummary = ({}: OrderSummaryProps) => {
           $112.32
         </div>
       </div>
-      <div className="flex justify-between py-3">
-        <Button variant="primary" className="block w-full px-3 py-2 rounded-sm font-semibold">
-          Checkout
-        </Button>
-      </div>
+      {isCheckout ? (
+        <div className="flex justify-between py-3">
+          <Button
+            variant="primary"
+            className="block w-full px-3 py-2 rounded-sm font-semibold"
+          >
+            Checkout
+          </Button>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };
