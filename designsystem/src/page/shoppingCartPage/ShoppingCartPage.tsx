@@ -23,7 +23,14 @@ const ShoppingCartPage = () => {
           </div>
           <div className="lg:w-1/3 md:w-1/3 sm:w-full">
             <div className="lg:px-6 sm:px-2  w-full">
-              <OrderSummary isCheckout={true}/>
+              <OrderSummary
+                subTotal="99"
+                shippingCharges="5"
+                tax="10"
+                orderTotal="124"
+                showShoppingCart={false}
+                isCheckout={true}
+              />
             </div>
           </div>
         </div>
