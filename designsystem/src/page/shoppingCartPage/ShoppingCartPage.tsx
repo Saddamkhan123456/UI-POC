@@ -4,7 +4,7 @@ import ItemCard from "../../atoms/shoppingCart/itemCard";
 
 const ShoppingCartPage = () => {
   return (
-    <div className="p-3 h-full">
+    <div className="p-6 lg:p-6 sm:p-3">
       <h1 className="text-3xl font-black mb-3">Shopping Cart</h1>
       <div className="flex py-8">
         <div className="flex flex-col md:flex-row w-full">
@@ -18,6 +18,7 @@ const ShoppingCartPage = () => {
                 qtyUpdate={true}
                 showQty={false}
                 cartCard={false}
+                imgSize={false}
               />
             </div>
           </div>

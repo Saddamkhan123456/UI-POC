@@ -11,6 +11,7 @@ export interface ShoppingCartProps extends HTMLAttributes<HTMLElement> {
   qtyUpdate: boolean;
   showQty: boolean;
   cartCard: boolean;
+  imgSize: boolean;
 }
 
 const ItemCard = ({
@@ -21,12 +22,13 @@ const ItemCard = ({
   qtyUpdate,
   showQty,
   cartCard,
+  imgSize
 }: ShoppingCartProps) => {
   return (
     <Card className={classnames(cartCard ? "border rounded flex px-4" : "")}>
       <CardBody className="p-3 flex w-full">
-        <div className="h-36 w-36 flex-shrink-0 overflow-hidden rounded-md border border-theme-neutral80">
-          <img
+        <div className={classnames(imgSize ? "cart-image h-24 w-24 " : "h-36 w-36 ") + "flex-shrink-0 overflow-hidden rounded-md border border-theme-neutral80"}>
+           <img
             src={thumbnail}
             alt={title}
             className="h-full w-full object-cover object-top"

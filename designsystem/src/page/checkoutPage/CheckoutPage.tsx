@@ -4,7 +4,7 @@ import CheckoutForm from "./checkoutForm";
 
 const CheckoutPage = () => {
   return (
-    <div className="p-3 h-full">
+    <div className="p-6 lg:p-6 sm:p-3">
       <h1 className="text-3xl font-black mb-3">Checkout</h1>
       <div className="flex py-8">
         <div className="flex flex-col md:flex-row w-full">
@@ -22,6 +22,7 @@ const CheckoutPage = () => {
                 orderTotal="124"
                 showShoppingCart={true}
                 isCheckout={false}
+                
               />
             </div>
           </div>

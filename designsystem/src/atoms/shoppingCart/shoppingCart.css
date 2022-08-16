@@ -5,5 +5,9 @@
     .card-body{
         @apply px-0
     }
+    .cart-image {
+       width: 6rem;
+       height: 6rem;
+    }
 }
   

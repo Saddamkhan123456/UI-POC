@@ -18,22 +18,23 @@ export const OrderSummary = ({
   subTotal,
   tax,
   orderTotal,
-  showShoppingCart
+  showShoppingCart,
 }: OrderSummaryProps) => {
   return (
     <div className="flex p-8 flex-col bg-theme-neutral85 rounded-sm">
       <h2 className=" pb-3 mb-4 ">Order Summary</h2>
       <Hr />
       {showShoppingCart ? (
-      <ItemCard
-        title="Black High Neck Cropped Top"
-        brand="Nike"
-        price="1294"
-        thumbnail="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/13843398/2021/4/19/1847ce50-4f55-4bad-aaf0-de8a2b31fbbf1618820819735-Inddus-Teal-Blue-Solid-Ruffle-Accordion-Pleat-Saree-71616188-1.jpg"
-        qtyUpdate={false}
-        showQty={true}
-        cartCard={false}
-      />
+        <ItemCard
+          title="Black High Neck Cropped Top"
+          brand="Nike"
+          price="1294"
+          thumbnail="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/13843398/2021/4/19/1847ce50-4f55-4bad-aaf0-de8a2b31fbbf1618820819735-Inddus-Teal-Blue-Solid-Ruffle-Accordion-Pleat-Saree-71616188-1.jpg"
+          qtyUpdate={false}
+          showQty={true}
+          cartCard={false}
+          imgSize={true}
+        />
       ) : (
         ""
       )}
