@@ -5,7 +5,6 @@ import ProductCategoryPage from "../page/productCategoryPage/ProductCategoryPage
 import ProductBrandPage from "../page/productBrandPage/ProductBrandPage";
 import ShoppingCartPage from "../page/shoppingCartPage/ShoppingCartPage";
 import Wishlist from "../page/wishlist/wishlist";
-import Account from "../page/myProfile/account";
 import MyProfile from "../page/myProfile/myProfile";
 
 export default function RouteConfig() {
@@ -20,8 +19,7 @@ export default function RouteConfig() {
       <Route path="/product/brand/:brandId" element={<ProductBrandPage />} />
       <Route path="/shopping-cart" element={<ShoppingCartPage />} />
       <Route path="/wishlist" element={<Wishlist />} />
-      <Route path="/my-profile" element={<Account />} />
-
+      {/* <Route path="/account" element={<Account />} /> */}
       <Route path="/my-profile" element={<MyProfile />} />
     </Routes>
   );
