@@ -48,6 +48,7 @@ const Account = ({}: formProps) => {
       });
     });
   }
+
   return (
     <>
       <Card className="grow flex h-full w-1/2 items-center justify-center">
