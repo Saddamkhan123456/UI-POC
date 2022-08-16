@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import React from "react";
 import { HTMLAttributes } from "react";
+import { Link } from "react-router-dom";
 import { DropdownButton } from "../dropdown/dropdown";
 import Icon from "../icons/icon";
 
@@ -55,36 +56,39 @@ export const Navbar = ({
           </div>
 
           <div className="flex items-center relative gap-4">
-            <DropdownButton
+            {/* <DropdownButton
               items={["My profile", "settings"]}
               className="w-4  rounded-full"
-            />
-            <a
+            /> */}
+
+            <Link
               className="flex items-center justify-center text-white hover:text-theme-neutral80 focus:text-theme-neutral80 mr-1 dropdown-toggle hidden-arrow flex items-center"
-              href="/cart"
-              aria-expanded="false"
+              to="/wishlist"
+            >
+              <Icon kind="wishlist" size={20}></Icon>
+              Wishlist
+            </Link>
+            <Link
+              className="flex items-center justify-center text-white hover:text-theme-neutral80 focus:text-theme-neutral80 mr-1  hidden-arrow flex items-center"
+              to="/shopping-cart"
             >
               <Icon kind="cart" size={20}></Icon>
-              <span className=" w-4 h-4 text-white bg-red-700 absolute rounded-full text-xs -mt-2 ml-2 py-0 px-1.5">
+              {/* <span className=" w-4 h-4 text-white bg-red-700 absolute rounded-full text-xs -mt-2 ml-2 py-0 px-1.5">
                 1
-              </span>
-            </a>
-
-            {/* <a
-              className="dropdown-toggle flex items-center hidden-arrow"
-              href="/"
-              id="dropdownMenuButton2"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
+              </span> */}
+            </Link>
+            <Link
+              className="w-10 h-10 rounded-full border flex items-center justify-center text-white hover:text-theme-neutral80 focus:text-theme-neutral80 mr-1  hidden-arrow flex items-center"
+              to="/my-profile"
             >
               <img
                 src="https://mdbootstrap.com/img/new/avatars/2.jpg"
-                
                 alt=""
+                className="w-10 h-10 rounded-full"
                 loading="lazy"
               />
-            </a> */}
+            </Link>
+
             <div className="dropdown relative">
               <div>
                 <div className="md:hidden">
