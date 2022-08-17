@@ -13,7 +13,7 @@ export const Sizes = ({ ...props }: SizesProps) => {
        <Button variant="secondary" size="small" className="w-12 rounded mr-2 font-bold size-button">M</Button>
        <Button variant="secondary" size="small" className="w-12 rounded mr-2 font-bold size-button">L</Button>
        <Button variant="secondary" size="small" className="w-12 rounded mr-2 font-bold size-button">XL</Button>
-       <Button variant="secondary" size="small" className="w-12 rounded mr-2 font-bold size-button">XXL</Button>
+       <Button variant="secondary" size="small" className="w-12 rounded mr-0 font-bold size-button">XXL</Button>
     </div>
   );
 };

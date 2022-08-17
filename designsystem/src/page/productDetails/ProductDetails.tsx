@@ -23,7 +23,7 @@ const ProductDetails = () => {
     });
   }, []);
   return (
-    <div>
+    <>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 py-16">
         <div className="flex flex-col md:flex-row -mx-4">
           <div className="md:flex-1 px-4">
@@ -42,7 +42,7 @@ const ProductDetails = () => {
             <h1 className="mb-2 text-theme-neutral capitalize text-2xl md:text-3xl">
               {productData.title}
             </h1>
-            <p className="mb-4 text-theme-neutral55 capitalize">
+            <p className="mb-4 text-theme-neutral25 capitalize">
               {productData.category}
             </p>
 
@@ -58,7 +58,7 @@ const ProductDetails = () => {
 
             <h5 className="mb-2 text-theme-neutral text-md">Description</h5>
             <div className="product-descriptiom">
-              <p className="mb-4 text-theme-neutral55">
+              <p className="mb-4 text-theme-neutral25">
                 {productData.description}
               </p>
             </div>
@@ -73,18 +73,18 @@ const ProductDetails = () => {
               </div>
             </div>
             <div className="flex items-center  pb-4 ">
-              <div className="w-1/2 md:w-1/3 pr-2">
+              <div className="w-1/2 md:w-1/3 mr-2">
                 <Button
                   variant="primary"
-                  className="block w-full px-3 py-2  uppercase"
+                  className="block w-full px-3 py-2 uppercase h-38"
                 >
                   wishlist
                 </Button>
               </div>
-              <div className="w-1/2 md:w-1/3 pr-2">
+              <div className="w-1/2 md:w-1/3 ml-2">
                 <Button
                   variant="secondary"
-                  className="block w-full px-3 py-2 uppercase "
+                  className="block w-full px-3 py-2 uppercase h-38"
                 >
                   Add to cart
                 </Button>
@@ -93,8 +93,7 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
-      ;
-    </div>
+    </>
   )
 }
 
