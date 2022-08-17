@@ -17,6 +17,7 @@ const Wishlist = () => {
                 qtyUpdate={true}
                 showQty={false}
                 cartCard={true}
+                imgSize={false}
               />
             </div>
           </div>

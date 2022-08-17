@@ -15,6 +15,7 @@ export const ShoppingCart = ({}) => {
               qtyUpdate={false}
               showQty={false}
               cartCard={false}
+              imgSize={false}
             />
           </li>
         </ul>

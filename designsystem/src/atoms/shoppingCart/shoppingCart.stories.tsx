@@ -18,6 +18,7 @@ const Template: Story<ShoppingCartProps> = (args) => (
     qtyUpdate={false}
     showQty={false}
     cartCard={false}
+    imgSize={false}
   />
 );
 
