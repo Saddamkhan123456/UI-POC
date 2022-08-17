@@ -1,9 +1,11 @@
 import classNames from "classnames";
-import React from "react";
+import React, { useState } from "react";
 import { HTMLAttributes } from "react";
 import { Link } from "react-router-dom";
-import { DropdownButton } from "../dropdown/dropdown";
+import { Button, Card, CardBody, List, ListItem } from "design-system";
 import Icon from "../icons/icon";
+import OffCanvasComponent from "../offcanvas/offcanvas";
+import ItemCard from "../shoppingCart/itemCard";
 
 export interface NavbarProps extends HTMLAttributes<HTMLElement> {
   collapsed?: boolean;
@@ -20,7 +22,7 @@ export const Navbar = ({
     { name: "Women", href: "/product/category/Women", current: false },
     { name: "Kids", href: "/product/category/kids", current: false },
   ];
-
+  const [open, setOpen] = useState(false);
   const [isCollapsed, setIsCollapsed] = React.useState(collapsed);
 
   return (
@@ -56,18 +58,43 @@ export const Navbar = ({
           </div>
 
           <div className="flex items-center relative gap-4">
-            {/* <DropdownButton
-              items={["My profile", "settings"]}
-              className="w-4  rounded-full"
-            /> */}
-
-            <Link
-              className="flex items-center justify-center text-white hover:text-theme-neutral80 focus:text-theme-neutral80 mr-1 dropdown-toggle hidden-arrow flex items-center"
-              to="/wishlist"
-            >
-              <Icon kind="wishlist" size={20}></Icon>
-              Wishlist
-            </Link>
+            <List>
+              <ListItem>
+                <div
+                  id="offCanvas"
+                  onClick={() => setOpen(!open)}
+                  className="cursor-pointer text-white"
+                >
+                  Wishlist
+                </div>
+                <OffCanvasComponent
+                  onClose={(e: any) => setOpen(!open)}
+                  isOpen={open}
+                  type="right"
+                  sizeInPercentage={50}
+                  panelClassName="panel bg-theme-neutral85 text-theme-dark"
+                  panelContainerClassName="panel-container"
+                  noBackdrop={false}
+                  props={undefined}
+                  children={
+                    <Card>
+                      <CardBody className="p-3">
+                        <h1 className="text-3xl font-black mb-3">Wishlist</h1>
+                        <ItemCard
+                          title={"Black High Neck Cropped Top"}
+                          brand={"Nike"}
+                          price={"$1294"}
+                          thumbnail="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16491130/2021/12/13/31b58c46-6189-4639-8d36-8c3a5bb78c151639371822052PinkChickNavyBlueColourblockedLayeredSatinDress1.jpg"
+                          qtyUpdate={false}
+                          showQty={false}
+                          cartCard={true}
+                        />
+                      </CardBody>
+                    </Card>
+                  }
+                />
+              </ListItem>
+            </List>
             <Link
               className="flex items-center justify-center text-white hover:text-theme-neutral80 focus:text-theme-neutral80 mr-1  hidden-arrow flex items-center"
               to="/shopping-cart"

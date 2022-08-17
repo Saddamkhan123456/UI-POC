@@ -25,7 +25,7 @@ const ItemCard = ({
   return (
     <Card className={classnames(cartCard ? "border rounded flex" : "")}>
       <CardBody className="p-3 flex w-full">
-        <div className="h-36 w-36 flex-shrink-0 overflow-hidden rounded-md border border-theme-neutral80">
+        <div className="mr-2 h-36 w-36 flex-shrink-0 overflow-hidden rounded-md border border-theme-neutral80">
           <img
             src={thumbnail}
             alt={title}
