@@ -72,12 +72,12 @@ export const Navbar = ({
                 type="right"
                 sizeInPercentage={50}
                 panelClassName="panel bg-theme-neutral85 text-theme-dark"
-                panelContainerClassName="panel-container"
+                panelContainerClassName="panel-container h-full"
                 noBackdrop={false}
                 props={undefined}
                 children={
-                  <Card>
-                    <CardBody className="p-3">
+                  <Card className="h-full">
+                    <CardBody className="p-3 ">
                       <h1 className="text-3xl font-black mb-3">Wishlist</h1>
                       <ItemCard
                         title={"Black High Neck Cropped Top"}
@@ -86,7 +86,7 @@ export const Navbar = ({
                         thumbnail="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16491130/2021/12/13/31b58c46-6189-4639-8d36-8c3a5bb78c151639371822052PinkChickNavyBlueColourblockedLayeredSatinDress1.jpg"
                         qtyUpdate={false}
                         showQty={false}
-                        cartCard={true}
+                        cartCard={false}
                       />
                     </CardBody>
                   </Card>

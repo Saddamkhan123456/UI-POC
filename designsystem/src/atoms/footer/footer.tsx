@@ -3,14 +3,13 @@ import React from "react";
 import { HTMLAttributes } from "react";
 import Icon from "../icons/icon";
 
-export interface FooterProps extends HTMLAttributes<HTMLElement> { }
+export interface FooterProps extends HTMLAttributes<HTMLElement> {}
 export const Footer = ({ ...props }: FooterProps) => {
   const product = [
     { name: "Men", href: "/product/category/Men" },
     { name: "Women", href: "/product/category/Women" },
     { name: "Kids", href: "/product/category/kids" },
   ];
-
 
   return (
     <>
@@ -22,7 +21,10 @@ export const Footer = ({ ...props }: FooterProps) => {
           <ul className="flex flex-row">
             {product.map((item, index) => (
               <li key={index}>
-                <a href={item.href} className="px-3 py-2 text-sm font-medium text-theme-neutral65">
+                <a
+                  href={item.href}
+                  className="px-3 py-2 text-sm font-medium text-theme-neutral65"
+                >
                   {item.name}
                 </a>
               </li>
@@ -32,7 +34,7 @@ export const Footer = ({ ...props }: FooterProps) => {
         <div className="text-center text-sm text-theme-neutral65">
           <span>© 2022 Copyright:</span>
           <a className="text-sm text-theme-neutral65 font-semibold" href="#">
-            Amazon
+            Brand
           </a>
         </div>
         {/* <div className="mx-6 py-10 text-center md:text-left">
@@ -67,7 +69,6 @@ export const Footer = ({ ...props }: FooterProps) => {
             </div>
           </div>
         </div> */}
-
       </footer>
     </>
   );

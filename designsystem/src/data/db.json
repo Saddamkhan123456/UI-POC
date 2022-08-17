@@ -6,7 +6,7 @@
       "price": 200.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "men's clothing",
-      "categoryId":"Men",
+      "categoryId": "Men",
       "brand": "Nike",
       "thumbnail": "https://rukminim1.flixcart.com/image/880/1056/km57hjk0/shirt/8/x/x/l-sdn-check-black-red-u-turn-original-imagf4fvy6hc3kuz.jpeg?q=50",
       "images": [
@@ -16,7 +16,7 @@
         "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
       ],
       "rating": 3.9,
-      "stock": 120 
+      "stock": 120
     },
     {
       "id": 2,
@@ -24,7 +24,7 @@
       "price": 55.66,
       "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
       "category": "men's clothing",
-      "categoryId":"Men",
+      "categoryId": "Men",
       "brand": "Nike",
       "thumbnail": "https://rukminim1.flixcart.com/image/880/1056/kz3118w0/shirt/e/d/q/m-cz-den-ch-01-cazzba-original-imagb65yqff6cfh9.jpeg?q=50",
       "images": [
@@ -42,7 +42,7 @@
       "price": 86.99,
       "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
       "category": "men's clothing",
-      "categoryId":"Men",
+      "categoryId": "Men",
       "brand": "Nike",
       "thumbnail": "https://rukminim1.flixcart.com/image/880/1056/k0wqwsw0/jacket/s/a/t/s-9690931-mast-harbour-original-imafkh5qgkzdzh67.jpeg?q=50",
       "images": [
@@ -59,7 +59,7 @@
       "price": 15.99,
       "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
       "category": "men's clothing",
-      "categoryId":"Men",
+      "categoryId": "Men",
       "brand": "Wrangler",
       "thumbnail": "https://rukminim1.flixcart.com/image/880/1056/km2clu80/jacket/c/f/0/s-mnt-7003-montrez-original-imagffv4hs3k6quc.jpeg?q=50",
       "images": [
@@ -76,7 +76,7 @@
       "price": 897.95,
       "description": "White and gold-toned printed woven fit and flare dress, has a round neck, short sleeves, zip closure, an attached lining, flared hem, comes with a belt",
       "category": "kids's clothing",
-      "categoryId":"kids",
+      "categoryId": "kids",
       "brand": "Wrangler",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/5154232/2022/5/25/61686b86-e9bb-4644-bd4a-188bf6402fe31653462970911NaughtyNinosGirlsWhitePrintedFitandFlareDress1.jpg",
       "images": [
@@ -94,7 +94,7 @@
       "price": 22.3,
       "description": "Black and pink printed basic jumpsuit with waist tie-ups a shoulder straps",
       "category": "kids's clothing",
-      "categoryId":"kids",
+      "categoryId": "kids",
       "brand": "Nike",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16981002/2022/1/29/1aa050c1-ab3b-4838-bcab-6c6b66910c951643466657169CUTECUMBERGirlsBlackPrinted1.jpg",
       "images": [
@@ -112,7 +112,7 @@
       "price": 444.99,
       "description": "Dark shade, heavy fade blue jeans Regular fit, mid-rise ",
       "category": "kids's clothing",
-      "categoryId":"kids",
+      "categoryId": "kids",
       "brand": "Nike",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/14803378/2022/6/4/55a56c2f-a2a9-4dc2-ae6f-afcf01d34fff1654324501832-YK-Boys-Blue-Regular-Fit-Mid-Rise-Heavy-Fade-Stretchable-Jea-1.jpg",
       "images": [
@@ -130,7 +130,7 @@
       "price": 15.99,
       "description": "Blue faded knitted joggers Jogger fit Mid-rise Whiskers & Chevrons Ripped Marvel printed Length: regular Pattern: solid Flat-front, with no pleats desig Feature: plai 5 pockets",
       "category": "kids's clothing",
-      "categoryId":"kids",
+      "categoryId": "kids",
       "brand": "Wrangler",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/14803438/2022/7/20/1a0df5ed-6083-4778-9943-9d00155f4e861658300037421-YK-Marvel-Boys-Blue-Faded--Ripped-Joggers-7201658300036948-1.jpg",
       "images": [
@@ -148,9 +148,9 @@
       "price": 156.99,
       "description": "Black solid knitted crop top, has a high neck, and long sleeves",
       "category": "women's clothing",
-      "categoryId":"Women",
+      "categoryId": "Women",
       "brand": "Puma",
-       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/12222036/2020/10/6/d7ae3065-98d4-42d0-b244-d2b18802ff101601959656577-SASSAFRAS-Women-Black-Solid-High-Neck-Cropped-Top-4441601959-1.jpg",
+      "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/12222036/2020/10/6/d7ae3065-98d4-42d0-b244-d2b18802ff101601959656577-SASSAFRAS-Women-Black-Solid-High-Neck-Cropped-Top-4441601959-1.jpg",
       "images": [
         "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_",
         "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_",
@@ -166,7 +166,7 @@
       "price": 1294.95,
       "description": "Teal blue ruffle accordion pleat saree.",
       "category": "women's clothing",
-      "categoryId":"Women",
+      "categoryId": "Women",
       "brand": "Nike",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/13843398/2021/4/19/1847ce50-4f55-4bad-aaf0-de8a2b31fbbf1618820819735-Inddus-Teal-Blue-Solid-Ruffle-Accordion-Pleat-Saree-71616188-1.jpg",
       "images": [
@@ -184,7 +184,7 @@
       "price": 349.99,
       "description": "Maroon accordion pleated solid saree",
       "category": "women's clothing",
-      "categoryId":"Women",
+      "categoryId": "Women",
       "brand": "Wrangler",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/10684980/2019/10/15/78d83031-09e1-4c04-b3c1-40c190d452281571121382484-Inddus-Purple-Solid-Silk-Blend-Saree-6951571121380989-1.jpg",
       "images": [
@@ -202,7 +202,7 @@
       "price": 99.99,
       "description": "Black solid knitted bodycon dress with tie-ups detail, has shoulder straps, sleeveless, and straight hem",
       "category": "women's clothing",
-      "categoryId":"Women",
+      "categoryId": "Women",
       "brand": "Wrangler",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/10054821/2019/7/3/db52fd6a-19fc-4add-bc4b-77b8608454d01562138455279-Veni-Vidi-Vici-Women-Black-Bodycon-Dress-3841562138453419-1.jpg",
       "images": [
@@ -220,7 +220,7 @@
       "price": 88.99,
       "description": "Olive green brand logo embroidered sweatshirt, has a hood, 1 kangaroo pocket, long sleeves, ribbed hem",
       "category": "men's clothing",
-      "categoryId":"Men",
+      "categoryId": "Men",
       "brand": "Wrangler",
       "thumbnail": "https://rukminim1.flixcart.com/image/880/1056/kxxl9jk0/sweatshirt/d/b/s/m-708y-breil-by-fort-collins-original-imagaaf3syucacmh.jpeg?q=50",
       "images": [
@@ -237,7 +237,7 @@
       "price": 88.99,
       "description": "Maroon solid casual shirt, has a spread collar, long sleeves, button placket, curved hem, and 2 flap pockets",
       "category": "men's clothing",
-      "categoryId":"Men",
+      "categoryId": "Men",
       "brand": "Nike",
       "thumbnail": "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/10410396/2019/9/4/19cd98c5-12dd-4f57-890f-e523790bfd9b1567579282567-HERENOW-Men-Shirts-7531567579282088-3.jpg",
       "images": [
@@ -254,7 +254,7 @@
       "price": 88.99,
       "description": "Navy blue checked slim fit casual blazer, has a notched lapel collar, long sleeves with buttons, single breasted with button closures,2 mock pockets with flaps ,1 pocket on chest and  2 internal pockets, attached lining, double vented back hem.",
       "category": "men's clothing",
-      "categoryId":"Men",
+      "categoryId": "Men",
       "brand": "Nike",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17757696/2022/5/27/83933076-c4f6-4f7a-a060-157f1ca4c1421653636108353-INVICTUS-Men-Navy-blue-Checked-Slim-Fit-Single-Breasted-Form-1.jpg",
       "images": [
@@ -271,7 +271,7 @@
       "price": 150.99,
       "description": "Navy blue solid rain jacket, has an attached hood with drawcord toggle, a full front zipper placket with flap, cuffs and hem with elasticated, a packable hood and breathable vents at the back, and two flap zipper pockets",
       "category": "men's clothing",
-      "categoryId":"Men",
+      "categoryId": "Men",
       "brand": "Puma",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/18415678/2022/5/25/a9a87b1a-8a52-4b14-b85f-b423cf6c45e61653471552581t-baseNavyNylonRibstopSolidFullSleeveRainWearJacket1.jpg",
       "images": [
@@ -288,7 +288,7 @@
       "price": 150.99,
       "description": "Black dark wash 5-pocket mid-rise jeans, clean look, light fade, has a button and zip closure, and waistband with belt loops",
       "category": "men's clothing",
-      "categoryId":"Men",
+      "categoryId": "Men",
       "brand": "Wrangler",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/13490720/2021/3/1/23d9e159-52ee-4d2e-b988-34138e8208a11614592943050-Mast--Harbour-Men-Jeans-1121614592941259-1.jpg",
       "images": [
@@ -305,7 +305,7 @@
       "price": 150.99,
       "description": "Black dark wash 5-pocket mid-rise jeans, clean look, light fade, has a button and zip closure, and waistband with belt loops",
       "category": "men's clothing",
-      "categoryId":"Men",
+      "categoryId": "Men",
       "brand": "Wrangler",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/18450002/2022/5/27/e7824c56-7434-4c27-b606-58ef32c284b51653649541979Jeans1.jpg",
       "images": [
@@ -322,7 +322,7 @@
       "price": 1255.99,
       "description": "Green and white solid kurta with churidar Green and white straight knee length kurta, has a mandarin collar, long sleeves, straight hem Green and white solid churidar, drawstring closure Comes with a nehru jacket",
       "category": "men's clothing",
-      "categoryId":"Men",
+      "categoryId": "Men",
       "brand": "Wrangler",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2019/12/13/c464f92d-c08d-472c-8b9e-48616bf737131576191650979-1.jpg",
       "images": [
@@ -339,7 +339,7 @@
       "price": 1345.99,
       "description": "An Ode etched in the Patuadi lifestyle, offering contemporary ethnic wardrobe solutions balancing modernity with tradition. The line offers affordable ethnic wear for the urban youth by extending statement cuts, with innovative fabrics to create a bold signature styling. This line beautifully balances vibrancy and tradition with novelty and elegance.",
       "category": "men's clothing",
-      "categoryId":"Men",
+      "categoryId": "Men",
       "brand": "Wrangler",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15434860/2022/6/2/62468384-336f-4867-a6fe-e837c46571721654168918870-Ode-by-House-of-Pataudi-Men-Kurtas-451654168918323-1.jpg",
       "images": [
@@ -356,7 +356,7 @@
       "price": 145.99,
       "description": "Lavender self design self design bodycon dress Sweetheart neck  Short, regular sleeves Ruffled detail Maxi length in straight hem Scuba fabric ",
       "category": "women's clothing",
-      "categoryId":"Women",
+      "categoryId": "Women",
       "brand": "Wrangler",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15227166/2021/9/13/aa2bd1ac-ea61-4d98-bf4f-d79ad74fafe31631519647107-Athena-Lavender-Scuba-Bodycon-Maxi-Tulle-Dress-with-Ruffled--1.jpg",
       "images": [
@@ -373,7 +373,7 @@
       "price": 675.99,
       "description": "Burgundy solid sheath dress, has a V-neck, and straight hem",
       "category": "women's clothing",
-      "categoryId":"Women",
+      "categoryId": "Women",
       "brand": "Nike",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/2/19/1b0143b3-2cb6-4a16-82f2-11ea590eb0e71613718036075-1.jpg",
       "images": [
@@ -390,7 +390,7 @@
       "price": 775.99,
       "description": "Burgundy solid sheath dress, has a V-neck, and straight hem",
       "category": "women's clothing",
-      "categoryId":"Women",
+      "categoryId": "Women",
       "brand": "Nike",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/10562422/2019/11/7/3744522a-4d29-4016-b109-4f98cb05cfd11573105654540-Roadster-Women-Jackets-7941573105651250-1.jpg",
       "images": [
@@ -407,7 +407,7 @@
       "price": 555.99,
       "description": "Brown animal solid tailored jacket with patchwork, has a spread collar, 1 pockets ,has a button closure, long sleeves, straight hemline, without lining",
       "category": "women's clothing",
-      "categoryId":"Women",
+      "categoryId": "Women",
       "brand": "Puma",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/18907598/2022/6/30/68ce0bdd-11c0-44d8-aee7-c51d7dc4e47b1656570328585URBANICWomenBrownTailoredJacketwithPatchwork1.jpg",
       "images": [
@@ -424,7 +424,7 @@
       "price": 555.99,
       "description": "Prep up for your next holiday with this sophisticated jumpsuit. The round neck promises comfort while a sleeveless design lends it a trendy appearance. ",
       "category": "women's clothing",
-      "categoryId":"Women",
+      "categoryId": "Women",
       "brand": "Wrangler",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15760922/2021/10/21/6aaa8769-c355-4304-91eb-0affa2174ee01634813706741-InWeave-Off-White-Printed-Culotte-Jumpsuit-8961634813705960-1.jpg",
       "images": [
@@ -441,7 +441,7 @@
       "price": 555.99,
       "description": "Maroon solid basic jumpsuit with waist tie-ups and gathered detail, has a round neck, three-quarter sleeves, button closures, two pockets. ",
       "category": "women's clothing",
-      "categoryId":"Women",
+      "categoryId": "Women",
       "brand": "Wrangler",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/10308671/2019/7/29/4276e20b-9a87-489e-9c49-95b67dc0b6c81564383574672-SASSAFRAS-Women-Jumpsuit-251564383573404-1.jpg",
       "images": [
@@ -458,7 +458,7 @@
       "price": 888.99,
       "description": "Blue solid sporty jacket, has a mock collar, 2 pockets ,has a zip closure, long sleeves, straight hemline, cotton lining",
       "category": "women's clothing",
-      "categoryId":"Women",
+      "categoryId": "Women",
       "brand": "Wrangler",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16562046/2021/12/20/682f7ea3-e488-4be8-be51-2328d2b951e31640000070821Jackets1.jpg",
       "images": [
@@ -475,7 +475,7 @@
       "price": 999.99,
       "description": "Black solid biker jacket, has a hooded, 2 pockets ,has a zip closure, long sleeves, straight hemline, cotton lining",
       "category": "women's clothing",
-      "categoryId":"Women",
+      "categoryId": "Women",
       "brand": "Wrangler",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16855258/2022/1/18/b48704d6-03c5-4dba-9321-854257d8c5b01642487415429Jackets1.jpg",
       "images": [
@@ -492,7 +492,7 @@
       "price": 569.99,
       "description": "T-shirts in soft cotton jersey. Relaxed fit with a rib-trimmed neckline, dropped shoulders and wide sleeves.",
       "category": "kid's clothing",
-      "categoryId":"kids",
+      "categoryId": "kids",
       "brand": "Puma",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17722704/2022/4/1/0d88f80a-ba4a-408c-9e19-7035f3dfdb3216488052871413-packcottonT-shirts1.jpg",
       "images": [
@@ -509,7 +509,7 @@
       "price": 499.99,
       "description": "T-shirts in soft cotton jersey. Relaxed fit with a rib-trimmed neckline, dropped shoulders and wide sleeves.",
       "category": "kid's clothing",
-      "categoryId":"kids",
+      "categoryId": "kids",
       "brand": "Puma",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17883506/2022/4/14/f3ced4ff-3487-4fab-9932-832d82f5c3901649905620356OversizedcottonT-shirt1.jpg",
       "images": [
@@ -526,7 +526,7 @@
       "price": 399.99,
       "description": "Yellow printed T-shirt, has a round neck, and short sleeves",
       "category": "kid's clothing",
-      "categoryId":"kids",
+      "categoryId": "kids",
       "brand": "Nike",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17794260/2022/6/22/b639516d-b9a5-4f9f-b061-40d3892910031655901346116AllenSollyJuniorBoysYellowBlackBrandLogoPrintedT-shirt1.jpg",
       "images": [
@@ -543,7 +543,7 @@
       "price": 399.99,
       "description": "Classic T-shirt in soft cotton jersey with a print motif. Ribbed trim around the neckline.",
       "category": "kid's clothing",
-      "categoryId":"kids",
+      "categoryId": "kids",
       "brand": "Puma",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17964790/2022/4/21/0f441557-0d77-4e12-870e-71dba8e59fe71650515518193PrintedT-shirt1.jpg",
       "images": [
@@ -560,7 +560,7 @@
       "price": 899.99,
       "description": "T-shirt in soft organic cotton jersey.",
       "category": "kid's clothing",
-      "categoryId":"kids",
+      "categoryId": "kids",
       "brand": "Puma",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17155536/2022/2/15/c8f034da-25fd-48a5-a3b4-3be9b1d197e01644901040712CottonT-shirt1.jpg",
       "images": [
@@ -577,7 +577,7 @@
       "price": 899.99,
       "description": "Maroon and White Superman printed T-shirt, has a round neck, and short sleeves",
       "category": "kid's clothing",
-      "categoryId":"kids",
+      "categoryId": "kids",
       "brand": "Wrangler",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/13357356/2022/6/4/9c80fa97-af25-4867-93ee-a8943e497aaa1654325061294-YK-Justice-League-Boys-Maroon-Superman-Print-Round-Neck-T-sh-1.jpg",
       "images": [
@@ -594,7 +594,7 @@
       "price": 3429.99,
       "description": "Navy Blue and pink printed knitted and woven A-line dress, has a round neck, sleeveless, concealed zip closure, an attached lining, flared hem",
       "category": "kid's clothing",
-      "categoryId":"kids",
+      "categoryId": "kids",
       "brand": "Puma",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2019/2/2/117bea42-e3b2-4fad-9783-01438c1f39811549131146029-1.jpg",
       "images": [
@@ -611,7 +611,7 @@
       "price": 3429.99,
       "description": "Navy blue & Pink colourblocked fit & flare dress",
       "category": "kid's clothing",
-      "categoryId":"kids",
+      "categoryId": "kids",
       "brand": "Wrangler",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16491130/2021/12/13/31b58c46-6189-4639-8d36-8c3a5bb78c151639371822052PinkChickNavyBlueColourblockedLayeredSatinDress1.jpg",
       "images": [
@@ -622,11 +622,7 @@
       ],
       "rating": 4.5
     }
-    
-
-
   ],
-
   "Orders": [
     {
       "id": 1,
@@ -650,28 +646,12 @@
   ],
   "Users": [
     {
-      "id": 1,
+      "name": "abhishek",
+      "lastName": "kumar",
+      "mobile": "111111111",
+
       "email": "John@gmail.com",
-      "username": "johnd",
-      "password": "m38rmF$",
-      "name": {
-        "firstname": "John",
-        "lastname": "Doe"
-      },
-      "address": [
-        {
-          "city": "Bengaluru",
-          "street": "7835 new road",
-          "address1": "",
-          "address2": "",
-          "zipcode": "12926-3874",
-          "geolocation": {
-            "lat": "-37.3159",
-            "long": "81.1496"
-          }
-        }
-      ],
-      "phone": "1-570-236-7033"
+      "id": 1
     }
   ]
 }

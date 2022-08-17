@@ -29,6 +29,21 @@ export const productDetail = (productId) => {
   )
 };
 
+// export const allUsers = (data) => {
+//   return(
+//     fetch("http://localhost:8000/Users", {
+//       method: "post",
+//       headers: {
+//         Accept: "application/json",
+//         "content-type": "application/json",
+//       },
+//       body: JSON.stringify(data),
+//     }).then((result) => {
+//       console.log(result, result);
+//       return(result)  
+//     })
+//   )
+// };
 
 
 
