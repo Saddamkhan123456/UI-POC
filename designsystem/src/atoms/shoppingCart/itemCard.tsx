@@ -23,8 +23,8 @@ const ItemCard = ({
   cartCard,
 }: ShoppingCartProps) => {
   return (
-    <Card className={classnames(cartCard ? "border rounded flex" : "")}>
-      <CardBody className="p-3 flex w-full">
+    <Card className={classnames(cartCard ? "" : "mb-2")}>
+      <CardBody className="pl-0 pr-0 px-0 flex w-full">
         <div className="mr-2 h-36 w-36 flex-shrink-0 overflow-hidden rounded-md border border-theme-neutral80">
           <img
             src={thumbnail}
