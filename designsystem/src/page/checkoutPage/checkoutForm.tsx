@@ -66,8 +66,7 @@ const CheckoutForm = ({}: checkoutFormProps) => {
           <div className="w-full flex flex-col">
             <form
               className="w-full mx-auto flex flex-col justify-center"
-              name="checkoutForm"
-              method="post"
+             
              
             >
               <div className="flex flex-col space-y-4 sm:space-y-5">
@@ -87,10 +86,10 @@ const CheckoutForm = ({}: checkoutFormProps) => {
                       onChange={(e) => {
                         setFirstName(e.target.value);
                       }}
-                      required
+                     
                   
                     />
-                    {fname}
+                   
                   </div>
                   <div className="w-full sm:w-1/2 mr-3">
                     <label className="block text-gray-600 text-sm leading-none mb-3 cursor-pointer">
@@ -107,7 +106,7 @@ const CheckoutForm = ({}: checkoutFormProps) => {
                       onChange={(e) => {
                         setLastName(e.target.value);
                       }}
-                      required = {true}
+                     
                     />
                   </div>
                 </div>
