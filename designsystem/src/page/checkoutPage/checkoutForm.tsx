@@ -15,8 +15,9 @@ export interface checkoutFormProps {
   pincode?: number;
   townCity?: string;
 }
-
+var fname = '';
 const CheckoutForm = ({}: checkoutFormProps) => {
+  
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -27,7 +28,9 @@ const CheckoutForm = ({}: checkoutFormProps) => {
   const [areaStreet, setAreaStreet] = useState("");
   const [pincode, setPincode] = useState("");
   const [townCity, setTownCity] = useState("");
-  const [createUserData, setCreateUserData] = useState([]);
+  
+
+  
   function placeOrder() {
     const userData = {
       firstName,
@@ -41,6 +44,7 @@ const CheckoutForm = ({}: checkoutFormProps) => {
       pincode,
       townCity,
     };
+   
 
     createUser(userData);
     setFirstName("");
@@ -62,6 +66,8 @@ const CheckoutForm = ({}: checkoutFormProps) => {
           <div className="w-full flex flex-col">
             <form
               className="w-full mx-auto flex flex-col justify-center"
+              name="checkoutForm"
+              method="post"
              
             >
               <div className="flex flex-col space-y-4 sm:space-y-5">
@@ -76,12 +82,15 @@ const CheckoutForm = ({}: checkoutFormProps) => {
                       name="firstName"
                       placeholder="First Name"
                       value={firstName}
-                      className="py-2 px-4 md:px-5 w-full appearance-none  border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading h-11 md:h-12"
+                      className="py-2 px-4 md:px-5 w-full appearance-none  border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading h-38"
                       aria-invalid="false"
                       onChange={(e) => {
                         setFirstName(e.target.value);
                       }}
+                      required
+                  
                     />
+                    {fname}
                   </div>
                   <div className="w-full sm:w-1/2 mr-3">
                     <label className="block text-gray-600 text-sm leading-none mb-3 cursor-pointer">
@@ -93,11 +102,12 @@ const CheckoutForm = ({}: checkoutFormProps) => {
                       name="lastName"
                       placeholder="Last Name"
                       value={lastName}
-                      className="py-2 px-4 md:px-5 w-full appearance-none border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading h-11 md:h-12"
+                      className="py-2 px-4 md:px-5 w-full appearance-none border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading h-38"
                       aria-invalid="false"
                       onChange={(e) => {
                         setLastName(e.target.value);
                       }}
+                      required = {true}
                     />
                   </div>
                 </div>
@@ -112,7 +122,7 @@ const CheckoutForm = ({}: checkoutFormProps) => {
                       name="phoneNumber"
                       placeholder="Mobile No."
                       value={phoneNumber}
-                      className="py-2 px-4 md:px-5 w-full appearance-none border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading h-11 md:h-12"
+                      className="py-2 px-4 md:px-5 w-full appearance-none border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading h-38"
                       aria-invalid="false"
                       onChange={(e) => {
                         setPhoneNumber(e.target.value);
@@ -129,7 +139,7 @@ const CheckoutForm = ({}: checkoutFormProps) => {
                       name="email"
                       placeholder="E-mail"
                       value={email}
-                      className="py-2 px-4 md:px-5 w-full appearance-none border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading h-11 md:h-12"
+                      className="py-2 px-4 md:px-5 w-full appearance-none border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading h-38"
                       onChange={(e) => {
                         setEmail(e.target.value);
                       }}
@@ -142,7 +152,7 @@ const CheckoutForm = ({}: checkoutFormProps) => {
                       Country *
                     </label>
                     <select
-                      className="py-2 px-4 md:px-5 w-full appearance-none border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading h-11 md:h-12"
+                      className="py-2 px-4 md:px-5 w-full appearance-none border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading h-38"
                       aria-label="Choose a country"
                       id="country"
                       value={country}
@@ -159,7 +169,7 @@ const CheckoutForm = ({}: checkoutFormProps) => {
                       State *
                     </label>
                     <select
-                      className="py-2 px-4 md:px-5 w-full appearance-none border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading h-11 md:h-12"
+                      className="py-2 px-4 md:px-5 w-full appearance-none border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading h-38"
                       aria-label="Choose a state"
                       id="state"
                       value={state}
@@ -184,7 +194,7 @@ const CheckoutForm = ({}: checkoutFormProps) => {
                       name="flatNo"
                       placeholder="Flat, House no., Building, Company, Apartment"
                       value={flatNo}
-                      className="py-2 px-4 md:px-5 w-full appearance-none border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading h-11 md:h-12"
+                      className="py-2 px-4 md:px-5 w-full appearance-none border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading h-38"
                       aria-invalid="false"
                       onChange={(e) => {
                         setFlatNo(e.target.value);
@@ -201,7 +211,7 @@ const CheckoutForm = ({}: checkoutFormProps) => {
                       name="areaStreet"
                       placeholder="Area, Street, Sector, Village"
                       value={areaStreet}
-                      className="py-2 px-4 md:px-5 w-full appearance-none border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading h-11 md:h-12"
+                      className="py-2 px-4 md:px-5 w-full appearance-none border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading h-38"
                       aria-invalid="false"
                       onChange={(e) => {
                         setAreaStreet(e.target.value);
@@ -220,7 +230,7 @@ const CheckoutForm = ({}: checkoutFormProps) => {
                       name="pincode"
                       placeholder="6 digits [0-9] PIN code"
                       value={pincode}
-                      className="py-2 px-4 md:px-5 w-full appearance-none border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading h-11 md:h-12"
+                      className="py-2 px-4 md:px-5 w-full appearance-none border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading h-38"
                       aria-invalid="false"
                       onChange={(e) => {
                         setPincode(e.target.value);
@@ -237,7 +247,7 @@ const CheckoutForm = ({}: checkoutFormProps) => {
                       name="townCity"
                       placeholder="Town City"
                       value={townCity}
-                      className="py-2 px-4 md:px-5 w-full appearance-none  border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading h-11 md:h-12"
+                      className="py-2 px-4 md:px-5 w-full appearance-none  border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading h-38"
                       aria-invalid="false"
                       onChange={(e) => {
                         setTownCity(e.target.value);
