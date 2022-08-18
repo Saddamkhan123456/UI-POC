@@ -2,6 +2,7 @@ import React from "react";
 import { HTMLAttributes } from "react";
 import { Button, Hr } from "design-system";
 import ItemCard from "../shoppingCart/itemCard";
+import { useNavigate } from "react-router-dom";
 
 export interface OrderSummaryProps extends HTMLAttributes<HTMLElement> {
   isCheckout: boolean;
@@ -20,11 +21,18 @@ export const OrderSummary = ({
   orderTotal,
   showShoppingCart,
 }: OrderSummaryProps) => {
+  const navigate = useNavigate();
+  const navigateCheckout = () => {
+    // 👇️ navigate to /
+    navigate('/checkout');
+  };
   return (
     <div className="flex p-8 flex-col bg-theme-neutral85 rounded-sm">
       <h2 className=" pb-3 mb-4 ">Order Summary</h2>
       <Hr />
       {showShoppingCart ? (
+        <>
+        <div className="h-full d-flex max-h-64 overflow-scroll "> 
         <ItemCard
           title="Black High Neck Cropped Top"
           brand="Nike"
@@ -35,6 +43,7 @@ export const OrderSummary = ({
           cartCard={false}
           imgSize={true}
         />
+        </div></>
       ) : (
         ""
       )}
@@ -63,6 +72,7 @@ export const OrderSummary = ({
           <Button
             variant="primary"
             className="block w-full px-3 py-2 rounded-sm font-semibold"
+            onClick={navigateCheckout}
           >
             Checkout
           </Button>
