@@ -37,23 +37,23 @@ const ItemCard = ({
         <div className="lg:ml-4 sm:ml-0  flex flex-1 ">
           <div className="w-full flex flex-col">
             <div className="flex justify-between text-base text-theme-neutral  lg:mt-0  mt-2 flex-col md:flex-row">
-              <h3>
-                <a className="font-medium"> {title} </a>
+              <h3 className="mr-1">
+                <a className="font-medium line-clamp-2"> {title} </a>
                 <p className="mt-1 mb-2 text-sm text-theme-neutral55 font-normal">
                   {brand}
                 </p>
               </h3>
-              <p className="text-lg font-semibold">${price}</p>
+              <p className="text-lg font-semibold ml-1">${price}</p>
             </div>
 
             <div className="flex flex-1 items-end justify-between text-sm">
-              <div>
+              <div className="mr-1">
                 <p className="text-gray-500">
                   Qty {showQty ? <span>1</span> : ""}
                 </p>
                 {qtyUpdate ? <QuantityBox /> : ""}
               </div>
-              <div className="flex">
+              <div className="flex ml-1">
                 <div className="remove-button">
                   <Button
                     variant="secondary"
