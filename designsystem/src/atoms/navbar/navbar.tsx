@@ -76,7 +76,7 @@ export const Navbar = ({
                 noBackdrop={false}
                 props={undefined}
                 children={
-                  <Card className="h-full">
+                  <Card className="h-full px-4">
                     <CardBody className="p-3 ">
                       <h1 className="text-3xl font-black mb-3">Wishlist</h1>
                       <ItemCard
@@ -87,6 +87,7 @@ export const Navbar = ({
                         qtyUpdate={false}
                         showQty={false}
                         cartCard={false}
+                        imgSize={false}
                       />
                     </CardBody>
                   </Card>

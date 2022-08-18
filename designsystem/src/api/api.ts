@@ -2,48 +2,37 @@ import axios from "axios";
 import { baseURL } from "../constants/constants";
 
 export const allProducts = () => {
-  return(
-    axios.get(`${baseURL}/products`) //GET
+  return axios
+    .get(`${baseURL}/products`) //GET
     .then((response) => {
-      return response
+      return response;
     })
     .catch((err) => {
-      return(
-        console.log(err)
-      )
-    } )
-  )
+      return console.log(err);
+    });
 };
 
 export const productDetail = (productId) => {
-  return(
-    axios.get(`${baseURL}/products/${productId}`) //GET
+  return axios
+    .get(`${baseURL}/products/${productId}`) //GET
     .then((response) => {
-      return response
+      return response;
     })
     .catch((err) => {
-      return(
-        console.log(err)
-      )
-    } )
-  )
+      return console.log(err);
+    });
 };
 
-// export const allUsers = (data) => {
-//   return(
-//     fetch("http://localhost:8000/Users", {
-//       method: "post",
-//       headers: {
-//         Accept: "application/json",
-//         "content-type": "application/json",
-//       },
-//       body: JSON.stringify(data),
-//     }).then((result) => {
-//       console.log(result, result);
-//       return(result)  
-//     })
-//   )
-// };
-
-
-
+export const createUser = (checkoutDetails) => {
+  return axios
+    .post(
+      `${baseURL}/Customers`, //post
+      checkoutDetails
+    )
+    .then(function(response) {
+      console.log(response);
+    })
+    .catch((err) => {
+      return console.log(err);
+    });
+};
