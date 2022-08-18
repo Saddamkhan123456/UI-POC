@@ -6,6 +6,7 @@ import ProductCategoryPage from "../page/productCategoryPage/ProductCategoryPage
 import ProductBrandPage from "../page/productBrandPage/ProductBrandPage";
 import ShoppingCartPage from "../page/shoppingCartPage/ShoppingCartPage";
 import Wishlist from "../page/wishlist/wishlist";
+import ThankYouPage from "../page/thankYouPage/ThankYouPage";
 import CheckoutPage from "../page/checkoutPage/CheckoutPage";
 
 export default function RouteConfig() {
@@ -21,6 +22,8 @@ export default function RouteConfig() {
       <Route path="/shopping-cart" element={<ShoppingCartPage />} />
       <Route path="/wishlist" element={<Wishlist />} />
       <Route path="/checkout" element={<CheckoutPage />} />
+      <Route path="/thankyou" element={<ThankYouPage />} />
+
     </Routes>
   );
 }
