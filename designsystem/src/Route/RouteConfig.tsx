@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import HomePage from "../page/homepage/HomePage";
-import Cart from "../page/cart/Cart";
 import ProductDetails from "../page/productDetails/ProductDetails";
 import ProductCategoryPage from "../page/productCategoryPage/ProductCategoryPage";
 import ProductBrandPage from "../page/productBrandPage/ProductBrandPage";
@@ -8,6 +7,7 @@ import ShoppingCartPage from "../page/shoppingCartPage/ShoppingCartPage";
 import Wishlist from "../page/wishlist/wishlist";
 import ThankYouPage from "../page/thankYouPage/ThankYouPage";
 import CheckoutPage from "../page/checkoutPage/CheckoutPage";
+import MyProfile from "../page/myProfile/myProfile";
 
 export default function RouteConfig() {
   return (
@@ -24,6 +24,8 @@ export default function RouteConfig() {
       <Route path="/checkout" element={<CheckoutPage />} />
       <Route path="/thankyou" element={<ThankYouPage />} />
 
+      {/* <Route path="/my-profile" element={<Account />} /> */}
+      <Route path="/my-profile" element={<MyProfile />} />
     </Routes>
   );
 }
