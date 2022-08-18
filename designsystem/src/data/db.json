@@ -671,18 +671,6 @@
     }
   ],
   "Customers": [
-    {
-      "firstName": "jyoti",
-      "lastName": "Thakre",
-      "phoneNumber": "09340678276",
-      "email": "thakrejyoti120@gmail.com",
-      "country": "India",
-      "state": "Madhya Pradesh",
-      "flatNo": "hejrtetr",
-      "areaStreet": "S E MPPGCL COLONY",
-      "pincode": "460447",
-      "townCity": "Betul",
-      "id": 1
-    }
+  
   ]
 }

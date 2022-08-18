@@ -12,7 +12,7 @@ const ThankyouComponent = ({ orderId }: ThankyouProps) => {
         <h1 className="h1">YOUR ORDER HAS BEEN RECEIVED</h1>
         <h2 className="">Thank you for your payment, it’s processing</h2>
         <p>Your order id is: #{orderId}</p>
-        <Link to="/" className="text-theme">Back to home page</Link>
+        <Link to="/" className="text-theme-primary font-bold">Back to home page</Link>
       </div>
     </Card>
   );

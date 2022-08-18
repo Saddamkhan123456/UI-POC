@@ -23,29 +23,16 @@ export const productDetail = (productId) => {
     });
 };
 
-export const createUser = (userData) => {
-  return (
-    //Post
-
-    axios
-      .post(`${baseURL}/Customers`, {
-        firstName: userData.firstName,
-        lastName: userData.lastName,
-        phoneNumber: userData.phoneNumber,
-        email: userData.email,
-        country: userData.country,
-        state: userData.state,
-        flatNo: userData.flatNo,
-        areaStreet: userData.areaStreet,
-        pincode: userData.pincode,
-        townCity: userData.townCity,
-      })
-      .then((result) => {
-        console.log(result.data);
-      })
-      .catch((error) => {
-        alert("error");
-        console.log(error);
-      })
-  );
+export const createUser = (checkoutDetails) => {
+  return axios
+    .post(
+      `${baseURL}/Customers`, //post
+      checkoutDetails
+    )
+    .then(function(response) {
+      console.log(response);
+    })
+    .catch((err) => {
+      return console.log(err);
+    });
 };
