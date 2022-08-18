@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Button } from "design-system";
 import { QuantityBox } from "../../molecules/quantityBox";
 import { Sizes } from "../../atoms/sizes";
 import { useParams } from "react-router-dom";
 import { productDetail } from "../../api/api";
+import {CartContext} from '../../Contexts/cart.context'
+
 
 
 const ProductDetails = () => {
@@ -12,16 +14,20 @@ const ProductDetails = () => {
     title: "",
     category: "",
     description: "",
-    price: "",
+    price: null,
     thumbnail: "",
-
+    brand: '',
+    categoryId: '',
+    id: null,
   });
+  const {saveCartItem} = useContext(CartContext)
   useEffect(() => {
     productDetail(productId).then((response) => {
       setProductData(response["data"]);
 
     });
   }, []);
+  const addProductToCart = () => saveCartItem(productData);
   return (
     <>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 py-16">
@@ -78,13 +84,14 @@ const ProductDetails = () => {
                   variant="primary"
                   className="block w-full px-3 py-2 uppercase h-38"
                 >
-                  wishlist
+                  Wishlist
                 </Button>
               </div>
               <div className="w-1/2 md:w-1/3 ml-2">
                 <Button
                   variant="secondary"
                   className="block w-full px-3 py-2 uppercase h-38"
+                  onClick={addProductToCart}
                 >
                   Add to cart
                 </Button>

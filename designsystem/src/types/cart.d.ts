@@ -3,14 +3,13 @@ export interface ICartItem{
   title: string;
   price: number;
   thumbnail: string;
-  description: string
-
+  brand: string;
+  description: string;
+  categoryId: string;
 }
 
 export type CartContextType = {
   cartItems : ICartItem[];
   saveCartItem: (cartItem : ICartItem) => void;
-  // deleteCartItem: (id : number) => void;
-  updateCartItem: (id : number) => void;
 
 }

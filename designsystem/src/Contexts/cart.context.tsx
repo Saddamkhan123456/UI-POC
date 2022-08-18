@@ -24,27 +24,9 @@ export const CartProvider : React.FC<React.ReactNode> = ({children}) => {
   
   const saveCartItem = (cartItemToAdd: ICartItem) => {
     setCartItems(addCartItem(cartItems , cartItemToAdd))
-    // const newCartItem: ICartItem = {
-    //   id: Math.random(), // not really unique - but fine for this example
-    //   title: cartItemToAdd.title,
-    //   description: cartItemToAdd.description,
-    //   thumbnail: cartItemToAdd.thumbnail,
-    //   price: cartItemToAdd.price
-    // }
-    // setCartItems([...cartItems, newCartItem])
   }
-
-  const updateCartItem = (id: number, ) => {
-    cartItems.filter((cartItem: ICartItem) => {
-      if (cartItem.id === id) {
-        cartItem.price = 999
-        setCartItems([...cartItems])
-      }
-    })
-  }
-  
   return(
-    <CartContext.Provider value={{ cartItems, saveCartItem, updateCartItem }}>
+    <CartContext.Provider value={{ cartItems, saveCartItem }}>
       {children}
     </CartContext.Provider>
   )

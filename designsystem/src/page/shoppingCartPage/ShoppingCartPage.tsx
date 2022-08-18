@@ -17,13 +17,13 @@ const ShoppingCartPage = () => {
                 return (<ItemCard
                   key={item.id}
                   title={item.title}
-                  brand="Nike"
+                  brand={item.brand}
                   price={item.price}
                   thumbnail={item.thumbnail}
                   qtyUpdate={true}
                   showQty={true}
-                  cartCard={false}
-                />)
+                  cartCard={false} imgSize={false}                
+                  />)
               })}
             </div>
           </div>

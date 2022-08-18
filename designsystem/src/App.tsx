@@ -8,9 +8,9 @@ function App() {
   return (
     <>
       <CartProvider>
-        <div className="flex flex-col h-full overflow-scroll">
+        <div className="flex flex-col h-full overflow-auto">
           <Navbar />
-          <div className="h-full overflow-scroll flex flex-col h-full">
+          <div className="h-full overflow-auto flex flex-col h-full">
             <RouteConfig />
             <Footer />
           </div>
