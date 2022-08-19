@@ -19,6 +19,7 @@ const ProductDetails = () => {
     brand: '',
     categoryId: '',
     id: null,
+    quantity: null,
   });
   const {saveCartItem} = useContext(CartContext)
   useEffect(() => {

@@ -1,4 +1,5 @@
 export interface ICartItem{
+  quantity: number;
   id: number;
   title: string;
   price: number;
@@ -11,5 +12,6 @@ export interface ICartItem{
 export type CartContextType = {
   cartItems : ICartItem[];
   saveCartItem: (cartItem : ICartItem) => void;
-
+  cartCount: number;
+  deleteCartItem : (cartItem : ICartItem) => void;
 }

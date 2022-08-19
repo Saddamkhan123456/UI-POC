@@ -7,7 +7,7 @@ export const ShoppingCart = ({}) => {
       <div className="flow-root">
         <ul className="-my-6 divide-y">
           <li className="flex flex-col md:flex-row py-8">
-            <ItemCard
+            {/* <ItemCard
               title="Black High Neck Cropped Top"
               brand="Nike"
               price="1294"
@@ -16,7 +16,7 @@ export const ShoppingCart = ({}) => {
               showQty={false}
               cartCard={false}
               imgSize={false}
-            />
+            /> */}
           </li>
         </ul>
       </div>

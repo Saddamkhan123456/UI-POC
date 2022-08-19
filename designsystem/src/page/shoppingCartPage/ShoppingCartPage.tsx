@@ -16,12 +16,7 @@ const ShoppingCartPage = () => {
               {cartItems.map((item) => {
                 return (<ItemCard
                   key={item.id}
-                  title={item.title}
-                  brand={item.brand}
-                  price={item.price}
-                  thumbnail={item.thumbnail}
-                  qtyUpdate={true}
-                  showQty={true}
+                  cartItem= {item}
                   cartCard={false} imgSize={false}                
                   />)
               })}
