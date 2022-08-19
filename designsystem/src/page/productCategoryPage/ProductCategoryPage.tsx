@@ -25,14 +25,7 @@ const ProductCategoryPage = () => {
                 return (
                   <>
                     <CardComponent
-                      id={cardData.id}
-                      thumbnail={cardData.thumbnail}
-                      title={cardData.title}
-                      description={cardData.description}
-                      category={cardData.category}
-                      price={cardData.price}
-                      brand={cardData.brand}
-                      withBrand={true}
+                      CardData={cardData}
                     />
                   </>
                 );

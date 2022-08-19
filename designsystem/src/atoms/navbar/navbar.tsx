@@ -1,11 +1,12 @@
 import classNames from "classnames";
-import React, { useState } from "react";
+import * as React from "react";
 import { HTMLAttributes } from "react";
 import { Link } from "react-router-dom";
-import { Button, Card, CardBody, List, ListItem } from "design-system";
+import { Card, CardBody } from "design-system";
 import Icon from "../icons/icon";
 import OffCanvasComponent from "../offcanvas/offcanvas";
-import ItemCard from "../shoppingCart/itemCard";
+// import ItemCard from "../shoppingCart/itemCard";
+import {CartContext} from '../../Contexts/cart.context'
 
 export interface NavbarProps extends HTMLAttributes<HTMLElement> {
   collapsed?: boolean;
@@ -22,9 +23,10 @@ export const Navbar = ({
     { name: "Women", href: "/product/category/Women", current: false },
     { name: "Kids", href: "/product/category/kids", current: false },
   ];
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = React.useState(false);
   const [isCollapsed, setIsCollapsed] = React.useState(collapsed);
-
+  const { cartCount} = React.useContext(CartContext)
+ 
   return (
     <>
       <nav className="relative w-full flex flex-wrap items-center justify-between py-4 bg-theme-neutral hover:text-theme-neutral80 focus:text-theme-neutral80 shadow-lg navbar navbar-expand-lg navbar-light">
@@ -79,7 +81,7 @@ export const Navbar = ({
                   <Card className="h-full px-4">
                     <CardBody className="p-3 ">
                       <h1 className="text-3xl font-black mb-3">Wishlist</h1>
-                      <ItemCard
+                      {/* <ItemCard
                         title={"Black High Neck Cropped Top"}
                         brand={"Nike"}
                         price={"$1294"}
@@ -88,7 +90,7 @@ export const Navbar = ({
                         showQty={false}
                         cartCard={false}
                         imgSize={false}
-                      />
+                      /> */}
                     </CardBody>
                   </Card>
                 }
@@ -99,9 +101,9 @@ export const Navbar = ({
               to="/shopping-cart"
             >
               <Icon kind="cart" size={20}></Icon>
-              {/* <span className=" w-4 h-4 text-white bg-red-700 absolute rounded-full text-xs -mt-2 ml-2 py-0 px-1.5">
-                1
-              </span> */}
+              <span className=" w-4 h-4 text-white bg-red-700 absolute rounded-full text-xs -mt-2 ml-2 py-0 px-1.5">
+                {cartCount}
+              </span>
             </Link>
             <Link
               className="w-10 h-10 rounded-full border flex items-center justify-center text-white hover:text-theme-neutral80 focus:text-theme-neutral80 mr-1  hidden-arrow flex items-center"

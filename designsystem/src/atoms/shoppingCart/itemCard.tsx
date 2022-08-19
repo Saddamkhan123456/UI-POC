@@ -1,34 +1,25 @@
-import React, { HTMLAttributes } from "react";
-import { QuantityBox } from "../../molecules/quantityBox";
+import * as React from "react";
+// import { QuantityBox } from "../../molecules/quantityBox";
 import { Button, Card, CardBody } from "design-system";
 import classnames from "classnames";
+import {CartContext} from '../../Contexts/cart.context'
 
-export interface ShoppingCartProps extends HTMLAttributes<HTMLElement> {
-  title: string;
-  brand: string;
-  price: any;
-  thumbnail: any;
-  qtyUpdate: boolean;
-  showQty: boolean;
-  cartCard: boolean;
-  imgSize: boolean;
+export interface ShoppingCartProps extends React.HTMLAttributes<HTMLElement> {
+  cartItem: any,
+  cartCard: boolean,
+  imgSize: boolean
 }
 
 const ItemCard = ({
-  title,
-  brand,
-  price,
-  thumbnail,
-  qtyUpdate,
-  showQty,
-  cartCard,
-  imgSize
+  cartItem, cartCard, imgSize
 }: ShoppingCartProps) => {
+  const { title, thumbnail, brand, quantity, price } = cartItem;
+  const {saveCartItem , deleteCartItem} = React.useContext(CartContext)
   return (
     <Card className={classnames(cartCard ? "border rounded flex px-4" : "")}>
       <CardBody className="p-3 flex w-full">
         <div className={classnames(imgSize ? "cart-image h-24 w-24 " : "h-36 w-36 ") + "flex-shrink-0 overflow-hidden rounded-md border border-theme-neutral80"}>
-           <img
+          <img
             src={thumbnail}
             alt={title}
             className="h-full w-full object-cover object-top"
@@ -47,11 +38,12 @@ const ItemCard = ({
             </div>
 
             <div className="flex flex-1 items-end justify-between text-sm">
-              <div className="mr-1">
+              <div className="mr-1 flex gap-0.5">
+                <span onClick={() => deleteCartItem(cartItem)} className="cursor-pointer">&#8592;</span>
                 <p className="text-gray-500">
-                  Qty {showQty ? <span>1</span> : ""}
+                  {quantity}
                 </p>
-                {qtyUpdate ? <QuantityBox /> : ""}
+                <span onClick={() => saveCartItem(cartItem)} className="cursor-pointer">&#8594;</span>
               </div>
               <div className="flex ml-1">
                 <div className="remove-button">

@@ -1,29 +1,33 @@
-import React from "react";
+import * as React from "react";
 import { Card, Button } from "design-system";
 import { Link } from "react-router-dom";
 import Icon from "../icons/icon";
+import {CartContext} from '../../Contexts/cart.context'
 
 export interface CardProps {
-  id: number;
-  thumbnail: string;
-  title: string;
-  description: string;
-  category: string;
-  price: number;
-  brand: string;
-  withBrand: boolean;
+  // id: number;
+  // thumbnail: string;
+  // title: string;
+  // description: string;
+  // category: string;
+  // price: number;
+  // brand: string;
+  // withBrand: boolean;
+  CardData: any;
 }
 
 export const CardComponent = ({
-  id,
-  thumbnail,
-  title,
-  description,
-  category,
-  price,
-  brand,
-  withBrand,
+  CardData
 }: CardProps) => {
+  const { id,
+    thumbnail,
+    title,
+    description,
+    category,
+    price,
+    brand } = CardData;
+    const {saveCartItem} = React.useContext(CartContext)
+    const addProductToCart = () => saveCartItem(CardData);
   return (
     <>
       <>
@@ -48,11 +52,7 @@ export const CardComponent = ({
                 <h3 className="text-theme-neutral line-clamp-2 text-xs capitalize">
                   {category}
                 </h3>
-                {withBrand ? (
-                  <div className="text-theme-neutral">{brand}</div>
-                ) : (
-                  ""
-                )}
+                <div className="text-theme-neutral">{brand}</div>
               </div>
               <div className="ml-2 text-right">
                 <div className="text-theme-neutral">${price}</div>
@@ -71,6 +71,7 @@ export const CardComponent = ({
                 <Button
                   variant="secondary"
                   className="block w-full px-3 py-2 uppercase h-38"
+                  onClick={addProductToCart}
                 >
                   <Icon kind="cart" size={16} />
                 </Button>
