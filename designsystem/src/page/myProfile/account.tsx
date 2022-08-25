@@ -16,7 +16,7 @@ const Account = ({}: IFormInput) => {
     watch,
     formState: { errors },
   } = useForm<IFormInput>();
-  const onSubmit = (data: IFormInput) => {
+  const handleEdit = (data: IFormInput) => {
     alert(JSON.stringify(data.name));
     let item = { name, lastName, mobile, email };
 
@@ -88,7 +88,7 @@ const Account = ({}: IFormInput) => {
             Account Details
           </h2>
           <form
-            onSubmit={handleSubmit(onSubmit)}
+            onSubmit={handleSubmit(handleEdit)}
             className="w-full mx-auto flex flex-col justify-center "
           >
             <div className="flex flex-col space-y-4 sm:space-y-5">
@@ -183,7 +183,7 @@ const Account = ({}: IFormInput) => {
                     setMobile(e.target.value);
                   }}
                 />
-                {errors?.name?.type === "required" && (
+                {errors?.phoneNumber?.type === "required" && (
                   <p className="mt-2 text-theme-danger">
                     This field is required
                   </p>
@@ -214,7 +214,7 @@ const Account = ({}: IFormInput) => {
                   }}
                   className="py-2 px-4 md:px-5 w-full appearance-none transition duration-150 ease-in-out border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading h-11 md:h-12"
                 />
-                {errors?.name?.type === "required" && (
+                {errors?.email?.type === "required" && (
                   <p className="mt-2 text-theme-danger">
                     This field is required
                   </p>
