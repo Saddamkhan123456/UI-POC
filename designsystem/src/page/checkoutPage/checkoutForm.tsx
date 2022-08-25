@@ -10,12 +10,6 @@ export interface checkoutFormProps {
   lastName?: string;
   phoneNumber?: number;
   email?: string;
-  country?: string;
-  state?: string;
-  flatNo?: any;
-  areaStree?: any;
-  pincode?: number;
-  townCity?: string;
 }
 
 const CheckoutForm = ({}: checkoutFormProps) => {
