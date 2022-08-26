@@ -19,8 +19,6 @@ const MyProfile = () => {
           active={active === 1}
         >
           {"Account"}
-
-          {"Tab 1"}
         </TabItem>
         <TabItem
           variant="primary"
