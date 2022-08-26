@@ -6,8 +6,8 @@ import Icon from "../icons/icon";
 export interface FooterProps extends HTMLAttributes<HTMLElement> {}
 export const Footer = ({ ...props }: FooterProps) => {
   const product = [
-    { name: "Men", href: "/product/category/Men" },
-    { name: "Women", href: "/product/category/Women" },
+    { name: "Men", href: "/product/category/men" },
+    { name: "Women", href: "/product/category/women" },
     { name: "Kids", href: "/product/category/kids" },
   ];
 
@@ -37,38 +37,7 @@ export const Footer = ({ ...props }: FooterProps) => {
             Brand
           </a>
         </div>
-        {/* <div className="mx-6 py-10 text-center md:text-left">
-          <div className="grid grid-1 md:grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="">
-              <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
-                Products
-              </h6>
-              <ul>
-                {product.map((item, index) => (
-                  <li className="mb-4" key={index}>
-                    <a href={item.href} className="text-gray-600">
-                      {item.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="">
-              <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
-                Useful links
-              </h6>
-              <ul>
-                {usefullink.map((item, index) => (
-                  <li className="mb-4" key={index}>
-                    <a href={item.href} className="text-gray-600">
-                      {item.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div> */}
+        
       </footer>
     </>
   );
