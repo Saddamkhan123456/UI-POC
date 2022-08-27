@@ -9,14 +9,14 @@ export const categoryData: CardPropsSets[] = [
     id: 1,
     image:
       "https://images.unsplash.com/photo-1589212987511-4a924cb9d8ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
-    type: "Women",
+    type: "women",
     link: '/product/category',
   },
   {
     id: 2,
     image:
       "https://images.unsplash.com/photo-1559582798-678dfc71ccd8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
-    type: "Men",
+    type: "men",
     link: '/product/category',
   },
   {
