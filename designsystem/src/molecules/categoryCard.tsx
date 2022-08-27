@@ -21,8 +21,10 @@ export const CategoryCard = ({
 }: CardProps) => {
   return (
     <>
-      <h1 className="pb-3 border-b mb-3 capitalize">{category}</h1>
-      <div className="grid grid-cols-3 gap-3">
+      <h1 className="text-xl pb-3 border-b mb-3 capitalize leading-none">
+        {category}
+      </h1>
+      <div className="grid grid-cols-3 gap-8">
         {CardPropsSets &&
           CardPropsSets.length > 0 &&
           CardPropsSets.map((CardPropsSet: any) => {

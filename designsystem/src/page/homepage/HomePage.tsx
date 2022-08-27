@@ -1,3 +1,4 @@
+
 import { CategoryCard } from "../../molecules/categoryCard";
 import { categoryData, brandCategoryData } from "../../constants/constants";
 import CarouselComponent from "../../atoms/carousal/carousal";
@@ -5,10 +6,10 @@ import CarouselComponent from "../../atoms/carousal/carousal";
 const HomePage = () => {
   return (
     <>
-      <div className="p-6 lg:p-6 sm:p-3">
+      <div className="flex flex-col items-center">
         <CarouselComponent />
-        <div>
-          <div className="mb-4">
+        <div className="container">
+          <div className="mb-4 ">
             <CategoryCard
               category="category"
               CardPropsSets={categoryData}

@@ -2,7 +2,7 @@ import * as React from "react";
 import { Card, Button } from "design-system";
 import { Link } from "react-router-dom";
 import Icon from "../icons/icon";
-import {CartContext} from '../../Contexts/cart.context'
+import { CartContext } from "../../Contexts/cart.context";
 
 export interface CardProps {
   // id: number;
@@ -16,24 +16,27 @@ export interface CardProps {
   CardData: any;
 }
 
-export const CardComponent = ({
-  CardData
-}: CardProps) => {
-  const { id,
+export const CardComponent = ({ CardData }: CardProps) => {
+  const {
+    id,
     thumbnail,
     title,
     description,
     category,
     price,
-    brand } = CardData;
-    const {saveCartItem} = React.useContext(CartContext)
-    const addProductToCart = () => saveCartItem(CardData);
+    brand,
+  } = CardData;
+  const { saveCartItem } = React.useContext(CartContext);
+  const addProductToCart = () => saveCartItem(CardData);
   return (
     <>
       <>
         <Card className="product-card bg-transparent justify-around group box-border overflow-hidden flex rounded-md cursor-pointer pe-0 mb-2 flex-col items-start transition duration-200 ease-in-out transform hover:-translate-y-1 hover:md:-translate-y-1.5 hover:shadow-lg ">
           <div className="mb-3 md:mb-3.5 flex w-full justify-center">
-            <Link to={`/product/${id}`} className="w-full min-h-80 aspect-w-1 aspect-h-1 lg:h-80 lg:aspect-none">
+            <Link
+              to={`/product/${id}`}
+              className="w-full min-h-80 aspect-w-1 aspect-h-1 lg:h-80 lg:aspect-none"
+            >
               <img
                 src={thumbnail}
                 alt="productImage"
@@ -42,9 +45,9 @@ export const CardComponent = ({
               />
             </Link>
           </div>
-          <div className="rounded-b-md p-4">
+          <div className="rounded-b-md p-2">
             <div className="flex justify-between items-start">
-              <div className="mr-2 flex-grow">
+              <div className=" flex-grow">
                 <h2 className="text-base line-clamp leading-non">{title}</h2>
                 <p className="text-theme-neutral line-clamp-2 text-sm">
                   {description}
