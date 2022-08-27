@@ -1,5 +1,3 @@
-import classNames from "classnames";
-import React from "react";
 import { HTMLAttributes } from "react";
 import Icon from "../icons/icon";
 
@@ -13,7 +11,7 @@ export const Footer = ({ ...props }: FooterProps) => {
 
   return (
     <>
-      <footer className="pt-8 pb-4 px-1 text-center bg-theme-neutral flex flex-col justify-center items-center">
+      <footer className="pt-8 pb-4 px-1 text-center bg-theme-neutral flex flex-col justify-center items-center mt-auto">
         <div>
           <Icon kind="logo" size={40} className="text-theme-white" />
         </div>
@@ -33,7 +31,7 @@ export const Footer = ({ ...props }: FooterProps) => {
         </div>
         <div className="text-center text-sm text-theme-neutral65">
           <span>© 2022 Copyright:</span>
-          <a className="text-sm text-theme-neutral65 font-semibold" href="#">
+          <a className="text-sm text-theme-neutral65 font-semibold" href="">
             Brand
           </a>
         </div>

@@ -1,5 +1,3 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { CategoryCard } from "../../molecules/categoryCard";
 import { categoryData, brandCategoryData } from "../../constants/constants";
 import CarouselComponent from "../../atoms/carousal/carousal";

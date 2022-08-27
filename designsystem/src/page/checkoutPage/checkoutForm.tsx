@@ -1,23 +1,10 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { Card, CardBody, Button } from "design-system";
 import { createUser } from "../../api/api";
 import { useNavigate } from "react-router-dom";
 
-export interface checkoutFormProps {
-  id?: number;
-  firstName?: string;
-  lastName?: string;
-  phoneNumber?: number;
-  email?: string;
-  country?: string;
-  state?: string;
-  flatNo?: any;
-  areaStree?: any;
-  pincode?: number;
-  townCity?: string;
-}
 
-const CheckoutForm = ({}: checkoutFormProps) => {
+const CheckoutForm = () => {
   const navigate = useNavigate();
   const [chekoutData, setchekoutData] = useState({
     firstName: "",

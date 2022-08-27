@@ -7,14 +7,15 @@ import {CartContext} from '../../Contexts/cart.context'
 export interface ShoppingCartProps extends React.HTMLAttributes<HTMLElement> {
   cartItem: any,
   cartCard: boolean,
-  imgSize: boolean
+  imgSize: boolean,
+  showRemove?: boolean,
 }
 
 const ItemCard = ({
-  cartItem, cartCard, imgSize
+  cartItem, cartCard, imgSize, showRemove
 }: ShoppingCartProps) => {
   const { title, thumbnail, brand, quantity, price } = cartItem;
-  const {saveCartItem , deleteCartItem} = React.useContext(CartContext)
+  const {saveCartItem , deleteCartItem , flushCartItem} = React.useContext(CartContext)
   return (
     <Card className={classnames(cartCard ? "border rounded flex px-4" : "")}>
       <CardBody className="p-3 flex w-full">
@@ -34,7 +35,7 @@ const ItemCard = ({
                   {brand}
                 </p>
               </h3>
-              <p className="text-lg font-semibold ml-1">${price}</p>
+              <p className="text-lg font-semibold ml-1">&#8377;{price}</p>
             </div>
 
             <div className="flex flex-1 items-end justify-between text-sm">
@@ -45,17 +46,18 @@ const ItemCard = ({
                 </p>
                 <span onClick={() => saveCartItem(cartItem)} className="cursor-pointer">&#8594;</span>
               </div>
-              <div className="flex ml-1">
+              {showRemove ? <div className="flex ml-1">
                 <div className="remove-button">
                   <Button
                     variant="secondary"
                     size="small"
                     className="font-medium text-theme-primary hover:text-theme-primary p-0"
+                    onClick={() => flushCartItem(cartItem)}
                   >
-                    Remove
+                    Remove 
                   </Button>
                 </div>
-              </div>
+              </div> : null}
             </div>
           </div>
         </div>

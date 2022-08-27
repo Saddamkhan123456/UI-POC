@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from "react";
+import { HTMLAttributes } from "react";
 import { Card } from "design-system";
 import { Link } from "react-router-dom";
 
