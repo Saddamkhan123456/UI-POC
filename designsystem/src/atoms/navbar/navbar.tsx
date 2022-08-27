@@ -19,8 +19,8 @@ export const Navbar = ({
 }: NavbarProps) => {
   const navigation = [
     // { name: "Home", href: "/", current: true },
-    { name: "Men", href: "/product/category/Men", current: false },
-    { name: "Women", href: "/product/category/Women", current: false },
+    { name: "Men", href: "/product/category/men", current: false },
+    { name: "Women", href: "/product/category/women", current: false },
     { name: "Kids", href: "/product/category/kids", current: false },
   ];
   const [open, setOpen] = React.useState(false);
