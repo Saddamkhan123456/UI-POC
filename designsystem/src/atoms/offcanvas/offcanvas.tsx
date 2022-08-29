@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from "react";
+import { HTMLAttributes } from "react";
 import SlidingPanel from "react-sliding-side-panel";
 
 export interface OffCanvasProps extends HTMLAttributes<HTMLElement> {

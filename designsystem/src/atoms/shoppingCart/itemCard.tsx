@@ -2,29 +2,42 @@ import * as React from "react";
 // import { QuantityBox } from "../../molecules/quantityBox";
 import { Button, Card, CardBody } from "design-system";
 import classnames from "classnames";
-import {CartContext} from '../../Contexts/cart.context'
+import { CartContext } from "../../Contexts/cart.context";
 import Icon from "../icons/icon";
 import { useState } from "react";
 
 export interface ShoppingCartProps extends React.HTMLAttributes<HTMLElement> {
-  cartItem: any,
-  cartCard: boolean,
-  imgSize: boolean
-  isQuantityShow:boolean,
-  isCartItem:boolean
+  cartItem: any;
+  cartCard: boolean;
+
+  imgSize: boolean;
+  isQuantityShow: boolean;
+  isCartItem: boolean;
+  showRemove?: boolean;
 }
 
 const ItemCard = ({
-  cartItem, cartCard, imgSize,isQuantityShow,isCartItem
+  cartItem,
+  cartCard,
+  imgSize,
+  showRemove,
+  isQuantityShow,
+  isCartItem,
 }: ShoppingCartProps) => {
   const { title, thumbnail, brand, quantity, price } = cartItem;
-  const {saveCartItem , deleteCartItem} = React.useContext(CartContext)
+  const { saveCartItem, deleteCartItem, flushCartItem } = React.useContext(
+    CartContext
+  );
 
- 
   return (
     <Card className={classnames(cartCard ? "border rounded flex px-4" : "")}>
       <CardBody className="p-3 flex w-full">
-        <div className={classnames(imgSize ? "cart-image h-24 w-24 " : "h-36 w-36 ") + "flex-shrink-0 overflow-hidden rounded-md border border-theme-neutral80"}>
+        <div
+          className={
+            classnames(imgSize ? "cart-image h-24 w-24 " : "h-36 w-36 ") +
+            "flex-shrink-0 overflow-hidden rounded-md border border-theme-neutral80"
+          }
+        >
           <img
             src={thumbnail}
             alt={title}
@@ -40,27 +53,35 @@ const ItemCard = ({
                   {brand}
                 </p>
               </h3>
-              <p className="text-lg font-semibold ml-1">${price}</p>
+              <p className="text-lg font-semibold ml-1">&#8377;{price}</p>
             </div>
 
             <div className="flex flex-1 items-end justify-between text-sm">
-              <div className={classnames(isQuantityShow? "flex" : "hidden")}>
+              <div className={classnames(isQuantityShow ? "flex" : "hidden")}>
                 <div className="mr-1 flex gap-0.5">
-                  <span onClick={() => deleteCartItem(cartItem)} className="cursor-pointer">&#8592;</span>
-                  <p className="text-gray-500">
-                    {quantity}
-                  </p>
-                  <span onClick={() => saveCartItem(cartItem)} className="cursor-pointer">&#8594;</span>
+                  <span
+                    onClick={() => deleteCartItem(cartItem)}
+                    className="cursor-pointer"
+                  >
+                    &#8592;
+                  </span>
+                  <p className="text-gray-500">{quantity}</p>
+                  <span
+                    onClick={() => saveCartItem(cartItem)}
+                    className="cursor-pointer"
+                  >
+                    &#8594;
+                  </span>
                 </div>
               </div>
-              
+
               <div className="flex ml-1">
                 <Button
-                    variant="secondary"
-                    size="small"
-                    className="font-medium text-theme-primary hover:text-theme-primary p-0 mr-2"
-                  >
-                    <Icon kind="delete" size={16} />
+                  variant="secondary"
+                  size="small"
+                  className="font-medium text-theme-primary hover:text-theme-primary p-0 mr-2"
+                >
+                  <Icon kind="delete" size={16} />
                 </Button>
                 <>
                   {isCartItem ? (
@@ -68,21 +89,35 @@ const ItemCard = ({
                       variant="secondary"
                       size="small"
                       className="font-medium text-theme-primary hover:text-theme-primary p-0"
-                      
                     >
-                      <Icon kind="wishlist"  size={16}/>
-                    </Button> )
-                    : (<Button
+                      <Icon kind="wishlist" size={16} />
+                    </Button>
+                  ) : (
+                    <Button
                       variant="secondary"
                       size="small"
                       className="font-medium text-theme-primary hover:text-theme-primary p-0"
-                      >
-                        <Icon kind="cart" size={16}/>
-                    </Button>)
-                    
-                  }
+                    >
+                      <Icon kind="cart" size={16} />
+                    </Button>
+                  )}
                 </>
               </div>
+
+              {showRemove ? (
+                <div className="flex ml-1">
+                  <div className="remove-button">
+                    <Button
+                      variant="secondary"
+                      size="small"
+                      className="font-medium text-theme-primary hover:text-theme-primary p-0"
+                      onClick={() => flushCartItem(cartItem)}
+                    >
+                      Remove
+                    </Button>
+                  </div>
+                </div>
+              ) : null}
             </div>
           </div>
         </div>

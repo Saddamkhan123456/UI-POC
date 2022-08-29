@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React, { useState, HTMLAttributes } from "react";
+import { useState, HTMLAttributes } from "react";
 import Icon from "../icons/icon";
 import { Button } from "design-system";
 

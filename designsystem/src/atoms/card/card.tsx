@@ -1,11 +1,10 @@
 import * as React from "react";
 import { Card, Button } from "design-system";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Icon from "../icons/icon";
 import { CartContext } from "../../Contexts/cart.context";
-import {WishlistContext} from '../../Contexts/wishlist.context'
-import { useContext, useState } from "react";
-
+import { WishlistContext } from "../../Contexts/wishlist.context";
+import { useContext } from "react";
 
 export interface CardProps {
   CardData: any;
@@ -14,9 +13,8 @@ export interface CardProps {
 export const CardComponent = ({ CardData }: CardProps) => {
   const { saveCartItem } = React.useContext(CartContext);
   const addProductToCart = () => saveCartItem(CardData);
-  const {saveWishlistItem} = useContext(WishlistContext)
+  const { saveWishlistItem } = useContext(WishlistContext);
   const addProductToWishlist = () => saveWishlistItem(CardData);
-
 
   return (
     <>
@@ -38,7 +36,9 @@ export const CardComponent = ({ CardData }: CardProps) => {
           <div className="rounded-b-md p-2">
             <div className="flex justify-between items-start">
               <div className=" flex-grow">
-                <h2 className="text-base line-clamp leading-non">{CardData.title}</h2>
+                <h2 className="text-base line-clamp leading-non">
+                  {CardData.title}
+                </h2>
                 <p className="text-theme-neutral line-clamp-2 text-sm">
                   {CardData.description}
                 </p>
@@ -50,25 +50,25 @@ export const CardComponent = ({ CardData }: CardProps) => {
               <div className="ml-2 text-right">
                 <div className="text-theme-neutral">${CardData.price}</div>
               </div>
-            </div>
-            <div className="flex justify-center items-center mt-2">
-              <div className="w-1/2 mr-2">
-                <Button
-                  variant="primary"
-                  className="block w-full px-3 py-2  uppercase h-38"
-                  onClick={addProductToWishlist}
-                >
-                  wishlist
-                </Button>
-              </div>
-              <div className="w-1/2 ml-2">
-                <Button
-                  variant="secondary"
-                  className="block w-full px-3 py-2 uppercase h-38"
-                  onClick={addProductToCart}
-                >
-                  <Icon kind="cart" size={16} />
-                </Button>
+              <div className="flex justify-center items-center mt-2">
+                <div className="w-1/2 mr-2">
+                  <Button
+                    variant="primary"
+                    className="block w-full px-3 py-2  uppercase h-38"
+                    onClick={addProductToWishlist}
+                  >
+                    wishlist
+                  </Button>
+                </div>
+                <div className="w-1/2 ml-2">
+                  <Button
+                    variant="secondary"
+                    className="block w-full px-3 py-2 uppercase h-38"
+                    onClick={addProductToCart}
+                  >
+                    <Icon kind="cart" size={16} />
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
