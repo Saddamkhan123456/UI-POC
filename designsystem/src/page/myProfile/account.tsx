@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Card, CardBody, Button } from "design-system";
 import { useForm } from "react-hook-form";
+import { UpdateUser } from "../../api/api";
 
 interface IFormInput {
   name: string;
@@ -17,26 +18,12 @@ const Account = ({}: IFormInput) => {
     formState: { errors },
   } = useForm<IFormInput>();
   const handleEdit = (data: IFormInput) => {
-    alert(JSON.stringify(data.name));
     let item = { name, lastName, mobile, email };
-
-    fetch(`http://localhost:8000/Users/${userId}`, {
-      method: "PUT",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(item),
-    }).then((result) => {
-      result.json().then((resp) => {
-        console.log(resp);
-        getUsers();
-      });
-    });
+    UpdateUser(item , userId)
   }; // your form submit function which will invoke after successful validation
 
   //
-  const [users, setUser] = useState([]);
+  // const [users, setUser] = useState([]);
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -50,7 +37,7 @@ const Account = ({}: IFormInput) => {
     fetch("http://localhost:8000/Users").then((result) => {
       result.json().then((resp) => {
         // console.warn(resp);
-        setUser(resp);
+        // setUser(resp);
         setName(resp[0].name);
         setLastName(resp[0].lastName);
         setMobile(resp[0].mobile);
@@ -59,27 +46,6 @@ const Account = ({}: IFormInput) => {
       });
     });
   };
-
-  // function handleEdit(e) {
-  //   e.preventDefault();
-  //   // console.log("You clicked submit.");
-  //   let item = { name, lastName, mobile, email };
-
-  //   fetch(`http://localhost:8000/Users/${userId}`, {
-  //     method: "PUT",
-  //     headers: {
-  //       Accept: "application/json",
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(item),
-  //   }).then((result) => {
-  //     result.json().then((resp) => {
-  //       console.log(resp);
-  //       getUsers();
-  //     });
-  //   });
-  // }
-
   return (
     <>
       <Card className="grow flex h-full w-1/2 items-center justify-center">

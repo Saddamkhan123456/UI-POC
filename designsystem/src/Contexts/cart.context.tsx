@@ -21,10 +21,16 @@ const removeCartItemQuantity = (cartItems, productToRemove) => {
   })
 
   if (existingCartItem.quantity === 1) {
-    return cartItems.filter((cartItem) => cartItem.id !== productToRemove.id)
+    const filterValue = cartItems.filter((cartItem) => cartItem.id !== productToRemove.id)
+    console.log(filterValue)
+    localStorage.setItem('cartItems' , JSON.stringify(filterValue))
+    
+  }else{
+    const mapValue = cartItems.map((cartItem) => cartItem.id === productToRemove.id ? { ...cartItem, quantity: cartItem.quantity - 1 } : cartItem)
+    localStorage.setItem('cartItems', JSON.stringify(mapValue))
   }
 
-  return cartItems.map((cartItem) => cartItem.id === productToRemove.id ? { ...cartItem, quantity: cartItem.quantity - 1 } : cartItem)
+  return JSON.parse(localStorage.getItem('cartItems'))
 }
 
 const flushCartItemQuantity = (cartItems, cartItemToFlush) => {
@@ -37,19 +43,19 @@ const flushCartItemQuantity = (cartItems, cartItemToFlush) => {
 export const CartContext = React.createContext<CartContextType | null>(null);
 
 export const CartProvider: React.FC<React.ReactNode> = ({ children }) => {
-
-  const [cartItems, setCartItems] = React.useState<ICartItem[]>([])
+  console.log(JSON.parse(localStorage.getItem('cartItems')))
+  const [cartItems, setCartItems] = React.useState<ICartItem[]>(JSON.parse(localStorage.getItem('cartItems')) || [])
   const [cartCount, setCartCount] = React.useState<number>(0)
   const [cartTotal, setCartTotal] = React.useState<number>(0)
   const [orderTotal, setOrderTotal] = React.useState<number>(0)
   const [taxAmount, setTaxAmount] = React.useState<number>(0)
 
   React.useEffect(() => {
-    const newCartCount: number = cartItems.reduce((total, cartItem) => total + cartItem.quantity, 0)
+    const newCartCount: number = cartItems?.length > 0 ? cartItems.reduce((total, cartItem) => total + cartItem.quantity, 0) : 0
     setCartCount(newCartCount)
   }, [cartItems])
   React.useEffect(() => {
-    const newCartTotal: number = cartItems.reduce((total, cartItem) => total + cartItem.quantity * cartItem.price, 0)
+    const newCartTotal: number = cartItems?.length > 0 ? cartItems.reduce((total, cartItem) => total + cartItem.quantity * cartItem.price, 0) : 0
     setCartTotal(newCartTotal)
   }, [cartItems])
   React.useEffect(() => {

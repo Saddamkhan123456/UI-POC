@@ -13,7 +13,7 @@ const ShoppingCartPage = () => {
         <div className="flex flex-col md:flex-row w-full">
           <div className="lg:w-2/3 sm:w-full">
             <div className="w-full">
-              {cartItems.map((item) => {
+              {cartItems?.length > 0 && cartItems.map((item) => {
                 return (<ItemCard
                   key={item.id}
                   cartItem= {item}
