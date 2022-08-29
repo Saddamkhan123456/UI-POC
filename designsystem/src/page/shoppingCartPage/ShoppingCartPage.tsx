@@ -17,7 +17,9 @@ const ShoppingCartPage = () => {
                 return (<ItemCard
                   key={item.id}
                   cartItem= {item}
-                  cartCard={false} imgSize={false}                
+                  cartCard={false} imgSize={false}   
+                  isQuantityShow={true}    
+                  isCartItem={true}   
                   />)
               })}
             </div>

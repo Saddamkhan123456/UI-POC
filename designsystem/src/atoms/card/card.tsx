@@ -12,22 +12,10 @@ export interface CardProps {
 }
 
 export const CardComponent = ({ CardData }: CardProps) => {
-  let { productId } = useParams();
-  const [productData, setProductData] = useState({
-    title: "",
-    category: "",
-    description: "",
-    price: null,
-    thumbnail: "",
-    brand: '',
-    categoryId: '',
-    id: null,
-   
-  });
   const { saveCartItem } = React.useContext(CartContext);
   const addProductToCart = () => saveCartItem(CardData);
   const {saveWishlistItem} = useContext(WishlistContext)
-  const addProductToWishlist = () => saveWishlistItem(productData);
+  const addProductToWishlist = () => saveWishlistItem(CardData);
 
 
   return (

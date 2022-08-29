@@ -58,10 +58,10 @@ const ProductDetails = () => {
               {productData.category}
             </p>
 
-            <h5 className="mb-2 text-theme-neutral text-md">Size</h5>
+            {/* <h5 className="mb-2 text-theme-neutral text-md">Size</h5>
             <div className="mb-4">
               <Sizes />
-            </div>
+            </div> */}
 
             <h5 className="mb-2 text-theme-neutral text-md">Quantity</h5>
             <div className="mb-4">
