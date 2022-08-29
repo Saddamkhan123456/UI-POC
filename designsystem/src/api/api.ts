@@ -26,7 +26,7 @@ export const productDetail = (productId) => {
 export const createUser = (checkoutDetails) => {
   return axios
     .post(
-      `${baseURL}/Customers`, //post
+      `${baseURL}/Orders`, //post
       checkoutDetails
     )
     .then(function(response) {
@@ -36,3 +36,16 @@ export const createUser = (checkoutDetails) => {
       return console.log(err);
     });
 };
+
+export const  UpdateUser = async (userDetail , userId) => {
+  return await axios 
+  .put(
+    `${baseURL}/Users/${userId}`, //Update
+    userDetail
+  )
+  .then(function(response){
+    console.log(response)
+  }).catch((err) => {
+    return console.log(err)
+  })
+}

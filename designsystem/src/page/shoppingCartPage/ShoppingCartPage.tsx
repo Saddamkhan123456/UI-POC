@@ -13,11 +13,11 @@ const ShoppingCartPage = () => {
         <div className="flex flex-col md:flex-row w-full">
           <div className="lg:w-2/3 sm:w-full">
             <div className="w-full">
-              {cartItems.map((item) => {
+              {cartItems?.length > 0 && cartItems.map((item) => {
                 return (<ItemCard
                   key={item.id}
                   cartItem= {item}
-                  cartCard={false} imgSize={false}                
+                  cartCard={false} imgSize={false}  showRemove={false}              
                   />)
               })}
             </div>
@@ -25,10 +25,6 @@ const ShoppingCartPage = () => {
           <div className="lg:w-1/3 md:w-1/3 sm:w-full">
             <div className="lg:px-6 sm:px-2  w-full">
               <OrderSummary
-                subTotal="99"
-                shippingCharges="5"
-                tax="10"
-                orderTotal="124"
                 showShoppingCart={false}
                 isCheckout={true}
               />

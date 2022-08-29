@@ -58,7 +58,7 @@ export const CardComponent = ({ CardData }: CardProps) => {
                 <div className="text-theme-neutral">{brand}</div>
               </div>
               <div className="ml-2 text-right">
-                <div className="text-theme-neutral">${price}</div>
+                <div className="text-theme-neutral">&#8377;{price}</div>
               </div>
             </div>
             <div className="flex justify-center items-center mt-2">

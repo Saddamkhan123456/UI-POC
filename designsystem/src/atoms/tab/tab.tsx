@@ -1,7 +1,3 @@
-import React from "react";
-import classNames from "classnames";
-import Icon from "../../atoms/icons/icon";
-
 export interface TabProps {
   className?: string;
   children: any;

@@ -1,10 +1,10 @@
 import { useEffect, useState, useContext } from "react";
 import { Button } from "design-system";
-import { QuantityBox } from "../../molecules/quantityBox";
-import { Sizes } from "../../atoms/sizes";
+// import { QuantityBox } from "../../molecules/quantityBox";
+// import { Sizes } from "../../atoms/sizes";
 import { useParams } from "react-router-dom";
 import { productDetail } from "../../api/api";
-import {CartContext} from '../../Contexts/cart.context'
+import { CartContext } from '../../Contexts/cart.context'
 
 
 
@@ -21,7 +21,7 @@ const ProductDetails = () => {
     id: null,
     quantity: null,
   });
-  const {saveCartItem} = useContext(CartContext)
+  const { saveCartItem } = useContext(CartContext)
   useEffect(() => {
     productDetail(productId).then((response) => {
       setProductData(response["data"]);
@@ -53,15 +53,10 @@ const ProductDetails = () => {
               {productData.category}
             </p>
 
-            <h5 className="mb-2 text-theme-neutral text-md">Size</h5>
-            <div className="mb-4">
-              <Sizes />
-            </div>
-
-            <h5 className="mb-2 text-theme-neutral text-md">Quantity</h5>
+            {/* <h5 className="mb-2 text-theme-neutral text-md">Quantity</h5>
             <div className="mb-4">
               <QuantityBox />
-            </div>
+            </div> */}
 
             <h5 className="mb-2 text-theme-neutral text-md">Description</h5>
             <div className="product-descriptiom">
@@ -74,7 +69,7 @@ const ProductDetails = () => {
               <div>
                 <div className="rounded-lg flex">
                   <span className="text-theme-neutral mr-1 mt-1 text-3xl font-bold">
-                    ${productData.price}
+                    &#8377;{productData.price}
                   </span>
                 </div>
               </div>
