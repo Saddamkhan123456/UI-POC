@@ -3,17 +3,17 @@ import { Card, CardBody, Button } from "design-system";
 import { useForm } from "react-hook-form";
 
 interface IFormInput {
-  name: string;
-  lastName: string;
-  email: string;
-  phoneNumber: string;
+  name?: string;
+  lastName?: string;
+  email?: string;
+  phoneNumber?: string;
 }
 
 const Account = ({}: IFormInput) => {
   const {
     register,
     handleSubmit,
-    watch,
+
     formState: { errors },
   } = useForm<IFormInput>();
   const handleEdit = (data: IFormInput) => {

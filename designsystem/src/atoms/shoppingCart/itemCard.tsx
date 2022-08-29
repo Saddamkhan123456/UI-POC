@@ -46,15 +46,21 @@ const ItemCard = ({
                 <span onClick={() => saveCartItem(cartItem)} className="cursor-pointer">&#8594;</span>
               </div>
               <div className="flex ml-1">
-                <div className="remove-button">
-                  <Button
+                <Button
                     variant="secondary"
                     size="small"
                     className="font-medium text-theme-primary hover:text-theme-primary p-0"
                   >
                     Remove
-                  </Button>
-                </div>
+                </Button>
+                
+                <Button
+                  variant="secondary"
+                  size="small"
+                  className="font-medium text-theme-primary hover:text-theme-primary p-0"
+                >
+                  add to cart
+                </Button>
               </div>
             </div>
           </div>

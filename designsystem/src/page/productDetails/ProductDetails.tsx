@@ -5,6 +5,8 @@ import { Sizes } from "../../atoms/sizes";
 import { useParams } from "react-router-dom";
 import { productDetail } from "../../api/api";
 import {CartContext} from '../../Contexts/cart.context'
+import {WishlistContext} from '../../Contexts/wishlist.context'
+
 
 
 
@@ -29,6 +31,9 @@ const ProductDetails = () => {
     });
   }, []);
   const addProductToCart = () => saveCartItem(productData);
+  const {saveWishlistItem} = useContext(WishlistContext)
+  const addProductToWishlist = () => saveWishlistItem(productData);
+
   return (
     <>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 py-16">
@@ -84,6 +89,7 @@ const ProductDetails = () => {
                 <Button
                   variant="primary"
                   className="block w-full px-3 py-2 uppercase h-38"
+                  onClick={addProductToWishlist}
                 >
                   Wishlist
                 </Button>
