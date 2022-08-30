@@ -4,14 +4,12 @@ import { Button, Card, CardBody } from "design-system";
 import classnames from "classnames";
 import { CartContext } from "../../Contexts/cart.context";
 import Icon from "../icons/icon";
-import { useState } from "react";
 
 export interface ShoppingCartProps extends React.HTMLAttributes<HTMLElement> {
-  cartItem: any;
-  cartCard: boolean;
-
-  imgSize: boolean;
-  isQuantityShow: boolean;
+  cartItem?: any;
+  cartCard?: boolean;
+  imgSize?: boolean;
+  isQuantityShow?: boolean;
   isCartItem: boolean;
   showRemove?: boolean;
 }

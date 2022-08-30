@@ -21,8 +21,8 @@ const ShoppingCartPage = () => {
                       cartItem={item}
                       cartCard={false}
                       imgSize={false}
-                      isQuantityShow={true}
-                      isCartItem={true}
+                      isQuantityShow={false}
+                      isCartItem={false}
                       showRemove={false}
                     />
                   );

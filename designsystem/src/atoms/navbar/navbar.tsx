@@ -1,16 +1,14 @@
 import classNames from "classnames";
 import * as React from "react";
-import { HTMLAttributes} from "react";
+import { HTMLAttributes } from "react";
 import { Link } from "react-router-dom";
 import { Card, CardBody } from "design-system";
 import Icon from "../icons/icon";
 import OffCanvasComponent from "../offcanvas/offcanvas";
-import {CartContext} from '../../Contexts/cart.context'
-import {WishlistContext} from '../../Contexts/wishlist.context'
+import { CartContext } from "../../Contexts/cart.context";
+import { WishlistContext } from "../../Contexts/wishlist.context";
 import { useContext } from "react";
 import ItemCard from "../shoppingCart/itemCard";
-
-
 
 export interface NavbarProps extends HTMLAttributes<HTMLElement> {
   collapsed?: boolean;
@@ -29,9 +27,8 @@ export const Navbar = ({
   ];
   const [open, setOpen] = React.useState(false);
   const [isCollapsed, setIsCollapsed] = React.useState(collapsed);
-  const { cartCount} = React.useContext(CartContext)
-  const { wishlistItems } = useContext(WishlistContext)
-
+  const { cartCount } = React.useContext(CartContext);
+  const { wishlistItems } = useContext(WishlistContext);
 
   return (
     <>
@@ -70,7 +67,8 @@ export const Navbar = ({
               <div
                 id="offCanvas"
                 onClick={() => setOpen(!open)}
-                className="cursor-pointer text-white">
+                className="cursor-pointer text-white"
+              >
                 Wishlist
               </div>
               <OffCanvasComponent
@@ -87,20 +85,27 @@ export const Navbar = ({
                     <CardBody className="p-3 ">
                       <div className="flex justify-between">
                         <h1 className="text-3xl font-black mb-3">Wishlist</h1>
-                        <div className="cursor-pointer" onClick={() => setOpen(!open)}><Icon kind="close" size={16}/></div>
+                        <div
+                          className="cursor-pointer"
+                          onClick={() => setOpen(!open)}
+                        >
+                          <Icon kind="close" size={16} />
+                        </div>
                       </div>
-                     
+
                       {wishlistItems.map((item) => {
-                      return (<ItemCard
-                        key={item.id}
-                        cartItem= {item}
-                        cartCard={false} imgSize={false}
-                        isQuantityShow={false} 
-                        isCartItem={false}
-                                   
-                        />)
-                    })}
-                      
+                        return (
+                          <ItemCard
+                            key={item.id}
+                            cartItem={item}
+                            cartCard={false}
+                            imgSize={false}
+                            isQuantityShow={false}
+                            isCartItem={false}
+                            showRemove={false}
+                          />
+                        );
+                      })}
                     </CardBody>
                   </Card>
                 }

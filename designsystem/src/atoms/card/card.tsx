@@ -34,7 +34,7 @@ export const CardComponent = ({ CardData }: CardProps) => {
             </Link>
           </div>
           <div className="rounded-b-md p-2">
-            <div className="flex justify-between items-start">
+            <div className="flex flex-col">
               <div className=" flex-grow">
                 <h2 className="text-base line-clamp leading-non">
                   {CardData.title}
