@@ -8,9 +8,10 @@ export interface CardProps {
 }
 
 export interface CardPropsSets {
-  Image?: string;
-  Type?: string;
-  Link?: string;
+  id: number;
+  image?: string;
+  type?: string;
+  link?: string;
 }
 
 export const CategoryCard = ({
@@ -28,14 +29,14 @@ export const CategoryCard = ({
           CardPropsSets.length > 0 &&
           CardPropsSets.map((CardPropsSet: any) => {
             return (
-              <Card className={`p-3 cursor-pointer ${className}`}>
-                <Link to={`/product/${category}/${CardPropsSet.Type.toLowerCase()}`}>
+              <Card key={CardPropsSet.id} className={`p-3 cursor-pointer ${className}`}>
+                <Link to={`/product/${category}/${CardPropsSet.type}`}>
                   <CardBody className=" ">
                     <h2 className="font-bold mb-1 text-xl text-theme-white capitalize">
-                      {CardPropsSet.Type}
+                      {CardPropsSet.type}
                     </h2>
                     <img
-                      src={CardPropsSet.Image}
+                      src={CardPropsSet.image}
                       alt=""
                       className="object-contain"
                     />

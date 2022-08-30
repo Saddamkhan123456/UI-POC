@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import  { useState, useContext } from "react";
 import { Card, CardBody, Button } from "design-system";
 import { createUser } from "../../api/api";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { CartContext } from "../../Contexts/cart.context";
 
 export interface checkoutFormProps {
   id?: number;
@@ -19,30 +20,29 @@ const CheckoutForm = ({}: checkoutFormProps) => {
     watch,
     formState: { errors },
   } = useForm<checkoutFormProps>();
-
+  const {cartItems} = useContext(CartContext)
   const handleEdit = (data: checkoutFormProps) => {
-    alert(JSON.stringify(data));
-
-    const checkoutDetails = { ...chekoutData };
-    console.log(checkoutDetails);
-    createUser(checkoutDetails);
+    const newCheckoutData = {...chekoutData , checkoutItems : cartItems }
+    setChekoutData(newCheckoutData)
+    createUser(newCheckoutData);
     navigate("/thankyou");
   }; // your form submit function which will invoke after successful validation
 
   //
   const navigate = useNavigate();
-  const [chekoutData, setchekoutData] = useState({
+  const [chekoutData, setChekoutData] = useState({
     firstName: "",
     lastName: "",
     phoneNumber: "",
     email: "",
+    checkoutItems: [],
   });
 
   const handleInput = (e) => {
     const name = e.target.name;
     const value = e.target.value;
     //  console.log(name + value);
-    setchekoutData({ ...chekoutData, [name]: value });
+    setChekoutData({ ...chekoutData, [name]: value });
   };
 
   return (

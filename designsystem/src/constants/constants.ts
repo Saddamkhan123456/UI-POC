@@ -6,36 +6,42 @@ export const baseURL = 'http://localhost:8000';
 
 export const categoryData: CardPropsSets[] = [
   {
-    Image:
+    id: 1,
+    image:
       "https://images.unsplash.com/photo-1589212987511-4a924cb9d8ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
-    Type: "Women",
-    Link: '/product/category',
+    type: "women",
+    link: '/product/category',
   },
   {
-    Image:
+    id: 2,
+    image:
       "https://images.unsplash.com/photo-1559582798-678dfc71ccd8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
-    Type: "Men",
-    Link: '/product/category',
+    type: "men",
+    link: '/product/category',
   },
   {
-    Image:
+    id: 3,
+    image:
       "https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=789&q=80",
-    Type: "kids",
-    Link: '/product/category',
+    type: "kids",
+    link: '/product/category',
   },
 ];
 
 export const brandCategoryData: CardPropsSets[] = [
   {
-    Image: "https://image3.mouthshut.com/images/imagesp/925906241s.png",
-    Type: "Nike",
+    id: 1,
+    image: "https://image3.mouthshut.com/images/imagesp/925906241s.png",
+    type: "Nike",
   },
   {
-    Image: "https://1000logos.net/wp-content/uploads/2021/04/Puma-logo.png",
-    Type: "Puma",
+    id: 2,
+    image: "https://1000logos.net/wp-content/uploads/2021/04/Puma-logo.png",
+    type: "Puma",
   },
   {
-    Image: "https://1000logos.net/wp-content/uploads/2021/06/Wrangler-logo.png",
-    Type: "Wrangler",
+    id: 3,
+    image: "https://1000logos.net/wp-content/uploads/2021/06/Wrangler-logo.png",
+    type: "Wrangler",
   },
 ];

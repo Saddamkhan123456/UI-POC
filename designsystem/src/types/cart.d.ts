@@ -13,5 +13,9 @@ export type CartContextType = {
   cartItems : ICartItem[];
   saveCartItem: (cartItem : ICartItem) => void;
   cartCount: number;
+  cartTotal: number;
+  orderTotal:number;
+  taxAmount: number;
   deleteCartItem : (cartItem : ICartItem) => void;
+  flushCartItem : (cartItem : ICartItem) => void;
 }

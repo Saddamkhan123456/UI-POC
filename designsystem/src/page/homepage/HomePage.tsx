@@ -1,4 +1,4 @@
-import React from "react";
+
 import { CategoryCard } from "../../molecules/categoryCard";
 import { categoryData, brandCategoryData } from "../../constants/constants";
 import CarouselComponent from "../../atoms/carousal/carousal";

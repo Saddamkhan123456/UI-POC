@@ -33,7 +33,7 @@ const MyProfile = () => {
         className=" mt-4 p-4 flex items-center justify-center flex-col"
         active={active === 1}
       >
-        <Account />
+        <Account name={""} lastName={""} email={""} phoneNumber={""} />
       </TabPane>
       <TabPane
         className=" mt-4 p-4 flex items-center justify-center flex-col"

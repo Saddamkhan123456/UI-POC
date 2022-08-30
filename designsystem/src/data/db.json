@@ -337,38 +337,65 @@
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16491130/2021/12/13/31b58c46-6189-4639-8d36-8c3a5bb78c151639371822052PinkChickNavyBlueColourblockedLayeredSatinDress1.jpg"
     }
   ],
-  "Orders": [
-    {
-      "id": 1,
-      "products": [
-        {
-          "id": 5,
-          "title": "Spring and summershoes",
-          "price": 2000,
-          "quantity": 3,
-          "total": 6000,
-          "discountPercentage": 8.71,
-          "discountedPrice": 774
-        }
-      ],
-      "total": 6000,
-      "discountedTotal": 774,
-      "userId": 97,
-      "totalProducts": 1,
-      "totalQuantity": 3
-    }
-  ],
   "Users": [
     {
-      "name": "abhishek",
-      "lastName": "kumar",
-      "mobile": "111111111",
-
-      "email": "John@gmail.com",
+      "name": "Abhishek",
+      "lastName": "Kumar",
+      "mobile": "9886973272",
+      "email": "singh004saab@gmail.com",
       "id": 1
     }
   ],
-  "Customers": [
-  
+  "Orders": [
+    {
+      "firstName": "Abhishek",
+      "lastName": "Kumar",
+      "phoneNumber": "8789999637",
+      "email": "singh004saab@gmail.com",
+      "id": 1
+    },
+    {
+      "firstName": "hnhngh",
+      "lastName": "bbbhh",
+      "phoneNumber": "45456565656",
+      "email": "dfd@gvgf.gcgf",
+      "checkoutItems": [],
+      "id": 2
+    },
+    {
+      "firstName": "Abhid",
+      "lastName": "ghghghg",
+      "phoneNumber": "87899996377887878",
+      "email": "singh004saab@gmail.com",
+      "checkoutItems": [],
+      "id": 3
+    },
+    {
+      "firstName": "Ahghg",
+      "lastName": "vghgh",
+      "phoneNumber": "9888454454",
+      "email": "abc@xyz.com",
+      "checkoutItems": [],
+      "id": 4
+    },
+    {
+      "firstName": "dfssdfsfd",
+      "lastName": "xfdfdfd",
+      "phoneNumber": "7687676886",
+      "email": "singh004saab@gmail.com",
+      "checkoutItems": [
+        {
+          "id": 1,
+          "title": "Men Slim Fit Checkered Spread Collar Casual Shirt",
+          "price": 2095,
+          "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+          "categoryId": "men",
+          "brand": "nike",
+          "thumbnail": "https://rukminim1.flixcart.com/image/880/1056/km57hjk0/shirt/8/x/x/l-sdn-check-black-red-u-turn-original-imagf4fvy6hc3kuz.jpeg?q=50",
+          "quantity": 2
+        }
+      ],
+      "id": 5
+    }
   ]
 }
