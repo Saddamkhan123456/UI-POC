@@ -2,14 +2,13 @@ import { HTMLAttributes } from "react";
 import { Button, Hr } from "design-system";
 // import ItemCard from "../shoppingCart/itemCard";
 import { useNavigate } from "react-router-dom";
-import {CartContext} from '../../Contexts/cart.context'
-import * as React from 'react'
+import { CartContext } from "../../Contexts/cart.context";
+import * as React from "react";
 
 export interface OrderSummaryProps extends HTMLAttributes<HTMLElement> {
   isCheckout?: boolean;
   showShoppingCart?: boolean;
 }
-
 
 export const OrderSummary = ({
   isCheckout,
@@ -18,9 +17,11 @@ export const OrderSummary = ({
   const navigate = useNavigate();
   const navigateCheckout = () => {
     // 👇️ navigate to /
-    navigate('/checkout');
+    navigate("/checkout");
   };
-  const {cartTotal ,orderTotal , taxAmount , cartItems} = React.useContext(CartContext) 
+  const { cartTotal, orderTotal, taxAmount, cartItems } = React.useContext(
+    CartContext
+  );
   return (
     <div className="flex p-8 flex-col bg-theme-neutral85 rounded-sm">
       <h2 className=" pb-3 mb-4 ">Order Summary</h2>
@@ -52,14 +53,14 @@ export const OrderSummary = ({
           Order Total
         </div>
         <div className="text-theme-neutral10 text-lg font-semibold">
-        &#8377;{orderTotal}
+          &#8377;{orderTotal}
         </div>
       </div>
       {isCheckout ? (
         <div className="flex justify-between py-3">
           <Button
             variant="primary"
-            className="block w-full px-3 py-2 rounded-sm font-semibold"
+            className="block w-full px-3 py-2 rounded-sm uppercase"
             onClick={navigateCheckout}
           >
             Checkout

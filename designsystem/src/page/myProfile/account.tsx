@@ -19,7 +19,7 @@ const Account = ({}: IFormInput) => {
   } = useForm<IFormInput>();
   const handleEdit = (data: IFormInput) => {
     let item = { name, lastName, mobile, email };
-    UpdateUser(item , userId)
+    UpdateUser(item, userId);
   }; // your form submit function which will invoke after successful validation
 
   //
@@ -192,7 +192,7 @@ const Account = ({}: IFormInput) => {
 
               <Button
                 variant="primary"
-                className="cursor-pointer mr-2"
+                className="cursor-pointer mr-2 uppercase"
                 type="submit"
                 // onClick={onSubmit}
               >

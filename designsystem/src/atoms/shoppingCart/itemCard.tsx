@@ -47,7 +47,7 @@ const ItemCard = ({
             <div className="flex justify-between text-base text-theme-neutral  lg:mt-0  mt-2 flex-col md:flex-row">
               <h3 className="mr-1">
                 <a className="font-medium line-clamp-2"> {title} </a>
-                <p className="mt-1 mb-2 text-sm text-theme-neutral55 font-normal">
+                <p className="mt-1 mb-2 text-sm text-theme-neutral55 font-normal capitalize">
                   {brand}
                 </p>
               </h3>
