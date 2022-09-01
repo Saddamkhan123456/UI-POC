@@ -9,12 +9,15 @@ export interface ShoppingCartProps extends React.HTMLAttributes<HTMLElement> {
   cartCard: boolean,
   imgSize: boolean,
   showRemove?: boolean,
+  qty?: boolean,
 }
 
+
 const ItemCard = ({
-  cartItem, cartCard, imgSize, showRemove
+  cartItem, cartCard, imgSize, showRemove, qty
 }: ShoppingCartProps) => {
   const { title, thumbnail, brand, quantity, price } = cartItem;
+  
   const {saveCartItem , deleteCartItem , flushCartItem} = React.useContext(CartContext)
   return (
     <Card className={classnames(cartCard ? "border rounded flex px-4" : "")}>
@@ -40,11 +43,18 @@ const ItemCard = ({
 
             <div className="flex flex-1 items-end justify-between text-sm">
               <div className="mr-1 flex gap-0.5">
-                <span onClick={() => deleteCartItem(cartItem)} className="cursor-pointer">&#8592;</span>
-                <p className="text-gray-500">
-                  {quantity}
-                </p>
-                <span onClick={() => saveCartItem(cartItem)} className="cursor-pointer">&#8594;</span>
+               {qty?  <p className="text-gray-500">
+                 {quantity}
+                 </p>:
+                 <> 
+                 <span onClick={() => deleteCartItem(cartItem)} className="cursor-pointer">&#8592;</span>
+                  <p className="text-gray-500">
+                    {quantity}
+                  </p>
+                  <span onClick={() => saveCartItem(cartItem)} className="cursor-pointer">&#8594;</span>
+                  </>
+                
+                }
               </div>
               {showRemove ? <div className="flex ml-1">
                 <div className="remove-button">

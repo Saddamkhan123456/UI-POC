@@ -49,3 +49,14 @@ export const  UpdateUser = async (userDetail , userId) => {
     return console.log(err)
   })
 }
+
+export const orderHistoryGet = () => {
+  return axios
+  .get(`${baseURL}/Orders`) //GET
+    .then((response) => {
+      return response;
+    })
+    .catch((err) => {
+      return console.log(err);
+    });
+};
