@@ -3,6 +3,7 @@ import Tab from "../../atoms/tab/tab";
 import TabItem from "../../atoms/tab/tabItem";
 import TabPane from "../../atoms/tab/tabPane";
 import Account from "./account";
+import Orders from "./orders";
 
 const MyProfile = () => {
   const [active, setActiveTab] = React.useState(1);
@@ -39,7 +40,8 @@ const MyProfile = () => {
         className=" mt-4 p-4 flex items-center justify-center flex-col"
         active={active === 2}
       >
-        Tab content 2
+       <Orders />
+       
       </TabPane>
       <TabPane
         className=" mt-4 p-4 flex items-center justify-center flex-col"
