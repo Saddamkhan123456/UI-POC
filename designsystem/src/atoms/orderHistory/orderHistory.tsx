@@ -21,7 +21,7 @@ export const OrderHistory = ({ orderId, totalAmount }: OrderHistoryProps) => {
           <h6 className="text-sm text-theme-neutral10 mb-2 font-semibold">
             Total Amount
           </h6>
-          <p className="text-xs text-theme-neutral55">${totalAmount}</p>
+          <p className="text-xs text-theme-neutral55">&#8377;{totalAmount}</p>
         </div>
       </div>
     </>

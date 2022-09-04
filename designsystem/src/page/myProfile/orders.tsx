@@ -14,7 +14,6 @@ const Orders = () => {
       setOrdersData(response["data"]);
     });
   }, []);
-  console.log(ordersData);
   return (
     <>
       <div className="grow flex flex-col h-full lg:w-1/2 md:w-full items-center justify-center">
@@ -29,7 +28,7 @@ const Orders = () => {
                 <CardBody className="w-full">
                   <OrderHistory
                     orderId={data.id}
-                    totalAmount={data.amount}
+                    totalAmount={data.orderTotal}
                   />
                   <div className="px-4">
                     {data.checkoutItems.map((item) => {

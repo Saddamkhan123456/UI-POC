@@ -22,7 +22,6 @@ const removeCartItemQuantity = (cartItems, productToRemove) => {
 
   if (existingCartItem.quantity === 1) {
     const filterValue = cartItems.filter((cartItem) => cartItem.id !== productToRemove.id)
-    console.log(filterValue)
     localStorage.setItem('cartItems' , JSON.stringify(filterValue))
     
   }else{
@@ -43,7 +42,6 @@ const flushCartItemQuantity = (cartItems, cartItemToFlush) => {
 export const CartContext = React.createContext<CartContextType | null>(null);
 
 export const CartProvider: React.FC<React.ReactNode> = ({ children }) => {
-  console.log(JSON.parse(localStorage.getItem('cartItems')))
   const [cartItems, setCartItems] = React.useState<ICartItem[]>(JSON.parse(localStorage.getItem('cartItems')) || [])
   const [cartCount, setCartCount] = React.useState<number>(0)
   const [cartTotal, setCartTotal] = React.useState<number>(0)
