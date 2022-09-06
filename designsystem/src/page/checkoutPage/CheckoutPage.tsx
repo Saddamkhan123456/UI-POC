@@ -28,6 +28,7 @@ const CheckoutPage = () => {
                       removeItem={() => deleteCartItem(item)}
                       deleteItem={() => flushCartItem(item)}
                       addToWishlist={() => saveWishlistItem(item)}
+                      qty={true}
                     />
                 );
               })}

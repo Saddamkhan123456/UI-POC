@@ -14,6 +14,7 @@ export interface ShoppingCartProps extends React.HTMLAttributes<HTMLElement> {
   deleteItem?: () => void;
   addToCart?: () => void;
   addToWishlist?: () => void;
+  qty?: boolean;
   // showRemove?: boolean;
 }
 
@@ -28,12 +29,15 @@ const ItemCard = ({
   removeItem,
   deleteItem,
   addToCart,
-  addToWishlist
+  addToWishlist,
+  qty,
 }: ShoppingCartProps) => {
   const { title, thumbnail, brand, quantity, price } = cartItem;
 
   return (
-    <Card className={classnames(cartCard ? "border rounded flex px-4" : "")}>
+    <Card
+      className={classnames(cartCard ? "border rounded flex px-4 mb-4" : "")}
+    >
       <CardBody className="p-3 flex w-full">
         <div
           className={
@@ -62,19 +66,19 @@ const ItemCard = ({
             <div className="flex flex-1 items-end justify-between text-sm">
               <div className={classnames(isQuantityShow ? "flex" : "hidden")}>
                 <div className="mr-1 flex gap-0.5">
-                  <span
-                    onClick={removeItem}
-                    className="cursor-pointer"
-                  >
-                    &#8592;
-                  </span>
-                  <p className="text-gray-500">{quantity}</p>
-                  <span
-                    onClick={addItem}
-                    className="cursor-pointer"
-                  >
-                    &#8594;
-                  </span>
+                  {qty ? (
+                    <p className="text-gray-500">Qty: {quantity}</p>
+                  ) : (
+                    <>
+                      <span onClick={removeItem} className="cursor-pointer">
+                        &#8592;
+                      </span>
+                      <p className="text-gray-500">{quantity}</p>
+                      <span onClick={addItem} className="cursor-pointer">
+                        &#8594;
+                      </span>
+                    </>
+                  )}
                 </div>
               </div>
 
