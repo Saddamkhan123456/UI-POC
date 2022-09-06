@@ -9,6 +9,7 @@ import { CartContext } from "../../Contexts/cart.context";
 import { WishlistContext } from "../../Contexts/wishlist.context";
 import { useContext } from "react";
 import ItemCard from "../shoppingCart/itemCard";
+import EmptyShoppingCart from "../emptyShoppingCart/emptyShoppingCart";
 
 export interface NavbarProps extends HTMLAttributes<HTMLElement> {
   collapsed?: boolean;
@@ -94,20 +95,28 @@ export const Navbar = ({
                           </div>
                         </div>
                         <div>
-                        {wishlistItems.map((item) => {
-                          return (
-                            <ItemCard
-                              key={item.id}
-                              cartItem={item}
-                              cartCard={true}
-                              imgSize={false}
-                              isQuantityShow={false}
-                              isCartItem={false}
-                              addToCart={() => saveCartItem(item)}
-                              deleteItem={() => flushWishlistItem(item)}
-                            />
-                          );
-                        })}
+                          {wishlistItems && wishlistItems.length > 0 ? (
+                            <>
+                              {wishlistItems.map((item) => {
+                                return (
+                                  <ItemCard
+                                    key={item.id}
+                                    cartItem={item}
+                                    cartCard={true}
+                                    imgSize={false}
+                                    isQuantityShow={false}
+                                    isCartItem={false}
+                                    addToCart={() => saveCartItem(item)}
+                                    deleteItem={() => flushWishlistItem(item)}
+                                  />
+                                );
+                              })}
+                            </>
+                          ) : (
+                            <>
+                              <EmptyShoppingCart />
+                            </>
+                          )}
                         </div>
                       </CardBody>
                     </Card>
