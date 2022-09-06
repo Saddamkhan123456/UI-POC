@@ -39,7 +39,10 @@ const Orders = () => {
                           cartCard={false}
                           imgSize={true}
                           showRemove={false}
-                          qty={true} isCartItem={false}                        />
+                          qty={true}
+                          isCartItem={false}  
+                          isQuantityShow={true}                     
+                         />
                       );
                     })}
                   </div>
