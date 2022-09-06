@@ -76,24 +76,24 @@ export const Navbar = ({
                 isOpen={open}
                 type="right"
                 sizeInPercentage={50}
-                panelClassName="panel bg-theme-neutral85 text-theme-dark"
-                panelContainerClassName="panel-container h-full"
+                panelClassName="panel bg-theme-neutral85 text-theme-dark overflow-auto"
+                panelContainerClassName="panel-container h-full "
                 noBackdrop={false}
                 props={undefined}
                 children={
                   <>
                     <Card className="h-full px-4">
                       <CardBody className="p-3 ">
-                        <div className="flex justify-between">
-                          <h1 className="text-3xl font-black mb-3">Wishlist</h1>
+                        <div className="flex justify-between items-center mb-5 mt-2">
+                          <h1 className="text-3xl font-black ">Wishlist</h1>
                           <div
-                            className="cursor-pointer"
+                            className="cursor-pointer "
                             onClick={() => setOpen(!open)}
                           >
                             <Icon kind="close" size={16} />
                           </div>
                         </div>
-
+                        <div>
                         {wishlistItems.map((item) => {
                           return (
                             <ItemCard
@@ -108,6 +108,7 @@ export const Navbar = ({
                             />
                           );
                         })}
+                        </div>
                       </CardBody>
                     </Card>
                   </>
