@@ -196,7 +196,7 @@ const Account = ({}: IFormInput) => {
                 type="submit"
                 // onClick={onSubmit}
               >
-                save
+                Save
               </Button>
             </div>
           </form>

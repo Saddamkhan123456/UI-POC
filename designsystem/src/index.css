@@ -12,5 +12,9 @@
 /* Molecules Import */
 @import "../src/molecules/quantityBox/quantitybox.css";
 
+/* Page Import */
+@import "../src/page/myProfile/orders.css"
+
+
 
 

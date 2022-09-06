@@ -20,9 +20,9 @@ const CheckoutForm = ({}: checkoutFormProps) => {
     watch,
     formState: { errors },
   } = useForm<checkoutFormProps>();
-  const {cartItems} = useContext(CartContext)
+  const {cartItems , orderTotal} = useContext(CartContext)
   const handleEdit = (data: checkoutFormProps) => {
-    const newCheckoutData = {...chekoutData , checkoutItems : cartItems }
+    const newCheckoutData = {...chekoutData , checkoutItems : cartItems, orderTotal: orderTotal }
     setChekoutData(newCheckoutData)
     createUser(newCheckoutData);
     navigate("/thankyou");
@@ -36,6 +36,7 @@ const CheckoutForm = ({}: checkoutFormProps) => {
     phoneNumber: "",
     email: "",
     checkoutItems: [],
+    orderTotal : 0,
   });
 
   const handleInput = (e) => {
