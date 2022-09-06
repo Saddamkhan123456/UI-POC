@@ -350,52 +350,42 @@
     {
       "firstName": "Abhishek",
       "lastName": "Kumar",
-      "phoneNumber": "8789999637",
-      "email": "singh004saab@gmail.com",
-      "id": 1
-    },
-    {
-      "firstName": "hnhngh",
-      "lastName": "bbbhh",
-      "phoneNumber": "45456565656",
-      "email": "dfd@gvgf.gcgf",
-      "checkoutItems": [],
-      "id": 2
-    },
-    {
-      "firstName": "Abhid",
-      "lastName": "ghghghg",
-      "phoneNumber": "87899996377887878",
-      "email": "singh004saab@gmail.com",
-      "checkoutItems": [],
-      "id": 3
-    },
-    {
-      "firstName": "Ahghg",
-      "lastName": "vghgh",
-      "phoneNumber": "9888454454",
-      "email": "abc@xyz.com",
-      "checkoutItems": [],
-      "id": 4
-    },
-    {
-      "firstName": "dfssdfsfd",
-      "lastName": "xfdfdfd",
-      "phoneNumber": "7687676886",
+      "phoneNumber": "08789999637",
       "email": "singh004saab@gmail.com",
       "checkoutItems": [
         {
-          "id": 1,
-          "title": "Men Slim Fit Checkered Spread Collar Casual Shirt",
-          "price": 2095,
-          "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-          "categoryId": "men",
+          "id": 6,
+          "title": "Girls Black & Pink Printed Basic Jumpsuit ",
+          "price": 2200,
+          "description": "Black and pink printed basic jumpsuit with waist tie-ups a shoulder straps",
+          "categoryId": "kids",
           "brand": "nike",
-          "thumbnail": "https://rukminim1.flixcart.com/image/880/1056/km57hjk0/shirt/8/x/x/l-sdn-check-black-red-u-turn-original-imagf4fvy6hc3kuz.jpeg?q=50",
+          "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16981002/2022/1/29/1aa050c1-ab3b-4838-bcab-6c6b66910c951643466657169CUTECUMBERGirlsBlackPrinted1.jpg",
+          "quantity": 1
+        }
+      ],
+      "orderTotal": 2973,
+      "id": 6
+    },
+    {
+      "firstName": "Pintu",
+      "lastName": "Singh",
+      "phoneNumber": "9899976523",
+      "email": "pintusingh@gmail.com",
+      "checkoutItems": [
+        {
+          "id": 9,
+          "title": "Black High Neck Cropped Top",
+          "price": 1599,
+          "description": "Black solid knitted crop top, has a high neck, and long sleeves",
+          "categoryId": "women",
+          "brand": "puma",
+          "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/12222036/2020/10/6/d7ae3065-98d4-42d0-b244-d2b18802ff101601959656577-SASSAFRAS-Women-Black-Solid-High-Neck-Cropped-Top-4441601959-1.jpg",
           "quantity": 2
         }
       ],
-      "id": 5
+      "orderTotal": 3486,
+      "id": 7
     }
   ]
 }
