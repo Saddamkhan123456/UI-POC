@@ -3,9 +3,11 @@ import { OrderSummary } from "../../atoms/orderSummary";
 import ItemCard from "../../atoms/shoppingCart/itemCard";
 import { useContext } from "react";
 import { CartContext } from "../../Contexts/cart.context";
+import {WishlistContext} from '../../Contexts/wishlist.context'
 
 const ShoppingCartPage = () => {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems , saveCartItem , deleteCartItem , flushCartItem } = useContext(CartContext);
+  const {saveWishlistItem} = useContext(WishlistContext)
   return (
     <div className="p-6 lg:p-6 sm:p-3">
       <h1 className="text-3xl font-black mb-3">Shopping Cart</h1>
@@ -21,9 +23,12 @@ const ShoppingCartPage = () => {
                       cartItem={item}
                       cartCard={false}
                       imgSize={false}
-                      isQuantityShow={false}
-                      isCartItem={false}
-                      showRemove={false}
+                      isQuantityShow={true}
+                      isCartItem={true}
+                      addItem={() => saveCartItem(item)}
+                      removeItem={() => deleteCartItem(item)}
+                      deleteItem={() => flushCartItem(item)}
+                      addToWishlist={() => saveWishlistItem(item)}
                     />
                   );
                 })}

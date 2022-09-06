@@ -27,8 +27,8 @@ export const Navbar = ({
   ];
   const [open, setOpen] = React.useState(false);
   const [isCollapsed, setIsCollapsed] = React.useState(collapsed);
-  const { cartCount } = React.useContext(CartContext);
-  const { wishlistItems } = useContext(WishlistContext);
+  const { cartCount, saveCartItem } = React.useContext(CartContext);
+  const { wishlistItems, flushWishlistItem } = useContext(WishlistContext);
 
   return (
     <>
@@ -81,33 +81,36 @@ export const Navbar = ({
                 noBackdrop={false}
                 props={undefined}
                 children={
-                  <Card className="h-full px-4">
-                    <CardBody className="p-3 ">
-                      <div className="flex justify-between">
-                        <h1 className="text-3xl font-black mb-3">Wishlist</h1>
-                        <div
-                          className="cursor-pointer"
-                          onClick={() => setOpen(!open)}
-                        >
-                          <Icon kind="close" size={16} />
+                  <>
+                    <Card className="h-full px-4">
+                      <CardBody className="p-3 ">
+                        <div className="flex justify-between">
+                          <h1 className="text-3xl font-black mb-3">Wishlist</h1>
+                          <div
+                            className="cursor-pointer"
+                            onClick={() => setOpen(!open)}
+                          >
+                            <Icon kind="close" size={16} />
+                          </div>
                         </div>
-                      </div>
 
-                      {wishlistItems.map((item) => {
-                        return (
-                          <ItemCard
-                            key={item.id}
-                            cartItem={item}
-                            cartCard={false}
-                            imgSize={false}
-                            isQuantityShow={false}
-                            isCartItem={false}
-                            showRemove={false}
-                          />
-                        );
-                      })}
-                    </CardBody>
-                  </Card>
+                        {wishlistItems.map((item) => {
+                          return (
+                            <ItemCard
+                              key={item.id}
+                              cartItem={item}
+                              cartCard={true}
+                              imgSize={false}
+                              isQuantityShow={false}
+                              isCartItem={false}
+                              addToCart={() => saveCartItem(item)}
+                              deleteItem={() => flushWishlistItem(item)}
+                            />
+                          );
+                        })}
+                      </CardBody>
+                    </Card>
+                  </>
                 }
               />
             </div>

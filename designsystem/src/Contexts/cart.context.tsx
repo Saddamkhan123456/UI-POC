@@ -1,6 +1,14 @@
 import * as React from 'react'
 import { ICartItem, CartContextType } from '../types/cart'
 
+const flushCartItemQuantity = (cartItems, cartItemToFlush) => {
+  const filterValue = cartItems.filter((cartItem) => cartItem.id !== cartItemToFlush.id)
+  localStorage.setItem('cartItems', JSON.stringify(filterValue))
+  return (
+    JSON.parse(localStorage.getItem('cartItems'))
+  )
+}
+
 const addCartItemQuantity = (cartItems, productsToAdd) => {
   //update the quantity if the item alraedy exists
   const existingCartItem = cartItems.find((cartItem) => {
@@ -19,10 +27,8 @@ const removeCartItemQuantity = (cartItems, productToRemove) => {
   const existingCartItem = cartItems.find((cartItem) => {
     return (cartItem.id === productToRemove.id)
   })
-
   if (existingCartItem.quantity === 1) {
     const filterValue = cartItems.filter((cartItem) => cartItem.id !== productToRemove.id)
-    console.log(filterValue)
     localStorage.setItem('cartItems' , JSON.stringify(filterValue))
     
   }else{
@@ -33,17 +39,9 @@ const removeCartItemQuantity = (cartItems, productToRemove) => {
   return JSON.parse(localStorage.getItem('cartItems'))
 }
 
-const flushCartItemQuantity = (cartItems, cartItemToFlush) => {
-  console.log('HHIe')
-  return (
-    cartItems.filter((cartItem) => cartItem.id !== cartItemToFlush.id)
-  )
-}
-
 export const CartContext = React.createContext<CartContextType | null>(null);
 
 export const CartProvider: React.FC<React.ReactNode> = ({ children }) => {
-  console.log(JSON.parse(localStorage.getItem('cartItems')))
   const [cartItems, setCartItems] = React.useState<ICartItem[]>(JSON.parse(localStorage.getItem('cartItems')) || [])
   const [cartCount, setCartCount] = React.useState<number>(0)
   const [cartTotal, setCartTotal] = React.useState<number>(0)

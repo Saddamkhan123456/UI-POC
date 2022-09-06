@@ -1,8 +1,6 @@
 import * as React from "react";
-// import { QuantityBox } from "../../molecules/quantityBox";
 import { Button, Card, CardBody } from "design-system";
 import classnames from "classnames";
-import { CartContext } from "../../Contexts/cart.context";
 import Icon from "../icons/icon";
 
 export interface ShoppingCartProps extends React.HTMLAttributes<HTMLElement> {
@@ -11,21 +9,28 @@ export interface ShoppingCartProps extends React.HTMLAttributes<HTMLElement> {
   imgSize?: boolean;
   isQuantityShow?: boolean;
   isCartItem: boolean;
-  showRemove?: boolean;
+  addItem?: () => void;
+  removeItem?: () => void;
+  deleteItem?: () => void;
+  addToCart?: () => void;
+  addToWishlist?: () => void;
+  // showRemove?: boolean;
 }
 
 const ItemCard = ({
   cartItem,
   cartCard,
   imgSize,
-  showRemove,
+  // showRemove,
   isQuantityShow,
   isCartItem,
+  addItem,
+  removeItem,
+  deleteItem,
+  addToCart,
+  addToWishlist
 }: ShoppingCartProps) => {
   const { title, thumbnail, brand, quantity, price } = cartItem;
-  const { saveCartItem, deleteCartItem, flushCartItem } = React.useContext(
-    CartContext
-  );
 
   return (
     <Card className={classnames(cartCard ? "border rounded flex px-4" : "")}>
@@ -58,14 +63,14 @@ const ItemCard = ({
               <div className={classnames(isQuantityShow ? "flex" : "hidden")}>
                 <div className="mr-1 flex gap-0.5">
                   <span
-                    onClick={() => deleteCartItem(cartItem)}
+                    onClick={removeItem}
                     className="cursor-pointer"
                   >
                     &#8592;
                   </span>
                   <p className="text-gray-500">{quantity}</p>
                   <span
-                    onClick={() => saveCartItem(cartItem)}
+                    onClick={addItem}
                     className="cursor-pointer"
                   >
                     &#8594;
@@ -77,6 +82,7 @@ const ItemCard = ({
                 <Button
                   variant="secondary"
                   size="small"
+                  onClick={deleteItem}
                   className="font-medium text-theme-primary hover:text-theme-primary p-0 mr-2"
                 >
                   <Icon kind="delete" size={16} />
@@ -86,6 +92,7 @@ const ItemCard = ({
                     <Button
                       variant="secondary"
                       size="small"
+                      onClick={addToWishlist}
                       className="font-medium text-theme-primary hover:text-theme-primary p-0"
                     >
                       <Icon kind="wishlist" size={16} />
@@ -94,6 +101,7 @@ const ItemCard = ({
                     <Button
                       variant="secondary"
                       size="small"
+                      onClick={addToCart}
                       className="font-medium text-theme-primary hover:text-theme-primary p-0"
                     >
                       <Icon kind="cart" size={16} />
@@ -101,21 +109,6 @@ const ItemCard = ({
                   )}
                 </>
               </div>
-
-              {showRemove ? (
-                <div className="flex ml-1">
-                  <div className="remove-button">
-                    <Button
-                      variant="secondary"
-                      size="small"
-                      className="font-medium text-theme-primary hover:text-theme-primary p-0"
-                      onClick={() => flushCartItem(cartItem)}
-                    >
-                      Remove
-                    </Button>
-                  </div>
-                </div>
-              ) : null}
             </div>
           </div>
         </div>
