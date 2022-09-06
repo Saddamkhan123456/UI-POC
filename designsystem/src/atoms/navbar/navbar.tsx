@@ -5,8 +5,10 @@ import { Link } from "react-router-dom";
 import { Card, CardBody } from "design-system";
 import Icon from "../icons/icon";
 import OffCanvasComponent from "../offcanvas/offcanvas";
-// import ItemCard from "../shoppingCart/itemCard";
-import {CartContext} from '../../Contexts/cart.context'
+import { CartContext } from "../../Contexts/cart.context";
+import { WishlistContext } from "../../Contexts/wishlist.context";
+import { useContext } from "react";
+import ItemCard from "../shoppingCart/itemCard";
 
 export interface NavbarProps extends HTMLAttributes<HTMLElement> {
   collapsed?: boolean;
@@ -25,8 +27,9 @@ export const Navbar = ({
   ];
   const [open, setOpen] = React.useState(false);
   const [isCollapsed, setIsCollapsed] = React.useState(collapsed);
-  const { cartCount} = React.useContext(CartContext)
- 
+  const { cartCount, saveCartItem } = React.useContext(CartContext);
+  const { wishlistItems, flushWishlistItem } = useContext(WishlistContext);
+
   return (
     <>
       <nav className="relative w-full flex flex-wrap items-center justify-between py-4 bg-theme-neutral hover:text-theme-neutral80 focus:text-theme-neutral80 shadow-lg navbar navbar-expand-lg navbar-light">
@@ -78,21 +81,36 @@ export const Navbar = ({
                 noBackdrop={false}
                 props={undefined}
                 children={
-                  <Card className="h-full px-4">
-                    <CardBody className="p-3 ">
-                      <h1 className="text-3xl font-black mb-3">Wishlist</h1>
-                      {/* <ItemCard
-                        title={"Black High Neck Cropped Top"}
-                        brand={"Nike"}
-                        price={"$1294"}
-                        thumbnail="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16491130/2021/12/13/31b58c46-6189-4639-8d36-8c3a5bb78c151639371822052PinkChickNavyBlueColourblockedLayeredSatinDress1.jpg"
-                        qtyUpdate={false}
-                        showQty={false}
-                        cartCard={false}
-                        imgSize={false}
-                      /> */}
-                    </CardBody>
-                  </Card>
+                  <>
+                    <Card className="h-full px-4">
+                      <CardBody className="p-3 ">
+                        <div className="flex justify-between">
+                          <h1 className="text-3xl font-black mb-3">Wishlist</h1>
+                          <div
+                            className="cursor-pointer"
+                            onClick={() => setOpen(!open)}
+                          >
+                            <Icon kind="close" size={16} />
+                          </div>
+                        </div>
+
+                        {wishlistItems.map((item) => {
+                          return (
+                            <ItemCard
+                              key={item.id}
+                              cartItem={item}
+                              cartCard={true}
+                              imgSize={false}
+                              isQuantityShow={false}
+                              isCartItem={false}
+                              addToCart={() => saveCartItem(item)}
+                              deleteItem={() => flushWishlistItem(item)}
+                            />
+                          );
+                        })}
+                      </CardBody>
+                    </Card>
+                  </>
                 }
               />
             </div>

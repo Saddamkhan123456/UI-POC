@@ -4,22 +4,22 @@ import { useForm } from "react-hook-form";
 import { UpdateUser } from "../../api/api";
 
 interface IFormInput {
-  name: string;
-  lastName: string;
-  email: string;
-  phoneNumber: string;
+  name?: string;
+  lastName?: string;
+  email?: string;
+  phoneNumber?: string;
 }
 
 const Account = ({}: IFormInput) => {
   const {
     register,
     handleSubmit,
-    watch,
+
     formState: { errors },
   } = useForm<IFormInput>();
   const handleEdit = (data: IFormInput) => {
     let item = { name, lastName, mobile, email };
-    UpdateUser(item , userId)
+    UpdateUser(item, userId);
   }; // your form submit function which will invoke after successful validation
 
   //
@@ -192,7 +192,7 @@ const Account = ({}: IFormInput) => {
 
               <Button
                 variant="primary"
-                className="cursor-pointer mr-2"
+                className="cursor-pointer mr-2 uppercase"
                 type="submit"
                 // onClick={onSubmit}
               >

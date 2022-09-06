@@ -1,12 +1,9 @@
 import { useEffect, useState, useContext } from "react";
 import { Button } from "design-system";
-// import { QuantityBox } from "../../molecules/quantityBox";
-// import { Sizes } from "../../atoms/sizes";
 import { useParams } from "react-router-dom";
 import { productDetail } from "../../api/api";
-import { CartContext } from '../../Contexts/cart.context'
-
-
+import { CartContext } from "../../Contexts/cart.context";
+import { WishlistContext } from "../../Contexts/wishlist.context";
 
 const ProductDetails = () => {
   let { productId } = useParams();
@@ -16,19 +13,21 @@ const ProductDetails = () => {
     description: "",
     price: null,
     thumbnail: "",
-    brand: '',
-    categoryId: '',
+    brand: "",
+    categoryId: "",
     id: null,
     quantity: null,
   });
-  const { saveCartItem } = useContext(CartContext)
+  const { saveCartItem } = useContext(CartContext);
   useEffect(() => {
     productDetail(productId).then((response) => {
       setProductData(response["data"]);
-
     });
   }, []);
   const addProductToCart = () => saveCartItem(productData);
+  const { saveWishlistItem } = useContext(WishlistContext);
+  const addProductToWishlist = () => saveWishlistItem(productData);
+
   return (
     <>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 py-16">
@@ -39,7 +38,8 @@ const ProductDetails = () => {
                 <div className="mb-4 flex items-center justify-center">
                   <img
                     src={productData.thumbnail}
-                    alt="productImage" width="400"
+                    alt="productImage"
+                    width="400"
                   />
                 </div>
               </div>
@@ -53,10 +53,7 @@ const ProductDetails = () => {
               {productData.category}
             </p>
 
-            {/* <h5 className="mb-2 text-theme-neutral text-md">Quantity</h5>
-            <div className="mb-4">
-              <QuantityBox />
-            </div> */}
+            <h5 className="mb-2 text-theme-neutral text-md">Quantity</h5>
 
             <h5 className="mb-2 text-theme-neutral text-md">Description</h5>
             <div className="product-descriptiom">
@@ -79,6 +76,7 @@ const ProductDetails = () => {
                 <Button
                   variant="primary"
                   className="block w-full px-3 py-2 uppercase h-38"
+                  onClick={addProductToWishlist}
                 >
                   Wishlist
                 </Button>
@@ -97,7 +95,7 @@ const ProductDetails = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
 export default ProductDetails;

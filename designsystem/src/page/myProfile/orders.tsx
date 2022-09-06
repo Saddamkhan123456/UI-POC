@@ -38,9 +38,8 @@ const Orders = () => {
                           cartItem={item}
                           cartCard={false}
                           imgSize={true}
-                          showRemove={true}
-                          qty={true}
-                        />
+                          showRemove={false}
+                          qty={true} isCartItem={false}                        />
                       );
                     })}
                   </div>
