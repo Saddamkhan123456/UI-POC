@@ -16,9 +16,9 @@ const ProductBrandPage = () => {
   }, []);
 
   return (
-    <>
+    <div className="flex flex-col items-center">
       <Banner pageHeading={brandId} />
-      <div className="flex flex-col p-3">
+      <div className="flex flex-col p-3 container">
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {brandData &&
             brandData
@@ -34,7 +34,7 @@ const ProductBrandPage = () => {
               })}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
