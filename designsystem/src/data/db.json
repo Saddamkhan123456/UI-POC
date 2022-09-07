@@ -386,6 +386,77 @@
       ],
       "orderTotal": 3486,
       "id": 7
+    },
+    {
+      "firstName": "jyoti",
+      "lastName": "Thakre",
+      "phoneNumber": "09340678276",
+      "email": "thakrejyoti120@gmail.com",
+      "checkoutItems": [
+        {
+          "id": 3,
+          "title": "Full Sleeve Colorblock Men Casual Jacket",
+          "price": 4600,
+          "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+          "categoryId": "men",
+          "brand": "nike",
+          "thumbnail": "https://rukminim1.flixcart.com/image/880/1056/k0wqwsw0/jacket/s/a/t/s-9690931-mast-harbour-original-imafkh5qgkzdzh67.jpeg?q=50",
+          "quantity": 3
+        },
+        {
+          "id": 2,
+          "title": "Men Regular Fit Solid Mandarin Collar Casual Shirt ",
+          "price": 1560,
+          "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
+          "categoryId": "men",
+          "brand": "nike",
+          "thumbnail": "https://rukminim1.flixcart.com/image/880/1056/kz3118w0/shirt/e/d/q/m-cz-den-ch-01-cazzba-original-imagb65yqff6cfh9.jpeg?q=50",
+          "quantity": 3
+        }
+      ],
+      "orderTotal": 21526,
+      "id": 8
+    },
+    {
+      "firstName": "riyar",
+      "lastName": "thakre",
+      "phoneNumber": "09340678276",
+      "email": "riya@gmail.com",
+      "checkoutItems": [
+        {
+          "id": 3,
+          "title": "Full Sleeve Colorblock Men Casual Jacket",
+          "price": 4600,
+          "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+          "categoryId": "men",
+          "brand": "nike",
+          "thumbnail": "https://rukminim1.flixcart.com/image/880/1056/k0wqwsw0/jacket/s/a/t/s-9690931-mast-harbour-original-imafkh5qgkzdzh67.jpeg?q=50",
+          "quantity": 3
+        },
+        {
+          "id": 2,
+          "title": "Men Regular Fit Solid Mandarin Collar Casual Shirt ",
+          "price": 1560,
+          "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
+          "categoryId": "men",
+          "brand": "nike",
+          "thumbnail": "https://rukminim1.flixcart.com/image/880/1056/kz3118w0/shirt/e/d/q/m-cz-den-ch-01-cazzba-original-imagb65yqff6cfh9.jpeg?q=50",
+          "quantity": 3
+        },
+        {
+          "id": 10,
+          "title": "Teal Blue Solid Accordian Pleat Ruffles Saree with Embroidered Blousep",
+          "price": 1295,
+          "description": "Teal blue ruffle accordion pleat saree.",
+          "category": "women's clothing",
+          "categoryId": "women",
+          "brand": "nike",
+          "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/13843398/2021/4/19/1847ce50-4f55-4bad-aaf0-de8a2b31fbbf1618820819735-Inddus-Teal-Blue-Solid-Ruffle-Accordion-Pleat-Saree-71616188-1.jpg",
+          "quantity": 1
+        }
+      ],
+      "orderTotal": 23101,
+      "id": 9
     }
   ]
 }

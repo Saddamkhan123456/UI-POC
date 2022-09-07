@@ -42,6 +42,7 @@
     "react-tooltip": "^4.2.21",
     "tinycolor2": "^1.4.2",
     "typescript": "^4.1.2",
+    "uuid": "^9.0.0",
     "web-vitals": "^1.0.1"
   },
   "scripts": {

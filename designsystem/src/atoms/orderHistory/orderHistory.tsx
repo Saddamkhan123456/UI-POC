@@ -1,4 +1,4 @@
-
+import { v4 as uuidv4 } from 'uuid';
 import { HTMLAttributes } from "react";
 
 export interface OrderHistoryProps extends HTMLAttributes<HTMLElement> {
@@ -15,7 +15,7 @@ export const OrderHistory = ({ orderId, totalAmount }: OrderHistoryProps) => {
           <h6 className="text-sm text-theme-neutral10 mb-2 font-semibold">
             Order Id
           </h6>
-          <p className="text-xs text-theme-neutral55">{orderId}</p>
+          <p className="text-xs text-theme-neutral55">{uuidv4()}</p>
         </div>
         <div className="ml-3 mr-0">
           <h6 className="text-sm text-theme-neutral10 mb-2 font-semibold">
