@@ -30,7 +30,7 @@ export const CategoryCard = ({
           CardPropsSets.map((CardPropsSet: any) => {
             return (
               <Card key={CardPropsSet.id} className={`p-3 cursor-pointer ${className}`}>
-                <Link to={`/product/${category}/${CardPropsSet.type}`}>
+                <Link to={`/product/${category}/${CardPropsSet.type.toLowerCase()}`}>
                   <CardBody className=" ">
                     <h2 className="font-bold mb-1 text-xl text-theme-white capitalize">
                       {CardPropsSet.type}
