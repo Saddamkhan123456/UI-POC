@@ -13,7 +13,7 @@ function withOpacity(variableName) {
 const tColors = {
   neutral: "#111827",
   neutral100: "#fefefe",
-  primaryBrand: "#36797F",
+  primaryBrand: "#4DACB4",
   primaryFlexBlue70: "#005589",
   primaryFlexBlue60: "#007ECC",
   supportGreen: "#88CD43",
