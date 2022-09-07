@@ -19,7 +19,7 @@ export const CardComponent = ({ CardData }: CardProps) => {
   return (
     <>
       <>
-        <Card className="product-card bg-transparent justify-around group box-border overflow-hidden flex rounded-md cursor-pointer pe-0 mb-2 flex-col items-start transition duration-200 ease-in-out transform hover:-translate-y-1 hover:md:-translate-y-1.5 hover:shadow-lg ">
+        <Card className="product-card group box-border overflow-hidden flex rounded-md cursor-pointer pe-0 mb-2 flex-col items-start transition duration-200 ease-in-out transform hover:-translate-y-1 hover:md:-translate-y-1.5 hover:shadow-lg ">
           <div className="mb-3 md:mb-3.5 flex w-full justify-center">
             <Link
               to={`/product/${CardData.id}`}
@@ -43,9 +43,9 @@ export const CardComponent = ({ CardData }: CardProps) => {
                   {CardData.description}
                 </p>
                 <h3 className="text-theme-neutral line-clamp-2 text-xs capitalize">
-                  {CardData.category}
+                  {CardData.categoryId}
                 </h3>
-                <div className="text-theme-neutral">{CardData.brand}</div>
+                <div className="text-theme-neutral capitalize">{CardData.brand}</div>
               </div>
               <div className="ml-2 text-right">
                 <div className="text-theme-neutral">${CardData.price}</div>
