@@ -59,7 +59,6 @@
       "title": "Boys Blue Regular Fit Mid Rise Heavy Fade Stretchable Jeans",
       "price": 1600,
       "description": "Dark shade, heavy fade blue jeans Regular fit, mid-rise ",
-      "category": "kids's clothing",
       "categoryId": "kids",
       "brand": "nike",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/14803378/2022/6/4/55a56c2f-a2a9-4dc2-ae6f-afcf01d34fff1654324501832-YK-Boys-Blue-Regular-Fit-Mid-Rise-Heavy-Fade-Stretchable-Jea-1.jpg",
@@ -95,7 +94,6 @@
       "title": "Teal Blue Solid Accordian Pleat Ruffles Saree with Embroidered Blousep",
       "price": 1295,
       "description": "Teal blue ruffle accordion pleat saree.",
-      "category": "women's clothing",
       "categoryId": "women",
       "brand": "nike",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/13843398/2021/4/19/1847ce50-4f55-4bad-aaf0-de8a2b31fbbf1618820819735-Inddus-Teal-Blue-Solid-Ruffle-Accordion-Pleat-Saree-71616188-1.jpg"
@@ -114,7 +112,6 @@
       "title": "Black Ruched Bodycon Dress",
       "price": 99.99,
       "description": "Black solid knitted bodycon dress with tie-ups detail, has shoulder straps, sleeveless, and straight hem",
-      "category": "women's clothing",
       "categoryId": "women",
       "brand": "wrangler",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/10054821/2019/7/3/db52fd6a-19fc-4add-bc4b-77b8608454d01562138455279-Veni-Vidi-Vici-Women-Black-Bodycon-Dress-3841562138453419-1.jpg"
@@ -169,7 +166,6 @@
       "title": "Men Black Skinny Fit Mid-Rise Clean Look Stretchable Jeans",
       "price": 1599,
       "description": "Black dark wash 5-pocket mid-rise jeans, clean look, light fade, has a button and zip closure, and waistband with belt loops",
-      "category": "men's clothing",
       "categoryId": "men",
       "brand": "wrangler",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/18450002/2022/5/27/e7824c56-7434-4c27-b606-58ef32c284b51653649541979Jeans1.jpg"
@@ -179,7 +175,6 @@
       "title": "Men Green & White Solid Kurta with Churidar",
       "price": 1255,
       "description": "Green and white solid kurta with churidar Green and white straight knee length kurta, has a mandarin collar, long sleeves, straight hem Green and white solid churidar, drawstring closure Comes with a nehru jacket",
-      "category": "men's clothing",
       "categoryId": "men",
       "brand": "wrangler",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2019/12/13/c464f92d-c08d-472c-8b9e-48616bf737131576191650979-1.jpg"
@@ -252,6 +247,7 @@
       "title": "Women Blue Cotton Sporty Jacket",
       "price": 1899,
       "description": "Blue solid sporty jacket, has a mock collar, 2 pockets ,has a zip closure, long sleeves, straight hemline, cotton lining",
+      "categoryId": "women",
       "brand": "wrangler",
       "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16562046/2021/12/20/682f7ea3-e488-4be8-be51-2328d2b951e31640000070821Jackets1.jpg"
     },
