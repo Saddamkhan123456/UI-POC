@@ -30,65 +30,61 @@ const ProductDetails = () => {
 
   return (
     <>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 py-16">
-        <div className="flex flex-col md:flex-row -mx-4">
-          <div className="md:flex-1 px-4">
-            <div>
-              <div className="mb-4">
-                <div className="mb-4 flex items-center justify-center">
-                  <img
-                    src={productData.thumbnail}
-                    alt="productImage"
-                    width="400"
-                  />
-                </div>
+      <div className="flex flex-col p-3 container mx-auto">
+        <div className="flex flex-col md:flex-row ">
+          <div className="md:flex-1 mt-4">
+            <div className="mb-4 flex items-center justify-center px-6">
+              <div className="w-full h-full aspect-square">
+                <img
+                  src={productData.thumbnail}
+                  alt="productImage"
+                  className="bg-gray-300 w-full h-full object-top object-cover lg:w-full lg:h-full"
+                />
               </div>
             </div>
           </div>
-          <div className="md:flex-1 px-4">
-            <h1 className="mb-2 text-theme-neutral capitalize text-2xl md:text-3xl">
-              {productData.title}
-            </h1>
-            <p className="mb-4 text-theme-neutral25 capitalize">
-              {productData.category}
-            </p>
-
-            <h5 className="mb-2 text-theme-neutral text-md">Quantity</h5>
-
-            <h5 className="mb-2 text-theme-neutral text-md">Description</h5>
-            <div className="product-descriptiom">
-              <p className="mb-4 text-theme-neutral25">
-                {productData.description}
+          <div className="md:flex-1  mt-4 px-6">
+            <div className="max-w-lg">
+              <h1 className="mb-2 text-theme-neutral capitalize text-2xl ">
+                {productData.title}
+              </h1>
+              <p className="mb-4 text-theme-neutral25 capitalize">
+                {productData.brand}
               </p>
-            </div>
+              <div className="product-descriptiom">
+                <p className="mb-4 text-theme-neutral25 font-light text-lg">
+                  {productData.description}
+                </p>
+              </div>
 
-            <div className="flex items-center space-x-4 my-4">
-              <div>
-                <div className="rounded-lg flex">
-                  <span className="text-theme-neutral mr-1 mt-1 text-3xl font-bold">
-                    &#8377;{productData.price}
-                  </span>
+              <div className="flex items-center space-x-4 my-4">
+                <div>
+                  <div className="rounded-lg flex">
+                    <span className="text-theme-neutral mr-1 mt-1 text-2xl font-bold">
+                      &#8377;{productData.price}
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="flex items-center  pb-4 ">
-              <div className="w-1/2 md:w-1/3 mr-2">
-                <Button
-                  variant="primary"
-                  className="block w-full px-3 py-2 uppercase h-38"
-                  onClick={addProductToWishlist}
-                >
-                  Wishlist
-                </Button>
-              </div>
-              <div className="w-1/2 md:w-1/3 ml-2">
-                <Button
-                  variant="secondary"
-                  className="block w-full px-3 py-2 uppercase h-38"
-                  onClick={addProductToCart}
-                >
-                  Add to cart
-                </Button>
+              <div className="flex items-center  pb-4 ">
+                <div className="w-1/2 md:w-1/3 mr-2">
+                  <Button
+                    variant="primary"
+                    className="block w-full px-3 py-2 uppercase h-38"
+                    onClick={addProductToWishlist}
+                  >
+                    Wishlist
+                  </Button>
+                </div>
+                <div className="w-1/2 md:w-1/3 ml-2">
+                  <Button
+                    variant="secondary"
+                    className="block w-full px-3 py-2 uppercase h-38"
+                    onClick={addProductToCart}
+                  >
+                    Add to cart
+                  </Button>
+                </div>
               </div>
             </div>
           </div>

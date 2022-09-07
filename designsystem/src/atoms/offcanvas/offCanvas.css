@@ -24,6 +24,9 @@
   height: 100%;
   width: 100%;
   pointer-events: all;
+  background-color: #fff;
+  overflow: auto;
+
 }
 
 .panel-container-left-enter {
