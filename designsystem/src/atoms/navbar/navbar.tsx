@@ -32,7 +32,7 @@ export const Navbar = ({
 
   return (
     <>
-      <nav className="relative w-full flex flex-wrap items-center justify-between py-4 bg-theme-neutral hover:text-theme-neutral80 focus:text-theme-neutral80 shadow-lg navbar navbar-expand-lg navbar-light">
+      <nav className="relative w-full flex flex-wrap items-center justify-between py-2 bg-theme-primary navbar navbar-expand-lg">
         <div className="container-fluid w-full flex flex-wrap items-center justify-between px-3 relative">
           <div className="flex items-center">
             <a
@@ -49,8 +49,8 @@ export const Navbar = ({
                     href={item.href}
                     className={classNames(
                       item.current
-                        ? "bg-theme-neutral15 text-white"
-                        : "text-white hover:bg-theme-neutral15 hover:text-white",
+                        ? "bg-theme-white text-theme-primary active:bg-theme-white active:text-theme-primary"
+                        : "text-white active:bg-theme-white active:text-theme-primary hover:bg-theme-white hover:text-theme-primary",
                       "px-3 py-2 rounded-md text-sm font-medium"
                     )}
                     aria-current={item.current ? "page" : undefined}
@@ -124,13 +124,13 @@ export const Navbar = ({
               </span>
             </Link>
             <Link
-              className="w-10 h-10 rounded-full border flex items-center justify-center text-white hover:text-theme-neutral80 focus:text-theme-neutral80 mr-1  hidden-arrow flex items-center"
+              className="w-8 h-8 rounded-full border-2 shrink-0 flex items-center justify-center text-white hover:text-theme-neutral80 focus:text-theme-neutral80 mr-1  hidden-arrow flex items-center"
               to="/my-profile"
             >
               <img
                 src="https://mdbootstrap.com/img/new/avatars/2.jpg"
                 alt=""
-                className="w-10 h-10 rounded-full"
+                className="w-8 h-8 rounded-full"
                 loading="lazy"
               />
             </Link>
