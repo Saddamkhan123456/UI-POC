@@ -32,13 +32,13 @@ const MyProfile = () => {
       </Tab>
       <div className="flex-grow">
         <TabPane
-          className="p-4 flex items-center h-full flex-col overflow-auto"
+          className="p-4 flex items-center justify-center flex-col overflow-auto h-100"
           active={active === 1}
         >
           <Account name={""} lastName={""} email={""} phoneNumber={""} />
         </TabPane>
         <TabPane
-          className="p-4 flex items-center h-full flex-col overflow-auto"
+          className="p-4 flex items-center justify-center flex-col overflow-auto h-100"
           active={active === 2}
         >
           <Orders />
