@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Banner } from "../../atoms/banner";
 import { useParams } from "react-router-dom";
 import { allProducts } from "../../api/api";
@@ -26,9 +26,7 @@ const ProductBrandPage = () => {
               .map((cardData: any) => {
                 return (
                   <>
-                    <CardComponent
-                      CardData={cardData}
-                    />
+                    <CardComponent CardData={cardData} />
                   </>
                 );
               })}

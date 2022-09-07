@@ -1,4 +1,3 @@
-
 import { CategoryCard } from "../../molecules/categoryCard";
 import { categoryData, brandCategoryData } from "../../constants/constants";
 import CarouselComponent from "../../atoms/carousal/carousal";
@@ -9,18 +8,20 @@ const HomePage = () => {
       <div className="flex flex-col items-center">
         <CarouselComponent />
         <div className="container">
-          <div className="mb-4 ">
+          <div className="my-8">
             <CategoryCard
               category="category"
               CardPropsSets={categoryData}
-              className="bg-theme-neutral"
+              className="relative"
+              isCategoryShow={true}
             />
           </div>
-          <div className="mb-4">
+          <div className="my-8">
             <CategoryCard
               category="brand"
               CardPropsSets={brandCategoryData}
-              className="bg-theme-neutral55"
+              className="relative border rounded-lg"
+              isCategoryShow={false}
             />
           </div>
         </div>

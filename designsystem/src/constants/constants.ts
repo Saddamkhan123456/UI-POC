@@ -8,24 +8,25 @@ export const categoryData: CardPropsSets[] = [
   {
     id: 1,
     image:
-      "https://images.unsplash.com/photo-1589212987511-4a924cb9d8ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
+      "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/w_441,c_limit/c804f931-0c54-4be7-b286-f0e0f9fca67b/nike-just-do-it.png",
     type: "women",
     link: '/product/category',
   },
   {
     id: 2,
     image:
-      "https://images.unsplash.com/photo-1559582798-678dfc71ccd8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
+      "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/w_441,c_limit/2af56a34-7459-48de-82cf-60a848ff063d/nike-just-do-it.png",
     type: "men",
     link: '/product/category',
   },
   {
     id: 3,
     image:
-      "https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=789&q=80",
+      "https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/w_441,c_limit/35bd3be8-6283-4ff8-b057-12b9d54d87fe/nike-just-do-it.png",
     type: "kids",
     link: '/product/category',
   },
+ 
 ];
 
 export const brandCategoryData: CardPropsSets[] = [
@@ -44,4 +45,5 @@ export const brandCategoryData: CardPropsSets[] = [
     image: "https://1000logos.net/wp-content/uploads/2021/06/Wrangler-logo.png",
     type: "Wrangler",
   },
+  
 ];
