@@ -11,7 +11,7 @@ function withOpacity(variableName) {
   };
 }
 const tColors = {
-  neutral: "#111827",
+  neutral: "#18191A",
   neutral100: "#fefefe",
   primaryBrand: "#4DACB4",
   primaryFlexBlue70: "#005589",
@@ -139,6 +139,7 @@ module.exports = {
       fontFamily: {
         sans: "'Roboto', sans-serif",
       },
+      important: true,
     },
   },
   variants: {

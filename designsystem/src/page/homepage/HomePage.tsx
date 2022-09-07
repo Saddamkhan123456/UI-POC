@@ -1,4 +1,3 @@
-
 import { CategoryCard } from "../../molecules/categoryCard";
 import { categoryData, brandCategoryData } from "../../constants/constants";
 import CarouselComponent from "../../atoms/carousal/carousal";
@@ -13,14 +12,14 @@ const HomePage = () => {
             <CategoryCard
               category="category"
               CardPropsSets={categoryData}
-              className="bg-theme-neutral"
+              className="bg-theme-neutral75 rounded-lg"
             />
           </div>
           <div className="mb-4">
             <CategoryCard
               category="brand"
               CardPropsSets={brandCategoryData}
-              className="bg-theme-neutral55"
+              className="bg-theme-neutral75 rounded-lg"
             />
           </div>
         </div>

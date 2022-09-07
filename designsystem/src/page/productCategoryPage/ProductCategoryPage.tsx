@@ -24,7 +24,6 @@ const ProductCategoryPage = () => {
               .map((cardData: any) => {
                 return (
                   <>
-                    
                     <CardComponent CardData={cardData} />
                   </>
                 );
