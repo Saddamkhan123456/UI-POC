@@ -19,8 +19,8 @@ export const CardComponent = ({ CardData }: CardProps) => {
   return (
     <>
       <>
-        <Card className="product-card group box-border overflow-hidden flex rounded-md cursor-pointer pe-0 mb-2 flex-col items-start transition duration-200 ease-in-out transform hover:-translate-y-1 hover:md:-translate-y-1.5 hover:shadow-lg ">
-          <div className="mb-3 md:mb-3.5 flex w-full justify-center">
+        <Card className="product-card justify-between group box-border overflow-hidden flex rounded-md cursor-pointer pe-0 mb-2 flex-col items-start transition duration-200 ease-in-out transform hover:-translate-y-1 hover:md:-translate-y-1.5 hover:shadow-lg ">
+          <div className="flex w-full justify-center">
             <Link
               to={`/product/${CardData.id}`}
               className="w-full min-h-80 aspect-w-1 aspect-h-1 lg:h-80 lg:aspect-none"
@@ -33,23 +33,31 @@ export const CardComponent = ({ CardData }: CardProps) => {
               />
             </Link>
           </div>
-          <div className="rounded-b-md p-2">
+          <div className="rounded-b-md p-4 w-full">
             <div className="flex flex-col">
               <div className=" flex-grow">
-                <h2 className="text-base line-clamp leading-non">
-                  {CardData.title}
-                </h2>
-                <p className="text-theme-neutral line-clamp-2 text-sm">
+                <div className="flex flex-row justify-between">
+                  <h2 className="text-base line-clamp font-normal text-theme-neutralGray leading-non">
+                    {CardData.title}
+                  </h2>
+                  <div className="ml-6 text-right text-theme-primary font-bold">
+                    ${CardData.price}
+                  </div>
+                </div>
+
+                <div className="flex flex-row justify-between mt-1 mb-1">
+                  <h3 className="text-theme-neutralGray line-clamp-2 text-xs capitalize">
+                    {CardData.category}
+                  </h3>
+                  <div className="text-theme-neutralGray line-clamp-2 text-xs font-semibold capitalize">
+                    {CardData.brand}
+                  </div>
+                </div>
+                <p className="line-clamp-2 text-sm text-theme-neutralGray mt-3 mb-1 h-10">
                   {CardData.description}
                 </p>
-                <h3 className="text-theme-neutral line-clamp-2 text-xs capitalize">
-                  {CardData.categoryId}
-                </h3>
-                <div className="text-theme-neutral capitalize">{CardData.brand}</div>
               </div>
-              <div className="ml-2 text-right">
-                <div className="text-theme-neutral">${CardData.price}</div>
-              </div>
+              <div className="ml-2 text-right"></div>
               <div className="flex justify-center items-center mt-2">
                 <div className="w-1/2 mr-2">
                   <Button

@@ -20,6 +20,9 @@ const tColors = {
   supportBlue: "#4072F6",
   supportYellow: "#F7BF16",
   supportRed: "#FF4935",
+  neutralGray: "#515151",
+  neutralGrayLight: "#F1F2F2",
+  neutralGray300: "#BCBFC1",
 };
 
 module.exports = {
@@ -116,6 +119,10 @@ module.exports = {
           info: tColors.supportBlue,
           white: tColors.neutral100,
           dark: tColors.neutral,
+          neutralGray: tColors.neutralGray,
+          neutralGrayLight: tColors.neutralGrayLight,
+          neutralGray300: tColors.neutralGray300,
+          
 
           hover: tColors.neutralLighter10,
           btnHover: tinyColor(tColors.primaryBrand)
