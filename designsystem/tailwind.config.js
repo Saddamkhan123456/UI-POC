@@ -11,7 +11,7 @@ function withOpacity(variableName) {
   };
 }
 const tColors = {
-  neutral: "#111827",
+  neutral: "#18191A",
   neutral100: "#fefefe",
   primaryBrand: "#36797F",
   primaryFlexBlue70: "#005589",
