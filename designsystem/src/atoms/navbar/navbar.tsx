@@ -110,7 +110,6 @@ export const Navbar = ({
                                     qty={true}
                                     addToCart={() => saveCartItem(item)}
                                     deleteItem={() => flushWishlistItem(item)}
-                                    
                                   />
                                 );
                               })}
@@ -121,8 +120,6 @@ export const Navbar = ({
                             </>
                           )}
                         </div>
-
-                       
                       </CardBody>
                     </Card>
                   </>
