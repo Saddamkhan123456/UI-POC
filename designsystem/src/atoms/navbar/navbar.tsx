@@ -9,6 +9,7 @@ import { CartContext } from "../../Contexts/cart.context";
 import { WishlistContext } from "../../Contexts/wishlist.context";
 import { useContext } from "react";
 import ItemCard from "../shoppingCart/itemCard";
+import EmptyShoppingCart from "../emptyShoppingCart/emptyShoppingCart";
 
 export interface NavbarProps extends HTMLAttributes<HTMLElement> {
   collapsed?: boolean;
@@ -82,10 +83,10 @@ export const Navbar = ({
                 props={undefined}
                 children={
                   <>
-                    <Card className="h-full px-4">
-                      <CardBody className="p-3 ">
-                        <div className="flex justify-between">
-                          <h1 className="text-3xl font-black mb-3">Wishlist</h1>
+                    <Card className="h-full flex flex-col">
+                      <CardBody className="h-full flex flex-col">
+                        <div className="flex justify-between p-4 border-b items-center mb-4">
+                          <h2 className="text-theme-neutral font-semibold text-2xl">Wishlist</h2>
                           <div
                             className="cursor-pointer"
                             onClick={() => setOpen(!open)}
@@ -94,20 +95,30 @@ export const Navbar = ({
                           </div>
                         </div>
 
-                        {wishlistItems.map((item) => {
-                          return (
-                            <ItemCard
-                              key={item.id}
-                              cartItem={item}
-                              cartCard={true}
-                              imgSize={false}
-                              isQuantityShow={false}
-                              isCartItem={false}
-                              addToCart={() => saveCartItem(item)}
-                              deleteItem={() => flushWishlistItem(item)}
-                            />
-                          );
-                        })}
+                        <div className="h-full flex flex-col">
+                          {wishlistItems && wishlistItems.length > 0 ? (
+                            <div className="px-4">
+                              {wishlistItems.map((item) => {
+                                return (
+                                  <ItemCard
+                                    key={item.id}
+                                    cartItem={item}
+                                    cartCard={false}
+                                    imgSize={false}
+                                    isQuantityShow={false}
+                                    isCartItem={false}
+                                    addToCart={() => saveCartItem(item)}
+                                    deleteItem={() => flushWishlistItem(item)}
+                                  />
+                                );
+                              })}
+                            </div>
+                          ) : (
+                            <>
+                              <EmptyShoppingCart />
+                            </>
+                          )}
+                        </div>
                       </CardBody>
                     </Card>
                   </>

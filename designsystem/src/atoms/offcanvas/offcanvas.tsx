@@ -32,7 +32,7 @@ export const OffCanvasComponent = ({
       panelContainerClassName={panelContainerClassName}
       noBackdrop={noBackdrop}
     >
-      <div className="panel-container">{props.children}</div>
+      <div className="panel-container h-full flex flex-col">{props.children}</div>
     </SlidingPanel>
   );
 };
