@@ -43,7 +43,7 @@ export const CardComponent = ({ CardData }: CardProps) => {
                   {CardData.description}
                 </p>
                 <h3 className="text-theme-neutral line-clamp-2 text-xs capitalize">
-                  {CardData.categoryId}
+                  {CardData.category}
                 </h3>
                 <div className="text-theme-neutral capitalize">{CardData.brand}</div>
               </div>
