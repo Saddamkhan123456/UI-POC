@@ -41,7 +41,7 @@ export const CardComponent = ({ CardData }: CardProps) => {
                     {CardData.title}
                   </h2>
                   <div className="ml-6 text-right text-theme-primary font-bold">
-                    ${CardData.price}
+                  &#8377;{CardData.price}
                   </div>
                 </div>
 
