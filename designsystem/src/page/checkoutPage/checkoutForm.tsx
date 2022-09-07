@@ -4,7 +4,7 @@ import { createUser } from "../../api/api";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { CartContext } from "../../Contexts/cart.context";
-
+import { v4 as uuidv4 } from 'uuid';
 export interface checkoutFormProps {
   id?: number;
   firstName?: string;
@@ -37,6 +37,7 @@ const CheckoutForm = ({}: checkoutFormProps) => {
     email: "",
     checkoutItems: [],
     orderTotal : 0,
+    id:uuidv4(),
   });
 
   const handleInput = (e) => {
