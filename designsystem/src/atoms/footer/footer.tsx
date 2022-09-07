@@ -17,10 +17,10 @@ export const Footer = ({ ...props }: FooterProps) => {
             <Icon kind="logo" size={40} className="text-theme-white" />
           </span>
           <div className="text-center text-sm text-theme-white">
-            <span>© 2022 Copyright : </span>
-            <a className="text-sm text-theme-white font-semibold" href="">
+            <span>© 2022 Copyright</span>
+            {/* <a className="text-sm text-theme-white font-semibold" href="">
               Brand
-            </a>
+            </a> */}
           </div>
         </div>
       </footer>

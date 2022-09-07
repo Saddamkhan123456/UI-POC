@@ -8,18 +8,20 @@ const HomePage = () => {
       <div className="flex flex-col items-center">
         <CarouselComponent />
         <div className="container">
-          <div className="mb-4 ">
+          <div className="my-8">
             <CategoryCard
               category="category"
               CardPropsSets={categoryData}
-              className="bg-theme-neutral75 rounded-lg"
+              className="relative"
+              isCategoryShow={true}
             />
           </div>
-          <div className="mb-4">
+          <div className="my-8">
             <CategoryCard
               category="brand"
               CardPropsSets={brandCategoryData}
-              className="bg-theme-neutral75 rounded-lg"
+              className="relative border rounded-lg"
+              isCategoryShow={false}
             />
           </div>
         </div>

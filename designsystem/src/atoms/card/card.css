@@ -16,7 +16,10 @@
       0 2px 4px -2px rgba(0, 0, 0, 0.1);
   }
 
-  .category-card.card-body {
-    @apply h-full p-0 flex items-center justify-center;
+  .card-heading {
+    position: absolute;
+    bottom: 50px;
+    left: 30px;
+    border-radius: 50px;
   }
 }

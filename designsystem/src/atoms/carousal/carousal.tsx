@@ -8,7 +8,7 @@ const CarouselComponent = () => {
   //   navigate("/product");
   // };
   return (
-    <div className="my-4">
+    <div className="my-8">
       <Carousel
         axis="horizontal"
         autoPlay={true}
@@ -40,7 +40,7 @@ const CarouselComponent = () => {
         <Link to="/product" className="cursor-pointer">
           <img
             alt="banner img"
-            src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/25/179e278f-77ee-44c2-bf39-9f00b0cd08e01658752429301-Handbags_Desk.jpg"
+            src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/25/9be788ff-39a4-4214-99d0-fc97505aae5a1658752545685-USPA_Desk_Banner.jpg"
             className="object-cover"
           />
           {/* <p className="legend">Kids</p> */}
