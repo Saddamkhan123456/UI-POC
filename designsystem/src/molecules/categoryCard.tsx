@@ -34,7 +34,7 @@ export const CategoryCard = ({
             return (
               <Card
                 key={CardPropsSet.id}
-                className={`p-3 cursor-pointer category-card ${className}`}
+                className={`cursor-pointer ${className}`}
               >
                 <Link
                   to={`/product/${category}/${CardPropsSet.type.toLowerCase()}`}
