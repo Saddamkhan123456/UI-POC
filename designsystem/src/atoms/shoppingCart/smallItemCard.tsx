@@ -7,15 +7,9 @@ export interface SmallItemCardProps extends React.HTMLAttributes<HTMLElement> {
   cartItem?: any;
   cartCard?: boolean;
   imgSize?: boolean;
-  
 }
 
-const SmallItemCard = ({
-  cartItem,
-  cartCard,
-  imgSize,
-  
-}: SmallItemCardProps) => {
+const SmallItemCard = ({ cartItem, cartCard, imgSize }: SmallItemCardProps) => {
   const { title, thumbnail, quantity, price } = cartItem;
   return (
     <Card className={classnames(cartCard ? "border rounded flex px-4" : "")}>
@@ -38,7 +32,9 @@ const SmallItemCard = ({
               <h3 className="mr-1">
                 <a className="font-normal text-sm line-clamp-2"> {title} </a>
               </h3>
-              <p className="font-semibold ml-1 text-sm text-theme-neutral">&#8377;{price}</p>
+              <p className="font-semibold ml-1 text-sm text-theme-neutral">
+                &#8377;{price}
+              </p>
             </div>
 
             <div className="flex flex-1 items-end justify-between text-sm">
