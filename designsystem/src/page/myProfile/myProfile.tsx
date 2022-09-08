@@ -12,7 +12,7 @@ const MyProfile = () => {
   };
   return (
     <div className="h-full flex w-full">
-      <Tab className="flex-col left-nav product-card">
+      <Tab className="flex-col left-nav card-shadow">
         <TabItem
           variant="primary"
           onClick={() => handleTabChange(1)}
