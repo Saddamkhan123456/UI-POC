@@ -83,9 +83,9 @@ export const Navbar = ({
                 props={undefined}
                 children={
                   <>
-                    <Card className="h-full px-4">
-                      <CardBody className="p-3 ">
-                        <div className="flex justify-between border-b pb-3 mb-3 items-center">
+                    <Card className="h-full">
+                      <CardBody className="">
+                        <div className="flex justify-between border-b p-4 mb-3 items-center">
                           <h1 className="text-xl font-black">Wishlist</h1>
                           <Icon
                             className="cursor-pointer"
@@ -104,10 +104,13 @@ export const Navbar = ({
                                     cartItem={item}
                                     cartCard={false}
                                     imgSize={false}
-                                    isQuantityShow={false}
+                                    isQuantityShow={true}
                                     isCartItem={false}
+                                    showRemove={true}
+                                    qty={true}
                                     addToCart={() => saveCartItem(item)}
                                     deleteItem={() => flushWishlistItem(item)}
+                                    
                                   />
                                 );
                               })}
@@ -119,21 +122,7 @@ export const Navbar = ({
                           )}
                         </div>
 
-                        {wishlistItems.map((item) => {
-                          return (
-                            <ItemCard
-                              key={item.id}
-                              cartItem={item}
-                              cartCard={true}
-                              imgSize={false}
-                              isQuantityShow={false}
-                              isCartItem={false}
-                              addToCart={() => saveCartItem(item)}
-                              deleteItem={() => flushWishlistItem(item)}
-                              showRemove={true}
-                            />
-                          );
-                        })}
+                       
                       </CardBody>
                     </Card>
                   </>

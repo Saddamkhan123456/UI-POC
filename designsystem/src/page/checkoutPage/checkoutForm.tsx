@@ -1,4 +1,4 @@
-import  { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import { Card, CardBody, Button } from "design-system";
 import { createUser } from "../../api/api";
 import { useNavigate } from "react-router-dom";
@@ -11,6 +11,7 @@ export interface checkoutFormProps {
   lastName?: string;
   phoneNumber?: number;
   email?: string;
+  address?: string;
 }
 
 const CheckoutForm = ({}: checkoutFormProps) => {
@@ -20,10 +21,14 @@ const CheckoutForm = ({}: checkoutFormProps) => {
     watch,
     formState: { errors },
   } = useForm<checkoutFormProps>();
-  const {cartItems , orderTotal} = useContext(CartContext)
+  const { cartItems, orderTotal } = useContext(CartContext);
   const handleEdit = (data: checkoutFormProps) => {
-    const newCheckoutData = {...chekoutData , checkoutItems : cartItems, orderTotal: orderTotal }
-    setChekoutData(newCheckoutData)
+    const newCheckoutData = {
+      ...chekoutData,
+      checkoutItems: cartItems,
+      orderTotal: orderTotal,
+    };
+    setChekoutData(newCheckoutData);
     createUser(newCheckoutData);
     navigate("/thankyou");
   }; // your form submit function which will invoke after successful validation
@@ -35,8 +40,9 @@ const CheckoutForm = ({}: checkoutFormProps) => {
     lastName: "",
     phoneNumber: "",
     email: "",
+    address: "",
     checkoutItems: [],
-    orderTotal : 0,
+    orderTotal: 0,
   });
 
   const handleInput = (e) => {
@@ -177,6 +183,30 @@ const CheckoutForm = ({}: checkoutFormProps) => {
                     {errors?.email?.type === "pattern" && (
                       <p className="mt-2 text-theme-danger">
                         enter valid email id
+                      </p>
+                    )}
+                  </div>
+                </div>
+                <div className="flex flex-col sm:flex-row sm:space-s-3 space-y-4 sm:space-y-0">
+                  <div className="w-full mr-3">
+                    <label className="block text-gray-600  text-sm leading-none mb-3 cursor-pointer">
+                      Address *
+                    </label>
+                    <textarea
+                    {...register("address", {
+                      required: true,
+                    })}
+                      name="address"
+                      id="address"
+                      placeholder="Address"
+                      value={chekoutData.address}
+                      onChange={handleInput}
+                      className="py-2 px-4 md:px-5 w-full appearance-none border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading"
+                      rows={7}
+                    ></textarea>
+                    {errors?.address?.type === "required" && (
+                      <p className="mt-2 text-theme-danger">
+                        This field is required
                       </p>
                     )}
                   </div>

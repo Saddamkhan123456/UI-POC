@@ -12,7 +12,7 @@ function App() {
         <WishlistProvider>
         <div className="flex flex-col h-full overflow-auto">
           <Navbar />
-          <div className="h-full overflow-auto flex flex-col h-full">
+          <div className="h-full overflow-auto flex flex-col">
             <RouteConfig />
             <Footer />
           </div>

@@ -56,7 +56,7 @@ const ItemCard = ({
           <div className="w-full flex flex-col">
             <div className="flex justify-between text-base text-theme-neutral flex-col md:flex-row">
               <h3 className="mr-1">
-                <a className="font-medium line-clamp-2"> {title} </a>
+                <a className="font-normal text-medium line-clamp-2"> {title} </a>
                 <p className="mt-1 mb-2 text-sm text-theme-neutral55 font-normal capitalize">
                   {brand}
                 </p>
@@ -67,19 +67,17 @@ const ItemCard = ({
             <div className="flex flex-1 items-end justify-between text-sm">
               <div className={classnames(isQuantityShow ? "flex" : "hidden")}>
                 <div className="mr-1 flex gap-0.5">
-                  {qty ? (
-                    <p className="text-gray-500">{quantity}</p>
-                  ) : (
+                  {qty ? <p className="text-theme-neutralGray">
+                    Qty: {quantity}
+                  </p> :
                     <>
-                      <span onClick={removeItem} className="cursor-pointer">
-                        &#8592;
-                      </span>
-                      <p className="text-gray-500">{quantity}</p>
-                      <span onClick={addItem} className="cursor-pointer">
-                        &#8594;
-                      </span>
+                      <span onClick={removeItem} className="cursor-pointer">&#8592;</span>
+                      <p className="text-theme-neutralGray">
+                        {quantity}
+                      </p>
+                      <span onClick={addItem} className="cursor-pointer">&#8594;</span>
                     </>
-                  )}
+                  }
                 </div>
               </div>
 
