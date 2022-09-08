@@ -14,10 +14,9 @@ export interface ShoppingCartProps extends React.HTMLAttributes<HTMLElement> {
   deleteItem?: () => void;
   addToCart?: () => void;
   addToWishlist?: () => void;
-  showRemove?: boolean,
-  qty?: boolean,
+  showRemove?: boolean;
+  qty?: boolean;
 }
-
 
 const ItemCard = ({
   cartItem,
@@ -30,12 +29,17 @@ const ItemCard = ({
   removeItem,
   deleteItem,
   addToCart,
-  addToWishlist, qty
+  addToWishlist,
+  qty,
 }: ShoppingCartProps) => {
   const { title, thumbnail, brand, quantity, price } = cartItem;
   return (
-    <Card className={classnames(cartCard ? "border rounded flex px-4" : "")}>
-      <CardBody className="p-3 flex w-full">
+    <Card
+      className={classnames(
+        cartCard ? "border rounded flex px-4 pt-4" : "px-4 pt-4"
+      )}
+    >
+      <CardBody className="p-0 pb-0 flex w-full">
         <div
           className={
             classnames(imgSize ? "cart-image h-24 w-24 " : "h-36 w-36 ") +
@@ -48,9 +52,9 @@ const ItemCard = ({
             className="h-full w-full object-cover object-top"
           />
         </div>
-        <div className="lg:ml-4 sm:ml-0  flex flex-1 ">
+        <div className="ml-3 flex flex-1 ">
           <div className="w-full flex flex-col">
-            <div className="flex justify-between text-base text-theme-neutral  lg:mt-0  mt-2 flex-col md:flex-row">
+            <div className="flex justify-between text-base text-theme-neutral flex-col md:flex-row">
               <h3 className="mr-1">
                 <a className="font-normal text-medium line-clamp-2"> {title} </a>
                 <p className="mt-1 mb-2 text-sm text-theme-neutral55 font-normal capitalize">
@@ -73,20 +77,21 @@ const ItemCard = ({
                       </p>
                       <span onClick={addItem} className="cursor-pointer">&#8594;</span>
                     </>
-
                   }
                 </div>
               </div>
 
               <div className="flex ml-1">
-                {showRemove && <Button
-                  variant="secondary"
-                  size="small"
-                  onClick={deleteItem}
-                  className="font-medium text-theme-primary hover:text-theme-primary p-0 mr-2"
-                >
-                  <Icon kind="delete" size={16} />
-                </Button>}
+                {showRemove && (
+                  <Button
+                    variant="secondary"
+                    size="small"
+                    onClick={deleteItem}
+                    className="font-medium text-theme-primary hover:text-theme-primary p-0 mr-2"
+                  >
+                    <Icon kind="delete" size={16} />
+                  </Button>
+                )}
                 <>
                   {isCartItem ? (
                     <Button
