@@ -13,13 +13,13 @@ const CheckoutPage = () => {
       <h1 className="mb-3 text-theme-neutral capitalize text-2xl mt-4">Checkout</h1>
       <div className="flex py-8">
         <div className="flex flex-col md:flex-row w-full overflow-auto">
-          <div className="lg:w-2/3 sm:w-full">
+          <div className="lg:w-3/5 sm:w-full">
             
             <div className="w-full">
               <CheckoutForm />
             </div>
           </div>
-          <div className="lg:w-1/3 md:w-1/3 sm:w-full">
+          <div className="lg:w-2/5 md:w-1/3 sm:w-full">
             <div className="lg:px-6 sm:px-2  w-full">
               <OrderSummary showShoppingCart={true} isCheckout={false} />
             </div>
