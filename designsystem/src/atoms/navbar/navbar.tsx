@@ -73,7 +73,7 @@ export const Navbar = ({
               >
                 <div>
                   <Icon kind="wishlist" size={20} />
-                  <span className=" w-4 h-4 text-white bg-red-700 absolute rounded-full text-xs -mt-7 ml-2 py-0 px-1.5">
+                  <span className="badge-count text-white bg-red-700 absolute rounded-full text-xs -mt-7 ml-2 py-0 px-1.5">
                     {wishlistCount}
                   </span>
                 </div>
@@ -137,7 +137,7 @@ export const Navbar = ({
               to="/shopping-cart"
             >
               <Icon kind="cart" size={20}></Icon>
-              <span className=" w-4 h-4 text-white bg-red-700 absolute rounded-full text-xs -mt-5 ml-3 py-0 px-1.5">
+              <span className="badge-count text-white bg-red-700 absolute rounded-full text-xs -mt-5 ml-3 py-0 px-1.5">
                 {cartCount}
               </span>
             </Link>
