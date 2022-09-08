@@ -30,6 +30,7 @@ export const Navbar = ({
   const [isCollapsed, setIsCollapsed] = React.useState(collapsed);
   const { cartCount, saveCartItem } = React.useContext(CartContext);
   const { wishlistItems, flushWishlistItem } = useContext(WishlistContext);
+  const { wishlistCount, saveWishlistItem } = useContext(WishlistContext);
 
   return (
     <>
@@ -70,7 +71,12 @@ export const Navbar = ({
                 onClick={() => setOpen(!open)}
                 className="cursor-pointer text-white"
               >
-                Wishlist
+                <div>
+                  <Icon kind="wishlist" size={20} />
+                  <span className=" w-4 h-4 text-white bg-red-700 absolute rounded-full text-xs -mt-7 ml-2 py-0 px-1.5">
+                    {wishlistCount}
+                  </span>
+                </div>
               </div>
               <OffCanvasComponent
                 onClose={(e: any) => setOpen(!open)}
@@ -131,7 +137,7 @@ export const Navbar = ({
               to="/shopping-cart"
             >
               <Icon kind="cart" size={20}></Icon>
-              <span className=" w-4 h-4 text-white bg-red-700 absolute rounded-full text-xs -mt-2 ml-2 py-0 px-1.5">
+              <span className=" w-4 h-4 text-white bg-red-700 absolute rounded-full text-xs -mt-5 ml-3 py-0 px-1.5">
                 {cartCount}
               </span>
             </Link>
