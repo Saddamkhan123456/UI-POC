@@ -83,18 +83,17 @@ export const Navbar = ({
                 props={undefined}
                 children={
                   <>
-                    <Card className="h-full flex flex-col">
-                      <CardBody className="h-full flex flex-col">
-                        <div className="flex justify-between p-4 border-b items-center mb-4">
-                          <h2 className="text-theme-neutral font-semibold text-2xl">Wishlist</h2>
-                          <div
+                    <Card className="h-full px-4">
+                      <CardBody className="p-3 ">
+                        <div className="flex justify-between border-b pb-3 mb-3 items-center">
+                          <h1 className="text-xl font-black">Wishlist</h1>
+                          <Icon
                             className="cursor-pointer"
+                            kind="close"
                             onClick={() => setOpen(!open)}
-                          >
-                            <Icon kind="close" size={16} />
-                          </div>
+                            size={12}
+                          />
                         </div>
-
                         <div className="h-full flex flex-col">
                           {wishlistItems && wishlistItems.length > 0 ? (
                             <div className="px-4">
@@ -119,6 +118,22 @@ export const Navbar = ({
                             </>
                           )}
                         </div>
+
+                        {wishlistItems.map((item) => {
+                          return (
+                            <ItemCard
+                              key={item.id}
+                              cartItem={item}
+                              cartCard={true}
+                              imgSize={false}
+                              isQuantityShow={false}
+                              isCartItem={false}
+                              addToCart={() => saveCartItem(item)}
+                              deleteItem={() => flushWishlistItem(item)}
+                              showRemove={true}
+                            />
+                          );
+                        })}
                       </CardBody>
                     </Card>
                   </>
@@ -135,7 +150,7 @@ export const Navbar = ({
               </span>
             </Link>
             <Link
-              className="w-8 h-8 rounded-full border-2 shrink-0 flex items-center justify-center text-white hover:text-theme-neutral80 focus:text-theme-neutral80 mr-1  hidden-arrow flex items-center"
+              className="w-8 h-8 rounded-full flex items-center justify-center text-white hover:text-theme-neutral80 focus:text-theme-neutral80 mr-1  hidden-arrow flex items-center"
               to="/my-profile"
             >
               <img

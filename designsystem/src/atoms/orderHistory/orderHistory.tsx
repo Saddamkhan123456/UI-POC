@@ -1,4 +1,3 @@
-
 import { HTMLAttributes } from "react";
 
 export interface OrderHistoryProps extends HTMLAttributes<HTMLElement> {
@@ -7,10 +6,9 @@ export interface OrderHistoryProps extends HTMLAttributes<HTMLElement> {
 }
 
 export const OrderHistory = ({ orderId, totalAmount }: OrderHistoryProps) => {
- 
   return (
     <>
-      <div className="flex p-4 border-b mb-2">
+      <div className="flex p-4 border-b">
         <div className="ml-0 mr-3">
           <h6 className="text-sm text-theme-neutral10 mb-2 font-semibold">
             Order Id

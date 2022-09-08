@@ -48,7 +48,7 @@ const Account = ({}: IFormInput) => {
   };
   return (
     <>
-      <Card className="grow flex h-full w-1/2 items-center justify-center">
+      <Card className="grow flex h-full w-1/2">
         <CardBody className="w-full">
           <h2 className="text-lg md:text-xl xl:text-2xl font-bold text-heading mb-6 xl:mb-8">
             Account Details
@@ -192,7 +192,7 @@ const Account = ({}: IFormInput) => {
 
               <Button
                 variant="primary"
-                className="cursor-pointer mr-2 uppercase"
+                className="cursor-pointer uppercase"
                 type="submit"
                 // onClick={onSubmit}
               >

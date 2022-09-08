@@ -11,8 +11,8 @@ const MyProfile = () => {
     setActiveTab(tabIndex);
   };
   return (
-    <div className="grow h-full p-4">
-      <Tab>
+    <div className="h-full flex w-full">
+      <Tab className="flex-col left-nav product-card">
         <TabItem
           variant="primary"
           onClick={() => handleTabChange(1)}
@@ -30,25 +30,20 @@ const MyProfile = () => {
           {"Orders"}
         </TabItem>
       </Tab>
-      <TabPane
-        className=" mt-4 p-4 flex items-center justify-center flex-col"
-        active={active === 1}
-      >
-        <Account name={""} lastName={""} email={""} phoneNumber={""} />
-      </TabPane>
-      <TabPane
-        className=" mt-4 p-4 flex items-center justify-center flex-col"
-        active={active === 2}
-      >
-       <Orders />
-       
-      </TabPane>
-      <TabPane
-        className=" mt-4 p-4 flex items-center justify-center flex-col"
-        active={active === 3}
-      >
-        Tab content 3
-      </TabPane>
+      <div className="flex-grow">
+        <TabPane
+          className="p-4 flex items-center h-full flex-col overflow-auto"
+          active={active === 1}
+        >
+          <Account name={""} lastName={""} email={""} phoneNumber={""} />
+        </TabPane>
+        <TabPane
+          className="p-4 flex items-center h-full flex-col overflow-auto"
+          active={active === 2}
+        >
+          <Orders />
+        </TabPane>
+      </div>
     </div>
   );
 };
