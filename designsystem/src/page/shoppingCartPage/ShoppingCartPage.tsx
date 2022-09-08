@@ -27,6 +27,7 @@ const ShoppingCartPage = () => {
                         imgSize={false}
                         isQuantityShow={true}
                         isCartItem={true}
+                        showRemove={true}
                         addItem={() => saveCartItem(item)}
                         removeItem={() => deleteCartItem(item)}
                         deleteItem={() => flushCartItem(item)}

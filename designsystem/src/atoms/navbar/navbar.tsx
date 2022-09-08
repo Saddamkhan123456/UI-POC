@@ -105,10 +105,13 @@ export const Navbar = ({
                                     cartItem={item}
                                     cartCard={false}
                                     imgSize={false}
-                                    isQuantityShow={false}
+                                    isQuantityShow={true}
                                     isCartItem={false}
+                                    showRemove={true}
+                                    qty={true}
                                     addToCart={() => saveCartItem(item)}
                                     deleteItem={() => flushWishlistItem(item)}
+                                    
                                   />
                                 );
                               })}

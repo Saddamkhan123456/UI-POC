@@ -64,7 +64,7 @@ const ItemCard = ({
               <div className={classnames(isQuantityShow ? "flex" : "hidden")}>
                 <div className="mr-1 flex gap-0.5">
                   {qty ? <p className="text-theme-neutralGray">
-                    {quantity}
+                    Qty: {quantity}
                   </p> :
                     <>
                       <span onClick={removeItem} className="cursor-pointer">&#8592;</span>
