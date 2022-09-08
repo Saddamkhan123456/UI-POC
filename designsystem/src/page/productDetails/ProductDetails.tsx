@@ -30,10 +30,10 @@ const ProductDetails = () => {
 
   return (
     <>
-      <div className="flex flex-col container mx-auto">
+      <div className="flex flex-col container mx-auto py-4 h-full">
         <div className="flex flex-col md:flex-row ">
-          <div className="md:flex-1 mt-4">
-            <div className="mb-4 flex items-center justify-center px-6">
+          <div className="md:flex-1">
+            <div className="flex items-center justify-center px-6">
               <div className="w-full h-full aspect-square">
                 <img
                   src={productData.thumbnail}
