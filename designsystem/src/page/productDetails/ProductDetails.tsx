@@ -30,7 +30,7 @@ const ProductDetails = () => {
 
   return (
     <>
-      <div className="flex flex-col p-3 container mx-auto">
+      <div className="flex flex-col container mx-auto">
         <div className="flex flex-col md:flex-row ">
           <div className="md:flex-1 mt-4">
             <div className="mb-4 flex items-center justify-center px-6">
