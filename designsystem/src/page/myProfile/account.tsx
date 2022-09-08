@@ -48,11 +48,11 @@ const Account = ({}: IFormInput) => {
   };
   return (
     <>
-      <Card className="grow flex h-full w-1/2">
+      <h2 className="text-xl capitalize leading-none pb-4 mb-4 border-b w-full font-medium">
+        Account Details
+      </h2>
+      <Card className="grow flex p-4 mt-4 w-1/2 card-shadow">
         <CardBody className="w-full">
-          <h2 className="text-lg md:text-xl xl:text-2xl font-bold text-heading mb-6 xl:mb-8">
-            Account Details
-          </h2>
           <form
             onSubmit={handleSubmit(handleEdit)}
             className="w-full mx-auto flex flex-col justify-center "

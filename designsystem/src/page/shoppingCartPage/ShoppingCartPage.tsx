@@ -3,17 +3,21 @@ import { OrderSummary } from "../../atoms/orderSummary";
 import ItemCard from "../../atoms/shoppingCart/itemCard";
 import { useContext } from "react";
 import { CartContext } from "../../Contexts/cart.context";
-import {WishlistContext} from '../../Contexts/wishlist.context'
+import { WishlistContext } from "../../Contexts/wishlist.context";
 import EmptyShoppingCart from "../../atoms/emptyShoppingCart/emptyShoppingCart";
 
 const ShoppingCartPage = () => {
-  const { cartItems , saveCartItem , deleteCartItem , flushCartItem } = useContext(CartContext);
-  const {saveWishlistItem} = useContext(WishlistContext)
+  const { cartItems, saveCartItem, deleteCartItem, flushCartItem } = useContext(
+    CartContext
+  );
+  const { saveWishlistItem } = useContext(WishlistContext);
   return (
-    <div className="flex flex-col p-3 container mx-auto">
-      <h1 className="text-3xl font-black mb-3">Shopping Cart</h1>
+    <div className="flex flex-col container mx-auto py-4">
+      <h1 className="text-xl capitalize leading-none pb-4 mb-4 border-b font-medium">
+        Shopping Cart
+      </h1>
       {cartItems && cartItems.length > 0 ? (
-          <div className="flex py-8">
+        <div className="flex pb-5">
           <div className="flex flex-col md:flex-row w-full">
             <div className="lg:w-2/3 sm:w-full">
               <div className="w-full">
@@ -46,8 +50,7 @@ const ShoppingCartPage = () => {
         </div>
       ) : (
         <EmptyShoppingCart />
-      ) }
-    
+      )}
     </div>
   );
 };

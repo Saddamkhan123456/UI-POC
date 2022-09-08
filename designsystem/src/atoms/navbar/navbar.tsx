@@ -92,7 +92,9 @@ export const Navbar = ({
                     <Card className="h-full">
                       <CardBody className="">
                         <div className="flex justify-between border-b p-4 mb-3 items-center">
-                          <h1 className="text-xl font-black">Wishlist</h1>
+                          <h1 className="text-xl capitalize leading-none font-medium">
+                            Wishlist
+                          </h1>
                           <Icon
                             className="cursor-pointer"
                             kind="close"

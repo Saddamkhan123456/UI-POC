@@ -19,7 +19,7 @@ export const CardComponent = ({ CardData }: CardProps) => {
   return (
     <>
       <>
-        <Card className="product-card justify-between group box-border overflow-hidden flex rounded-md cursor-pointer pe-0 mb-2 flex-col items-start transition duration-200 ease-in-out transform hover:-translate-y-1 hover:md:-translate-y-1.5 hover:shadow-lg ">
+        <Card className="card-shadow justify-between group box-border overflow-hidden flex rounded-md cursor-pointer pe-0 mb-2 flex-col items-start transition duration-200 ease-in-out transform hover:-translate-y-1 hover:md:-translate-y-1.5 hover:shadow-lg ">
           <div className="flex w-full justify-center">
             <Link
               to={`/product/${CardData.id}`}
@@ -41,7 +41,7 @@ export const CardComponent = ({ CardData }: CardProps) => {
                     {CardData.title}
                   </h2>
                   <div className="ml-6 text-right text-theme-primary font-bold">
-                  &#8377;{CardData.price}
+                    &#8377;{CardData.price}
                   </div>
                 </div>
 
