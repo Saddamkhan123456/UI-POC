@@ -4,6 +4,7 @@ import { Button, Hr } from "design-system";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../Contexts/cart.context";
 import * as React from "react";
+import SmallItemCard from "../shoppingCart/smallItemCard";
 
 export interface OrderSummaryProps extends HTMLAttributes<HTMLElement> {
   isCheckout?: boolean;
@@ -26,20 +27,21 @@ export const OrderSummary = ({
     <div className="flex p-8 flex-col bg-theme-neutral85 rounded-sm">
       <h2 className=" pb-3 mb-4 ">Order Summary</h2>
       <Hr />
-      {/* {showShoppingCart ? (
+      {showShoppingCart ? (
         <>
         <div className="h-full d-flex max-h-64 overflow-scroll "> 
         {cartItems.map((item) => {
-                return (<ItemCard
+                return ( <SmallItemCard
                   key={item.id}
                   cartItem= {item}
-                  cartCard={false} imgSize={false}  showRemove={false}              
+                  cartCard={false} imgSize={true}   
+                            
                   />)
               })}
         </div></>
       ) : (
         ""
-      )} */}
+      )}
       <div className="flex justify-between py-3 border-b border-theme-neutral80 ">
         <div className="text-theme-neutral55 text-sm">Subtotal:</div>
         <div className="text-theme-neutral10 text-sm ">&#8377;{cartTotal}</div>
@@ -70,5 +72,6 @@ export const OrderSummary = ({
         ""
       )}
     </div>
+   
   );
 };

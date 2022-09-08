@@ -16,21 +16,20 @@ const Orders = () => {
   }, []);
   return (
     <>
-      <div className="grow flex flex-col h-full lg:w-1/2 md:w-full items-center justify-center">
+      <div className="grow flex flex-col h-full w-4/5 items-center">
         <h2 className="text-lg md:text-xl xl:text-2xl font-bold text-heading mb-6  w-full">
           Order History
         </h2>
-        <div className="w-full flex flex-col overflow-auto max-h-45">
-        {ordersData.map((data) => {
-          return (
-            <>
-              <Card className="border rounded-md w-full mb-4">
-                <CardBody className="w-full">
+        <div className="w-full flex flex-col">
+          {ordersData.map((data) => {
+            return (
+              <>
+                <Card className="border rounded-md w-full mb-4">
                   <OrderHistory
                     orderId={data.id}
                     totalAmount={data.orderTotal}
                   />
-                  <div className="px-4">
+                  <div className="">
                     {data.checkoutItems.map((item) => {
                       return (
                         <ItemCard
@@ -39,14 +38,16 @@ const Orders = () => {
                           cartCard={false}
                           imgSize={true}
                           showRemove={false}
-                          qty={true} isCartItem={false}                        />
+                          qty={true}
+                          isCartItem={false}
+                        />
                       );
                     })}
                   </div>
-                </CardBody>
-              </Card>
-            </>
-        );})}
+                </Card>
+              </>
+            );
+          })}
         </div>
       </div>
     </>

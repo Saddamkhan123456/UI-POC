@@ -9,34 +9,17 @@ const CheckoutPage = () => {
   const { cartItems , saveCartItem , deleteCartItem , flushCartItem } = React.useContext(CartContext);
   const {saveWishlistItem} = React.useContext(WishlistContext)
   return (
-    <div className="p-6 lg:p-6 sm:p-3 overflow-auto">
-      <h1 className="text-3xl font-black mb-3">Checkout</h1>
+    <div className="flex flex-col p-3 container mx-auto">
+      <h1 className="mb-3 text-theme-neutral capitalize text-2xl mt-4">Checkout</h1>
       <div className="flex py-8">
         <div className="flex flex-col md:flex-row w-full overflow-auto">
-          <div className="lg:w-2/3 sm:w-full">
-            <div className="w-full mt-8">
-              {cartItems.map((item) => {
-                return (
-                  <ItemCard
-                      key={item.id}
-                      cartItem={item}
-                      cartCard={false}
-                      imgSize={false}
-                      isQuantityShow={true}
-                      isCartItem={true}
-                      addItem={() => saveCartItem(item)}
-                      removeItem={() => deleteCartItem(item)}
-                      deleteItem={() => flushCartItem(item)}
-                      addToWishlist={() => saveWishlistItem(item)}
-                    />
-                );
-              })}
-            </div>
+          <div className="lg:w-3/5 sm:w-full">
+            
             <div className="w-full">
               <CheckoutForm />
             </div>
           </div>
-          <div className="lg:w-1/3 md:w-1/3 sm:w-full">
+          <div className="lg:w-2/5 md:w-1/3 sm:w-full">
             <div className="lg:px-6 sm:px-2  w-full">
               <OrderSummary showShoppingCart={true} isCheckout={false} />
             </div>

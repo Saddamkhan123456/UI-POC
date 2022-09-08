@@ -20,7 +20,7 @@ const HomePage = () => {
             <CategoryCard
               category="brand"
               CardPropsSets={brandCategoryData}
-              className="relative border rounded-lg"
+              className="relative border rounded-lg p-4"
               isCategoryShow={false}
             />
           </div>
