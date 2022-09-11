@@ -32,9 +32,7 @@ const SmallItemCard = ({ cartItem, cartCard, imgSize }: SmallItemCardProps) => {
               <h3 className="mr-1">
                 <a className="font-normal text-sm line-clamp-2"> {title} </a>
               </h3>
-              <p className="font-semibold ml-1 text-sm text-theme-neutral">
-                &#8377;{price}
-              </p>
+              <p className="font-semibold ml-1 text-sm text-theme-neutral">&#8377;{price}</p>
             </div>
 
             <div className="flex flex-1 items-end justify-between text-sm">

@@ -16,7 +16,7 @@ const tColors = {
   primaryBrand: "#4DACB4",
   primaryFlexBlue70: "#005589",
   primaryFlexBlue60: "#007ECC",
-  supportGreen: "#88CD43",
+  supportGreen: "#4CC24F",
   supportBlue: "#4072F6",
   supportYellow: "#F7BF16",
   supportRed: "#FF4935",

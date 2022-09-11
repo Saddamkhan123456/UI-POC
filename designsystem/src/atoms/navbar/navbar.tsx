@@ -118,6 +118,7 @@ export const Navbar = ({
                                     qty={true}
                                     addToCart={() => saveCartItem(item)}
                                     deleteItem={() => flushWishlistItem(item)}
+                                    
                                   />
                                 );
                               })}

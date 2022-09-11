@@ -58,7 +58,7 @@ const CheckoutForm = ({}: checkoutFormProps) => {
 
   return (
     <>
-      <Card className="flex h-full items-center justify-center w-4/5">
+      <Card className="flex h-full items-center justify-center w-full">
         <CardBody className="w-full flex p-0">
           <div className="w-full flex flex-col">
             <form
@@ -217,7 +217,7 @@ const CheckoutForm = ({}: checkoutFormProps) => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row sm:space-s-3 space-y-4 sm:space-y-0">
-                  <div className="w-full  mr-3">
+                  <div className="w-full ">
                     <Button
                       variant="primary"
                       className="cursor-pointer w-full font-semi"

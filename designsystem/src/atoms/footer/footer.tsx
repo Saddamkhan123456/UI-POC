@@ -11,7 +11,7 @@ export const Footer = ({ ...props }: FooterProps) => {
 
   return (
     <>
-      <footer className="p-4 text-center bg-theme-primary flex flex-col justify-center items-center">
+      <footer className="p-4 text-center bg-theme-primary flex flex-col justify-center items-center mt-auto">
         <div className="flex items-center">
           <span>
             <Icon kind="logo" size={20} className="text-theme-white" />
