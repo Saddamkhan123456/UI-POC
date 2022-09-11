@@ -4,7 +4,8 @@ import { createUser } from "../../api/api";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { CartContext } from "../../Contexts/cart.context";
-
+import { OrderContext } from "../../Contexts/order.context";
+import { v4 as uuidv4 } from 'uuid';
 export interface checkoutFormProps {
   id?: number;
   firstName?: string;
@@ -22,6 +23,7 @@ const CheckoutForm = ({}: checkoutFormProps) => {
     formState: { errors },
   } = useForm<checkoutFormProps>();
   const { cartItems, orderTotal } = useContext(CartContext);
+  const { setOrderId } = useContext(OrderContext);
   const handleEdit = (data: checkoutFormProps) => {
     const newCheckoutData = {
       ...chekoutData,
@@ -29,6 +31,7 @@ const CheckoutForm = ({}: checkoutFormProps) => {
       orderTotal: orderTotal,
     };
     setChekoutData(newCheckoutData);
+    setOrderId(chekoutData.id)
     createUser(newCheckoutData);
     navigate("/thankyou");
   }; // your form submit function which will invoke after successful validation
@@ -42,7 +45,8 @@ const CheckoutForm = ({}: checkoutFormProps) => {
     email: "",
     address: "",
     checkoutItems: [],
-    orderTotal: 0,
+    orderTotal : 0,
+    id:uuidv4(),
   });
 
   const handleInput = (e) => {
@@ -54,7 +58,7 @@ const CheckoutForm = ({}: checkoutFormProps) => {
 
   return (
     <>
-      <Card className="w-full flex h-full items-center justify-center">
+      <Card className="flex h-full items-center justify-center w-4/5">
         <CardBody className="w-full flex p-0">
           <div className="w-full flex flex-col">
             <form
@@ -98,7 +102,7 @@ const CheckoutForm = ({}: checkoutFormProps) => {
                       </p>
                     )}
                   </div>
-                  <div className="w-full sm:w-1/2 mr-3">
+                  <div className="w-full sm:w-1/2">
                     <label className="block text-gray-600 text-sm leading-none mb-3 cursor-pointer">
                       Last Name *
                     </label>
@@ -158,7 +162,7 @@ const CheckoutForm = ({}: checkoutFormProps) => {
                       </p>
                     )}
                   </div>
-                  <div className="w-full sm:w-1/2 mr-3">
+                  <div className="w-full sm:w-1/2">
                     <label className="block text-gray-600 text-sm leading-none mb-3 cursor-pointer">
                       Email *
                     </label>
@@ -193,9 +197,9 @@ const CheckoutForm = ({}: checkoutFormProps) => {
                       Address *
                     </label>
                     <textarea
-                    {...register("address", {
-                      required: true,
-                    })}
+                      {...register("address", {
+                        required: true,
+                      })}
                       name="address"
                       id="address"
                       placeholder="Address"

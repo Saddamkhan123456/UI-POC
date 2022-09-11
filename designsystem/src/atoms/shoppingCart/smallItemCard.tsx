@@ -7,15 +7,9 @@ export interface SmallItemCardProps extends React.HTMLAttributes<HTMLElement> {
   cartItem?: any;
   cartCard?: boolean;
   imgSize?: boolean;
-  
 }
 
-const SmallItemCard = ({
-  cartItem,
-  cartCard,
-  imgSize,
-  
-}: SmallItemCardProps) => {
+const SmallItemCard = ({ cartItem, cartCard, imgSize }: SmallItemCardProps) => {
   const { title, thumbnail, quantity, price } = cartItem;
   return (
     <Card className={classnames(cartCard ? "border rounded flex px-4" : "")}>

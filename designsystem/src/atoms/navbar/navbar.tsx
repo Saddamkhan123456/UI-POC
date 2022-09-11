@@ -30,6 +30,7 @@ export const Navbar = ({
   const [isCollapsed, setIsCollapsed] = React.useState(collapsed);
   const { cartCount, saveCartItem } = React.useContext(CartContext);
   const { wishlistItems, flushWishlistItem } = useContext(WishlistContext);
+  const { wishlistCount, saveWishlistItem } = useContext(WishlistContext);
 
   return (
     <>
@@ -70,7 +71,12 @@ export const Navbar = ({
                 onClick={() => setOpen(!open)}
                 className="cursor-pointer text-white"
               >
-                Wishlist
+                <div>
+                  <Icon kind="wishlist" size={20} />
+                  <span className="badge-count text-white bg-red-700 absolute rounded-full text-xs -mt-7 ml-2 py-0 px-1.5">
+                    {wishlistCount}
+                  </span>
+                </div>
               </div>
               <OffCanvasComponent
                 onClose={(e: any) => setOpen(!open)}
@@ -86,7 +92,9 @@ export const Navbar = ({
                     <Card className="h-full">
                       <CardBody className="">
                         <div className="flex justify-between border-b p-4 mb-3 items-center">
-                          <h1 className="text-xl font-black">Wishlist</h1>
+                          <h1 className="text-xl capitalize leading-none font-medium">
+                            Wishlist
+                          </h1>
                           <Icon
                             className="cursor-pointer"
                             kind="close"
@@ -121,8 +129,6 @@ export const Navbar = ({
                             </>
                           )}
                         </div>
-
-                       
                       </CardBody>
                     </Card>
                   </>
@@ -134,7 +140,7 @@ export const Navbar = ({
               to="/shopping-cart"
             >
               <Icon kind="cart" size={20}></Icon>
-              <span className=" w-4 h-4 text-white bg-red-700 absolute rounded-full text-xs -mt-2 ml-2 py-0 px-1.5">
+              <span className="badge-count text-white bg-red-700 absolute rounded-full text-xs -mt-5 ml-3 py-0 px-1.5">
                 {cartCount}
               </span>
             </Link>
