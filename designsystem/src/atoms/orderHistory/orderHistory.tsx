@@ -8,7 +8,7 @@ export interface OrderHistoryProps extends HTMLAttributes<HTMLElement> {
 export const OrderHistory = ({ orderId, totalAmount }: OrderHistoryProps) => {
   return (
     <>
-      <div className="flex p-4 border-b">
+      <div className="flex p-5 border-b">
         <div className="ml-0 mr-3">
           <h6 className="text-sm text-theme-neutral10 mb-2 font-semibold">
             Order Id

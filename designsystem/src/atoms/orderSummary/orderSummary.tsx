@@ -24,21 +24,26 @@ export const OrderSummary = ({
     CartContext
   );
   return (
-    <div className="flex p-8 flex-col bg-theme-neutral85 rounded-sm">
-      <h2 className=" pb-3 mb-4 ">Order Summary</h2>
-      <Hr />
+    <div className="flex p-3 flex-col bg-theme-neutral85 rounded-sm">
+      <h2 className="text-xl capitalize leading-none pb-4 mb-2 border-b font-medium">
+        Order Summary
+      </h2>
+
       {showShoppingCart ? (
         <>
-        <div className="h-full d-flex max-h-64 overflow-scroll "> 
-        {cartItems.map((item) => {
-                return ( <SmallItemCard
+          <div className="h-full d-flex max-h-64 overflow-scroll pr-3">
+            {cartItems.map((item) => {
+              return (
+                <SmallItemCard
                   key={item.id}
-                  cartItem= {item}
-                  cartCard={false} imgSize={true}   
-                            
-                  />)
-              })}
-        </div></>
+                  cartItem={item}
+                  cartCard={false}
+                  imgSize={true}
+                />
+              );
+            })}
+          </div>
+        </>
       ) : (
         ""
       )}
@@ -50,13 +55,9 @@ export const OrderSummary = ({
         <div className="text-theme-neutral55 text-sm">Tax estimate</div>
         <div className="text-theme-neutral10 text-sm">&#8377;{taxAmount}</div>
       </div>
-      <div className="flex justify-between py-3">
-        <div className="text-theme-neutral10 text-lg font-semibold">
-          Order Total
-        </div>
-        <div className="text-theme-neutral10 text-lg font-semibold">
-          &#8377;{orderTotal}
-        </div>
+      <div className="flex justify-between pt-3 text-md text-theme-neutral10 text-sm">
+        <p className="font-semibold">Order Total</p>
+        <p>&#8377;{orderTotal}</p>
       </div>
       {isCheckout ? (
         <div className="flex justify-between py-3">
@@ -72,6 +73,5 @@ export const OrderSummary = ({
         ""
       )}
     </div>
-   
   );
 };
