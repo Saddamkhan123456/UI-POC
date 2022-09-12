@@ -12,7 +12,7 @@ const ShoppingCartPage = () => {
   );
   const { saveWishlistItem } = useContext(WishlistContext);
   return (
-    <div className="flex flex-col container mx-auto py-4 h-full">
+    <div className="flex flex-col container mx-auto py-4 h-full px-1 md:px-0">
       <h1 className="text-xl capitalize leading-none pb-4 mb-4 border-b font-medium">
         Shopping Cart
       </h1>
