@@ -32,6 +32,7 @@ const CheckoutForm = (checkoutFormProps) => {
     setChekoutData(newCheckoutData);
     setOrderId(chekoutData.id);
     createUser(newCheckoutData);
+    localStorage.removeItem('cartItems')
     navigate("/thankyou");
   }; // your form submit function which will invoke after successful validation
 
