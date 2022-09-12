@@ -3,11 +3,11 @@ import Icon from "../icons/icon";
 
 export interface FooterProps extends HTMLAttributes<HTMLElement> {}
 export const Footer = ({ ...props }: FooterProps) => {
-  const product = [
-    { name: "Men", href: "/product/category/men" },
-    { name: "Women", href: "/product/category/women" },
-    { name: "Kids", href: "/product/category/kids" },
-  ];
+  // const product = [
+  //   { name: "Men", href: "/product/category/men" },
+  //   { name: "Women", href: "/product/category/women" },
+  //   { name: "Kids", href: "/product/category/kids" },
+  // ];
 
   return (
     <>
@@ -18,9 +18,6 @@ export const Footer = ({ ...props }: FooterProps) => {
           </span>
           <div className="text-center text-sm text-theme-white">
             <span>© 2022 Copyright</span>
-            {/* <a className="text-sm text-theme-white font-semibold" href="">
-              Brand
-            </a> */}
           </div>
         </div>
       </footer>

@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import * as React from "react";
 import { HTMLAttributes } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Card, CardBody } from "design-system";
 import Icon from "../icons/icon";
 import OffCanvasComponent from "../offcanvas/offcanvas";
@@ -20,8 +20,8 @@ export const Navbar = ({
   Closed,
   ...props
 }: NavbarProps) => {
+  const location = useLocation();
   const navigation = [
-    // { name: "Home", href: "/", current: true },
     { name: "Men", href: "/product/category/men", current: false },
     { name: "Women", href: "/product/category/women", current: false },
     { name: "Kids", href: "/product/category/kids", current: false },
@@ -30,7 +30,7 @@ export const Navbar = ({
   const [isCollapsed, setIsCollapsed] = React.useState(collapsed);
   const { cartCount, saveCartItem } = React.useContext(CartContext);
   const { wishlistItems, flushWishlistItem } = useContext(WishlistContext);
-  const { wishlistCount, saveWishlistItem } = useContext(WishlistContext);
+  const { wishlistCount } = useContext(WishlistContext);
 
   return (
     <>
@@ -50,10 +50,10 @@ export const Navbar = ({
                     key={index}
                     href={item.href}
                     className={classNames(
-                      item.current
+                      location.pathname === item.href
                         ? "bg-theme-white text-theme-primary active:bg-theme-white active:text-theme-primary"
-                        : "text-white active:bg-theme-white active:text-theme-primary hover:bg-theme-white hover:text-theme-primary",
-                      "px-3 py-2 rounded-md text-sm font-medium"
+                        : "text-white",
+                      "px-3 py-1 rounded-md text-sm font-medium"
                     )}
                     aria-current={item.current ? "page" : undefined}
                   >
@@ -118,7 +118,6 @@ export const Navbar = ({
                                     qty={true}
                                     addToCart={() => saveCartItem(item)}
                                     deleteItem={() => flushWishlistItem(item)}
-                                    
                                   />
                                 );
                               })}

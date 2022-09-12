@@ -24,10 +24,10 @@ export const CategoryCard = ({
 }: CardProps) => {
   return (
     <>
-      <h1 className="text-xl pb-3 border-b mb-5 capitalize leading-none">
+      <h1 className="text-xl pb-3 border-b mb-5 capitalize leading-none px-1 md:px-0">
         {category}
       </h1>
-      <div className="grid grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-3 gap-8 grid-cols-1">
         {CardPropsSets &&
           CardPropsSets.length > 0 &&
           CardPropsSets.map((CardPropsSet: any) => {

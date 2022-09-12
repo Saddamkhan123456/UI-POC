@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { CartContext } from "../../Contexts/cart.context";
+// import { CartContext } from "../../Contexts/cart.context";
 import { orderHistoryGet } from "../../api/api";
-import { Card, CardBody } from "design-system";
 import { OrderHistory } from "../../atoms/orderHistory/orderHistory";
 import ItemCard from "../../atoms/shoppingCart/itemCard";
 
 const Orders = () => {
-  const { cartItems } = React.useContext(CartContext);
+  // const { cartItems } = React.useContext(CartContext);
   const [ordersData, setOrdersData] = useState([]);
   useEffect(() => {
     orderHistoryGet().then((response) => {
