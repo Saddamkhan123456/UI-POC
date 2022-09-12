@@ -1,5 +1,5 @@
 import { HTMLAttributes } from "react";
-import { Button, Hr } from "design-system";
+import { Button } from "design-system";
 // import ItemCard from "../shoppingCart/itemCard";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../Contexts/cart.context";
@@ -73,6 +73,5 @@ export const OrderSummary = ({
         ""
       )}
     </div>
-   
   );
 };

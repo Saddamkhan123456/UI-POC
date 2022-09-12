@@ -10,7 +10,7 @@ interface IFormInput {
   phoneNumber?: string;
 }
 
-const Account = ({}: IFormInput) => {
+const Account = (IFormInput) => {
   const {
     register,
     handleSubmit,

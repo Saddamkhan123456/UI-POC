@@ -1,7 +1,6 @@
 import * as React from "react";
-import { Button, Card, CardBody } from "design-system";
+import { Card, CardBody } from "design-system";
 import classnames from "classnames";
-import Icon from "../icons/icon";
 
 export interface SmallItemCardProps extends React.HTMLAttributes<HTMLElement> {
   cartItem?: any;
@@ -30,9 +29,11 @@ const SmallItemCard = ({ cartItem, cartCard, imgSize }: SmallItemCardProps) => {
           <div className="w-full flex flex-col">
             <div className="flex justify-between  text-theme-neutral  lg:mt-0  mt-2 flex-col md:flex-row">
               <h3 className="mr-1">
-                <a className="font-normal text-sm line-clamp-2"> {title} </a>
+                <p className="font-normal text-sm line-clamp-2"> {title} </p>
               </h3>
-              <p className="font-semibold ml-1 text-sm text-theme-neutral">&#8377;{price}</p>
+              <p className="font-semibold ml-1 text-sm text-theme-neutral">
+                &#8377;{price}
+              </p>
             </div>
 
             <div className="flex flex-1 items-end justify-between text-sm">
