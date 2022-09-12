@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { CartContext } from "../../Contexts/cart.context";
 import { OrderContext } from "../../Contexts/order.context";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 export interface checkoutFormProps {
   id?: number;
   firstName?: string;
@@ -15,11 +15,10 @@ export interface checkoutFormProps {
   address?: string;
 }
 
-const CheckoutForm = ({}: checkoutFormProps) => {
+const CheckoutForm = (checkoutFormProps) => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm<checkoutFormProps>();
   const { cartItems, orderTotal } = useContext(CartContext);
@@ -31,7 +30,7 @@ const CheckoutForm = ({}: checkoutFormProps) => {
       orderTotal: orderTotal,
     };
     setChekoutData(newCheckoutData);
-    setOrderId(chekoutData.id)
+    setOrderId(chekoutData.id);
     createUser(newCheckoutData);
     navigate("/thankyou");
   }; // your form submit function which will invoke after successful validation
@@ -45,8 +44,8 @@ const CheckoutForm = ({}: checkoutFormProps) => {
     email: "",
     address: "",
     checkoutItems: [],
-    orderTotal : 0,
-    id:uuidv4(),
+    orderTotal: 0,
+    id: uuidv4(),
   });
 
   const handleInput = (e) => {

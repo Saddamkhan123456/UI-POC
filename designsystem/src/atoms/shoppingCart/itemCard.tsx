@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Button, Card, CardBody } from "design-system";
+import { Button, Card } from "design-system";
 import classnames from "classnames";
 import Icon from "../icons/icon";
 
@@ -55,7 +55,7 @@ const ItemCard = ({
         <div className="w-full flex flex-col">
           <div className="flex justify-between text-base text-theme-neutral flex-col md:flex-row">
             <h3 className="mr-1">
-              <a className="font-normal text-medium line-clamp-2"> {title} </a>
+              <p className="font-normal text-medium line-clamp-2">{title}</p>
               <p className="mt-1 mb-2 text-sm text-theme-neutral55 font-normal capitalize">
                 {brand}
               </p>
