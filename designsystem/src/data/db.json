@@ -472,6 +472,58 @@
       ],
       "orderTotal": 6600,
       "id": "00e1ac6a-74f6-4178-ab73-439fbf32d28b"
+    },
+    {
+      "firstName": "Abhishek",
+      "lastName": "Kumar",
+      "phoneNumber": "+918789999637",
+      "email": "singh004saab@gmail.com",
+      "address": "Pipra Chowk",
+      "checkoutItems": [
+        {
+          "id": 3,
+          "title": "Full Sleeve Colorblock Men Casual Jacket",
+          "price": 4600,
+          "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+          "category": "men's clothing",
+          "categoryId": "men",
+          "brand": "nike",
+          "thumbnail": "https://rukminim1.flixcart.com/image/880/1056/k0wqwsw0/jacket/s/a/t/s-9690931-mast-harbour-original-imafkh5qgkzdzh67.jpeg?q=50",
+          "quantity": 1
+        }
+      ],
+      "orderTotal": 4600,
+      "id": "c0a60c93-e295-4481-9881-77c6737380a9"
+    },
+    {
+      "firstName": "Abhishek",
+      "lastName": "Kumar",
+      "phoneNumber": "+918789999637",
+      "email": "singh004saab@gmail.com",
+      "address": "Pipra Chowk",
+      "checkoutItems": [
+        {
+          "id": 7,
+          "title": "Boys Blue Regular Fit Mid Rise Heavy Fade Stretchable Jeans",
+          "price": 1600,
+          "description": "Dark shade, heavy fade blue jeans Regular fit, mid-rise ",
+          "category": "kid's clothing",
+          "categoryId": "kids",
+          "brand": "nike",
+          "thumbnail": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/14803378/2022/6/4/55a56c2f-a2a9-4dc2-ae6f-afcf01d34fff1654324501832-YK-Boys-Blue-Regular-Fit-Mid-Rise-Heavy-Fade-Stretchable-Jea-1.jpg",
+          "images": [
+            "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+            "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+            "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+            "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg"
+          ],
+          "rating": 4.7,
+          "stock": 100,
+          "quantity": 1
+        }
+      ],
+      "orderTotal": 1600,
+      "id": "cf352a73-d9c9-4a8c-9365-322a2ac9813d"
     }
   ]
 }
