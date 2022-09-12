@@ -52,8 +52,8 @@ export const Navbar = ({
                     className={classNames(
                       location.pathname === item.href
                         ? "bg-theme-white text-theme-primary active:bg-theme-white active:text-theme-primary"
-                        : "text-white active:bg-theme-white active:text-theme-primary hover:bg-theme-white hover:text-theme-primary",
-                      "px-3 py-2 rounded-md text-sm font-medium"
+                        : "text-white",
+                      "px-3 py-1 rounded-md text-sm font-medium"
                     )}
                     aria-current={item.current ? "page" : undefined}
                   >
