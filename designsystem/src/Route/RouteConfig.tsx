@@ -7,12 +7,13 @@ import ShoppingCartPage from "../page/shoppingCartPage/ShoppingCartPage";
 import ThankYouPage from "../page/thankYouPage/ThankYouPage";
 import CheckoutPage from "../page/checkoutPage/CheckoutPage";
 import MyProfile from "../page/myProfile/myProfile";
+import {Pages} from "./Pages";
 
 export default function RouteConfig() {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/product/:productId" element={<ProductDetails />} />
+      <Route path={Pages.HOMEPAGE} element={<HomePage />} />
+      <Route path={Pages.PRODUCT_DETAIL} element={<ProductDetails />} />
       <Route
         path="/product/category/:categoryId"
         element={<ProductCategoryPage />}
@@ -21,8 +22,6 @@ export default function RouteConfig() {
       <Route path="/shopping-cart" element={<ShoppingCartPage />} />
       <Route path="/checkout" element={<CheckoutPage />} />
       <Route path="/thankyou" element={<ThankYouPage />} />
-
-      {/* <Route path="/my-profile" element={<Account />} /> */}
       <Route path="/my-profile" element={<MyProfile />} />
     </Routes>
   );

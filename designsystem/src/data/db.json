@@ -121,7 +121,7 @@
     {
       "id": 12,
       "title": "Black Ruched Bodycon Dress",
-      "price": 99.99,
+      "price": 1599,
       "description": "Black solid knitted bodycon dress with tie-ups detail, has shoulder straps, sleeveless, and straight hem",
       "category": "women's clothing",
       "categoryId": "women",
@@ -141,7 +141,7 @@
     {
       "id": 14,
       "title": "Men Maroon Regular Fit Solid Casual Shirt",
-      "price": 88.99,
+      "price": 1899,
       "description": "Maroon solid casual shirt, has a spread collar, long sleeves, button placket, curved hem, and 2 flap pockets",
       "category": "men's clothing",
       "categoryId": "men",
@@ -221,7 +221,7 @@
     {
       "id": 21,
       "title": "Women Burgundy Solid Sheath Dress",
-      "price": 6759,
+      "price": 2759,
       "description": "Burgundy solid sheath dress, has a V-neck, and straight hem",
       "category": "women's clothing",
       "categoryId": "women",
@@ -241,7 +241,7 @@
     {
       "id": 23,
       "title": "Women Brown Tailored Jacket with Patchwork",
-      "price": 5559,
+      "price": 1559,
       "description": "Brown animal solid tailored jacket with patchwork, has a spread collar, 1 pockets ,has a button closure, long sleeves, straight hemline, without lining",
       "category": "women's clothing",
       "categoryId": "women",
@@ -261,7 +261,7 @@
     {
       "id": 25,
       "title": "Women Maroon Solid Basic Jumpsuit",
-      "price": 5599,
+      "price": 2599,
       "description": "Maroon solid basic jumpsuit with waist tie-ups and gathered detail, has a round neck, three-quarter sleeves, button closures, two pockets. ",
       "category": "women's clothing",
       "categoryId": "women",
@@ -291,7 +291,7 @@
     {
       "id": 28,
       "title": "Boys Pack Of 3 Colourblocked Cotton T-shirts",
-      "price": 5699,
+      "price": 1699,
       "description": "T-shirts in soft cotton jersey. Relaxed fit with a rib-trimmed neckline, dropped shoulders and wide sleeves.",
       "category": "kid's clothing",
       "categoryId": "kids",
@@ -301,7 +301,7 @@
     {
       "id": 29,
       "title": "Green Printed Oversized Cotton T-Shirt",
-      "price": 4999,
+      "price": 1999,
       "description": "T-shirts in soft cotton jersey. Relaxed fit with a rib-trimmed neckline, dropped shoulders and wide sleeves.",
       "category": "kid's clothing",
       "categoryId": "kids",
@@ -311,7 +311,7 @@
     {
       "id": 30,
       "title": "Boys Yellow & Black Brand Logo Printed T-shirt",
-      "price": 2599,
+      "price": 1599,
       "description": "Yellow printed T-shirt, has a round neck, and short sleeves",
       "category": "kid's clothing",
       "categoryId": "kids",
@@ -321,7 +321,7 @@
     {
       "id": 31,
       "title": "White Printed T-Shirt",
-      "price": 3999,
+      "price": 1999,
       "description": "Classic T-shirt in soft cotton jersey with a print motif. Ribbed trim around the neckline.",
       "category": "kid's clothing",
       "categoryId": "kids",
@@ -371,10 +371,10 @@
   ],
   "Users": [
     {
-      "name": "Abhishek",
-      "lastName": "Kumar",
-      "mobile": "9886973272",
-      "email": "singh004saab@gmail.com",
+      "name": "Palak",
+      "lastName": "Amralkar",
+      "mobile": "8789999637",
+      "email": "abhishek.kumar@gmail.com",
       "id": 1
     }
   ],
@@ -406,8 +406,30 @@
           "quantity": 1
         }
       ],
-      "orderTotal": 1600,
+      "orderTotal": 1870,
       "id": "cf352a73-d9c9-4a8c-9365-322a2ac9813d"
+    },
+    {
+      "firstName": "Abhiush",
+      "lastName": "Kumar",
+      "phoneNumber": "8789999637",
+      "email": "singh004saab@gmail.com",
+      "address": "Talentica softwares pune",
+      "checkoutItems": [
+        {
+          "id": 1,
+          "title": "Men Slim Fit Checkered Spread Collar Casual Shirt",
+          "price": 2095,
+          "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+          "category": "men's clothing",
+          "categoryId": "men",
+          "brand": "nike",
+          "thumbnail": "https://rukminim1.flixcart.com/image/880/1056/km57hjk0/shirt/8/x/x/l-sdn-check-black-red-u-turn-original-imagf4fvy6hc3kuz.jpeg?q=50",
+          "quantity": 4
+        }
+      ],
+      "orderTotal": 9511,
+      "id": "b4f538fe-83a6-4386-89e8-04cbe2461e15"
     }
   ]
 }

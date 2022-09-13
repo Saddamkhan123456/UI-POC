@@ -10,6 +10,7 @@ import { WishlistContext } from "../../Contexts/wishlist.context";
 import { useContext } from "react";
 import ItemCard from "../shoppingCart/itemCard";
 import EmptyShoppingCart from "../emptyShoppingCart/emptyShoppingCart";
+import {navigation} from './constant'
 
 export interface NavbarProps extends HTMLAttributes<HTMLElement> {
   collapsed?: boolean;
@@ -21,11 +22,6 @@ export const Navbar = ({
   ...props
 }: NavbarProps) => {
   const location = useLocation();
-  const navigation = [
-    { name: "Men", href: "/product/category/men", current: false },
-    { name: "Women", href: "/product/category/women", current: false },
-    { name: "Kids", href: "/product/category/kids", current: false },
-  ];
   const [open, setOpen] = React.useState(false);
   const [isCollapsed, setIsCollapsed] = React.useState(collapsed);
   const { cartCount, saveCartItem } = React.useContext(CartContext);
@@ -34,7 +30,7 @@ export const Navbar = ({
 
   return (
     <>
-      <nav className="relative w-full flex flex-wrap items-center justify-between py-2 bg-theme-primary navbar navbar-expand-lg">
+      <nav className="relative w-full flex flex-wrap items-center justify-between py-2 bg-theme-primary navbar navbar-expand-lg" {...props}>
         <div className="container-fluid w-full flex flex-wrap items-center justify-between px-3 relative">
           <div className="flex items-center">
             <a
