@@ -13,7 +13,8 @@
 @import "../src/molecules/quantityBox/quantitybox.css";
 
 /* Page Import */
-@import "../src/page/myProfile/orders.css"
+@import "../src/page/myProfile/orders.css";
+@import "../src/page/productDetails/productDetails.css"
 
 
 
