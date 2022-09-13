@@ -90,8 +90,8 @@ export const Navbar = ({
                 children={
                   <>
                     <Card className="h-full">
-                      <CardBody className="">
-                        <div className="flex justify-between border-b p-4 mb-3 items-center">
+                      <CardBody>
+                        <div className="flex justify-between border-b p-4 mb-4 items-center">
                           <h1 className="text-xl capitalize leading-none font-medium">
                             Wishlist
                           </h1>
@@ -102,7 +102,7 @@ export const Navbar = ({
                             size={12}
                           />
                         </div>
-                        <div className="h-full flex flex-col">
+                        <div className="h-100 flex flex-col overflow-auto">
                           {wishlistItems && wishlistItems.length > 0 ? (
                             <div className="px-4">
                               {wishlistItems.map((item) => {
