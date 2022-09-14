@@ -14,12 +14,12 @@ const Account = (IFormInput) => {
   const {
     register,
     handleSubmit,
-
     formState: { errors },
   } = useForm<IFormInput>();
   const handleEdit = (data: IFormInput) => {
     let item = { name, lastName, mobile, email };
     UpdateUser(item, userId);
+    alert("Your form details have been saved");
   }; // your form submit function which will invoke after successful validation
 
   //
