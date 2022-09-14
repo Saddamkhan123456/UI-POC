@@ -16,7 +16,7 @@ const ProductCategoryPage = () => {
   return (
     <div className="flex flex-col items-center">
       <Banner pageHeading={categoryId} />
-      <div className="flex flex-col container">
+      <div className="flex flex-col container my-4">
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {categoryData &&
             categoryData
