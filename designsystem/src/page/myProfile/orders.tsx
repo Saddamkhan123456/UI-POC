@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { orderHistoryGet } from "../../api/api";
 import { OrderHistory } from "../../atoms/orderHistory/orderHistory";
-import ItemCard from "../../atoms/shoppingCart/itemCard";
+import ItemCard from "../../atoms/itemCard/itemCard";
 
 const Orders = () => {
   const [ordersData, setOrdersData] = useState([]);
