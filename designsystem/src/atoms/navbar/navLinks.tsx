@@ -2,17 +2,13 @@ import React, { HTMLAttributes } from "react";
 import { useLocation } from "react-router-dom";
 import classNames from "classnames";
 import Icon from "../icons/icon";
+import { navigation } from "../../constants/constants";
 
 export interface NavLinkProps extends HTMLAttributes<HTMLElement> {
   collapsed?: boolean;
 }
 const NavLinks = ({ collapsed = false, ...props }: NavLinkProps) => {
   const location = useLocation();
-  const navigation = [
-    { name: "Men", href: "/product/category/men", current: false },
-    { name: "Women", href: "/product/category/women", current: false },
-    { name: "Kids", href: "/product/category/kids", current: false },
-  ];
   const [isCollapsed, setIsCollapsed] = React.useState(collapsed);
 
   return (

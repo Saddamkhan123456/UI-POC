@@ -1,4 +1,4 @@
-import { Card, CardBody } from "design-system";
+import { Card } from "design-system";
 import { Link } from "react-router-dom";
 import classNames from "classnames";
 
