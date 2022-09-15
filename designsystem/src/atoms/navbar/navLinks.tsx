@@ -25,7 +25,7 @@ const NavLinks = ({ collapsed = false, ...props }: NavLinkProps) => {
                   : "text-white",
                 "px-3 py-1 rounded-md text-sm font-medium"
               )}
-              aria-current={item.current ? "page" : undefined}
+              aria-current={item ? "page" : undefined}
             >
               {item.name}
             </a>
@@ -57,12 +57,12 @@ const NavLinks = ({ collapsed = false, ...props }: NavLinkProps) => {
                     <a
                       href={item.href}
                       className={classNames(
-                        item.current
+                        item
                           ? " text-white w-full"
                           : "text-white hover:text-white py-3 hover:bg-theme-neutral15 w-full mb-1",
                         "px-3 py-2 text-sm font-medium hover:bg-theme-neutral15 w-full mb-1"
                       )}
-                      aria-current={item.current ? "page" : undefined}
+                      aria-current={item ? "page" : undefined}
                     >
                       {item.name}
                     </a>
