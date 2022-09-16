@@ -14,12 +14,12 @@ const Account = (IFormInput) => {
   const {
     register,
     handleSubmit,
-
     formState: { errors },
   } = useForm<IFormInput>();
   const handleEdit = (data: IFormInput) => {
     let item = { name, lastName, mobile, email };
     UpdateUser(item, userId);
+    // alert("Your form details have been saved");
   }; // your form submit function which will invoke after successful validation
 
   //
@@ -66,6 +66,7 @@ const Account = (IFormInput) => {
                   First Name *
                 </label>
                 <input
+                  autoComplete="true"
                   {...register("name", {
                     required: true,
                     minLength: 5,
@@ -103,6 +104,7 @@ const Account = (IFormInput) => {
                   Last Name *
                 </label>
                 <input
+                  autoComplete="true"
                   {...register("lastName", {
                     required: true,
                     pattern: /^[A-Za-z]+$/i,
@@ -134,7 +136,10 @@ const Account = (IFormInput) => {
                   Phone/Mobile *
                 </label>
                 <input
+                  autoComplete="true"
                   {...register("phoneNumber", {
+                    minLength: 10,
+                    maxLength: 10,
                     required: true,
                     pattern: /\d+/,
                   })}
@@ -159,6 +164,16 @@ const Account = (IFormInput) => {
                     This input is number only.
                   </p>
                 )}
+                {errors?.phoneNumber?.type === "minLength" && (
+                  <p className="mt-2 text-theme-danger">
+                    Please enter valid 10 digit number
+                  </p>
+                )}
+                {errors?.phoneNumber?.type === "maxLength" && (
+                  <p className="mt-2 text-theme-danger">
+                    limit exceeded than 10 digit
+                  </p>
+                )}
               </div>
 
               <div className="">
@@ -166,6 +181,7 @@ const Account = (IFormInput) => {
                   Email *
                 </label>
                 <input
+                  autoComplete="true"
                   {...register("email", {
                     required: true,
                     pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
