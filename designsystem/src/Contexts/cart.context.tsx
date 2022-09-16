@@ -78,23 +78,18 @@ export const CartProvider: React.FC<React.ReactNode> = ({ children }) => {
     const newCartTotal: number =
       cartItems?.length > 0
         ? cartItems.reduce(
-            (total, cartItem) => total + cartItem.quantity * cartItem.price,
-            0
-          )
+          (total, cartItem) => total + cartItem.quantity * cartItem.price,
+          0
+        )
         : 0;
     setCartTotal(newCartTotal);
   }, [cartItems]);
   React.useEffect(() => {
-    if (cartItems === null) {
-      setOrderTotal(0);
-    } else {
-      const newOrderTotal: number = cartTotal + taxAmount;
-      setOrderTotal(newOrderTotal);
-    }
-  }, [cartTotal]);
-  React.useEffect(() => {
     const newTaxAmount: number = cartTotal * 0.18;
+    console.log(newTaxAmount)
     setTaxAmount(Math.round(newTaxAmount));
+    const newOrderTotal: number = cartTotal + newTaxAmount;
+    setOrderTotal(Math.round(newOrderTotal));
   }, [cartTotal]);
 
   const saveCartItem = (cartItemToAdd: ICartItem) => {
