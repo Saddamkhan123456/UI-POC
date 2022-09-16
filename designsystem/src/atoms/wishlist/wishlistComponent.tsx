@@ -13,7 +13,7 @@ export interface NavbarProps extends HTMLAttributes<HTMLElement> {
   collapsed?: boolean;
   Closed?: boolean;
 }
-export const OffCanvasComponents = ({
+export const WishlistComponent = ({
   collapsed = false,
   Closed,
   ...props
@@ -98,4 +98,4 @@ export const OffCanvasComponents = ({
   );
 };
 
-export default OffCanvasComponents;
+export default WishlistComponent;

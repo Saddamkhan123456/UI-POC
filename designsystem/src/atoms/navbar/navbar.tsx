@@ -3,8 +3,7 @@ import { HTMLAttributes } from "react";
 import { Link } from "react-router-dom";
 import Icon from "../icons/icon";
 import { CartContext } from "../../Contexts/cart.context";
-
-import OffCanvasComponents from "../offcanvas/offCanvasComponent";
+import WishlistComponent from "../wishlist/wishlistComponent";
 import NavLinks from "./navLinks";
 
 export interface NavbarProps extends HTMLAttributes<HTMLElement> {
@@ -37,7 +36,7 @@ export const Navbar = ({
           </div>
 
           <div className="flex items-center relative gap-4">
-            <OffCanvasComponents />
+            <WishlistComponent />
             <Link
               className="flex items-center justify-center text-white hover:text-theme-neutral80 focus:text-theme-neutral80 mr-1  hidden-arrow flex items-center"
               to="/shopping-cart"
