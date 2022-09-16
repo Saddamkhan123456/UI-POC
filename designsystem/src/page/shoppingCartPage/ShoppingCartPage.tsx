@@ -1,6 +1,6 @@
 import React from "react";
 import { OrderSummary } from "../../atoms/orderSummary/orderSummary";
-import ItemCard from "../../atoms/shoppingCart/itemCard";
+import ItemCard from "../../atoms/itemCard/itemCard";
 import { useContext } from "react";
 import { CartContext } from "../../Contexts/cart.context";
 import { WishlistContext } from "../../Contexts/wishlist.context";

@@ -3,7 +3,7 @@ import { Button, Card } from "design-system";
 import classnames from "classnames";
 import Icon from "../icons/icon";
 
-export interface ShoppingCartProps extends React.HTMLAttributes<HTMLElement> {
+export interface ItemCardProps extends React.HTMLAttributes<HTMLElement> {
   cartItem?: any;
   cartCard?: boolean;
   imgSize?: boolean;
@@ -31,7 +31,7 @@ const ItemCard = ({
   addToCart,
   addToWishlist,
   qty,
-}: ShoppingCartProps) => {
+}: ItemCardProps) => {
   const { title, thumbnail, brand, quantity, price } = cartItem;
   return (
     <Card

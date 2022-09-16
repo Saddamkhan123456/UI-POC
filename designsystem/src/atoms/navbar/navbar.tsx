@@ -8,7 +8,7 @@ import OffCanvasComponent from "../offcanvas/offcanvas";
 import { CartContext } from "../../Contexts/cart.context";
 import { WishlistContext } from "../../Contexts/wishlist.context";
 import { useContext } from "react";
-import ItemCard from "../shoppingCart/itemCard";
+import ItemCard from "../itemCard/itemCard";
 import EmptyShoppingCart from "../emptyShoppingCart/emptyShoppingCart";
 import {navigation} from './constant'
 
