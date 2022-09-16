@@ -98,7 +98,7 @@ export const Navbar = ({
                             size={12}
                           />
                         </div>
-                        <div className="h-full flex flex-col">
+                        <div className="h-calc flex flex-col overflow-auto">
                           {wishlistItems && wishlistItems.length > 0 ? (
                             <div className="px-4">
                               {wishlistItems.map((item) => {

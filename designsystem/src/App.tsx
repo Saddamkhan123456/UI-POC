@@ -1,5 +1,5 @@
 import "./App.css";
-import { Footer } from "./atoms/footer";
+import {Footer} from "./atoms/footer/footer"
 import { Navbar } from "./atoms/navbar/navbar";
 import RouteConfig from "./Route/RouteConfig";
 import { CartProvider } from './Contexts/cart.context'
