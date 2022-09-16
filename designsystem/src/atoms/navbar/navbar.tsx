@@ -36,7 +36,9 @@ export const Navbar = ({
           </div>
 
           <div className="flex items-center relative gap-4">
+
             <WishlistComponent />
+
             <Link
               className="flex items-center justify-center text-white hover:text-theme-neutral80 focus:text-theme-neutral80 mr-1  hidden-arrow flex items-center"
               to="/shopping-cart"

@@ -1,10 +1,9 @@
 import { HTMLAttributes } from "react";
 import { Button } from "design-system";
-// import ItemCard from "../shoppingCart/itemCard";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../Contexts/cart.context";
 import * as React from "react";
-import SmallItemCard from "../shoppingCart/smallItemCard";
+import SmallItemCard from "../itemCard/smallItemCard";
 
 export interface OrderSummaryProps extends HTMLAttributes<HTMLElement> {
   isCheckout?: boolean;
