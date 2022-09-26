@@ -1,5 +1,5 @@
 import React from "react";
-import { OrderSummary } from "../../atoms/orderSummary";
+import { OrderSummary } from "../../atoms/orderSummary/orderSummary";
 import CheckoutForm from "./checkoutForm";
 
 const CheckoutPage = () => {

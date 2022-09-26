@@ -1,4 +1,4 @@
-import { Card, CardBody } from "design-system";
+import { Card } from "design-system";
 import { Link } from "react-router-dom";
 import classNames from "classnames";
 
@@ -39,7 +39,7 @@ export const CategoryCard = ({
                 <Link
                   to={`/product/${category}/${CardPropsSet.type.toLowerCase()}`}
                 >
-                  <CardBody className="h-full">
+                  <div className="h-full">
                     <h2
                       className={classNames(
                         isCategoryShow
@@ -56,7 +56,7 @@ export const CategoryCard = ({
                         category === "brand" ? "w-1/2 m-auto" : ""
                       }`}
                     />
-                  </CardBody>
+                  </div>
                 </Link>
               </Card>
             );

@@ -1,17 +1,8 @@
-import { HTMLAttributes } from "react";
 import Icon from "../icons/icon";
-
-export interface FooterProps extends HTMLAttributes<HTMLElement> {}
-export const Footer = ({ ...props }: FooterProps) => {
-  // const product = [
-  //   { name: "Men", href: "/product/category/men" },
-  //   { name: "Women", href: "/product/category/women" },
-  //   { name: "Kids", href: "/product/category/kids" },
-  // ];
-
-  return (
+export const Footer = ({ ...props }) => {
+ return (
     <>
-      <footer className="p-4 text-center bg-theme-primary flex flex-col justify-center items-center mt-auto">
+      <footer className="p-4 text-center bg-theme-primary flex flex-col justify-center items-center mt-auto" {...props}>
         <div className="flex items-center">
           <span>
             <Icon kind="logo" size={20} className="text-theme-white" />
