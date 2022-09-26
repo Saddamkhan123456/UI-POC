@@ -5,7 +5,7 @@ import Icon from "../icons/icon";
 import { CartContext } from "../../Contexts/cart.context";
 import { WishlistContext } from "../../Contexts/wishlist.context";
 import { useContext } from "react";
-import ItemCard from "../shoppingCart/itemCard";
+import ItemCard from "../itemCard/itemCard";
 import EmptyShoppingCart from "../emptyShoppingCart/emptyShoppingCart";
 import OffCanvasComponent from "../offcanvas/offcanvas";
 

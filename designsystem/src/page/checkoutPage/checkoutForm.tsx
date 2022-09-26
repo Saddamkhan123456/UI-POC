@@ -141,6 +141,8 @@ const CheckoutForm = (checkoutFormProps) => {
                       {...register("phoneNumber", {
                         required: true,
                         pattern: /\d+/,
+                        minLength: 10,
+                        maxLength: 10,
                       })}
                       type="tel"
                       id="phoneNumber"
@@ -159,6 +161,16 @@ const CheckoutForm = (checkoutFormProps) => {
                     {errors?.phoneNumber?.type === "pattern" && (
                       <p className="mt-2 text-theme-danger">
                         This input is number only.
+                      </p>
+                    )}
+                    {errors?.phoneNumber?.type === "minLength" && (
+                      <p className="mt-2 text-theme-danger">
+                        Please enter valid 10 digit number
+                      </p>
+                    )}
+                    {errors?.phoneNumber?.type === "maxLength" && (
+                      <p className="mt-2 text-theme-danger">
+                        limit exceeded than 10 digit
                       </p>
                     )}
                   </div>
