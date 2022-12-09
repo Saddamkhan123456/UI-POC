@@ -5,7 +5,7 @@ import indexRouter from './routes';
 import connect from './config/db';
 const app = express();
 
-// connect();
+connect();
 const corsOptions = {
   origin: ['http://localhost:3000'],
   optionsSuccessStatus: 201,

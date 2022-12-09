@@ -4,5 +4,5 @@ export interface User extends Auth {
   name: string;
   mobile: string;
   address: string;
-  role: string;
+  role: 'USER' | 'ADMIN';
 }
