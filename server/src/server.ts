@@ -14,6 +14,10 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use('/api', indexRouter);
+app.use(handleError);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on PORT : ${PORT}`));
+function handleError(handleError: any) {
+  throw new Error('Function not implemented.');
+}
