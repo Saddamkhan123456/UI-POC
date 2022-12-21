@@ -1,7 +1,9 @@
 import { NextFunction, Request, Response } from 'express';
 import joi from 'joi';
 import UserModel from '../models/user.model';
-import { encrypt } from '../utils/bcrypt.handle';
+import { encrypt, verified } from '../utils/bcrypt.handle';
+import { generateToken } from '../utils/jwt.handle';
+import { RequestExt } from '../interfaces/req-ext';
 
 const registerCtrl = async (
   { body }: Request,
@@ -64,8 +66,23 @@ const loginCtrl = async (req: Request, res: Response, next: NextFunction) => {
   const { email, password } = result.value;
   const user = await UserModel.findOne({ email }).exec();
   if (user) {
-    res.status(201);
-    return res.json({ user: user });
+    let isMatched = await verified(password, user?.password || '');
+    if (isMatched) {
+      const payload = {
+        id: user?._id,
+        email,
+        name: user?.name,
+        role: user?.role,
+        telephone: user?.mobile,
+      };
+      const token = generateToken(payload);
+      if (token) {
+        res.status(201);
+        return res.json({ token, payload });
+      }
+    }
+    res.status(400);
+    return next(new Error(`${password} is incorrect password!`));
   }
   res.status(400);
   return next(new Error(`${email} not found !`));
