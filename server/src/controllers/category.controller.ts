@@ -1,119 +1,152 @@
 import { Request, NextFunction, Response } from 'express';
-import { RequestExt } from '../interfaces/req-ext';
+import { RequestExt } from '../types/req-ext';
 import CategoryModel from '../models/category.model';
 import joi from 'joi';
+import { validateMongoId } from '../utils/validateMongoId';
+import { BadRequestError } from '../errors';
 
 const getAll = async (req: Request, res: Response, next: NextFunction) => {
-  const categories = await CategoryModel.find({ isActive: true }).exec();
-  if (categories) {
-    res.status(201);
-    res.json({ categories });
-    return;
+  try {
+    const categories = await CategoryModel.find({ isActive: true }).exec();
+    if (categories) {
+      res.status(201);
+      res.json({ categories });
+      return;
+    }
+    return next(new BadRequestError('No categories found!'));
+  } catch (error) {
+    return next(new Error('Somthing went wrong'));
   }
-  res.status(400);
-  return next(new Error('No categories found!'));
 };
 
 const getById = async (req: Request, res: Response, next: NextFunction) => {
-  const category = await CategoryModel.findById({
-    _id: req.params.id,
-    is_active: true,
-  }).exec();
-  if (category) {
-    res.status(201);
-    res.json({ category });
-    return;
+  try {
+    if (validateMongoId(req.params.id)) {
+      const category = await CategoryModel.findById({
+        _id: req.params.id,
+        is_active: true,
+      }).exec();
+      if (category) {
+        res.status(201);
+        res.json({ category });
+        return;
+      }
+      return next(new BadRequestError('No category found!'));
+    } else {
+      return next(new BadRequestError('Invalid id!'));
+    }
+  } catch (error) {
+    return next(new Error('Somthing went wrong'));
   }
-  res.status(400);
-  return next(new Error('No category found!'));
 };
 
 const create = async (req: RequestExt, res: Response, next: NextFunction) => {
-  const schema = joi.object({
-    title: joi.string().required(),
-  });
-  const { error, value } = schema.validate(req.body);
-  if (error) {
-    res.status(400);
-    return next(new Error(error.details[0].message));
-  }
-  const { title } = value;
-  let isExists = await CategoryModel.findOne({ title, isActive: true }).exec();
-  if (!isExists) {
-    const category = await new CategoryModel({
-      title,
-      user: req.user?.id,
-    }).save();
-    if (category) {
-      res.status(201);
-      return res.json('Category added successfully !');
+  try {
+    const schema = joi.object({
+      title: joi.string().required(),
+    });
+    const { error, value } = schema.validate(req.body);
+    if (error) {
+      return next(new BadRequestError(error.details[0].message));
     }
-    res.status(400);
-    return next(new Error('Problem while adding category!'));
+    const { title } = value;
+    let isExists = await CategoryModel.findOne({
+      title,
+      isActive: true,
+    }).exec();
+    if (!isExists) {
+      const category = await new CategoryModel({
+        title,
+        createdBy: req.user?.id,
+      }).save();
+      if (category) {
+        res.status(201);
+        return res.json('Category added successfully !');
+      }
+      return next(new BadRequestError('Problem while adding category!'));
+    }
+    return next(new BadRequestError('Category allready exists !'));
+  } catch (error) {
+    return next(new Error('Somthing went wrong'));
   }
-  res.status(400);
-  return next(new Error('Category allready exists !'));
 };
 
 const update = async (req: RequestExt, res: Response, next: NextFunction) => {
-  const schema = joi.object({
-    id: joi.string().required(),
-    title: joi.string().required(),
-  });
-  const { error, value } = schema.validate(req.body);
-  if (error) {
-    res.status(400);
-    return next(new Error(error.details[0].message));
-  }
-  const { title, id } = value;
-  let isExists = await CategoryModel.findOne({
-    title,
-    _id: { $ne: id },
-  }).exec();
-  if (!isExists) {
-    let category = await CategoryModel.findByIdAndUpdate(
-      { _id: id },
-      {
-        title,
-        user: req.user?.id,
-      },
-      { new: true }
-    );
-    if (category) {
-      res.status(201);
-      return res.json('Category updated successfully !');
+  try {
+    const schema = joi.object({
+      id: joi.string().required(),
+      title: joi.string().required(),
+    });
+    const { error, value } = schema.validate(req.body);
+    if (error) {
+      return next(new BadRequestError(error.details[0].message));
     }
-    res.status(400);
-    return next(new Error(`category with given id: ${id} not Exists!`));
+    const { title, id } = value;
+    if (validateMongoId(id)) {
+      let isExists = await CategoryModel.findOne({
+        title,
+        _id: { $ne: id },
+      }).exec();
+      if (!isExists) {
+        let category = await CategoryModel.findByIdAndUpdate(
+          { _id: id },
+          {
+            title,
+            updatedBy: req.user?.id,
+          },
+          { new: true }
+        );
+        if (category) {
+          res.status(201);
+          return res.json('Category updated successfully !');
+        }
+        return next(
+          new BadRequestError(`category with given id: ${id} not Exists!`)
+        );
+      }
+      return next(
+        new BadRequestError(
+          `category with given title: ${title} already Exists!`
+        )
+      );
+    } else {
+      return next(new BadRequestError('Invalid id!'));
+    }
+  } catch (error) {
+    return next(new Error('Somthing went wrong'));
   }
-  res.status(400);
-  return next(new Error(`category with given title: ${title} already Exists!`));
 };
 
 const remove = async (req: RequestExt, res: Response, next: NextFunction) => {
-  const schema = joi.object({
-    id: joi.string().required(),
-  });
-  const { error, value } = schema.validate(req.body);
-  if (error) {
-    res.status(400);
-    return next(new Error(error.details[0].message));
+  try {
+    const schema = joi.object({
+      id: joi.string().required(),
+    });
+    const { error, value } = schema.validate(req.body);
+    if (error) {
+      return next(new BadRequestError(error.details[0].message));
+    }
+    const { id } = value;
+    if (validateMongoId(id)) {
+      let category = await CategoryModel.findByIdAndUpdate(
+        { _id: id },
+        {
+          isActive: false,
+          updatedBy: req.user?.id,
+        },
+        { new: true }
+      );
+      if (category) {
+        res.status(201);
+        return res.json('Category deleted successfully !');
+      }
+      return next(new BadRequestError('No category found !'));
+    } else {
+      return next(new BadRequestError('Invalid id!'));
+    }
+  } catch (error) {
+    return next(new Error('Somthing went wrong'));
   }
-  const { id } = value;
-  let category = await CategoryModel.findByIdAndUpdate(
-    { _id: id },
-    {
-      isActive: false,
-      user: req.user?.id,
-    },
-    { new: true }
-  );
-  if (category) {
-    res.status(201);
-    return res.json('Category deleted successfully !');
-  }
-  res.status(400);
-  return next(new Error('No category found !'));
 };
 
 export { getAll, create, update, getById, remove };

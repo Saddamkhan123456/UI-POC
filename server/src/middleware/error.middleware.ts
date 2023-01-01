@@ -1,19 +1,20 @@
 import { Response, Request, NextFunction } from 'express';
+import { CustomError } from '../errors';
 
-function handleErrors(
+const handleErrors = (
   error: Error,
   req: Request,
   res: Response,
   next: NextFunction
-) {
-  try {
-    if (res.statusCode === 201) {
-      res.statusCode = 500;
-    }
-    res.json({ error: error.message || 'Somthing went wrong !' });
-  } catch (error) {
-    next();
+) => {
+  if (error instanceof CustomError) {
+    return res
+      .status(error.statusCode)
+      .json({ errors: error.generateErrors(), stack: error.stack });
   }
-}
+  res
+    .status(500)
+    .json({ errors: [{ message: 'somthing went wrong', stack: error.stack }] });
+};
 
-export default handleErrors;
+export { handleErrors };
