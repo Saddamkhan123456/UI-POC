@@ -16,4 +16,4 @@ function handleErrors(
   }
 }
 
-module.exports = handleErrors;
+export default handleErrors;
