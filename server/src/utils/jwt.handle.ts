@@ -1,5 +1,4 @@
 import { sign, verify } from 'jsonwebtoken';
-import { User } from '../interfaces/user.interface';
 const JWT_KEY = process.env.JWT_KEY || 'token.01010101';
 
 const generateToken = (payload: any) => {
