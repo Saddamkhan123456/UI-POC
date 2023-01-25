@@ -16,7 +16,7 @@ const registerCtrl = async (
       email: joi.string().required(),
       password: joi.string().required(),
       confirm_password: joi.string().required(),
-      address: joi.string().required(),
+      address: joi.string(),
       mobile: joi.string().required(),
     });
     const result = schema.validate(body);
@@ -44,8 +44,18 @@ const registerCtrl = async (
       password: hashPassword,
     });
     if (user) {
-      res.status(201);
-      return res.json({ message: 'User registered successfully !' });
+      const payload = {
+        id: user?._id,
+        email,
+        name: user?.name,
+        role: user?.role,
+        telephone: user?.mobile,
+      };
+      const token = generateToken(payload);
+      if (token) {
+        res.status(201);
+        return res.json({ token, payload });
+      }
     }
     return next(new BadRequestError('Problem while creating user !'));
   } catch (error) {

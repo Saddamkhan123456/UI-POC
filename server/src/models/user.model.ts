@@ -1,4 +1,4 @@
-import { Schema, model } from 'mongoose';
+import mongoose, { Schema, model } from 'mongoose';
 import { User } from '../types/user';
 
 const UserSchema = new Schema<User>(
@@ -23,6 +23,7 @@ const UserSchema = new Schema<User>(
     address: {
       type: String,
     },
+    wishlist: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Product' }],
     role: {
       type: String,
       default: 'USER',
