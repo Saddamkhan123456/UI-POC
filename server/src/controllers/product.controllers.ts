@@ -1,18 +1,50 @@
 import { Request, NextFunction, Response } from 'express';
 import { RequestExt } from '../types/req-ext';
 import ProductModel from '../models/product.model';
-import joi from 'joi';
+import joi, { string } from 'joi';
 const _ = require('underscore');
 import { validateMongoId } from '../utils/validateMongoId';
 import slugify from 'slugify';
 import { BadRequestError } from '../errors';
+import { match } from 'assert';
 
 const getAll = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const products = await ProductModel.find({ isActive: true }).exec();
-    if (products) {
+    // filtering
+    const queryObj = {
+      ...req.query,
+    };
+    const excludeFields = ['page', 'sort', 'limit', 'fields'];
+    excludeFields.forEach((ele: string) => delete queryObj[ele]);
+    let queryStr = JSON.stringify(queryObj);
+    queryStr = queryStr.replace(
+      /\b(gte|lte|gt|lt)\b/g,
+      (match: any) => `$${match}`
+    );
+    let query = ProductModel.find(JSON.parse(queryStr));
+    // sorting
+    if (req.query.sort) {
+      let sortBy = req.query.sort as string;
+      sortBy = sortBy.split(',').join(' ');
+      query = query.sort(sortBy);
+    } else {
+      query = query.sort('-createdAt');
+    }
+    //pagination
+    const page: any = req.query.page;
+    const limit: any = req.query.limit;
+    const skip = (page - 1) * limit;
+    query = query.skip(skip).limit(limit);
+    if (req.query.page) {
+      const productCount = await ProductModel.countDocuments();
+      if (skip >= productCount) {
+        return next(new BadRequestError('This page does not exists!'));
+      }
+    }
+    const product = await query;
+    if (product) {
       res.status(201);
-      res.json({ products });
+      res.json({ product });
       return;
     }
     return next(new BadRequestError('No products found!'));
