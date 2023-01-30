@@ -15,30 +15,30 @@ export const CardComponent = ({ CardData }: CardProps) => {
   const addProductToCart = () => saveCartItem(CardData);
   const { saveWishlistItem } = useContext(WishlistContext);
   const addProductToWishlist = () => saveWishlistItem(CardData);
+  console.log(CardData);
 
   return (
     <>
       <>
-
         <Card className="card-shadow justify-between group box-border overflow-hidden flex rounded-md cursor-pointer pe-0 mb-2 flex-col items-start transition duration-200 ease-in-out transform hover:-translate-y-1 hover:md:-translate-y-1.5 hover:shadow-lg ">
           <div className="flex w-full justify-center">
-              <div className="w-full min-h-80 aspect-w-1 aspect-h-1 lg:h-80 lg:aspect-none">
-            <Link to={`/product/${CardData.id}`}>
+            <div className="w-full min-h-80 aspect-w-1 aspect-h-1 lg:h-80 lg:aspect-none">
+              <Link to={`/product/${CardData.id}`}>
                 <img
                   src={CardData.thumbnail}
                   alt="productImage"
                   // className="bg-gray-300 object-cover rounded-s-md rounded-md transition duration-200 ease-in group-hover:rounded-b-none"
                   className="bg-gray-300 w-full h-full object-top object-cover lg:w-full lg:h-full"
                 />
-            </Link>
-              </div>
+              </Link>
+            </div>
           </div>
           <div className="rounded-b-md p-4 w-full">
             <div className="flex flex-col">
               <div className=" flex-grow">
                 <div className="flex flex-row justify-between">
                   <h2 className="text-sm line-clamp font-normal text-theme-neutralGray leading-non">
-                    {CardData.title}
+                    {CardData?.title}
                   </h2>
                   <div className="ml-6 text-right text-xs text-theme-primary font-medium">
                     &#8377;{CardData.price}
@@ -81,8 +81,8 @@ export const CardComponent = ({ CardData }: CardProps) => {
             </div>
           </div>
         </Card>
-      {/* </Link> */}
-    </>
+        {/* </Link> */}
+      </>
     </>
   );
 };

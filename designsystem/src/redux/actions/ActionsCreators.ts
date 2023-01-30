@@ -6,10 +6,16 @@ import {
   SIGNUP_FAIL,
 } from "./Auth.action";
 import axios from "axios";
+import {
+  GET_ALL_PRODUCT_FAIL,
+  GET_ALL_PRODUCT_START,
+  GET_ALL_PRODUCT_SUCCESS,
+  ProductAction,
+} from "./Product.action";
 
 let API: string = "http://localhost:9000/api/";
 
-export const saveSurvey = (data: any) => async (
+export const register = (data: any) => async (
   dispatch: Dispatch<AuthAction>
 ) => {
   try {
@@ -34,6 +40,35 @@ export const saveSurvey = (data: any) => async (
     if (e instanceof Error) {
       dispatch({
         type: SIGNUP_FAIL,
+        error: e.message,
+      });
+    }
+  }
+};
+
+export const getProducts = () => (dispatch: Dispatch<ProductAction>) => {
+  try {
+    dispatch({
+      type: GET_ALL_PRODUCT_START,
+    });
+    axios
+      .get(API + "product/")
+      .then((response) => {
+        dispatch({
+          type: GET_ALL_PRODUCT_SUCCESS,
+          payload: response.data,
+        });
+      })
+      .catch((error) => {
+        dispatch({
+          type: GET_ALL_PRODUCT_FAIL,
+          error: error.message,
+        });
+      });
+  } catch (e) {
+    if (e instanceof Error) {
+      dispatch({
+        type: GET_ALL_PRODUCT_FAIL,
         error: e.message,
       });
     }

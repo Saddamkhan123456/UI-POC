@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "design-system";
 import axios from "axios";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store/configureStore";
+import { getProducts } from "../../redux/actions/ActionsCreators";
 
 export interface SignupFormProps {
   name?: string;
@@ -15,9 +16,6 @@ export interface SignupFormProps {
 }
 
 const Signup = () => {
-  const auth = useSelector((state: RootState) => state.auth);
-  console.log(auth.loading);
-
   const {
     register,
     handleSubmit,
