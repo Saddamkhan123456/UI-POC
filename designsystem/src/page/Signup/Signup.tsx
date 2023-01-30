@@ -1,7 +1,10 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
-import { Button } from 'design-system';
-import axios from 'axios';
+import React, { useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { Button } from "design-system";
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../store/configureStore";
+import { getProducts } from "../../redux/actions/ActionsCreators";
 
 export interface SignupFormProps {
   name?: string;
@@ -19,16 +22,16 @@ const Signup = () => {
     formState: { errors },
   } = useForm<SignupFormProps>();
   const [formData, setFormData] = React.useState({
-    name: '',
-    email: '',
-    password: '',
-    password2: '',
-    address: '',
-    mobile: '',
+    name: "",
+    email: "",
+    password: "",
+    password2: "",
+    address: "",
+    mobile: "",
   });
   const handleEdit = async (data: SignupFormProps) => {
     if (formData.password !== formData.password2) {
-      console.log('Passwords do not match');
+      console.log("Passwords do not match");
     } else {
       const newUser = {
         name: formData.name,
@@ -42,11 +45,15 @@ const Signup = () => {
       try {
         const config = {
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
         };
         const body = JSON.stringify(newUser);
-        const res = await axios.post('http://localhost:9000/api/auth/register', body, config);
+        const res = await axios.post(
+          "http://localhost:9000/api/auth/register",
+          body,
+          config
+        );
         console.log(res.data);
       } catch (error) {
         console.log(error);
@@ -59,132 +66,166 @@ const Signup = () => {
     setFormData({ ...formData, [name]: value });
   };
   return (
-    <div className='flex flex-col items-center w-full py-5'>
-      <h1 className='large text-primary'>Sign Up</h1>
-      <p className='lead'>
-        <i className='fas fa-user'></i> Create Your Account
+    <div className="flex flex-col items-center w-full py-5">
+      <h1 className="large text-primary">Sign Up</h1>
+      <p className="lead">
+        <i className="fas fa-user"></i> Create Your Account
       </p>
-      <form className='form my-8 flex flex-col gap-4' onSubmit={handleSubmit(handleEdit)}>
-        <div className='form-group'>
+      <form
+        className="form my-8 flex flex-col gap-4"
+        onSubmit={handleSubmit(handleEdit)}
+      >
+        <div className="form-group">
           <input
-            {...register('name', {
+            {...register("name", {
               required: true,
               minLength: 5,
               pattern: /^[A-Za-z]+$/i,
             })}
-            type='text'
-            placeholder='Name'
-            className='py-2 px-3 w-full appearance-none border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading'
-            name='name'
+            type="text"
+            placeholder="Name"
+            className="py-2 px-3 w-full appearance-none border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading"
+            name="name"
             value={formData.name}
             onChange={handleInput}
             required
           />
-          {errors?.name?.type === 'pattern' && <p className='mt-2 text-theme-danger'>Alphabetical characters only</p>}
-          {errors?.name?.type === 'required' && <p className='mt-2 text-theme-danger'>This field is required</p>}
-          {errors?.name?.type === 'minLength' && (
-            <p className='mt-2 text-theme-danger'>First name cannot less than 5 characters</p>
+          {errors?.name?.type === "pattern" && (
+            <p className="mt-2 text-theme-danger">
+              Alphabetical characters only
+            </p>
+          )}
+          {errors?.name?.type === "required" && (
+            <p className="mt-2 text-theme-danger">This field is required</p>
+          )}
+          {errors?.name?.type === "minLength" && (
+            <p className="mt-2 text-theme-danger">
+              First name cannot less than 5 characters
+            </p>
           )}
         </div>
-        <div className='form-group'>
+        <div className="form-group">
           <input
-            {...register('email', {
+            {...register("email", {
               required: true,
               pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
             })}
-            type='email'
-            className='py-2 px-3 w-full appearance-none border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading'
-            placeholder='Email Address'
+            type="email"
+            className="py-2 px-3 w-full appearance-none border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading"
+            placeholder="Email Address"
             value={formData.email}
             onChange={handleInput}
-            name='email'
+            name="email"
           />
-          {errors?.email?.type === 'required' && <p className='mt-2 text-theme-danger'>This field is required</p>}
-          {errors?.email?.type === 'pattern' && <p className='mt-2 text-theme-danger'>enter valid email id</p>}
-          <small className='form-text block mt-1 text-theme-neutral'>
-            This site uses Gravatar so if you want a profile image, use a Gravatar email
+          {errors?.email?.type === "required" && (
+            <p className="mt-2 text-theme-danger">This field is required</p>
+          )}
+          {errors?.email?.type === "pattern" && (
+            <p className="mt-2 text-theme-danger">enter valid email id</p>
+          )}
+          <small className="form-text block mt-1 text-theme-neutral">
+            This site uses Gravatar so if you want a profile image, use a
+            Gravatar email
           </small>
         </div>
-        <div className='form-group'>
+        <div className="form-group">
           <input
-            {...register('password', {
+            {...register("password", {
               required: true,
             })}
-            type='password'
-            className='py-2 px-3 w-full appearance-none border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading'
-            placeholder='Password'
+            type="password"
+            className="py-2 px-3 w-full appearance-none border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading"
+            placeholder="Password"
             value={formData.password}
             onChange={handleInput}
-            name='password'
+            name="password"
             minLength={6}
           />
-          {errors?.password?.type === 'required' && <p className='mt-2 text-theme-danger'>This field is required</p>}
+          {errors?.password?.type === "required" && (
+            <p className="mt-2 text-theme-danger">This field is required</p>
+          )}
         </div>
-        <div className='form-group'>
+        <div className="form-group">
           <input
-            {...register('password2', {
+            {...register("password2", {
               required: true,
             })}
-            type='password'
-            className='py-2 px-3 w-full appearance-none border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading'
-            placeholder='Confirm Password'
+            type="password"
+            className="py-2 px-3 w-full appearance-none border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading"
+            placeholder="Confirm Password"
             value={formData.password2}
             onChange={handleInput}
-            name='password2'
+            name="password2"
             minLength={6}
           />
-          {errors?.password2?.type === 'required' && <p className='mt-2 text-theme-danger'>This field is required</p>}
+          {errors?.password2?.type === "required" && (
+            <p className="mt-2 text-theme-danger">This field is required</p>
+          )}
         </div>
         <div>
           <input
-            {...register('mobile', {
+            {...register("mobile", {
               required: true,
               pattern: /\d+/,
               minLength: 10,
               maxLength: 10,
             })}
-            type='tel'
-            id='mobile'
-            name='mobile'
-            placeholder='Mobile No.'
+            type="tel"
+            id="mobile"
+            name="mobile"
+            placeholder="Mobile No."
             value={formData.mobile}
-            className='py-2 px-4 md:px-5 w-full appearance-none border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading h-38'
-            aria-invalid='false'
+            className="py-2 px-4 md:px-5 w-full appearance-none border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading h-38"
+            aria-invalid="false"
             onChange={handleInput}
           />
-          {errors?.mobile?.type === 'required' && <p className='mt-2 text-theme-danger'>This field is required</p>}
-          {errors?.mobile?.type === 'pattern' && <p className='mt-2 text-theme-danger'>This input is number only.</p>}
-          {errors?.mobile?.type === 'minLength' && (
-            <p className='mt-2 text-theme-danger'>Please enter valid 10 digit number</p>
+          {errors?.mobile?.type === "required" && (
+            <p className="mt-2 text-theme-danger">This field is required</p>
           )}
-          {errors?.mobile?.type === 'maxLength' && (
-            <p className='mt-2 text-theme-danger'>limit exceeded than 10 digit</p>
+          {errors?.mobile?.type === "pattern" && (
+            <p className="mt-2 text-theme-danger">This input is number only.</p>
+          )}
+          {errors?.mobile?.type === "minLength" && (
+            <p className="mt-2 text-theme-danger">
+              Please enter valid 10 digit number
+            </p>
+          )}
+          {errors?.mobile?.type === "maxLength" && (
+            <p className="mt-2 text-theme-danger">
+              limit exceeded than 10 digit
+            </p>
           )}
         </div>
         <div>
           <textarea
-            {...register('address', {
+            {...register("address", {
               required: true,
             })}
-            name='address'
-            id='address'
-            placeholder='Address'
+            name="address"
+            id="address"
+            placeholder="Address"
             value={formData.address}
             onChange={handleInput}
-            className='py-2 px-3 w-full appearance-none border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading'
+            className="py-2 px-3 w-full appearance-none border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading"
             rows={7}
           ></textarea>
-          {errors?.address?.type === 'required' && <p className='mt-2 text-theme-danger'>This field is required</p>}
+          {errors?.address?.type === "required" && (
+            <p className="mt-2 text-theme-danger">This field is required</p>
+          )}
         </div>
-        <div className='w-full '>
-          <Button variant='primary' className='cursor-pointer w-full font-semi' type='submit'>
+        <div className="w-full ">
+          <Button
+            variant="primary"
+            className="cursor-pointer w-full font-semi"
+            type="submit"
+          >
             Register
           </Button>
         </div>
       </form>
-      <p className='my-1'>
-        Already have an account?{' '}
-        <a href='/login' className='underline text-theme-supportBlue'>
+      <p className="my-1">
+        Already have an account?{" "}
+        <a href="/login" className="underline text-theme-supportBlue">
           Sign In
         </a>
       </p>
