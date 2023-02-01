@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Banner } from "../../atoms/banner";
-import { json, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import { allProducts } from "../../api/api";
 import { CardComponent } from "../../atoms/card";
 import { useSelector, useDispatch } from "react-redux";
