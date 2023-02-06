@@ -190,6 +190,37 @@ const getUserCart = async (
   }
 };
 
+const removeCartItem = async (
+  req: RequestExt,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const schema = joi.object({
+      productId: joi.string().required(),
+    });
+    const { error, value } = schema.validate(req.body);
+    if (error) {
+      return next(new BadRequestError(error.details[0].message));
+    }
+    const { productId } = value;
+    const cart = await CartModel.findOneAndUpdate(
+      { user: req.user?.id },
+      {
+        $pull: {
+          products: productId,
+        },
+      },
+      { new: true }
+    );
+    if (cart) {
+      res.status(201).json(true);
+    }
+  } catch (error) {
+    return next(new Error('Somthing went wrong'));
+  }
+};
+
 const emptyUserCart = async (
   req: RequestExt,
   res: Response,
@@ -213,4 +244,5 @@ export {
   addToCart,
   getUserCart,
   emptyUserCart,
+  removeCartItem,
 };
