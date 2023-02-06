@@ -85,6 +85,35 @@ const getUserWishlist = async (
   }
 };
 
+const removeFromWishlist = async (
+  req: RequestExt,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const schema = joi.object({
+      productId: joi.string().required(),
+    });
+    const { error, value } = schema.validate(req.body);
+    if (error) {
+      return next(new BadRequestError(error.details[0].message));
+    }
+    const { productId } = value;
+    const wishlist = await UserModel.findByIdAndUpdate(
+      { _id: req.user?.id },
+      {
+        $pull: { wishlist: productId },
+      },
+      { new: true }
+    );
+    if (wishlist) {
+      res.status(201).json(true);
+    }
+  } catch (error) {
+    return next(new Error('Somthing went wrong'));
+  }
+};
+
 const addToCart = async (
   req: RequestExt,
   res: Response,
@@ -245,4 +274,5 @@ export {
   getUserCart,
   emptyUserCart,
   removeCartItem,
+  removeFromWishlist,
 };

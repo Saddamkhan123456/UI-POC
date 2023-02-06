@@ -5,6 +5,7 @@ import Icon from "../icons/icon";
 import { CartContext } from "../../Contexts/cart.context";
 import { WishlistContext } from "../../Contexts/wishlist.context";
 import { useContext } from "react";
+import { baseUrl } from "../../redux/actions/ActionsCreators";
 
 export interface CardProps {
   CardData: any;
@@ -23,9 +24,9 @@ export const CardComponent = ({ CardData }: CardProps) => {
         <Card className="card-shadow justify-between group box-border overflow-hidden flex rounded-md cursor-pointer pe-0 mb-2 flex-col items-start transition duration-200 ease-in-out transform hover:-translate-y-1 hover:md:-translate-y-1.5 hover:shadow-lg ">
           <div className="flex w-full justify-center">
             <div className="w-full min-h-80 aspect-w-1 aspect-h-1 lg:h-80 lg:aspect-none">
-              <Link to={`/product/${CardData.id}`}>
+              <Link to={`/product/${CardData._id}`}>
                 <img
-                  src={CardData.thumbnail}
+                  src={baseUrl + "uploads/images/" + CardData.images[0]?.img}
                   alt="productImage"
                   // className="bg-gray-300 object-cover rounded-s-md rounded-md transition duration-200 ease-in group-hover:rounded-b-none"
                   className="bg-gray-300 w-full h-full object-top object-cover lg:w-full lg:h-full"
