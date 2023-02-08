@@ -85,6 +85,35 @@ const getUserWishlist = async (
   }
 };
 
+const removeFromWishlist = async (
+  req: RequestExt,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const schema = joi.object({
+      productId: joi.string().required(),
+    });
+    const { error, value } = schema.validate(req.body);
+    if (error) {
+      return next(new BadRequestError(error.details[0].message));
+    }
+    const { productId } = value;
+    const wishlist = await UserModel.findByIdAndUpdate(
+      { _id: req.user?.id },
+      {
+        $pull: { wishlist: productId },
+      },
+      { new: true }
+    );
+    if (wishlist) {
+      res.status(201).json(true);
+    }
+  } catch (error) {
+    return next(new Error('Somthing went wrong'));
+  }
+};
+
 const addToCart = async (
   req: RequestExt,
   res: Response,
@@ -99,34 +128,72 @@ const addToCart = async (
       return next(new BadRequestError(error.details[0].message));
     }
     const { products } = value;
-    let newProducts: any = [];
     const allreadyExists = await CartModel.findOne({ user: req.user?.id });
     if (allreadyExists) {
-      allreadyExists.remove();
-    }
-    for (let i = 0; i < products.length; i++) {
-      let obj: any = {};
-      obj.product = products[i].product;
-      obj.quantity = products[i].quantity;
-      let getPrice = await ProductModel.findById({
-        _id: products[i].product,
-      })
-        .select('price')
-        .exec();
-      obj.price = getPrice?.price;
-      newProducts.push(obj);
-    }
-    let cartTotal: number = 0;
-    for (let i = 0; i < newProducts.length; i++) {
-      cartTotal = cartTotal + newProducts[i].price * newProducts[i].quantity;
-    }
-    let newCart = await new CartModel({
-      products,
-      cartTotal,
-      user: req.user?.id,
-    }).save();
-    if (newCart) {
-      res.status(201).json(newCart);
+      //if cart already exists then update cart by quantity
+      let cart;
+      products.forEach(async (item: any) => {
+        const product = item.product;
+        const filteredItem = allreadyExists?.products?.find(
+          (c: any) => c.product == product
+        );
+        if (filteredItem) {
+          filteredItem.quantity = filteredItem.quantity + item.quantity;
+          cart = await CartModel.findOneAndUpdate(
+            { user: req.user?.id, 'products.product': product },
+            {
+              $set: {
+                'products.$': filteredItem,
+              },
+            },
+            { new: true }
+          );
+        } else {
+          let obj: any = {};
+          obj.product = item.product;
+          obj.quantity = item.quantity;
+          let getPrice = await ProductModel.findById({
+            _id: item.product,
+          })
+            .select('price')
+            .exec();
+          obj.price = getPrice?.price;
+          cart = await CartModel.findOneAndUpdate(
+            { user: req.user?.id },
+            {
+              $push: {
+                products: obj,
+              },
+            },
+            { new: true }
+          );
+        }
+        if (cart) {
+          res.status(201).json(cart);
+        }
+      });
+    } else {
+      //if cart not exist then create a new cart
+      let newProducts: any = [];
+      for (let i = 0; i < products.length; i++) {
+        let obj: any = {};
+        obj.product = products[i].product;
+        obj.quantity = products[i].quantity;
+        let getPrice = await ProductModel.findById({
+          _id: products[i].product,
+        })
+          .select('price')
+          .exec();
+        obj.price = getPrice?.price;
+        newProducts.push(obj);
+      }
+      const cart = await new CartModel({
+        user: req.user?.id,
+        products: newProducts,
+      }).save();
+      if (cart) {
+        res.status(201).json(cart);
+      }
     }
   } catch (error) {
     return next(new Error('Somthing went wrong'));
@@ -144,6 +211,39 @@ const getUserCart = async (
     );
     if (cart) {
       res.status(201).json(cart);
+    } else {
+      res.status(201).json('No data found');
+    }
+  } catch (error) {
+    return next(new Error('Somthing went wrong'));
+  }
+};
+
+const removeCartItem = async (
+  req: RequestExt,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const schema = joi.object({
+      productId: joi.string().required(),
+    });
+    const { error, value } = schema.validate(req.body);
+    if (error) {
+      return next(new BadRequestError(error.details[0].message));
+    }
+    const { productId } = value;
+    const cart = await CartModel.findOneAndUpdate(
+      { user: req.user?.id },
+      {
+        $pull: {
+          products: productId,
+        },
+      },
+      { new: true }
+    );
+    if (cart) {
+      res.status(201).json(true);
     }
   } catch (error) {
     return next(new Error('Somthing went wrong'));
@@ -156,8 +256,11 @@ const emptyUserCart = async (
   next: NextFunction
 ) => {
   try {
-    const cart = await CartModel.findOneAndRemove({ user: req.user?.id });
-    res.status(201).json(cart);
+    const cart = await CartModel.findOneAndRemove(
+      { user: req.user?.id },
+      { new: true }
+    );
+    res.status(201).json('Cart is empty!');
   } catch (error) {
     return next(new Error('Somthing went wrong'));
   }
@@ -170,4 +273,6 @@ export {
   addToCart,
   getUserCart,
   emptyUserCart,
+  removeCartItem,
+  removeFromWishlist,
 };

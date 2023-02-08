@@ -13,7 +13,6 @@ const CartSchema = new Schema<Cart>(
         price: Number,
       },
     ],
-    cartTotal: Number,
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',

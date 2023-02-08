@@ -13,7 +13,7 @@ import {
   ProductAction,
 } from "./Product.action";
 
-let API: string = "http://localhost:9000/api/";
+export const baseUrl: string = "http://localhost:9000/api/";
 
 export const register = (data: any) => async (
   dispatch: Dispatch<AuthAction>
@@ -23,7 +23,7 @@ export const register = (data: any) => async (
       type: SIGNUP_START,
     });
     axios
-      .post(API + "auth/register", data)
+      .post(baseUrl + "auth/register", data)
       .then((response) => {
         dispatch({
           type: SIGNUP_SUCCESS,
@@ -52,7 +52,7 @@ export const getProducts = () => (dispatch: Dispatch<ProductAction>) => {
       type: GET_ALL_PRODUCT_START,
     });
     axios
-      .get(API + "product/")
+      .get(baseUrl + "product/")
       .then((response) => {
         dispatch({
           type: GET_ALL_PRODUCT_SUCCESS,
