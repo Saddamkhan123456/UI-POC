@@ -12,8 +12,20 @@ import {
   GET_ALL_PRODUCT_SUCCESS,
   ProductAction,
 } from "./Product.action";
+import {
+  GetWishlistAction,
+  GET_WISHLIST_PRODUCT_FAIL,
+  GET_WISHLIST_PRODUCT_START,
+  GET_WISHLIST_PRODUCT_SUCCESS,
+} from "./GetWishlist.action";
+import {
+  AddWishlistAction,
+  ADD_WISHLIST_PRODUCT_FAIL,
+  ADD_WISHLIST_PRODUCT_START,
+  ADD_WISHLIST_PRODUCT_SUCCESS,
+} from "./AddWishlist.action";
 
-export const baseUrl: string = "http://localhost:9000/api/";
+export const baseUrl: string = "http://localhost:6000/api/";
 
 export const register = (data: any) => async (
   dispatch: Dispatch<AuthAction>
@@ -69,6 +81,129 @@ export const getProducts = () => (dispatch: Dispatch<ProductAction>) => {
     if (e instanceof Error) {
       dispatch({
         type: GET_ALL_PRODUCT_FAIL,
+        error: e.message,
+      });
+    }
+  }
+};
+
+export const getWishlistProducts = () => (
+  dispatch: Dispatch<GetWishlistAction>
+) => {
+  let config = {
+    method: "get",
+    url: `${baseUrl}user/wishlist`,
+    headers: {
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZThkMDY3NzNmMzBjMzgyZDhlYzhlMyIsImVtYWlsIjoic3VqYXkudGVzdEB0YWxlbnRpY2EuY29tIiwibmFtZSI6InN1amF5Iiwicm9sZSI6IlVTRVIiLCJ0ZWxlcGhvbmUiOiIxMjM0NTY3ODkwIiwiaWF0IjoxNjc2MjAyMDg3LCJleHAiOjE2NzYzNzQ4ODd9.KXLv09Ios8ZkMOB4cEdZTxwKWW_9x50aEjGBPZeh_CM",
+    },
+  };
+  try {
+    dispatch({
+      type: GET_WISHLIST_PRODUCT_START,
+    });
+    axios(config)
+      .then((response) => {
+        dispatch({
+          type: GET_WISHLIST_PRODUCT_SUCCESS,
+          payload: response.data,
+        });
+      })
+      .catch((error) => {
+        dispatch({
+          type: GET_WISHLIST_PRODUCT_FAIL,
+          error: error.message,
+        });
+      });
+  } catch (e) {
+    if (e instanceof Error) {
+      dispatch({
+        type: GET_WISHLIST_PRODUCT_FAIL,
+        error: e.message,
+      });
+    }
+  }
+};
+
+export const addWishlistProducts = (data) => (
+  dispatch: Dispatch<AddWishlistAction>
+) => {
+  var body = JSON.stringify({
+    productId: data,
+  });
+  let config = {
+    method: "put",
+    url: `${baseUrl}user/wishlist`,
+    headers: {
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZThkMDY3NzNmMzBjMzgyZDhlYzhlMyIsImVtYWlsIjoic3VqYXkudGVzdEB0YWxlbnRpY2EuY29tIiwibmFtZSI6InN1amF5Iiwicm9sZSI6IlVTRVIiLCJ0ZWxlcGhvbmUiOiIxMjM0NTY3ODkwIiwiaWF0IjoxNjc2MjAyMDg3LCJleHAiOjE2NzYzNzQ4ODd9.KXLv09Ios8ZkMOB4cEdZTxwKWW_9x50aEjGBPZeh_CM",
+      "Content-Type": "application/json",
+    },
+    data: body,
+  };
+  try {
+    dispatch({
+      type: ADD_WISHLIST_PRODUCT_START,
+    });
+    axios(config)
+      .then((response) => {
+        dispatch({
+          type: ADD_WISHLIST_PRODUCT_SUCCESS,
+          payload: response.data,
+        });
+      })
+      .catch((error) => {
+        dispatch({
+          type: ADD_WISHLIST_PRODUCT_FAIL,
+          error: error.message,
+        });
+      });
+  } catch (e) {
+    if (e instanceof Error) {
+      dispatch({
+        type: ADD_WISHLIST_PRODUCT_FAIL,
+        error: e.message,
+      });
+    }
+  }
+};
+export const removeWishlistProducts = (data) => (
+  dispatch: Dispatch<AddWishlistAction>
+) => {
+  var body = JSON.stringify({
+    productId: data,
+  });
+  let config = {
+    method: "put",
+    url: `${baseUrl}user/wishlist/remove`,
+    headers: {
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZThkMDY3NzNmMzBjMzgyZDhlYzhlMyIsImVtYWlsIjoic3VqYXkudGVzdEB0YWxlbnRpY2EuY29tIiwibmFtZSI6InN1amF5Iiwicm9sZSI6IlVTRVIiLCJ0ZWxlcGhvbmUiOiIxMjM0NTY3ODkwIiwiaWF0IjoxNjc2MjAyMDg3LCJleHAiOjE2NzYzNzQ4ODd9.KXLv09Ios8ZkMOB4cEdZTxwKWW_9x50aEjGBPZeh_CM",
+      "Content-Type": "application/json",
+    },
+    data: body,
+  };
+  try {
+    dispatch({
+      type: ADD_WISHLIST_PRODUCT_START,
+    });
+    axios(config)
+      .then((response) => {
+        dispatch({
+          type: ADD_WISHLIST_PRODUCT_SUCCESS,
+          payload: response.data,
+        });
+      })
+      .catch((error) => {
+        dispatch({
+          type: ADD_WISHLIST_PRODUCT_FAIL,
+          error: error.message,
+        });
+      });
+  } catch (e) {
+    if (e instanceof Error) {
+      dispatch({
+        type: ADD_WISHLIST_PRODUCT_FAIL,
         error: e.message,
       });
     }

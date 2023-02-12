@@ -2,6 +2,7 @@ import * as React from "react";
 import { Button, Card } from "design-system";
 import classnames from "classnames";
 import Icon from "../icons/icon";
+import { baseUrl } from "../../redux/actions/ActionsCreators";
 
 export interface ItemCardProps extends React.HTMLAttributes<HTMLElement> {
   cartItem?: any;
@@ -32,7 +33,7 @@ const ItemCard = ({
   addToWishlist,
   qty,
 }: ItemCardProps) => {
-  const { title, thumbnail, brand, quantity, price } = cartItem;
+  const { title, images, description, quantity, brand, price } = cartItem;
   return (
     <Card
       className={classnames(
@@ -46,7 +47,7 @@ const ItemCard = ({
         }
       >
         <img
-          src={thumbnail}
+          src={`${baseUrl}uploads/images/${images[0]?.img}`}
           alt={title}
           className="h-full w-full object-cover object-top"
         />
@@ -55,7 +56,10 @@ const ItemCard = ({
         <div className="w-full flex flex-col">
           <div className="flex justify-between text-base text-theme-neutral flex-col md:flex-row">
             <h3 className="mr-1">
-              <p className="font-normal text-medium line-clamp-2">{title}</p>
+              <p className="font-bold text-normal line-clamp-2">{title}</p>
+              <p className="mt-1 mb-2 text-medium font-normal capitalize">
+                {description}
+              </p>
               <p className="mt-1 mb-2 text-sm text-theme-neutral55 font-normal capitalize">
                 {brand}
               </p>
@@ -66,9 +70,7 @@ const ItemCard = ({
           <div className="flex flex-1 items-end justify-between text-sm">
             <div className={classnames(isQuantityShow ? "flex" : "hidden")}>
               <div className="mr-1 flex gap-0.5">
-                {qty ? (
-                  <p className="text-theme-neutralGray">Qty: {quantity}</p>
-                ) : (
+                {!qty && (
                   <>
                     <span onClick={removeItem} className="cursor-pointer">
                       &#8592;
