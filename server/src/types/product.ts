@@ -6,7 +6,7 @@ export interface Product extends Document {
   description: string;
   price: number;
   salePrice: number;
-  brand: string;
+  brand: mongoose.Schema.Types.ObjectId;
   SKU: String;
   quantity: number;
   sold: number;

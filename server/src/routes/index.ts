@@ -4,10 +4,12 @@ import authRoutes from './auth.routes';
 import userRoutes from './user.routes';
 import categoryRoutes from './category.routes';
 import productRoutes from './product.routes';
+import brandRoutes from './brand.routes';
 
 router.use('/auth', authRoutes);
 router.use('/user', userRoutes);
 router.use('/category', categoryRoutes);
 router.use('/product', productRoutes);
+router.use('/brand', brandRoutes);
 
 export default router;
