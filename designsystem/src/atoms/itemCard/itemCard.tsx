@@ -2,7 +2,7 @@ import * as React from "react";
 import { Button, Card } from "design-system";
 import classnames from "classnames";
 import Icon from "../icons/icon";
-import { baseUrl } from "../../redux/actions/ActionsCreators";
+import { imageBaseUrl } from "../../constants/constants";
 
 export interface ItemCardProps extends React.HTMLAttributes<HTMLElement> {
   cartItem?: any;
@@ -47,7 +47,7 @@ const ItemCard = ({
         }
       >
         <img
-          src={`${baseUrl}uploads/images/${images[0]?.img}`}
+          src={`${imageBaseUrl}${images[0]?.img}`}
           alt={title}
           className="h-full w-full object-cover object-top"
         />
@@ -61,7 +61,7 @@ const ItemCard = ({
                 {description}
               </p>
               <p className="mt-1 mb-2 text-sm text-theme-neutral55 font-normal capitalize">
-                {brand}
+                {brand.title}
               </p>
             </h3>
             <p className="text-lg font-semibold ml-1">&#8377;{price}</p>

@@ -76,7 +76,10 @@ const getUserWishlist = async (
   try {
     const user = await UserModel.findById({ _id: req.user?.id })
       .select('name email mobile wishlist')
-      .populate('wishlist');
+      .populate({
+        path: 'wishlist',
+        populate: { path: 'brand' },
+      });
     if (user) {
       res.status(201).json(user);
     }
