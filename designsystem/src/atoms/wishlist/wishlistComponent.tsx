@@ -1,5 +1,11 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 import { HTMLAttributes } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  getWishlistProducts,
+  removeWishlistProducts,
+} from "../../redux/actions/ActionsCreators";
+import { RootState } from "../../store/configureStore";
 import { Card, CardBody } from "design-system";
 import Icon from "../icons/icon";
 import { CartContext } from "../../Contexts/cart.context";
@@ -18,10 +24,23 @@ export const WishlistComponent = ({
   Closed,
   ...props
 }: NavbarProps) => {
+  const [wishlistData, setWishlistData] = useState([]);
+  const wishlist = useSelector((state: RootState) => state.getwishlist);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch<any>(getWishlistProducts());
+  }, []);
+
+  useEffect(() => {
+    setWishlistData(wishlist?.products?.wishlist);
+  }, [wishlist?.products]);
+
   const [open, setOpen] = React.useState(false);
   const { saveCartItem } = React.useContext(CartContext);
-  const { wishlistItems, flushWishlistItem } = useContext(WishlistContext);
-  const { wishlistCount } = useContext(WishlistContext);
+  const flushWishlistItem = (cardData) => {
+    dispatch<any>(removeWishlistProducts(cardData._id));
+    dispatch<any>(getWishlistProducts());
+  };
 
   return (
     <>
@@ -34,7 +53,7 @@ export const WishlistComponent = ({
           <div>
             <Icon kind="wishlist" size={20} />
             <span className="badge-count text-white bg-red-700 absolute rounded-full text-xs -mt-7 ml-2 py-0 px-1.5">
-              {wishlistCount}
+              {wishlistData?.length}
             </span>
           </div>
         </div>
@@ -63,12 +82,12 @@ export const WishlistComponent = ({
                     />
                   </div>
                   <div className="h-full flex flex-col">
-                    {wishlistItems && wishlistItems.length > 0 ? (
+                    {wishlistData ? (
                       <div className="px-4">
-                        {wishlistItems.map((item) => {
+                        {wishlistData.map((item) => {
                           return (
                             <ItemCard
-                              key={item.id}
+                              key={item._id}
                               cartItem={item}
                               cartCard={false}
                               imgSize={false}

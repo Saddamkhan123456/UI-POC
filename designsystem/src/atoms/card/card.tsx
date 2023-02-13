@@ -1,4 +1,6 @@
 import * as React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../../store/configureStore";
 import { Card, Button } from "design-system";
 import { Link } from "react-router-dom";
 import Icon from "../icons/icon";
@@ -6,16 +8,26 @@ import { CartContext } from "../../Contexts/cart.context";
 import { WishlistContext } from "../../Contexts/wishlist.context";
 import { useContext } from "react";
 import { imageBaseUrl } from "../../constants/constants";
+import {
+  addWishlistProducts,
+  getWishlistProducts,
+} from "../../redux/actions/ActionsCreators";
+
 
 export interface CardProps {
   CardData: any;
 }
 
 export const CardComponent = ({ CardData }: CardProps) => {
+  const dispatch = useDispatch();
+
   const { saveCartItem } = React.useContext(CartContext);
   const addProductToCart = () => saveCartItem(CardData);
   const { saveWishlistItem } = useContext(WishlistContext);
-  const addProductToWishlist = () => saveWishlistItem(CardData);
+  const addProductToWishlist = () => {
+    dispatch<any>(addWishlistProducts(CardData._id));
+    dispatch<any>(getWishlistProducts());
+  };
 
   return (
     <>
