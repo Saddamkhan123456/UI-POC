@@ -21,7 +21,9 @@ const getAll = async (req: Request, res: Response, next: NextFunction) => {
       /\b(gte|lte|gt|lt)\b/g,
       (match: any) => `$${match}`
     );
-    let query = ProductModel.find(JSON.parse(queryStr));
+    let query = ProductModel.find(JSON.parse(queryStr)).populate(
+      'category brand'
+    );
     // sorting
     if (req.query.sort) {
       let sortBy = req.query.sort as string;
@@ -41,10 +43,10 @@ const getAll = async (req: Request, res: Response, next: NextFunction) => {
         return next(new BadRequestError('This page does not exists!'));
       }
     }
-    const product = await query;
-    if (product) {
+    const products = await query;
+    if (products) {
       res.status(201);
-      res.json({ product });
+      res.json(products);
       return;
     }
     return next(new BadRequestError('No products found!'));
@@ -59,10 +61,12 @@ const getById = async (req: Request, res: Response, next: NextFunction) => {
       const product = await ProductModel.findById({
         _id: req.params.id,
         is_active: true,
-      }).exec();
+      })
+        .populate('brand category')
+        .exec();
       if (product) {
         res.status(201);
-        res.json({ product });
+        res.json(product);
         return;
       }
       return next(new BadRequestError('No product found!'));
@@ -83,7 +87,7 @@ const create = async (req: RequestExt, res: Response, next: NextFunction) => {
       return next(new BadRequestError('Please upload atleast 1 file!!'));
     }
     let imagePath: any = [];
-    if (req?.files?.length! > 0) {
+    if (req?.files?.length!) {
       imagePath = (req.files as any[]).map((file: any) => {
         return { img: `product/${file.filename}` };
       });
@@ -94,11 +98,11 @@ const create = async (req: RequestExt, res: Response, next: NextFunction) => {
       description: joi.string().required(),
       price: joi.number().required(),
       salePrice: joi.number(),
-      SKU: joi.string().required(),
-      color: joi.string().required(),
-      brand: joi.string().required(),
-      category: joi.string().required(),
+      brand: joi.any().required(),
+      category: joi.any().required(),
       quantity: joi.number().required(),
+      SKU: joi.string(),
+      color: joi.string(),
       images: joi.array().required(),
     });
     const { error, value } = schema.validate({
@@ -113,6 +117,7 @@ const create = async (req: RequestExt, res: Response, next: NextFunction) => {
       title,
       is_active: true,
     }).exec();
+
     if (isExists) {
       return next(new BadRequestError('Product already exists!'));
     }
@@ -131,7 +136,6 @@ const create = async (req: RequestExt, res: Response, next: NextFunction) => {
     return next(new Error('Somthing went wrong'));
   }
 };
-
 const update = async (req: RequestExt, res: Response, next: NextFunction) => {
   try {
     let imagePath: any = [];

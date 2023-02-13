@@ -20,7 +20,10 @@ app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(morgan('dev'));
-app.use('/images', express.static(path.join(__dirname, 'uploads/images/')));
+app.use(
+  '/images',
+  express.static(path.join(__dirname, '..', 'uploads', 'images'))
+);
 app.use('/api', indexRouter);
 app.all('*', (req, res, next) => {
   next(new NotFoundError());

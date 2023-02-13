@@ -15,10 +15,11 @@ const productSchema = new Schema<Product>(
       required: true,
     },
     brand: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Brand',
       required: true,
     },
-    SKU: { type: String, required: true },
+    SKU: { type: String },
     price: {
       type: Number,
       required: true,
@@ -27,12 +28,12 @@ const productSchema = new Schema<Product>(
       type: Number,
     },
     category: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Category',
       required: true,
     },
     color: {
       type: String,
-      required: true,
     },
     images: [{ img: { type: String } }],
     quantity: { type: Number, required: true },

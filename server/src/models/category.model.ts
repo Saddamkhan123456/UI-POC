@@ -7,6 +7,14 @@ const categorySchema = new Schema<Category>(
       type: String,
       required: true,
     },
+    banner: {
+      type: String,
+      required: true,
+    },
+    thumbnail: {
+      type: String,
+      required: true,
+    },
     isActive: {
       type: Boolean,
       default: true,

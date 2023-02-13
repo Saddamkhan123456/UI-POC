@@ -10,9 +10,23 @@ import {
   GET_ALL_PRODUCT_FAIL,
   GET_ALL_PRODUCT_START,
   GET_ALL_PRODUCT_SUCCESS,
+  GET_PRODUCT_BY_ID_FAIL,
+  GET_PRODUCT_BY_ID_START,
+  GET_PRODUCT_BY_ID_SUCCESS,
   ProductAction,
 } from "./Product.action";
 import {
+  CategoryAction,
+  GET_ALL_CATEGORY_FAIL,
+  GET_ALL_CATEGORY_START,
+  GET_ALL_CATEGORY_SUCCESS,
+} from "./Category.action";
+import {
+  BrandAction,
+  GET_ALL_BRAND_FAIL,
+  GET_ALL_BRAND_START,
+  GET_ALL_BRAND_SUCCESS,
+} from "./Brand.action";
   GetWishlistAction,
   GET_WISHLIST_PRODUCT_FAIL,
   GET_WISHLIST_PRODUCT_START,
@@ -24,6 +38,7 @@ import {
   ADD_WISHLIST_PRODUCT_START,
   ADD_WISHLIST_PRODUCT_SUCCESS,
 } from "./AddWishlist.action";
+
 
 export const baseUrl: string = "http://localhost:6000/api/";
 
@@ -58,13 +73,20 @@ export const register = (data: any) => async (
   }
 };
 
-export const getProducts = () => (dispatch: Dispatch<ProductAction>) => {
+export const getProducts = (category?: string, brand?: string) => (
+  dispatch: Dispatch<ProductAction>
+) => {
   try {
     dispatch({
       type: GET_ALL_PRODUCT_START,
     });
     axios
-      .get(baseUrl + "product/")
+      .get(
+        baseUrl +
+          `product/${category ? `?category=${category}` : ""}${
+            brand ? `?brand=${brand}` : ""
+          }`
+      )
       .then((response) => {
         dispatch({
           type: GET_ALL_PRODUCT_SUCCESS,
@@ -81,6 +103,96 @@ export const getProducts = () => (dispatch: Dispatch<ProductAction>) => {
     if (e instanceof Error) {
       dispatch({
         type: GET_ALL_PRODUCT_FAIL,
+        error: e.message,
+      });
+    }
+  }
+};
+
+
+export const getProduct = (id?: string) => (
+  dispatch: Dispatch<ProductAction>
+) => {
+  try {
+    dispatch({
+      type: GET_PRODUCT_BY_ID_START,
+    });
+    axios
+      .get(baseUrl + `product/${id}`)
+      .then((response) => {
+        dispatch({
+          type: GET_PRODUCT_BY_ID_SUCCESS,
+          payload: response.data,
+        });
+      })
+      .catch((error) => {
+        dispatch({
+          type: GET_PRODUCT_BY_ID_FAIL,
+          error: error.message,
+        });
+      });
+  } catch (e) {
+    if (e instanceof Error) {
+      dispatch({
+        type: GET_PRODUCT_BY_ID_FAIL,
+        error: e.message,
+      });
+    }
+  }
+};
+
+export const getCategories = () => (dispatch: Dispatch<CategoryAction>) => {
+  try {
+    dispatch({
+      type: GET_ALL_CATEGORY_START,
+    });
+    axios
+      .get(baseUrl + "category/")
+      .then((response) => {
+        dispatch({
+          type: GET_ALL_CATEGORY_SUCCESS,
+          payload: response.data,
+        });
+      })
+      .catch((error) => {
+        dispatch({
+          type: GET_ALL_CATEGORY_FAIL,
+          error: error.message,
+        });
+      });
+  } catch (e) {
+    if (e instanceof Error) {
+      dispatch({
+        type: GET_ALL_CATEGORY_FAIL,
+        error: e.message,
+      });
+    }
+  }
+};
+
+export const getBrands = () => (dispatch: Dispatch<BrandAction>) => {
+  try {
+    dispatch({
+      type: GET_ALL_BRAND_START,
+    });
+    axios
+      .get(baseUrl + "brand/")
+      .then((response) => {
+        dispatch({
+          type: GET_ALL_BRAND_SUCCESS,
+          payload: response.data,
+        });
+      })
+      .catch((error) => {
+        dispatch({
+          type: GET_ALL_BRAND_FAIL,
+          error: error.message,
+        });
+      });
+  } catch (e) {
+    if (e instanceof Error) {
+      dispatch({
+        type: GET_ALL_BRAND_FAIL,
         error: e.message,
       });
     }

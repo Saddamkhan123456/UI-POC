@@ -25,7 +25,7 @@ const storage = multer.diskStorage({
   },
   filename: function (req: Request, file, cb) {
     if (file) {
-      if (!file.originalname.match(/\.(png|jpg|jpeg|gif|svg)$/)) {
+      if (!file.originalname.match(/\.(png|jpg|jpeg|gif|svg|webp|avif)$/)) {
         return cb(
           new BadRequestError('Please upload an image file.'),
           file.originalname

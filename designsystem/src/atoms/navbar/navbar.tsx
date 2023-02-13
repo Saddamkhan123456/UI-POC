@@ -26,17 +26,16 @@ export const Navbar = ({
       >
         <div className="container-fluid w-full flex flex-wrap items-center justify-between px-3 relative">
           <div className="flex items-center">
-            <a
+            <Link
               className="mr-3 mt-1 flex-none w-[2.0625rem] overflow-hidden md:w-auto"
-              href="/"
+              to="/"
             >
               <Icon kind="logo" size={40} className="text-theme-white" />
-            </a>
+            </Link>
             <NavLinks />
           </div>
 
           <div className="flex items-center relative gap-4">
-
             <WishlistComponent />
 
             <Link

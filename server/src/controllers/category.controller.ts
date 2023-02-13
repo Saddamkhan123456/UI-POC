@@ -4,13 +4,14 @@ import CategoryModel from '../models/category.model';
 import joi from 'joi';
 import { validateMongoId } from '../utils/validateMongoId';
 import { BadRequestError } from '../errors';
+import _ from 'underscore';
 
 const getAll = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const categories = await CategoryModel.find({ isActive: true }).exec();
     if (categories) {
       res.status(201);
-      res.json({ categories });
+      res.json(categories);
       return;
     }
     return next(new BadRequestError('No categories found!'));
@@ -28,7 +29,7 @@ const getById = async (req: Request, res: Response, next: NextFunction) => {
       }).exec();
       if (category) {
         res.status(201);
-        res.json({ category });
+        res.json(category);
         return;
       }
       return next(new BadRequestError('No category found!'));
@@ -42,10 +43,27 @@ const getById = async (req: Request, res: Response, next: NextFunction) => {
 
 const create = async (req: RequestExt, res: Response, next: NextFunction) => {
   try {
+    const files = req.files as { [fieldname: string]: Express.Multer.File[] };
+
+    if (!files.banner.length) {
+      return next(new BadRequestError('Please upload image for banner!!'));
+    }
+
+    if (!files.banner?.length) {
+      return next(new BadRequestError('Please upload image for thumbnail!!'));
+    }
+
     const schema = joi.object({
       title: joi.string().required(),
+      banner: joi.any().required(),
+      thumbnail: joi.any().required(),
     });
-    const { error, value } = schema.validate(req.body);
+
+    const { error, value } = schema.validate({
+      ...req.body,
+      banner: `category/${files?.banner[0]?.filename}`,
+      thumbnail: `category/${files?.thumbnail[0]?.filename}`,
+    });
     if (error) {
       return next(new BadRequestError(error.details[0].message));
     }
@@ -56,7 +74,7 @@ const create = async (req: RequestExt, res: Response, next: NextFunction) => {
     }).exec();
     if (!isExists) {
       const category = await new CategoryModel({
-        title,
+        ...value,
         createdBy: req.user?.id,
       }).save();
       if (category) {
@@ -73,9 +91,13 @@ const create = async (req: RequestExt, res: Response, next: NextFunction) => {
 
 const update = async (req: RequestExt, res: Response, next: NextFunction) => {
   try {
+    const files = req.files as { [fieldname: string]: Express.Multer.File[] };
+
     const schema = joi.object({
       id: joi.string().required(),
       title: joi.string().required(),
+      banner: joi.any(),
+      thumbnail: joi.any(),
     });
     const { error, value } = schema.validate(req.body);
     if (error) {
@@ -83,7 +105,7 @@ const update = async (req: RequestExt, res: Response, next: NextFunction) => {
     }
     const { title, id } = value;
     if (validateMongoId(id)) {
-      let isExists = await CategoryModel.findOne({
+      let isExists: any = await CategoryModel.findOne({
         title,
         _id: { $ne: id },
       }).exec();
@@ -91,7 +113,13 @@ const update = async (req: RequestExt, res: Response, next: NextFunction) => {
         let category = await CategoryModel.findByIdAndUpdate(
           { _id: id },
           {
-            title,
+            ...value,
+            banner: files?.banner[0]?.filename
+              ? `category/${files?.banner[0]?.filename}`
+              : isExists?.banner,
+            thumbnail: files?.thumbnail[0]?.filename
+              ? `category/${files?.thumbnail[0]?.filename}`
+              : isExists?.thumbnail,
             updatedBy: req.user?.id,
           },
           { new: true }
