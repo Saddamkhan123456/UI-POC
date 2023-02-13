@@ -27,11 +27,14 @@ import {
   GET_ALL_BRAND_START,
   GET_ALL_BRAND_SUCCESS,
 } from "./Brand.action";
+
+import {
   GetWishlistAction,
   GET_WISHLIST_PRODUCT_FAIL,
   GET_WISHLIST_PRODUCT_START,
   GET_WISHLIST_PRODUCT_SUCCESS,
 } from "./GetWishlist.action";
+
 import {
   AddWishlistAction,
   ADD_WISHLIST_PRODUCT_FAIL,
@@ -39,8 +42,7 @@ import {
   ADD_WISHLIST_PRODUCT_SUCCESS,
 } from "./AddWishlist.action";
 
-
-export const baseUrl: string = "http://localhost:6000/api/";
+export const baseUrl: string = "http://localhost:9000/api/";
 
 export const register = (data: any) => async (
   dispatch: Dispatch<AuthAction>
@@ -109,7 +111,6 @@ export const getProducts = (category?: string, brand?: string) => (
   }
 };
 
-
 export const getProduct = (id?: string) => (
   dispatch: Dispatch<ProductAction>
 ) => {
@@ -147,7 +148,7 @@ export const getCategories = () => (dispatch: Dispatch<CategoryAction>) => {
       type: GET_ALL_CATEGORY_START,
     });
     axios
-      .get(baseUrl + "category/")
+      .get(baseUrl + "category")
       .then((response) => {
         dispatch({
           type: GET_ALL_CATEGORY_SUCCESS,
@@ -176,7 +177,7 @@ export const getBrands = () => (dispatch: Dispatch<BrandAction>) => {
       type: GET_ALL_BRAND_START,
     });
     axios
-      .get(baseUrl + "brand/")
+      .get(baseUrl + "brand")
       .then((response) => {
         dispatch({
           type: GET_ALL_BRAND_SUCCESS,
@@ -279,6 +280,7 @@ export const addWishlistProducts = (data) => (
     }
   }
 };
+
 export const removeWishlistProducts = (data) => (
   dispatch: Dispatch<AddWishlistAction>
 ) => {
