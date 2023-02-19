@@ -9,6 +9,10 @@ import { RootState } from "../../store/configureStore";
 import { imageBaseUrl } from "../../constants/constants";
 import Spinner from "../../atoms/spinner/spinner";
 import ImageGallery from "react-image-gallery";
+import {
+  addWishlistProducts,
+  getWishlistProducts,
+} from "../../redux/actions/ActionsCreators";
 
 const ProductDetails = () => {
   let { productId } = useParams();
@@ -27,8 +31,9 @@ const ProductDetails = () => {
   const { saveCartItem } = useContext(CartContext);
   const dispatch = useDispatch();
   const addProductToCart = () => saveCartItem(productData);
-  const { saveWishlistItem } = useContext(WishlistContext);
-  const addProductToWishlist = () => saveWishlistItem(productData);
+  const addProductToWishlist = () => {
+    dispatch<any>(addWishlistProducts(productId));
+  };
   const product = useSelector((state: RootState) => state.product);
   useEffect(() => {
     dispatch<any>(getProduct(productId));

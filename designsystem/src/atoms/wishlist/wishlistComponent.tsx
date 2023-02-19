@@ -39,7 +39,6 @@ export const WishlistComponent = ({
   const { saveCartItem } = React.useContext(CartContext);
   const flushWishlistItem = (cardData) => {
     dispatch<any>(removeWishlistProducts(cardData._id));
-    dispatch<any>(getWishlistProducts());
   };
 
   return (

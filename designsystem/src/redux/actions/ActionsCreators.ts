@@ -41,6 +41,7 @@ import {
   ADD_WISHLIST_PRODUCT_START,
   ADD_WISHLIST_PRODUCT_SUCCESS,
 } from "./AddWishlist.action";
+import { token } from "../../constants/constants";
 
 export const baseUrl: string = "http://localhost:9000/api/";
 
@@ -207,8 +208,7 @@ export const getWishlistProducts = () => (
     method: "get",
     url: `${baseUrl}user/wishlist`,
     headers: {
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZThkMDY3NzNmMzBjMzgyZDhlYzhlMyIsImVtYWlsIjoic3VqYXkudGVzdEB0YWxlbnRpY2EuY29tIiwibmFtZSI6InN1amF5Iiwicm9sZSI6IlVTRVIiLCJ0ZWxlcGhvbmUiOiIxMjM0NTY3ODkwIiwiaWF0IjoxNjc2MjAyMDg3LCJleHAiOjE2NzYzNzQ4ODd9.KXLv09Ios8ZkMOB4cEdZTxwKWW_9x50aEjGBPZeh_CM",
+      Authorization: `Bearer ${token}`,
     },
   };
   try {
@@ -248,8 +248,7 @@ export const addWishlistProducts = (data) => (
     method: "put",
     url: `${baseUrl}user/wishlist`,
     headers: {
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZThkMDY3NzNmMzBjMzgyZDhlYzhlMyIsImVtYWlsIjoic3VqYXkudGVzdEB0YWxlbnRpY2EuY29tIiwibmFtZSI6InN1amF5Iiwicm9sZSI6IlVTRVIiLCJ0ZWxlcGhvbmUiOiIxMjM0NTY3ODkwIiwiaWF0IjoxNjc2MjAyMDg3LCJleHAiOjE2NzYzNzQ4ODd9.KXLv09Ios8ZkMOB4cEdZTxwKWW_9x50aEjGBPZeh_CM",
+      Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
     },
     data: body,
@@ -264,6 +263,7 @@ export const addWishlistProducts = (data) => (
           type: ADD_WISHLIST_PRODUCT_SUCCESS,
           payload: response.data,
         });
+        dispatch<any>(getWishlistProducts());
       })
       .catch((error) => {
         dispatch({
@@ -291,8 +291,7 @@ export const removeWishlistProducts = (data) => (
     method: "put",
     url: `${baseUrl}user/wishlist/remove`,
     headers: {
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZThkMDY3NzNmMzBjMzgyZDhlYzhlMyIsImVtYWlsIjoic3VqYXkudGVzdEB0YWxlbnRpY2EuY29tIiwibmFtZSI6InN1amF5Iiwicm9sZSI6IlVTRVIiLCJ0ZWxlcGhvbmUiOiIxMjM0NTY3ODkwIiwiaWF0IjoxNjc2MjAyMDg3LCJleHAiOjE2NzYzNzQ4ODd9.KXLv09Ios8ZkMOB4cEdZTxwKWW_9x50aEjGBPZeh_CM",
+      Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
     },
     data: body,
@@ -307,6 +306,7 @@ export const removeWishlistProducts = (data) => (
           type: ADD_WISHLIST_PRODUCT_SUCCESS,
           payload: response.data,
         });
+        dispatch<any>(getWishlistProducts());
       })
       .catch((error) => {
         dispatch({
