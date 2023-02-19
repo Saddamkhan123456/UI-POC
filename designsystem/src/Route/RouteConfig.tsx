@@ -9,6 +9,7 @@ import CheckoutPage from '../page/checkoutPage/CheckoutPage';
 import MyProfile from '../page/myProfile/myProfile';
 import Signup from '../page/Signup/Signup';
 import { Pages } from './Pages';
+import Signin from '../page/Signin/Signin';
 
 export default function RouteConfig() {
   return (
@@ -22,6 +23,7 @@ export default function RouteConfig() {
       <Route path={Pages.THANKYOU} element={<ThankYouPage />} />
       <Route path={Pages.MYPROFILE} element={<MyProfile />} />
       <Route path={Pages.REGISTER} element={<Signup />} />
+      <Route path={Pages.LOGIN} element={<Signin />} />
     </Routes>
   );
 }

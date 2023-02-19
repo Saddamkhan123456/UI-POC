@@ -1,11 +1,14 @@
-import { Dispatch } from "redux";
+import { Dispatch } from 'redux';
 import {
   AuthAction,
   SIGNUP_START,
   SIGNUP_SUCCESS,
   SIGNUP_FAIL,
-} from "./Auth.action";
-import axios from "axios";
+  LOGIN_START,
+  LOGIN_SUCCESS,
+  LOGIN_FAIL,
+} from './Auth.action';
+import axios from 'axios';
 import {
   GET_ALL_PRODUCT_FAIL,
   GET_ALL_PRODUCT_START,
@@ -14,52 +17,47 @@ import {
   GET_PRODUCT_BY_ID_START,
   GET_PRODUCT_BY_ID_SUCCESS,
   ProductAction,
-} from "./Product.action";
+} from './Product.action';
 import {
   CategoryAction,
   GET_ALL_CATEGORY_FAIL,
   GET_ALL_CATEGORY_START,
   GET_ALL_CATEGORY_SUCCESS,
-} from "./Category.action";
-import {
-  BrandAction,
-  GET_ALL_BRAND_FAIL,
-  GET_ALL_BRAND_START,
-  GET_ALL_BRAND_SUCCESS,
-} from "./Brand.action";
+} from './Category.action';
+import { BrandAction, GET_ALL_BRAND_FAIL, GET_ALL_BRAND_START, GET_ALL_BRAND_SUCCESS } from './Brand.action';
 
 import {
   GetWishlistAction,
   GET_WISHLIST_PRODUCT_FAIL,
   GET_WISHLIST_PRODUCT_START,
   GET_WISHLIST_PRODUCT_SUCCESS,
-} from "./GetWishlist.action";
+} from './GetWishlist.action';
 
 import {
   AddWishlistAction,
   ADD_WISHLIST_PRODUCT_FAIL,
   ADD_WISHLIST_PRODUCT_START,
   ADD_WISHLIST_PRODUCT_SUCCESS,
-} from "./AddWishlist.action";
+} from './AddWishlist.action';
 
-export const baseUrl: string = "http://localhost:9000/api/";
+export const baseUrl: string = 'http://localhost:9000/api/';
 
-export const register = (data: any) => async (
-  dispatch: Dispatch<AuthAction>
-) => {
+export const registerUser = (data: object) => async (dispatch: Dispatch<AuthAction>) => {
   try {
     dispatch({
       type: SIGNUP_START,
     });
     axios
-      .post(baseUrl + "auth/register", data)
+      .post(baseUrl + 'auth/register', data)
       .then((response) => {
+        localStorage.setItem('token', response.data.token);
         dispatch({
           type: SIGNUP_SUCCESS,
           payload: response.data,
         });
       })
       .catch((error) => {
+        localStorage.removeItem('token');
         dispatch({
           type: SIGNUP_FAIL,
           error: error.message,
@@ -75,20 +73,45 @@ export const register = (data: any) => async (
   }
 };
 
-export const getProducts = (category?: string, brand?: string) => (
-  dispatch: Dispatch<ProductAction>
-) => {
+export const loginUser = (data: object) => async (dispatch: Dispatch<AuthAction>) => {
+  try {
+    dispatch({
+      type: LOGIN_START,
+    });
+    axios
+      .post(baseUrl + 'auth/login', data)
+      .then((response) => {
+        console.log(response.data.token);
+        localStorage.setItem('token', response.data.token);
+        dispatch({
+          type: LOGIN_SUCCESS,
+          payload: response.data,
+        });
+      })
+      .catch((error) => {
+        localStorage.removeItem('token');
+        dispatch({
+          type: LOGIN_FAIL,
+          error: error.message,
+        });
+      });
+  } catch (e) {
+    if (e instanceof Error) {
+      dispatch({
+        type: LOGIN_FAIL,
+        error: e.message,
+      });
+    }
+  }
+};
+
+export const getProducts = (category?: string, brand?: string) => (dispatch: Dispatch<ProductAction>) => {
   try {
     dispatch({
       type: GET_ALL_PRODUCT_START,
     });
     axios
-      .get(
-        baseUrl +
-          `product/${category ? `?category=${category}` : ""}${
-            brand ? `?brand=${brand}` : ""
-          }`
-      )
+      .get(baseUrl + `product/${category ? `?category=${category}` : ''}${brand ? `?brand=${brand}` : ''}`)
       .then((response) => {
         dispatch({
           type: GET_ALL_PRODUCT_SUCCESS,
@@ -111,9 +134,7 @@ export const getProducts = (category?: string, brand?: string) => (
   }
 };
 
-export const getProduct = (id?: string) => (
-  dispatch: Dispatch<ProductAction>
-) => {
+export const getProduct = (id?: string) => (dispatch: Dispatch<ProductAction>) => {
   try {
     dispatch({
       type: GET_PRODUCT_BY_ID_START,
@@ -148,7 +169,7 @@ export const getCategories = () => (dispatch: Dispatch<CategoryAction>) => {
       type: GET_ALL_CATEGORY_START,
     });
     axios
-      .get(baseUrl + "category")
+      .get(baseUrl + 'category')
       .then((response) => {
         dispatch({
           type: GET_ALL_CATEGORY_SUCCESS,
@@ -177,7 +198,7 @@ export const getBrands = () => (dispatch: Dispatch<BrandAction>) => {
       type: GET_ALL_BRAND_START,
     });
     axios
-      .get(baseUrl + "brand")
+      .get(baseUrl + 'brand')
       .then((response) => {
         dispatch({
           type: GET_ALL_BRAND_SUCCESS,
@@ -200,15 +221,13 @@ export const getBrands = () => (dispatch: Dispatch<BrandAction>) => {
   }
 };
 
-export const getWishlistProducts = () => (
-  dispatch: Dispatch<GetWishlistAction>
-) => {
+export const getWishlistProducts = () => (dispatch: Dispatch<GetWishlistAction>) => {
   let config = {
-    method: "get",
+    method: 'get',
     url: `${baseUrl}user/wishlist`,
     headers: {
       Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZThkMDY3NzNmMzBjMzgyZDhlYzhlMyIsImVtYWlsIjoic3VqYXkudGVzdEB0YWxlbnRpY2EuY29tIiwibmFtZSI6InN1amF5Iiwicm9sZSI6IlVTRVIiLCJ0ZWxlcGhvbmUiOiIxMjM0NTY3ODkwIiwiaWF0IjoxNjc2MjAyMDg3LCJleHAiOjE2NzYzNzQ4ODd9.KXLv09Ios8ZkMOB4cEdZTxwKWW_9x50aEjGBPZeh_CM",
+        'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZThkMDY3NzNmMzBjMzgyZDhlYzhlMyIsImVtYWlsIjoic3VqYXkudGVzdEB0YWxlbnRpY2EuY29tIiwibmFtZSI6InN1amF5Iiwicm9sZSI6IlVTRVIiLCJ0ZWxlcGhvbmUiOiIxMjM0NTY3ODkwIiwiaWF0IjoxNjc2MjAyMDg3LCJleHAiOjE2NzYzNzQ4ODd9.KXLv09Ios8ZkMOB4cEdZTxwKWW_9x50aEjGBPZeh_CM',
     },
   };
   try {
@@ -238,19 +257,17 @@ export const getWishlistProducts = () => (
   }
 };
 
-export const addWishlistProducts = (data) => (
-  dispatch: Dispatch<AddWishlistAction>
-) => {
+export const addWishlistProducts = (data) => (dispatch: Dispatch<AddWishlistAction>) => {
   var body = JSON.stringify({
     productId: data,
   });
   let config = {
-    method: "put",
+    method: 'put',
     url: `${baseUrl}user/wishlist`,
     headers: {
       Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZThkMDY3NzNmMzBjMzgyZDhlYzhlMyIsImVtYWlsIjoic3VqYXkudGVzdEB0YWxlbnRpY2EuY29tIiwibmFtZSI6InN1amF5Iiwicm9sZSI6IlVTRVIiLCJ0ZWxlcGhvbmUiOiIxMjM0NTY3ODkwIiwiaWF0IjoxNjc2MjAyMDg3LCJleHAiOjE2NzYzNzQ4ODd9.KXLv09Ios8ZkMOB4cEdZTxwKWW_9x50aEjGBPZeh_CM",
-      "Content-Type": "application/json",
+        'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZThkMDY3NzNmMzBjMzgyZDhlYzhlMyIsImVtYWlsIjoic3VqYXkudGVzdEB0YWxlbnRpY2EuY29tIiwibmFtZSI6InN1amF5Iiwicm9sZSI6IlVTRVIiLCJ0ZWxlcGhvbmUiOiIxMjM0NTY3ODkwIiwiaWF0IjoxNjc2MjAyMDg3LCJleHAiOjE2NzYzNzQ4ODd9.KXLv09Ios8ZkMOB4cEdZTxwKWW_9x50aEjGBPZeh_CM',
+      'Content-Type': 'application/json',
     },
     data: body,
   };
@@ -281,19 +298,17 @@ export const addWishlistProducts = (data) => (
   }
 };
 
-export const removeWishlistProducts = (data) => (
-  dispatch: Dispatch<AddWishlistAction>
-) => {
+export const removeWishlistProducts = (data) => (dispatch: Dispatch<AddWishlistAction>) => {
   var body = JSON.stringify({
     productId: data,
   });
   let config = {
-    method: "put",
+    method: 'put',
     url: `${baseUrl}user/wishlist/remove`,
     headers: {
       Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZThkMDY3NzNmMzBjMzgyZDhlYzhlMyIsImVtYWlsIjoic3VqYXkudGVzdEB0YWxlbnRpY2EuY29tIiwibmFtZSI6InN1amF5Iiwicm9sZSI6IlVTRVIiLCJ0ZWxlcGhvbmUiOiIxMjM0NTY3ODkwIiwiaWF0IjoxNjc2MjAyMDg3LCJleHAiOjE2NzYzNzQ4ODd9.KXLv09Ios8ZkMOB4cEdZTxwKWW_9x50aEjGBPZeh_CM",
-      "Content-Type": "application/json",
+        'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZThkMDY3NzNmMzBjMzgyZDhlYzhlMyIsImVtYWlsIjoic3VqYXkudGVzdEB0YWxlbnRpY2EuY29tIiwibmFtZSI6InN1amF5Iiwicm9sZSI6IlVTRVIiLCJ0ZWxlcGhvbmUiOiIxMjM0NTY3ODkwIiwiaWF0IjoxNjc2MjAyMDg3LCJleHAiOjE2NzYzNzQ4ODd9.KXLv09Ios8ZkMOB4cEdZTxwKWW_9x50aEjGBPZeh_CM',
+      'Content-Type': 'application/json',
     },
     data: body,
   };
