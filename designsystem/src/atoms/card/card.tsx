@@ -13,7 +13,6 @@ import {
   getWishlistProducts,
 } from "../../redux/actions/ActionsCreators";
 
-
 export interface CardProps {
   CardData: any;
 }
@@ -26,7 +25,6 @@ export const CardComponent = ({ CardData }: CardProps) => {
   const { saveWishlistItem } = useContext(WishlistContext);
   const addProductToWishlist = () => {
     dispatch<any>(addWishlistProducts(CardData._id));
-    dispatch<any>(getWishlistProducts());
   };
 
   return (

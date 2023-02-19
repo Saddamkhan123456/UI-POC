@@ -13,7 +13,7 @@ const ProductCategoryPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch<any>(getProducts(location.state.id, null));
+    dispatch<any>(getProducts(location?.state?.id, null));
   }, [location?.state?.id]);
 
   let { title } = useParams();
