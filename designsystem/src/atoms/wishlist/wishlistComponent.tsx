@@ -51,9 +51,11 @@ export const WishlistComponent = ({
         >
           <div>
             <Icon kind="wishlist" size={20} />
-            <span className="badge-count text-white bg-red-700 absolute rounded-full text-xs -mt-7 ml-2 py-0 px-1.5">
-              {wishlistData?.length}
-            </span>
+            {wishlistData?.length > 0 && (
+              <span className="badge-count text-white bg-red-700 absolute rounded-full text-xs -mt-7 ml-2 py-0 px-1.5">
+                {wishlistData?.length}
+              </span>
+            )}
           </div>
         </div>
         <OffCanvasComponent
