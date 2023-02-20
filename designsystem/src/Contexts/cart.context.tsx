@@ -1,7 +1,10 @@
 import * as React from "react";
 import { ICartItem, CartContextType } from "../types/cart";
-import {flushCartItemQuantity , addCartItemQuantity , removeCartItemQuantity} from './helper'
-
+import {
+  flushCartItemQuantity,
+  addCartItemQuantity,
+  removeCartItemQuantity,
+} from "./helper";
 
 export const CartContext = React.createContext<CartContextType | null>(null);
 
@@ -25,15 +28,14 @@ export const CartProvider: React.FC<React.ReactNode> = ({ children }) => {
     const newCartTotal: number =
       cartItems?.length > 0
         ? cartItems.reduce(
-          (total, cartItem) => total + cartItem.quantity * cartItem.price,
-          0
-        )
+            (total, cartItem) => total + cartItem.quantity * cartItem.price,
+            0
+          )
         : 0;
     setCartTotal(newCartTotal);
   }, [cartItems]);
   React.useEffect(() => {
     const newTaxAmount: number = cartTotal * 0.18;
-    console.log(newTaxAmount)
     setTaxAmount(Math.round(newTaxAmount));
     const newOrderTotal: number = cartTotal + newTaxAmount;
     setOrderTotal(Math.round(newOrderTotal));

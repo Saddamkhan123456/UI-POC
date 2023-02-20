@@ -56,15 +56,23 @@ const ItemCard = ({
         <div className="w-full flex flex-col">
           <div className="flex justify-between text-base text-theme-neutral flex-col md:flex-row">
             <h3 className="mr-1">
-              <p className="font-bold text-normal line-clamp-2">{title}</p>
-              <p className="mt-1 mb-2 text-medium font-normal capitalize">
-                {description}
-              </p>
-              <p className="mt-1 mb-2 text-sm text-theme-neutral55 font-normal capitalize">
-                {brand.title}
-              </p>
+              {title && (
+                <p className="font-bold text-normal line-clamp-2">{title}</p>
+              )}
+              {description && (
+                <p className="mt-1 mb-2 text-medium font-normal capitalize">
+                  {description}
+                </p>
+              )}
+              {brand && (
+                <p className="mt-1 mb-2 text-sm text-theme-neutral55 font-normal capitalize">
+                  {brand?.title}
+                </p>
+              )}
             </h3>
-            <p className="text-lg font-semibold ml-1">&#8377;{price}</p>
+            {price && (
+              <p className="text-lg font-semibold ml-1">&#8377;{price}</p>
+            )}
           </div>
 
           <div className="flex flex-1 items-end justify-between text-sm">
