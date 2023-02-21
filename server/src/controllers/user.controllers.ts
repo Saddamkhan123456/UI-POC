@@ -6,7 +6,8 @@ import joi from 'joi';
 import { User } from '../types/user';
 import CartModel from '../models/cart.model';
 import ProductModel from '../models/product.model';
-const updateProfile = async (
+
+const getProfile = async (
   req: RequestExt,
   res: Response,
   next: NextFunction
@@ -23,6 +24,38 @@ const updateProfile = async (
     return next(new BadRequestError('No user found!'));
   } catch (error) {
     return next(new Error('Somthing went wrong'));
+  }
+};
+
+const updateProfile = async (
+  req: RequestExt,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const schema = joi.object({
+      name: joi.string(),
+      address: joi.string(),
+      mobile: joi.string().required(),
+    });
+    const result = schema.validate(req.body);
+    if (result.error) {
+      return next(new BadRequestError(result.error.details[0].message));
+    }
+    let { name, address, mobile } = result.value;
+
+    const user = await UserModel.findByIdAndUpdate(
+      { _id: req.user?.id },
+      { name, address, mobile },
+      { new: true }
+    );
+    if (user) {
+      res.status(201);
+      res.json(user);
+    }
+    return next(new BadRequestError('Problem while updating user !'));
+  } catch (error) {
+    return next(new Error('Somthing went wrong!'));
   }
 };
 
@@ -271,6 +304,7 @@ const emptyUserCart = async (
 
 export {
   updateProfile,
+  getProfile,
   addToWishlist,
   getUserWishlist,
   addToCart,

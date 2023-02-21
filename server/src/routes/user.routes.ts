@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import {
+  getProfile,
   updateProfile,
   addToWishlist,
   getUserWishlist,
@@ -12,7 +13,8 @@ import {
 import { userAuthMiddleware } from '../middleware/auth.middleware';
 
 const router = Router();
-router.get('/profile', userAuthMiddleware, updateProfile);
+router.get('/profile', userAuthMiddleware, getProfile);
+router.put('/profile/update', userAuthMiddleware, updateProfile);
 router.put('/wishlist', userAuthMiddleware, addToWishlist);
 router.put('/wishlist/remove', userAuthMiddleware, removeFromWishlist);
 router.get('/wishlist', userAuthMiddleware, getUserWishlist);
