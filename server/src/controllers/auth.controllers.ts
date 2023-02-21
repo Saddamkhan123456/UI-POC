@@ -16,7 +16,7 @@ const registerCtrl = async (
       email: joi.string().required(),
       password: joi.string().required(),
       confirm_password: joi.string().required(),
-      address: joi.string(),
+      address: joi.string().required(),
       mobile: joi.string().required(),
     });
     const result = schema.validate(body);
