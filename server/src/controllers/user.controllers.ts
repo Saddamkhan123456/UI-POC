@@ -36,7 +36,7 @@ const updateProfile = async (
     const schema = joi.object({
       name: joi.string(),
       address: joi.string(),
-      mobile: joi.string().required(),
+      mobile: joi.number(),
     });
     const result = schema.validate(req.body);
     if (result.error) {
@@ -248,7 +248,7 @@ const getUserCart = async (
     if (cart) {
       res.status(201).json(cart);
     } else {
-      res.status(201).json('No data found');
+      res.status(201).json('your Cart is empty');
     }
   } catch (error) {
     return next(new Error('Somthing went wrong'));
@@ -273,7 +273,9 @@ const removeCartItem = async (
       { user: req.user?.id },
       {
         $pull: {
-          products: productId,
+          products: {
+            product: productId,
+          },
         },
       },
       { new: true }
