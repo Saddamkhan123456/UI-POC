@@ -18,12 +18,23 @@ const createOrder = async (
       address: joi.string().required(),
       mobile: joi.number().required(),
       COD: joi.boolean(),
+      totalAmount: joi.number().required(),
+      totalTax: joi.number().required(),
+      finalAmountAfterTax: joi.number().required(),
     });
     const result = schema.validate(req.body);
     if (result.error) {
       return next(new BadRequestError(result.error.details[0].message));
     }
-    let { name, address, mobile, COD } = result.value;
+    let {
+      name,
+      address,
+      mobile,
+      COD,
+      totalAmount,
+      totalTax,
+      finalAmountAfterTax,
+    } = result.value;
     if (!COD) {
       return next(new BadRequestError('COD is required!'));
     }
@@ -40,11 +51,14 @@ const createOrder = async (
         paymentIntent: {
           id: myuuid,
           method: 'COD',
-          finalAmount,
+          finalAmountAfterTax,
           orderStatus: 'Cash on Delivery',
           created: Date.now(),
           currency: 'INR',
         },
+        totalAmount,
+        totalTax,
+        finalAmountAfterTax,
         oderBy: req.user?.id,
       }).save();
       if (newOrder) {

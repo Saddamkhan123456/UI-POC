@@ -7,6 +7,9 @@ export interface Order {
   products: Product[];
   paymentIntent: {};
   orderStatus: String;
+  totalAmount: number;
+  totalTax: number;
+  finalAmountAfterTax: number;
   oderBy: mongoose.Schema.Types.ObjectId;
 }
 

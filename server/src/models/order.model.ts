@@ -38,6 +38,9 @@ const orderSchema = new Schema<Order>(
         'Delivered',
       ],
     },
+    totalAmount: Number,
+    totalTax: Number,
+    finalAmountAfterTax: Number,
     oderBy: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
