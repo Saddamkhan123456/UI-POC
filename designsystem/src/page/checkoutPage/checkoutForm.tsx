@@ -1,46 +1,73 @@
-import { useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import { Card, CardBody, Button } from "design-system";
-import { createUser } from "../../api/api";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { CartContext } from "../../Contexts/cart.context";
-import { OrderContext } from "../../Contexts/order.context";
 import { v4 as uuidv4 } from "uuid";
+import { RootState } from "../../store/configureStore";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  addOrderProducts,
+  getCartProducts,
+} from "../../redux/actions/ActionsCreators";
 export interface checkoutFormProps {
   id?: number;
-  firstName?: string;
-  lastName?: string;
+  name?: string;
   phoneNumber?: number;
   email?: string;
   address?: string;
 }
 
 const CheckoutForm = (checkoutFormProps) => {
+  const [cartData, setCartData] = useState([]);
+
+  const cartlist = useSelector((state: RootState) => state.getCart);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch<any>(getCartProducts());
+  }, []);
+
+  useEffect(() => {
+    setCartData(cartlist?.products?.products);
+  }, [cartlist?.products]);
+
+  let cartTotalValue = 0,
+    orderTotalValue = 0,
+    cartTotalTax = 0;
+
+  const cartValue = () => {
+    cartData?.forEach((item) => {
+      if (item !== undefined) {
+        cartTotalValue += item.quantity * item.price;
+        cartTotalTax += (item.price / 100) * 12 * item.quantity;
+      }
+    });
+  };
+  cartValue();
+
+  orderTotalValue = cartTotalValue + cartTotalTax;
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<checkoutFormProps>();
-  const { cartItems, orderTotal } = useContext(CartContext);
-  const { setOrderId } = useContext(OrderContext);
+
   const handleEdit = (data: checkoutFormProps) => {
     const newCheckoutData = {
-      ...chekoutData,
-      checkoutItems: cartItems,
-      orderTotal: orderTotal,
+      ...data,
+      orderTotalValue: orderTotalValue,
+      cartTotalValue: cartTotalValue,
+      cartTotalTax: cartTotalTax,
     };
-    setChekoutData(newCheckoutData);
-    setOrderId(chekoutData.id);
-    createUser(newCheckoutData);
-    localStorage.removeItem('cartItems')
+    dispatch<any>(addOrderProducts(newCheckoutData));
     navigate("/thankyou");
   }; // your form submit function which will invoke after successful validation
 
   //
   const navigate = useNavigate();
   const [chekoutData, setChekoutData] = useState({
-    firstName: "",
-    lastName: "",
+    name: "",
     phoneNumber: "",
     email: "",
     address: "",
@@ -52,7 +79,6 @@ const CheckoutForm = (checkoutFormProps) => {
   const handleInput = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    //  console.log(name + value);
     setChekoutData({ ...chekoutData, [name]: value });
   };
 
@@ -67,67 +93,38 @@ const CheckoutForm = (checkoutFormProps) => {
             >
               <div className="flex flex-col space-y-4 sm:space-y-5">
                 <div className="flex flex-col sm:flex-row sm:space-s-3 space-y-4 sm:space-y-0">
-                  <div className="w-full sm:w-1/2 mr-3">
+                  <div className="w-full">
                     <label className="block text-gray-600  text-sm leading-none mb-3 cursor-pointer">
                       First Name *
                     </label>
                     <input
-                      {...register("firstName", {
+                      {...register("name", {
                         required: true,
                         minLength: 5,
                         pattern: /^[A-Za-z]+$/i,
                       })}
                       type="text"
-                      id="firstName"
-                      name="firstName"
-                      placeholder="First Name"
-                      value={chekoutData.firstName}
+                      id="name"
+                      name="name"
+                      placeholder="Name"
+                      value={chekoutData.name}
                       className="py-2 px-4 md:px-5 w-full appearance-none  border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading h-38"
                       aria-invalid="false"
                       onChange={handleInput}
                     />
-                    {errors?.firstName?.type === "pattern" && (
+                    {errors?.name?.type === "pattern" && (
                       <p className="mt-2 text-theme-danger">
                         Alphabetical characters only
                       </p>
                     )}
-                    {errors?.firstName?.type === "required" && (
+                    {errors?.name?.type === "required" && (
                       <p className="mt-2 text-theme-danger">
                         This field is required
                       </p>
                     )}
-                    {errors?.firstName?.type === "minLength" && (
+                    {errors?.name?.type === "minLength" && (
                       <p className="mt-2 text-theme-danger">
                         First name cannot less than 5 characters
-                      </p>
-                    )}
-                  </div>
-                  <div className="w-full sm:w-1/2">
-                    <label className="block text-gray-600 text-sm leading-none mb-3 cursor-pointer">
-                      Last Name *
-                    </label>
-                    <input
-                      {...register("lastName", {
-                        required: true,
-                        pattern: /^[A-Za-z]+$/i,
-                      })}
-                      type="text"
-                      id="lastName"
-                      name="lastName"
-                      placeholder="Last Name"
-                      value={chekoutData.lastName}
-                      className="py-2 px-4 md:px-5 w-full appearance-none border text-input text-xs lg:text-sm font-body rounded-md placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:outline-none focus:border-heading h-38"
-                      aria-invalid="false"
-                      onChange={handleInput}
-                    />
-                    {errors?.lastName?.type === "pattern" && (
-                      <p className="mt-2 text-theme-danger">
-                        Alphabetical characters only
-                      </p>
-                    )}
-                    {errors?.lastName?.type === "required" && (
-                      <p className="mt-2 text-theme-danger">
-                        This field is required
                       </p>
                     )}
                   </div>

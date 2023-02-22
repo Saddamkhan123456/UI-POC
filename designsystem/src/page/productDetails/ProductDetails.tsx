@@ -4,7 +4,10 @@ import { useParams } from "react-router-dom";
 import { CartContext } from "../../Contexts/cart.context";
 import { WishlistContext } from "../../Contexts/wishlist.context";
 import { useDispatch, useSelector } from "react-redux";
-import { getProduct } from "../../redux/actions/ActionsCreators";
+import {
+  addCartProducts,
+  getProduct,
+} from "../../redux/actions/ActionsCreators";
 import { RootState } from "../../store/configureStore";
 import { imageBaseUrl } from "../../constants/constants";
 import Spinner from "../../atoms/spinner/spinner";
@@ -28,9 +31,10 @@ const ProductDetails = () => {
     quantity: null,
   });
   const [images, setImages] = useState<any>([]);
-  const { saveCartItem } = useContext(CartContext);
   const dispatch = useDispatch();
-  const addProductToCart = () => saveCartItem(productData);
+  const addProductToCart = () => {
+    dispatch<any>(addCartProducts({ id: productId, quantity: "1" }));
+  };
   const addProductToWishlist = () => {
     dispatch<any>(addWishlistProducts(productId));
   };
