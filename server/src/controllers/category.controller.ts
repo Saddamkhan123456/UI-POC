@@ -92,7 +92,6 @@ const create = async (req: RequestExt, res: Response, next: NextFunction) => {
 const update = async (req: RequestExt, res: Response, next: NextFunction) => {
   try {
     const files = req.files as { [fieldname: string]: Express.Multer.File[] };
-
     const schema = joi.object({
       id: joi.string().required(),
       title: joi.string().required(),

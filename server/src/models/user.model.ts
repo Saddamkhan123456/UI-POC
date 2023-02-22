@@ -13,7 +13,7 @@ const UserSchema = new Schema<User>(
       unique: true,
     },
     mobile: {
-      type: String,
+      type: Number,
       required: true,
     },
     password: {
