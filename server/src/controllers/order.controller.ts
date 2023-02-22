@@ -71,7 +71,9 @@ const getOrderByUser = async (
   next: NextFunction
 ) => {
   try {
-    const orders = await OrderModel.find({ user: req.user?.id }).exec();
+    const orders = await OrderModel.find({ user: req.user?.id })
+      .populate('products.product', 'images title')
+      .exec();
     if (orders) {
       res.status(201);
       res.json(orders);
