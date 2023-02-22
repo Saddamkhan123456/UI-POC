@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import Icon from "../icons/icon";
 import { CartContext } from "../../Contexts/cart.context";
 import WishlistComponent from "../wishlist/wishlistComponent";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../../store/configureStore";
 import NavLinks from "./navLinks";
 
 export interface NavbarProps extends HTMLAttributes<HTMLElement> {
@@ -16,7 +18,9 @@ export const Navbar = ({
   ...props
 }: NavbarProps) => {
   const [isCollapsed, setIsCollapsed] = React.useState(collapsed);
-  const { cartCount } = React.useContext(CartContext);
+  const cartlist = useSelector((state: RootState) => state.getCart);
+
+  const cartCount = cartlist?.products?.products?.length;
 
   return (
     <>
@@ -43,9 +47,11 @@ export const Navbar = ({
               to="/shopping-cart"
             >
               <Icon kind="cart" size={20}></Icon>
-              <span className="badge-count text-white bg-red-700 absolute rounded-full text-xs -mt-5 ml-3 py-0 px-1.5">
-                {cartCount}
-              </span>
+              {cartCount > 0 && (
+                <span className="badge-count text-white bg-red-700 absolute rounded-full text-xs -mt-5 ml-3 py-0 px-1.5">
+                  {cartCount}
+                </span>
+              )}
             </Link>
             <Link
               className="w-8 h-8 rounded-full flex items-center justify-center text-white hover:text-theme-neutral80 focus:text-theme-neutral80 mr-1  hidden-arrow flex items-center"

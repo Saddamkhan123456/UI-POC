@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { HTMLAttributes } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
+  addCartProducts,
   getWishlistProducts,
   removeWishlistProducts,
 } from "../../redux/actions/ActionsCreators";
@@ -9,8 +10,6 @@ import { RootState } from "../../store/configureStore";
 import { Card, CardBody } from "design-system";
 import Icon from "../icons/icon";
 import { CartContext } from "../../Contexts/cart.context";
-import { WishlistContext } from "../../Contexts/wishlist.context";
-import { useContext } from "react";
 import ItemCard from "../itemCard/itemCard";
 import EmptyShoppingCart from "../emptyShoppingCart/emptyShoppingCart";
 import OffCanvasComponent from "../offcanvas/offcanvas";
@@ -36,7 +35,10 @@ export const WishlistComponent = ({
   }, [wishlist?.products]);
 
   const [open, setOpen] = React.useState(false);
-  const { saveCartItem } = React.useContext(CartContext);
+
+  const saveCartItem = (cardData) => {
+    dispatch<any>(addCartProducts({ id: cardData._id, quantity: 1 }));
+  };
   const flushWishlistItem = (cardData) => {
     dispatch<any>(removeWishlistProducts(cardData._id));
   };
@@ -69,7 +71,7 @@ export const WishlistComponent = ({
           props={undefined}
           children={
             <>
-              <Card className="h-full">
+              <Card className="h-screen overflow-auto">
                 <CardBody className="">
                   <div className="flex justify-between border-b p-4 mb-3 items-center">
                     <h1 className="text-xl capitalize leading-none font-medium">

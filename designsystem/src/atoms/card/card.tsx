@@ -9,6 +9,7 @@ import { WishlistContext } from "../../Contexts/wishlist.context";
 import { useContext } from "react";
 import { imageBaseUrl } from "../../constants/constants";
 import {
+  addCartProducts,
   addWishlistProducts,
   getWishlistProducts,
 } from "../../redux/actions/ActionsCreators";
@@ -20,9 +21,9 @@ export interface CardProps {
 export const CardComponent = ({ CardData }: CardProps) => {
   const dispatch = useDispatch();
 
-  const { saveCartItem } = React.useContext(CartContext);
-  const addProductToCart = () => saveCartItem(CardData);
-  const { saveWishlistItem } = useContext(WishlistContext);
+  const addProductToCart = () => {
+    dispatch<any>(addCartProducts({ id: CardData._id, quantity: 1 }));
+  };
   const addProductToWishlist = () => {
     dispatch<any>(addWishlistProducts(CardData._id));
   };

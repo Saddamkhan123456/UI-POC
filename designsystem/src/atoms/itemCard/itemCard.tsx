@@ -17,6 +17,7 @@ export interface ItemCardProps extends React.HTMLAttributes<HTMLElement> {
   addToWishlist?: () => void;
   showRemove?: boolean;
   qty?: boolean;
+  quantity?: string;
 }
 
 const ItemCard = ({
@@ -32,8 +33,9 @@ const ItemCard = ({
   addToCart,
   addToWishlist,
   qty,
+  quantity,
 }: ItemCardProps) => {
-  const { title, images, description, quantity, brand, price } = cartItem;
+  const { title, images, description, brand, price } = cartItem;
   return (
     <Card
       className={classnames(
