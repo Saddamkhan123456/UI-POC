@@ -21,7 +21,7 @@ export const Navbar = ({
   const cartlist = useSelector((state: RootState) => state.getCart);
 
   const cartCount = cartlist?.products?.products?.length;
-
+  const isLogin = localStorage.getItem("token") !== null;
   return (
     <>
       <nav
@@ -40,30 +40,43 @@ export const Navbar = ({
           </div>
 
           <div className="flex items-center relative gap-4">
-            <WishlistComponent />
+            {isLogin && (
+              <>
+                <WishlistComponent />
 
-            <Link
-              className="flex items-center justify-center text-white hover:text-theme-neutral80 focus:text-theme-neutral80 mr-1  hidden-arrow flex items-center"
-              to="/shopping-cart"
-            >
-              <Icon kind="cart" size={20}></Icon>
-              {cartCount > 0 && (
-                <span className="badge-count text-white bg-red-700 absolute rounded-full text-xs -mt-5 ml-3 py-0 px-1.5">
-                  {cartCount}
-                </span>
-              )}
-            </Link>
-            <Link
-              className="w-8 h-8 rounded-full flex items-center justify-center text-white hover:text-theme-neutral80 focus:text-theme-neutral80 mr-1  hidden-arrow flex items-center"
-              to="/my-profile"
-            >
-              <img
-                src="https://mdbootstrap.com/img/new/avatars/2.jpg"
-                alt=""
-                className="w-8 h-8 rounded-full"
-                loading="lazy"
-              />
-            </Link>
+                <Link
+                  className="flex items-center justify-center text-white hover:text-theme-neutral80 focus:text-theme-neutral80 mr-1  hidden-arrow flex items-center"
+                  to="/shopping-cart"
+                >
+                  <Icon kind="cart" size={20}></Icon>
+                  {cartCount > 0 && (
+                    <span className="badge-count text-white bg-red-700 absolute rounded-full text-xs -mt-5 ml-3 py-0 px-1.5">
+                      {cartCount}
+                    </span>
+                  )}
+                </Link>
+              </>
+            )}
+            {!isLogin ? (
+              <Link
+                to="/login"
+                className="bg-theme-danger text-theme-white hover:bg-theme-hoverDarken active:bg-theme-clicked px-6 py-2 text-sm leading-none font-light flex items-center justify-center btn block cursor-pointer hover:opacity-90"
+              >
+                Login
+              </Link>
+            ) : (
+              <Link
+                className="w-8 h-8 rounded-full flex items-center justify-center text-white hover:text-theme-neutral80 focus:text-theme-neutral80 mr-1  hidden-arrow flex items-center"
+                to="/my-profile"
+              >
+                <img
+                  src="https://mdbootstrap.com/img/new/avatars/2.jpg"
+                  alt=""
+                  className="w-8 h-8 rounded-full"
+                  loading="lazy"
+                />
+              </Link>
+            )}
             <div className="dropdown relative">
               <div>
                 <div className="md:hidden">
