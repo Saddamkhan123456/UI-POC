@@ -1,4 +1,5 @@
-import { Dispatch } from "redux";
+import { Dispatch } from 'redux';
+import axios from 'axios';
 import {
   AuthAction,
   SIGNUP_START,
@@ -7,8 +8,7 @@ import {
   LOGIN_START,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
-} from "./Auth.action";
-import axios from "axios";
+} from './Auth.action';
 import {
   GET_ALL_PRODUCT_FAIL,
   GET_ALL_PRODUCT_START,
@@ -17,79 +17,83 @@ import {
   GET_PRODUCT_BY_ID_START,
   GET_PRODUCT_BY_ID_SUCCESS,
   ProductAction,
-} from "./Product.action";
+} from './Product.action';
 import {
   CategoryAction,
   GET_ALL_CATEGORY_FAIL,
   GET_ALL_CATEGORY_START,
   GET_ALL_CATEGORY_SUCCESS,
-} from "./Category.action";
-import {
-  BrandAction,
-  GET_ALL_BRAND_FAIL,
-  GET_ALL_BRAND_START,
-  GET_ALL_BRAND_SUCCESS,
-} from "./Brand.action";
+} from './Category.action';
+import { BrandAction, GET_ALL_BRAND_FAIL, GET_ALL_BRAND_START, GET_ALL_BRAND_SUCCESS } from './Brand.action';
 
 import {
   GetWishlistAction,
   GET_WISHLIST_PRODUCT_FAIL,
   GET_WISHLIST_PRODUCT_START,
   GET_WISHLIST_PRODUCT_SUCCESS,
-} from "./GetWishlist.action";
+} from './GetWishlist.action';
 
 import {
   AddWishlistAction,
   ADD_WISHLIST_PRODUCT_FAIL,
   ADD_WISHLIST_PRODUCT_START,
   ADD_WISHLIST_PRODUCT_SUCCESS,
-} from "./AddWishlist.action";
+} from './AddWishlist.action';
 import {
   GetCartAction,
   GET_CART_PRODUCT_FAIL,
   GET_CART_PRODUCT_START,
   GET_CART_PRODUCT_SUCCESS,
-} from "./GetCart.action";
+} from './GetCart.action';
 import {
   AddCartAction,
   ADD_CART_PRODUCT_FAIL,
   ADD_CART_PRODUCT_START,
   ADD_CART_PRODUCT_SUCCESS,
-} from "./AddCart.action";
+} from './AddCart.action';
 import {
   RemoveCartAction,
   REMOVE_CART_PRODUCT_FAIL,
   REMOVE_CART_PRODUCT_START,
   REMOVE_CART_PRODUCT_SUCCESS,
-} from "./RemoveCart.action";
+} from './RemoveCart.action';
 import {
   RemoveWishlistAction,
   REMOVE_WISHLIST_PRODUCT_FAIL,
   REMOVE_WISHLIST_PRODUCT_START,
   REMOVE_WISHLIST_PRODUCT_SUCCESS,
-} from "./RemoveWishlist.action";
-import { AddOrderAction } from "./AddOrder.action";
+} from './RemoveWishlist.action';
+import { AddOrderAction } from './AddOrder.action';
+import { token } from '../../constants/constants';
+import {
+  GET_PROFILE_FAIL,
+  GET_PROFILE_START,
+  GET_PROFILE_SUCCESS,
+  ProfileAction,
+  UPDATE_PROFILE_FAIL,
+  UPDATE_PROFILE_START,
+  UPDATE_PROFILE_SUCCESS,
+} from './Profile.action';
+import { GET_ORDERS_FAIL, GET_ORDERS_START, GET_ORDERS_SUCCESS, OrdersAction } from './Orders.action';
 
-export const baseUrl: string = "http://localhost:9000/api/";
+export const baseUrl: string = 'http://localhost:9000/api/';
 
-export const registerUser = (data: object) => async (
-  dispatch: Dispatch<AuthAction>
-) => {
+export const registerUser = (data: object) => async (dispatch: Dispatch<AuthAction>) => {
   try {
     dispatch({
       type: SIGNUP_START,
     });
     axios
-      .post(baseUrl + "auth/register", data)
+      .post(baseUrl + 'auth/register', data)
       .then((response) => {
-        localStorage.setItem("token", response.data.token);
+        localStorage.setItem('token', response.data.token);
         dispatch({
           type: SIGNUP_SUCCESS,
           payload: response.data,
         });
       })
       .catch((error) => {
-        localStorage.removeItem("token");
+        localStorage.removeItem('token');
         dispatch({
           type: SIGNUP_FAIL,
           error: error.message,
@@ -105,24 +109,22 @@ export const registerUser = (data: object) => async (
   }
 };
 
-export const loginUser = (data: object) => async (
-  dispatch: Dispatch<AuthAction>
-) => {
+export const loginUser = (data: object) => async (dispatch: Dispatch<AuthAction>) => {
   try {
     dispatch({
       type: LOGIN_START,
     });
     axios
-      .post(baseUrl + "auth/login", data)
+      .post(baseUrl + 'auth/login', data)
       .then((response) => {
-        localStorage.setItem("token", response.data.token);
+        localStorage.setItem('token', response.data.token);
         dispatch({
           type: LOGIN_SUCCESS,
           payload: response.data,
         });
       })
       .catch((error) => {
-        localStorage.removeItem("token");
+        localStorage.removeItem('token');
         dispatch({
           type: LOGIN_FAIL,
           error: error.message,
@@ -138,20 +140,124 @@ export const loginUser = (data: object) => async (
   }
 };
 
-export const getProducts = (category?: string, brand?: string) => (
-  dispatch: Dispatch<ProductAction>
-) => {
+export const getOrders = () => (dispatch: Dispatch<OrdersAction>) => {
+  let config = {
+    method: 'get',
+    url: `${baseUrl}order/orderByUser`,
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  try {
+    dispatch({
+      type: GET_ORDERS_START,
+    });
+    axios(config)
+      .then((response) => {
+        console.log(response.data);
+        dispatch({
+          type: GET_ORDERS_SUCCESS,
+          payload: response.data,
+        });
+      })
+      .catch((error) => {
+        dispatch({
+          type: GET_ORDERS_FAIL,
+          error: error.message,
+        });
+      });
+  } catch (e) {
+    if (e instanceof Error) {
+      dispatch({
+        type: GET_ORDERS_FAIL,
+        error: e.message,
+      });
+    }
+  }
+};
+
+export const getProfile = () => (dispatch: Dispatch<ProfileAction>) => {
+  let config = {
+    method: 'get',
+    url: `${baseUrl}user/profile`,
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  try {
+    dispatch({
+      type: GET_PROFILE_START,
+    });
+    axios(config)
+      .then((response) => {
+        console.log(response.data);
+        dispatch({
+          type: GET_PROFILE_SUCCESS,
+          payload: response.data,
+        });
+      })
+      .catch((error) => {
+        dispatch({
+          type: GET_PROFILE_FAIL,
+          error: error.message,
+        });
+      });
+  } catch (e) {
+    if (e instanceof Error) {
+      dispatch({
+        type: GET_PROFILE_FAIL,
+        error: e.message,
+      });
+    }
+  }
+};
+
+export const updateProfile = (data: object) => (dispatch: Dispatch<ProfileAction>) => {
+  var body = JSON.stringify(data);
+  let config = {
+    method: 'PUT',
+    url: `${baseUrl}user/profile/update`,
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+    data: body,
+  };
+  try {
+    dispatch({
+      type: UPDATE_PROFILE_START,
+    });
+    axios(config)
+      .then((response) => {
+        console.log(response.data);
+        dispatch({
+          type: UPDATE_PROFILE_SUCCESS,
+          payload: response.data,
+        });
+      })
+      .catch((error) => {
+        dispatch({
+          type: UPDATE_PROFILE_FAIL,
+          error: error.message,
+        });
+      });
+  } catch (e) {
+    if (e instanceof Error) {
+      dispatch({
+        type: UPDATE_PROFILE_FAIL,
+        error: e.message,
+      });
+    }
+  }
+};
+
+export const getProducts = (category?: string, brand?: string) => (dispatch: Dispatch<ProductAction>) => {
   try {
     dispatch({
       type: GET_ALL_PRODUCT_START,
     });
     axios
-      .get(
-        baseUrl +
-          `product/${category ? `?category=${category}` : ""}${
-            brand ? `?brand=${brand}` : ""
-          }`
-      )
+      .get(baseUrl + `product/${category ? `?category=${category}` : ''}${brand ? `?brand=${brand}` : ''}`)
       .then((response) => {
         dispatch({
           type: GET_ALL_PRODUCT_SUCCESS,
@@ -174,10 +280,9 @@ export const getProducts = (category?: string, brand?: string) => (
   }
 };
 
-export const getProduct = (id?: string) => (
-  dispatch: Dispatch<ProductAction>
-) => {
+export const getProduct = (id?: string) => (dispatch: Dispatch<ProductAction>) => {
   try {
+    console.log(localStorage.getItem('token'));
     dispatch({
       type: GET_PRODUCT_BY_ID_START,
     });
@@ -211,7 +316,7 @@ export const getCategories = () => (dispatch: Dispatch<CategoryAction>) => {
       type: GET_ALL_CATEGORY_START,
     });
     axios
-      .get(baseUrl + "category")
+      .get(baseUrl + 'category')
       .then((response) => {
         dispatch({
           type: GET_ALL_CATEGORY_SUCCESS,
@@ -240,7 +345,7 @@ export const getBrands = () => (dispatch: Dispatch<BrandAction>) => {
       type: GET_ALL_BRAND_START,
     });
     axios
-      .get(baseUrl + "brand")
+      .get(baseUrl + 'brand')
       .then((response) => {
         dispatch({
           type: GET_ALL_BRAND_SUCCESS,
@@ -263,14 +368,12 @@ export const getBrands = () => (dispatch: Dispatch<BrandAction>) => {
   }
 };
 
-export const getWishlistProducts = () => (
-  dispatch: Dispatch<GetWishlistAction>
-) => {
+export const getWishlistProducts = () => (dispatch: Dispatch<GetWishlistAction>) => {
   let config = {
-    method: "get",
+    method: 'get',
     url: `${baseUrl}user/wishlist`,
     headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
     },
   };
   try {
@@ -300,18 +403,16 @@ export const getWishlistProducts = () => (
   }
 };
 
-export const addWishlistProducts = (data) => (
-  dispatch: Dispatch<AddWishlistAction>
-) => {
+export const addWishlistProducts = (data) => (dispatch: Dispatch<AddWishlistAction>) => {
   var body = JSON.stringify({
     productId: data,
   });
   let config = {
-    method: "put",
+    method: 'put',
     url: `${baseUrl}user/wishlist`,
     headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
-      "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+      'Content-Type': 'application/json',
     },
     data: body,
   };
@@ -343,18 +444,16 @@ export const addWishlistProducts = (data) => (
   }
 };
 
-export const removeWishlistProducts = (data) => (
-  dispatch: Dispatch<RemoveWishlistAction>
-) => {
+export const removeWishlistProducts = (data) => (dispatch: Dispatch<RemoveWishlistAction>) => {
   var body = JSON.stringify({
     productId: data,
   });
   let config = {
-    method: "put",
+    method: 'put',
     url: `${baseUrl}user/wishlist/remove`,
     headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
-      "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+      'Content-Type': 'application/json',
     },
     data: body,
   };
@@ -388,10 +487,10 @@ export const removeWishlistProducts = (data) => (
 
 export const getCartProducts = () => (dispatch: Dispatch<GetCartAction>) => {
   let config = {
-    method: "get",
+    method: 'get',
     url: `${baseUrl}user/cart`,
     headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
     },
   };
   try {
@@ -421,9 +520,7 @@ export const getCartProducts = () => (dispatch: Dispatch<GetCartAction>) => {
   }
 };
 
-export const addCartProducts = (data) => (
-  dispatch: Dispatch<AddCartAction>
-) => {
+export const addCartProducts = (data) => (dispatch: Dispatch<AddCartAction>) => {
   var body = JSON.stringify({
     products: [
       {
@@ -433,11 +530,11 @@ export const addCartProducts = (data) => (
     ],
   });
   let config = {
-    method: "POST",
+    method: 'POST',
     url: `${baseUrl}user/cart`,
     headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
-      "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+      'Content-Type': 'application/json',
     },
     data: body,
   };
@@ -469,18 +566,16 @@ export const addCartProducts = (data) => (
   }
 };
 
-export const removeCartProducts = (data) => (
-  dispatch: Dispatch<RemoveCartAction>
-) => {
+export const removeCartProducts = (data) => (dispatch: Dispatch<RemoveCartAction>) => {
   var body = JSON.stringify({
     productId: data.id,
   });
   let config = {
-    method: "put",
+    method: 'put',
     url: `${baseUrl}user/cart`,
     headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
-      "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+      'Content-Type': 'application/json',
     },
     data: body,
   };
@@ -512,16 +607,14 @@ export const removeCartProducts = (data) => (
   }
 };
 
-export const emptyCartProducts = () => (
-  dispatch: Dispatch<RemoveCartAction>
-) => {
+export const emptyCartProducts = () => (dispatch: Dispatch<RemoveCartAction>) => {
   var body = JSON.stringify({});
   let config = {
-    method: "delete",
+    method: 'delete',
     url: `${baseUrl}user/cart`,
     headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
-      "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+      'Content-Type': 'application/json',
     },
     data: body,
   };
@@ -553,9 +646,7 @@ export const emptyCartProducts = () => (
   }
 };
 
-export const addOrderProducts = (data) => (
-  dispatch: Dispatch<AddOrderAction>
-) => {
+export const addOrderProducts = (data) => (dispatch: Dispatch<AddOrderAction>) => {
   var body = JSON.stringify({
     name: data.name,
     mobile: data.phoneNumber,
@@ -566,11 +657,11 @@ export const addOrderProducts = (data) => (
     finalAmountAfterTax: data.orderTotalValue,
   });
   let config = {
-    method: "POST",
+    method: 'POST',
     url: `${baseUrl}order/cashOnDelivery`,
     headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
-      "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+      'Content-Type': 'application/json',
     },
     data: body,
   };

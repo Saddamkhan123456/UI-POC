@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
-import { Banner } from "../../atoms/banner";
-import { useLocation, useParams } from "react-router-dom";
-import { CardComponent } from "../../atoms/card";
-import { useSelector, useDispatch } from "react-redux";
-import { getProducts } from "../../redux/actions/ActionsCreators";
-import { RootState } from "../../store/configureStore";
-import Spinner from "../../atoms/spinner/spinner";
+import { useEffect, useState } from 'react';
+import { Banner } from '../../atoms/banner';
+import { useLocation, useParams } from 'react-router-dom';
+import { CardComponent } from '../../atoms/card';
+import { useSelector, useDispatch } from 'react-redux';
+import { getProducts } from '../../redux/actions/ActionsCreators';
+import { RootState } from '../../store/configureStore';
+import Spinner from '../../atoms/spinner/spinner';
 
 const ProductCategoryPage = () => {
   const location = useLocation() as any;
@@ -19,20 +19,20 @@ const ProductCategoryPage = () => {
   let { title } = useParams();
 
   return (
-    <div className="flex flex-col items-center">
+    <div className='flex flex-col items-center responsive-height overflow-auto'>
       <Banner pageHeading={title} />
       {product.loading ? (
         <Spinner />
       ) : (
-        <div className="flex flex-col container my-4">
+        <div className='flex flex-col container my-4'>
           {product?.products?.length ? (
-            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
               {product?.products?.map((cardData: any) => {
                 return <CardComponent CardData={cardData} key={cardData._id} />;
               })}
             </div>
           ) : (
-            <h5 className="text-center">No data for category : {title}</h5>
+            <h5 className='text-center'>No data for category : {title}</h5>
           )}
         </div>
       )}

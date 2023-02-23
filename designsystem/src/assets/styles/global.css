@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --font-family: "Roboto", sans-serif;
+  --font-family: 'Roboto', sans-serif;
   --neutral-lighter-90: 23, 24, 26; /* 23, 24, 26 #17181a */
   --neutral-lighter-70: 14, 35, 48; /* 14, 35, 48 #0e2330*/
   --neutral-lighter-60: 102, 117, 128; /* 102, 117, 128 #667580 */
@@ -34,5 +34,11 @@
   }
   :focus-visible {
     outline: none;
+  }
+}
+
+@layer components {
+  .responsive-height {
+    height: calc(100% - 52px);
   }
 }

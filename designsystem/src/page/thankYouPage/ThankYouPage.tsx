@@ -1,12 +1,9 @@
-import * as React from 'react'
-import ThankyouComponent from "../../atoms/thankyou/thankyou";
-import {OrderContext} from '../../Contexts/order.context'
+import ThankyouComponent from '../../atoms/thankyou/thankyou';
 
 const ThankYouPage = () => {
-  const {orderId} = React.useContext(OrderContext)
   return (
-    <div className="flex flex-col container mx-auto h-full">
-        <ThankyouComponent orderId={orderId}/>
+    <div className='flex flex-col container mx-auto h-full'>
+      <ThankyouComponent />
     </div>
   );
 };

@@ -1,9 +1,9 @@
-import { CategoryCard } from "../../molecules/categoryCard";
-import CarouselComponent from "../../atoms/carousal/carousal";
-import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { getCategories, getBrands } from "../../redux/actions/ActionsCreators";
-import { RootState } from "../../store/configureStore";
+import { CategoryCard } from '../../molecules/categoryCard';
+import CarouselComponent from '../../atoms/carousal/carousal';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getCategories, getBrands } from '../../redux/actions/ActionsCreators';
+import { RootState } from '../../store/configureStore';
 
 const HomePage = () => {
   const brands = useSelector((state: RootState) => state.brand);
@@ -15,23 +15,23 @@ const HomePage = () => {
   }, []);
   return (
     <>
-      <div className="flex flex-col items-center">
+      <div className='flex flex-col resposive-height overflow-auto items-center'>
         <CarouselComponent />
-        <div className="container">
-          <div className="my-8">
+        <div className='container'>
+          <div className='my-8'>
             <CategoryCard
-              category="category"
+              category='category'
               CardPropsSets={categories?.categories}
-              className="relative"
+              className='relative'
               isCategoryShow={true}
               loading={categories.loading}
             />
           </div>
-          <div className="my-8">
+          <div className='my-8'>
             <CategoryCard
-              category="brand"
+              category='brand'
               CardPropsSets={brands?.brands}
-              className="relative border rounded-lg p-4"
+              className='relative border rounded-lg p-4'
               isCategoryShow={false}
               loading={brands.loading}
             />

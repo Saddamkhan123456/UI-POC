@@ -1,9 +1,9 @@
-import React from "react";
-import Tab from "../../atoms/tab/tab";
-import TabItem from "../../atoms/tab/tabItem";
-import TabPane from "../../atoms/tab/tabPane";
-import Account from "./account";
-import Orders from "./orders";
+import React from 'react';
+import Tab from '../../atoms/tab/tab';
+import TabItem from '../../atoms/tab/tabItem';
+import TabPane from '../../atoms/tab/tabPane';
+import Account from './account';
+import Orders from './orders';
 
 const MyProfile = () => {
   const [active, setActiveTab] = React.useState(1);
@@ -11,36 +11,20 @@ const MyProfile = () => {
     setActiveTab(tabIndex);
   };
   return (
-    <div className="h-full flex w-full">
-      <Tab className="flex-col left-nav card-shadow">
-        <TabItem
-          variant="primary"
-          onClick={() => handleTabChange(1)}
-          tabIndex={1}
-          active={active === 1}
-        >
-          {"Account"}
+    <div className='responsive-height flex w-full'>
+      <Tab className='flex-col left-nav card-shadow'>
+        <TabItem variant='primary' onClick={() => handleTabChange(1)} tabIndex={1} active={active === 1}>
+          {'Account'}
         </TabItem>
-        <TabItem
-          variant="primary"
-          onClick={() => handleTabChange(2)}
-          tabIndex={2}
-          active={active === 2}
-        >
-          {"Orders"}
+        <TabItem variant='primary' onClick={() => handleTabChange(2)} tabIndex={2} active={active === 2}>
+          {'Orders'}
         </TabItem>
       </Tab>
-      <div className="flex-grow">
-        <TabPane
-          className="p-4 flex items-center h-full flex-col overflow-auto"
-          active={active === 1}
-        >
-          <Account name={""} lastName={""} email={""} phoneNumber={""} />
+      <div className='flex-grow'>
+        <TabPane className='p-4 flex items-center h-full flex-col overflow-auto' active={active === 1}>
+          <Account />
         </TabPane>
-        <TabPane
-          className="p-4 flex items-center h-full flex-col overflow-auto"
-          active={active === 2}
-        >
+        <TabPane className='p-4 flex items-center h-full flex-col overflow-auto' active={active === 2}>
           <Orders />
         </TabPane>
       </div>

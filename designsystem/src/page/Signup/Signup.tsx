@@ -1,10 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Button } from 'design-system';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../store/configureStore';
+import { useDispatch } from 'react-redux';
 import { registerUser } from '../../redux/actions/ActionsCreators';
 
 export interface SignupFormProps {
@@ -56,7 +54,7 @@ const Signup = () => {
     setFormData({ ...formData, [name]: value });
   };
   return (
-    <div className='flex flex-col items-center w-full py-5'>
+    <div className='flex flex-col responsive-height overflow-auto items-center w-full py-5'>
       <h1 className='large text-primary'>Sign Up</h1>
       <p className='lead'>
         <i className='fas fa-user'></i> Create Your Account
