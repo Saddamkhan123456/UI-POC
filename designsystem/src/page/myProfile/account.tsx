@@ -23,6 +23,8 @@ const Account = () => {
   const handleEdit = () => {
     let item = { name, address, mobile };
     dispatch<any>(updateProfile(item));
+    setEditMode(false);
+
     // alert("Your form details have been saved");
   }; // your form submit function which will invoke after successful validation
 

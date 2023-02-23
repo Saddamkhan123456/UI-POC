@@ -35,8 +35,10 @@ const Orders = () => {
                               cartCard={false}
                               imgSize={true}
                               showRemove={false}
-                              qty={true}
+                              qty={false}
                               isCartItem={false}
+                              quantity={item.quantity}
+                              itemPrice={item.price}
                             />
                           );
                         })}
