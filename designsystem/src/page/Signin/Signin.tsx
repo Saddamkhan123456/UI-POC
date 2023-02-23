@@ -46,7 +46,7 @@ const Signin = () => {
     }
   }, [auth.token]);
   return (
-    <div className='flex flex-col items-center w-full py-5'>
+    <div className='flex flex-col responsive-height overflow-auto items-center w-full py-5'>
       <h1 className='large text-primary'>Sign Up</h1>
       <p className='lead'>
         <i className='fas fa-user'></i> Login To Your Account

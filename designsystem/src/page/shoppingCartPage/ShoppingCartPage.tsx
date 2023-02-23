@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { OrderSummary } from "../../atoms/orderSummary/orderSummary";
-import { useSelector, useDispatch } from "react-redux";
-import ItemCard from "../../atoms/itemCard/itemCard";
-import { useContext } from "react";
-import { CartContext } from "../../Contexts/cart.context";
-import { WishlistContext } from "../../Contexts/wishlist.context";
-import EmptyShoppingCart from "../../atoms/emptyShoppingCart/emptyShoppingCart";
+import React, { useEffect, useState } from 'react';
+import { OrderSummary } from '../../atoms/orderSummary/orderSummary';
+import { useSelector, useDispatch } from 'react-redux';
+import ItemCard from '../../atoms/itemCard/itemCard';
+import { useContext } from 'react';
+import { CartContext } from '../../Contexts/cart.context';
+import { WishlistContext } from '../../Contexts/wishlist.context';
+import EmptyShoppingCart from '../../atoms/emptyShoppingCart/emptyShoppingCart';
 import {
   addCartProducts,
   addWishlistProducts,
   getCartProducts,
   removeCartProducts,
-} from "../../redux/actions/ActionsCreators";
-import { RootState } from "../../store/configureStore";
+} from '../../redux/actions/ActionsCreators';
+import { RootState } from '../../store/configureStore';
 
 const ShoppingCartPage = () => {
   const [cartData, setCartData] = useState([]);
@@ -40,15 +40,13 @@ const ShoppingCartPage = () => {
     dispatch<any>(addCartProducts({ id: cartItem.product._id, quantity: 1 }));
   };
   return (
-    <div className="flex flex-col container mx-auto py-4 px-1 md:px-0">
-      <h1 className="text-xl capitalize leading-none pb-4 mb-4 border-b font-medium">
-        Shopping Cart
-      </h1>
+    <div className='flex flex-col responsive-height overflow-auto container mx-auto py-4 px-1 md:px-0'>
+      <h1 className='text-xl capitalize leading-none pb-4 mb-4 border-b font-medium'>Shopping Cart</h1>
       {cartData?.length > 0 ? (
-        <div className="flex pb-5">
-          <div className="flex flex-col md:flex-row w-full">
-            <div className="lg:w-2/3 sm:w-full">
-              <div className="w-full">
+        <div className='flex pb-5'>
+          <div className='flex flex-col md:flex-row w-full'>
+            <div className='lg:w-2/3 sm:w-full'>
+              <div className='w-full'>
                 {cartData &&
                   cartData.map((item) => {
                     return (
@@ -70,8 +68,8 @@ const ShoppingCartPage = () => {
                   })}
               </div>
             </div>
-            <div className="lg:w-1/3 md:w-1/3 sm:w-full">
-              <div className="lg:px-6 sm:px-2  w-full">
+            <div className='lg:w-1/3 md:w-1/3 sm:w-full'>
+              <div className='lg:px-6 sm:px-2  w-full'>
                 <OrderSummary showShoppingCart={false} isCheckout={true} />
               </div>
             </div>
