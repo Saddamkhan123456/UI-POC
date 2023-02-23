@@ -434,6 +434,7 @@ export const addWishlistProducts = (data) => (
   dispatch: Dispatch<AddWishlistAction>
 ) => {
   let token = localStorage.getItem("token");
+
   if (token === null) {
     window.location.href = "/login";
   }
@@ -444,7 +445,7 @@ export const addWishlistProducts = (data) => (
     method: "put",
     url: `${baseUrl}user/wishlist`,
     headers: {
-      Authorization: `Bearer ${localStorage.getItem(token)}`,
+      Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
     },
     data: body,
