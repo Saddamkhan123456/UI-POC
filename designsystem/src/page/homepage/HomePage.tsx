@@ -13,12 +13,18 @@ import { RootState } from "../../store/configureStore";
 const HomePage = () => {
   const brands = useSelector((state: RootState) => state.brand);
   const categories = useSelector((state: RootState) => state.category);
+  const auth = useSelector((state: RootState) => state.auth);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch<any>(getCategories());
     dispatch<any>(getBrands());
-    dispatch<any>(getWishlistProducts());
-    dispatch<any>(getCartProducts());
+  }, []);
+  useEffect(() => {
+    console.log("auth", auth);
+    if (auth.token) {
+      dispatch<any>(getCartProducts());
+      dispatch<any>(getWishlistProducts());
+    }
   }, []);
   return (
     <>

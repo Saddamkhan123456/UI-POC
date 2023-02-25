@@ -3,6 +3,7 @@ import { HTMLAttributes } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   addCartProducts,
+  getCartProducts,
   getWishlistProducts,
   removeWishlistProducts,
 } from "../../redux/actions/ActionsCreators";
@@ -28,6 +29,7 @@ export const WishlistComponent = ({
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch<any>(getWishlistProducts());
+    dispatch<any>(getCartProducts());
   }, []);
 
   useEffect(() => {

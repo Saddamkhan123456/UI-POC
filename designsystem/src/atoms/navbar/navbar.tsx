@@ -60,7 +60,7 @@ export const Navbar = ({
             {!isLogin ? (
               <Link
                 to="/login"
-                className="bg-theme-danger text-theme-white hover:bg-theme-hoverDarken active:bg-theme-clicked px-6 py-2 text-sm leading-none font-light flex items-center justify-center btn block cursor-pointer hover:opacity-90"
+                className="bg-theme-white text-theme-primary hover:bg-theme-hoverDarken active:bg-theme-clicked px-6 py-2 text-sm leading-none font-light flex items-center justify-center btn block cursor-pointer hover:opacity-90"
               >
                 Login
               </Link>
