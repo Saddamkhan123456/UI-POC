@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { Button, Card } from 'design-system';
-import classnames from 'classnames';
-import Icon from '../icons/icon';
-import { imageBaseUrl } from '../../constants/constants';
+import * as React from "react";
+import { Button, Card } from "design-system";
+import classnames from "classnames";
+import Icon from "../icons/icon";
+import { imageBaseUrl } from "../../constants/constants";
 
 export interface ItemCardProps extends React.HTMLAttributes<HTMLElement> {
   cartItem?: any;
@@ -19,6 +19,7 @@ export interface ItemCardProps extends React.HTMLAttributes<HTMLElement> {
   qty?: boolean;
   quantity?: string;
   itemPrice?: string;
+  disableCart?: boolean;
 }
 
 const ItemCard = ({
@@ -36,40 +37,63 @@ const ItemCard = ({
   qty,
   quantity,
   itemPrice,
+  disableCart = true,
 }: ItemCardProps) => {
   const { title, images, description, brand, price } = cartItem;
   return (
-    <Card className={classnames(cartCard ? 'border rounded flex px-4 pt-4' : 'mb-5 flex')}>
+    <Card
+      className={classnames(
+        cartCard ? "border rounded flex px-4 pt-4" : "mb-5 flex"
+      )}
+    >
       <div
         className={
-          classnames(imgSize ? 'cart-image h-24 w-24 ' : 'h-36 w-36 ') +
-          'flex-shrink-0 overflow-hidden rounded-md border border-theme-neutral80'
+          classnames(imgSize ? "cart-image h-24 w-24 " : "h-36 w-36 ") +
+          "flex-shrink-0 overflow-hidden rounded-md border border-theme-neutral80"
         }
       >
-        <img src={`${imageBaseUrl}${images[0]?.img}`} alt={title} className='h-full w-full object-cover object-top' />
+        <img
+          src={`${imageBaseUrl}${images[0]?.img}`}
+          alt={title}
+          className="h-full w-full object-cover object-top"
+        />
       </div>
-      <div className='ml-3 flex flex-1 '>
-        <div className='w-full flex flex-col'>
-          <div className='flex justify-between text-base text-theme-neutral flex-col md:flex-row'>
-            <h3 className='mr-1'>
-              {title && <p className='font-bold text-normal line-clamp-2'>{title}</p>}
-              {description && <p className='mt-1 mb-2 text-medium font-normal capitalize'>{description}</p>}
-              {brand && <p className='mt-1 mb-2 text-sm text-theme-neutral55 font-normal capitalize'>{brand?.title}</p>}
+      <div className="ml-3 flex flex-1 ">
+        <div className="w-full flex flex-col">
+          <div className="flex justify-between text-base text-theme-neutral flex-col md:flex-row">
+            <h3 className="mr-1">
+              {title && (
+                <p className="font-bold text-normal line-clamp-2">{title}</p>
+              )}
+              {description && (
+                <p className="mt-1 mb-2 text-medium font-normal capitalize">
+                  {description}
+                </p>
+              )}
+              {brand && (
+                <p className="mt-1 mb-2 text-sm text-theme-neutral55 font-normal capitalize">
+                  {brand?.title}
+                </p>
+              )}
             </h3>
-            {price && <p className='text-lg font-semibold ml-1'>&#8377;{price}</p>}
-            {itemPrice && <p className='text-lg font-semibold ml-1'>&#8377;{itemPrice}</p>}
+            {price && (
+              <p className="text-lg font-semibold ml-1">&#8377;{price}</p>
+            )}
+            {itemPrice && (
+              <p className="text-lg font-semibold ml-1">&#8377;{itemPrice}</p>
+            )}
           </div>
 
-          <div className='flex flex-1 items-end justify-between text-sm'>
-            <div className={classnames(isQuantityShow ? 'flex' : 'hidden')}>
-              <div className='mr-1 flex gap-0.5'>
+          <div className="flex flex-1 items-end justify-between text-sm">
+            <div className={classnames(isQuantityShow ? "flex" : "hidden")}>
+              <div className="mr-1 flex gap-0.5">
                 {!qty && (
                   <>
-                    <span onClick={removeItem} className='cursor-pointer'>
+                    <span onClick={removeItem} className="cursor-pointer">
                       &#8592;
                     </span>
-                    <p className='text-theme-neutralGray'>{quantity}</p>
-                    <span onClick={addItem} className='cursor-pointer'>
+                    <p className="text-theme-neutralGray">{quantity}</p>
+                    <span onClick={addItem} className="cursor-pointer">
                       &#8594;
                     </span>
                   </>
@@ -77,36 +101,38 @@ const ItemCard = ({
               </div>
             </div>
 
-            <div className='flex ml-1'>
+            <div className="flex ml-1">
               {showRemove && (
                 <Button
-                  variant='secondary'
-                  size='small'
+                  variant="secondary"
+                  size="small"
                   onClick={deleteItem}
-                  className='font-medium text-theme-primary hover:text-theme-primary p-0 mr-2'
+                  className="font-medium text-theme-primary hover:text-theme-primary p-0 mr-2"
                 >
-                  <Icon kind='delete' size={16} />
+                  <Icon kind="delete" size={16} />
                 </Button>
               )}
               <>
                 {isCartItem ? (
                   <Button
-                    variant='secondary'
-                    size='small'
+                    variant="secondary"
+                    size="small"
                     onClick={addToWishlist}
-                    className='font-medium text-theme-primary hover:text-theme-primary p-0'
+                    className="font-medium text-theme-primary hover:text-theme-primary p-0"
                   >
-                    <Icon kind='wishlist' size={16} />
+                    <Icon kind="wishlist" size={16} />
                   </Button>
                 ) : (
-                  <Button
-                    variant='secondary'
-                    size='small'
-                    onClick={addToCart}
-                    className='font-medium text-theme-primary hover:text-theme-primary p-0'
-                  >
-                    <Icon kind='cart' size={16} />
-                  </Button>
+                  disableCart && (
+                    <Button
+                      variant="secondary"
+                      size="small"
+                      onClick={addToCart}
+                      className="font-medium text-theme-primary hover:text-theme-primary p-0"
+                    >
+                      <Icon kind="cart" size={16} />
+                    </Button>
+                  )
                 )}
               </>
             </div>

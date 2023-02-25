@@ -12,10 +12,7 @@ import { RootState } from "../../store/configureStore";
 import { imageBaseUrl } from "../../constants/constants";
 import Spinner from "../../atoms/spinner/spinner";
 import ImageGallery from "react-image-gallery";
-import {
-  addWishlistProducts,
-  getWishlistProducts,
-} from "../../redux/actions/ActionsCreators";
+import { addWishlistProducts } from "../../redux/actions/ActionsCreators";
 
 const ProductDetails = () => {
   let { productId } = useParams();
@@ -33,7 +30,7 @@ const ProductDetails = () => {
   const [images, setImages] = useState<any>([]);
   const dispatch = useDispatch();
   const addProductToCart = () => {
-    dispatch<any>(addCartProducts({ id: productId, quantity: "1" }));
+    dispatch<any>(addCartProducts({ id: productId, quantity: 1 }));
   };
   const addProductToWishlist = () => {
     dispatch<any>(addWishlistProducts(productId));

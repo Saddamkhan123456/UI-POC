@@ -1,17 +1,12 @@
 import * as React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../../store/configureStore";
+import { useDispatch } from "react-redux";
 import { Card, Button } from "design-system";
 import { Link } from "react-router-dom";
 import Icon from "../icons/icon";
-import { CartContext } from "../../Contexts/cart.context";
-import { WishlistContext } from "../../Contexts/wishlist.context";
-import { useContext } from "react";
 import { imageBaseUrl } from "../../constants/constants";
 import {
   addCartProducts,
   addWishlistProducts,
-  getWishlistProducts,
 } from "../../redux/actions/ActionsCreators";
 
 export interface CardProps {

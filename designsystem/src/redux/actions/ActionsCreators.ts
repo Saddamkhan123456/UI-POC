@@ -85,6 +85,7 @@ import {
   GET_ORDERS_SUCCESS,
   OrdersAction,
 } from "./Orders.action";
+import { getAuthtoken } from "../../utility/authtoken";
 
 export const baseUrl: string = "http://localhost:9000/api/";
 
@@ -155,6 +156,7 @@ export const loginUser = (data: object) => async (
 };
 
 export const getOrders = () => (dispatch: Dispatch<OrdersAction>) => {
+  let token = getAuthtoken();
   let config = {
     method: "get",
     url: `${baseUrl}order/orderByUser`,
@@ -191,6 +193,7 @@ export const getOrders = () => (dispatch: Dispatch<OrdersAction>) => {
 };
 
 export const getProfile = () => (dispatch: Dispatch<ProfileAction>) => {
+  let token = getAuthtoken();
   let config = {
     method: "get",
     url: `${baseUrl}user/profile`,
@@ -229,6 +232,7 @@ export const getProfile = () => (dispatch: Dispatch<ProfileAction>) => {
 export const updateProfile = (data: object) => (
   dispatch: Dispatch<ProfileAction>
 ) => {
+  let token = getAuthtoken();
   var body = JSON.stringify(data);
   let config = {
     method: "PUT",
@@ -307,7 +311,6 @@ export const getProduct = (id?: string) => (
   dispatch: Dispatch<ProductAction>
 ) => {
   try {
-    console.log(localStorage.getItem("token"));
     dispatch({
       type: GET_PRODUCT_BY_ID_START,
     });
@@ -396,11 +399,12 @@ export const getBrands = () => (dispatch: Dispatch<BrandAction>) => {
 export const getWishlistProducts = () => (
   dispatch: Dispatch<GetWishlistAction>
 ) => {
+  let token = getAuthtoken();
   let config = {
     method: "get",
     url: `${baseUrl}user/wishlist`,
     headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
+      Authorization: `Bearer ${token}`,
     },
   };
   try {
@@ -433,11 +437,8 @@ export const getWishlistProducts = () => (
 export const addWishlistProducts = (data) => (
   dispatch: Dispatch<AddWishlistAction>
 ) => {
-  let token = localStorage.getItem("token");
+  let token = getAuthtoken();
 
-  if (token === null) {
-    window.location.href = "/login";
-  }
   var body = JSON.stringify({
     productId: data,
   });
@@ -481,6 +482,7 @@ export const addWishlistProducts = (data) => (
 export const removeWishlistProducts = (data) => (
   dispatch: Dispatch<RemoveWishlistAction>
 ) => {
+  let token = getAuthtoken();
   var body = JSON.stringify({
     productId: data,
   });
@@ -488,7 +490,7 @@ export const removeWishlistProducts = (data) => (
     method: "put",
     url: `${baseUrl}user/wishlist/remove`,
     headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
+      Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
     },
     data: body,
@@ -522,11 +524,13 @@ export const removeWishlistProducts = (data) => (
 };
 
 export const getCartProducts = () => (dispatch: Dispatch<GetCartAction>) => {
+  console.log("inn");
+  let token = getAuthtoken();
   let config = {
     method: "get",
     url: `${baseUrl}user/cart`,
     headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
+      Authorization: `Bearer ${token}`,
     },
   };
   try {
@@ -559,10 +563,7 @@ export const getCartProducts = () => (dispatch: Dispatch<GetCartAction>) => {
 export const addCartProducts = (data) => (
   dispatch: Dispatch<AddCartAction>
 ) => {
-  let token = localStorage.getItem("token");
-  if (token === null) {
-    window.location.href = "/login";
-  }
+  let token = getAuthtoken();
   var body = JSON.stringify({
     products: [
       {
@@ -611,6 +612,7 @@ export const addCartProducts = (data) => (
 export const removeCartProducts = (data) => (
   dispatch: Dispatch<RemoveCartAction>
 ) => {
+  let token = getAuthtoken();
   var body = JSON.stringify({
     productId: data.id,
   });
@@ -618,7 +620,7 @@ export const removeCartProducts = (data) => (
     method: "put",
     url: `${baseUrl}user/cart`,
     headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
+      Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
     },
     data: body,
@@ -654,12 +656,13 @@ export const removeCartProducts = (data) => (
 export const emptyCartProducts = () => (
   dispatch: Dispatch<RemoveCartAction>
 ) => {
+  let token = getAuthtoken();
   var body = JSON.stringify({});
   let config = {
     method: "delete",
     url: `${baseUrl}user/cart`,
     headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
+      Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
     },
     data: body,
@@ -695,6 +698,7 @@ export const emptyCartProducts = () => (
 export const addOrderProducts = (data) => (
   dispatch: Dispatch<AddOrderAction>
 ) => {
+  let token = getAuthtoken();
   var body = JSON.stringify({
     name: data.name,
     mobile: data.phoneNumber,
@@ -708,7 +712,7 @@ export const addOrderProducts = (data) => (
     method: "POST",
     url: `${baseUrl}order/cashOnDelivery`,
     headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
+      Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
     },
     data: body,
