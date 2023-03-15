@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Banner } from '../../atoms/banner';
 import { useLocation, useParams } from 'react-router-dom';
 import { CardComponent } from '../../atoms/card';

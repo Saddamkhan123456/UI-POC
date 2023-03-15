@@ -1,10 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { OrderSummary } from '../../atoms/orderSummary/orderSummary';
 import { useSelector, useDispatch } from 'react-redux';
 import ItemCard from '../../atoms/itemCard/itemCard';
-import { useContext } from 'react';
-import { CartContext } from '../../Contexts/cart.context';
-import { WishlistContext } from '../../Contexts/wishlist.context';
 import EmptyShoppingCart from '../../atoms/emptyShoppingCart/emptyShoppingCart';
 import {
   addCartProducts,

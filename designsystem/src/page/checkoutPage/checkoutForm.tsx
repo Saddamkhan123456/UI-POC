@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { v4 as uuidv4 } from 'uuid';
 import { RootState } from '../../store/configureStore';
 import { useSelector, useDispatch } from 'react-redux';
-import { addOrderProducts, getCartProducts } from '../../redux/actions/ActionsCreators';
+import { addOrderProducts, emptyCartProducts, getCartProducts } from '../../redux/actions/ActionsCreators';
 export interface checkoutFormProps {
   id?: number;
   name?: string;
@@ -58,6 +58,7 @@ const CheckoutForm = (checkoutFormProps) => {
       cartTotalTax: cartTotalTax,
     };
     dispatch<any>(addOrderProducts(newCheckoutData));
+    dispatch<any>(emptyCartProducts());
     navigate('/thankyou');
   }; // your form submit function which will invoke after successful validation
 

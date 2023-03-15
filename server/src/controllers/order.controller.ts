@@ -87,6 +87,7 @@ const getOrderByUser = async (
   try {
     const orders = await OrderModel.find({ user: req.user?.id })
       .populate('products.product', 'images title')
+      .sort({ createdAt: -1 })
       .exec();
     if (orders) {
       res.status(201);
