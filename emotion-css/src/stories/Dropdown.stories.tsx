@@ -18,5 +18,9 @@ const options = ["Option 1", "Option 2", "Option 3"];
 export const DropdownComponent: Story = {
   args: {
     options: options,
+    placeholder: "Select",
+    onClick: (selected: string) => {
+      console.log(selected);
+    },
   },
 };

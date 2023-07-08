@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { BsChevronDown, BsChevronUp } from "react-icons/bs";
@@ -11,13 +11,19 @@ const dropdownStyles = css`
 const dropdownButtonStyles = css`
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
   border: 1px solid #dedeed;
+  min-width: 180px;
   font-size: 1rem;
   color: #343434;
   background: #fff;
   cursor: pointer;
+
+  &:hover {
+    background-color: #f9f9f9;
+  }
 `;
 
 const dropdownIconStyles = css`
@@ -29,7 +35,7 @@ const dropdownContentStyles = css`
   margin-top: 0.5rem;
   position: absolute;
   width: 100%;
-  min-width: 160px;
+  min-width: 180px;
   border-radius: 0.25rem;
   border: 1px solid rgba(184, 188, 192, 0.25);
   box-shadow: 0px 0px 10px 0px rgba(184, 188, 192, 0.25);
@@ -37,7 +43,6 @@ const dropdownContentStyles = css`
 `;
 
 const dropdownItemStyles = css`
-  color: #000;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -50,9 +55,21 @@ const dropdownItemStyles = css`
   }
 `;
 
+const dropdownItemSelectedStyles = css`
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 1rem;
+  color: #343434;
+  cursor: pointer;
+  background-color: #f0f0f0;
+`;
+
 interface DropdownProps {
   options: string[];
   selectedOption?: string;
+  placeholder?: string;
+  onClick?: (e: any) => void;
 }
 
 const DropdownContainer = styled.div`
@@ -71,14 +88,20 @@ const DropdownContent = styled.div`
   ${dropdownContentStyles}
 `;
 
-const DropdownItem = styled.a`
-  ${dropdownItemStyles}
+const DropdownItem = styled.a<{ isSelected: boolean }>`
+  ${(props) =>
+    props.isSelected ? dropdownItemSelectedStyles : dropdownItemStyles}
 `;
 
-const Dropdown: React.FC<DropdownProps> = ({ options, selectedOption }) => {
+const Dropdown: React.FC<DropdownProps> = ({
+  options,
+  selectedOption,
+  onClick,
+  placeholder = "Select an option",
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState(
-    selectedOption ? selectedOption : "Select an option"
+    selectedOption ? selectedOption : placeholder
   );
 
   const toggleDropdown = () => {
@@ -89,6 +112,10 @@ const Dropdown: React.FC<DropdownProps> = ({ options, selectedOption }) => {
     setIsOpen(!isOpen);
     setSelected(e.target.innerText);
   };
+
+  useEffect(() => {
+    selected !== placeholder && onClick && onClick(selected);
+  }, [selected]);
 
   return (
     <DropdownContainer>
@@ -101,7 +128,11 @@ const Dropdown: React.FC<DropdownProps> = ({ options, selectedOption }) => {
       {isOpen && (
         <DropdownContent>
           {options.map((option, index) => (
-            <DropdownItem key={index} onClick={selectedValue}>
+            <DropdownItem
+              key={index}
+              isSelected={option === selected}
+              onClick={selectedValue}
+            >
               {option}
             </DropdownItem>
           ))}
