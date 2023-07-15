@@ -16,10 +16,11 @@ const CardContainer = styled.div`
 // Define the props interface
 export interface CardProps {
   children: React.ReactNode;
+  style?: React.CSSProperties;
 }
 
-const CardComponent: React.FC<CardProps> = ({ children }) => {
-  return <CardContainer>{children}</CardContainer>;
+const CardComponent: React.FC<CardProps> = ({ children, style }) => {
+  return <CardContainer style={style}>{children}</CardContainer>;
 };
 
 export default CardComponent;
