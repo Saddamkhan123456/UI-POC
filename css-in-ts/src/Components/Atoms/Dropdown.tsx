@@ -29,9 +29,6 @@ const DropdownToggle = styled.button`
   color: #343434;
   background: #fff;
   cursor: pointer;
-  &:hover {
-    background-color: #f9f9f9;
-  }
 `;
 
 const DropdownIcon = styled.span`
@@ -44,6 +41,7 @@ const DropdownMenu = styled.div`
   width: 100%;
   min-width: 180px;
   border-radius: 0.375rem;
+  background: #ffffff;
   border: 1px solid rgba(184, 188, 192, 0.25);
   box-shadow: 0px 0px 10px 0px rgba(184, 188, 192, 0.25);
   z-index: 1;
@@ -94,15 +92,13 @@ const Dropdown: React.FC<IDropdownProps> = ({
     <DropdownRoot>
       <DropdownToggle onClick={toggleDropdown}>
         {selected}
-        {selected === placeholder ? (
-          <DropdownIcon>
+        <DropdownIcon>
+          {selected === placeholder ? (
             <Icon kind="chevronDown" width={14} height={8} />
-          </DropdownIcon>
-        ) : (
-          <DropdownIcon onClick={handleIcon}>
-            <Icon kind="close" size={14} />
-          </DropdownIcon>
-        )}
+          ) : (
+            <Icon kind="close" size={14} onClick={handleIcon} />
+          )}
+        </DropdownIcon>
       </DropdownToggle>
       {isOpen && (
         <DropdownMenu>

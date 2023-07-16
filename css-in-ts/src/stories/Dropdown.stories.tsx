@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
 import DropdownComponent from "../Components/Atoms/Dropdown";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
@@ -17,8 +16,5 @@ export const Dropdown: Story = {
   args: {
     options: options,
     placeholder: "Select",
-    onClick: (selected: string) => {
-      console.log(selected);
-    },
   },
 };
