@@ -11,4 +11,14 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Dropdown: Story = {};
+const options = ["Option 1", "Option 2", "Option 3"];
+
+export const Dropdown: Story = {
+  args: {
+    options: options,
+    placeholder: "Select",
+    onClick: (selected: string) => {
+      console.log(selected);
+    },
+  },
+};
