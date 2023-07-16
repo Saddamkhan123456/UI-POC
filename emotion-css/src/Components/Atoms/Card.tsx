@@ -1,6 +1,6 @@
-import React from "react";
-import { css } from "@emotion/react";
-import styled from "@emotion/styled";
+import React from 'react';
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 
 const cardStyles = css`
   background-color: #fff;
@@ -9,7 +9,7 @@ const cardStyles = css`
   padding: 1rem;
 `;
 
-const CardContainer = styled.div`
+export const CardContainer = styled.div`
   ${cardStyles}
 `;
 

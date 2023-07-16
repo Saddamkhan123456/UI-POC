@@ -1,11 +1,11 @@
-import React from "react";
-import { css } from "@emotion/react";
-import styled from "@emotion/styled";
-import Carousel from "react-multi-carousel";
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
+import React from 'react';
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
+import Carousel from 'react-multi-carousel';
+import { FaAngleLeft, FaAngleRight } from 'react-icons/fa6';
 
-import "react-multi-carousel/lib/styles.css";
-import CardComponent from "../Atoms/Card";
+import 'react-multi-carousel/lib/styles.css';
+import CardComponent from '../Atoms/Card';
 
 // Define your carousel item styles using Emotion Styled
 
@@ -84,7 +84,7 @@ const CarouselItemImage = styled.img`
 `;
 
 interface Item {
-  id: string;
+  id: number;
   image: string;
   name: string;
 }
@@ -126,11 +126,17 @@ const ItemsCarousel: React.FC<CarouselProps> = ({ items, itemCounts }) => {
       infinite={true}
       centerMode={true}
       keyBoardControl={true}
-      customTransition="transform 300ms ease-in-out"
+      customTransition='transform 300ms ease-in-out'
       transitionDuration={300}
-      containerClass="carousel-container"
-      itemClass="carousel-item-padding-40-px"
-      customLeftArrow={<CustomLeftArrow />}
+      containerClass='carousel-container'
+      itemClass='carousel-item-padding-40-px'
+      customLeftArrow={
+        <CustomLeftArrow
+          onClick={function (): void {
+            throw new Error('Function not implemented.');
+          }}
+        />
+      }
       customRightArrow={<CustomRightArrow />}
     >
       {items.map((item) => (
@@ -146,7 +152,7 @@ const ItemsCarousel: React.FC<CarouselProps> = ({ items, itemCounts }) => {
     </Carousel>
   );
 };
-const CustomLeftArrow: React.FC<{ onClick: () => void }> = ({ onClick }) => {
+const CustomLeftArrow: React.FC<{ onClick?: () => void }> = ({ onClick }) => {
   return (
     <CarouselPrevButton onClick={onClick}>
       <FaAngleLeft size={30} />
@@ -155,7 +161,7 @@ const CustomLeftArrow: React.FC<{ onClick: () => void }> = ({ onClick }) => {
 };
 
 // Custom Right Arrow component using React icon
-const CustomRightArrow: React.FC<{ onClick: () => void }> = ({ onClick }) => {
+const CustomRightArrow: React.FC<{ onClick?: () => void }> = ({ onClick }) => {
   return (
     <CarouselNextButton onClick={onClick}>
       <FaAngleRight size={30} />
