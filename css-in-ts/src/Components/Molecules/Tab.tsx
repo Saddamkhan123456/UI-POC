@@ -19,10 +19,14 @@ export const KRATabList = styled(TabList)`
 
 export const KRATab = styled(Tab)`
   cursor: pointer;
-  padding: 11px 0;
+  padding: 0;
   line-height: 1.125rem;
   font-weight: ${({ selected }) => (selected ? 500 : 400)};
   color: ${({ selected }) => (selected ? "#0B93DF" : "#343434")};
+  margin-bottom: 1.375rem;
+  &:last-child {
+    margin: 0;
+  }
   &:focus-visible {
     outline: none;
     border: none;
