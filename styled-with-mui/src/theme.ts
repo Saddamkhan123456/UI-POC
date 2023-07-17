@@ -1,7 +1,4 @@
 import { createTheme } from '@material-ui/core/styles';
-import React from 'react';
-
-
 
 const theme = createTheme({
   // Customize your theme here
@@ -17,7 +14,13 @@ const theme = createTheme({
     },
     success: {
       main: '#10B857',
-    }
+    },
+    common: {
+      white: '#fff',
+    },
+  },
+    typography: {
+    fontFamily: ['Ubuntu', 'sans-serif'].join(','),
   },
   overrides: {
     MuiButton: {
