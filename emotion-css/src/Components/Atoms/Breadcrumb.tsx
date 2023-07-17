@@ -13,21 +13,20 @@ const olStyled = css`
 `;
 const liStyled = css`
   display: list-item;
-  &:first-item {
+  cursor: pointer;
+  &:before {
+    content: '/';
+    padding-right: 0.5rem;
+  }
+  &:first-child {
     &:before {
-      content: '/';
-      padding-right: 0.5rem;
+      content: '';
     }
   }
 `;
 const active = css`
+  ${liStyled}
   font-weight: 500;
-  & {
-    &:before {
-      content: '/';
-      padding-right: 0.5rem;
-    }
-  }
 `;
 
 interface BreadcrumbProps {
