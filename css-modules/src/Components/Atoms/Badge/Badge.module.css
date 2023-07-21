@@ -1,0 +1,18 @@
+.badge {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--kb-white);
+  text-transform: uppercase;
+  padding: 0.25rem 0.625rem;
+  border-radius: 0.25rem;
+}
+.badge-warning {
+  background-color: var(--kb-yellow);
+}
+.badge-success {
+  background-color: var(--kb-green);
+}
+.badge-light {
+  background-color: var(--kb-blue-light);
+  color: var(--kb-dark-gray);
+}

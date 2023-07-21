@@ -1,0 +1,5 @@
+.divider {
+  border-color: var(--kb-gray-lighter);
+  border-width: 0.031rem;
+  margin-block: 1.875rem;
+}

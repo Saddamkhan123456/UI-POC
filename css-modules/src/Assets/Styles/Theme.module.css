@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  font-family: var(--kb-font-family);
+  font-size: var(--kb-body-font-size);
+  font-weight: var(--kb-body-font-weight);
+  line-height: var(--kb-body-line-height);
+  color: var(--kb-gray);
+}
+:root {
+  --kb-blue: #0b93df;
+  --kb-blue-light: #eaf5ff;
+  --kb-yellow: #f0ad56;
+  --kb-green: #10b857;
+  --kb-black: #000;
+  --kb-white: #fff;
+  --kb-gray: #343434;
+  --kb-gray-dark: #222222;
+  --kb-gray-100: #666666;
+  --kb-gray-200: #a5a5a5;
+  --kb-font-family: 'Ubuntu', sans-serif;
+  --kb-body-font-family: var(--kb-font-family);
+  --kb-body-font-size: 1rem;
+  --kb-body-font-weight: 400;
+  --kb-body-line-height: 1.5;
+  --kb-body-bg: #fff;
+  --kb-border-radius: 0.25rem;
+}
+
+h1 {
+  font-size: 2.375rem;
+  line-height: 1.14;
+}
+h2 {
+  font-size: 2rem;
+  line-height: 1.14;
+}
+h3 {
+  font-size: 1.5rem;
+  line-height: 1.14;
+}
+h4 {
+  font-size: 1.25rem;
+  line-height: 1.1;
+}
+h5 {
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.1;
+}
