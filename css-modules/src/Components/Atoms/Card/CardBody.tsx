@@ -8,7 +8,7 @@ interface CardBodyProps {
   isCardBottomBox?: boolean;
   cardSubHeading?: string;
   cardSubText?: string;
-  cardType?: 'category-card' | 'tech-card' | 'bookmark' | 'moreFor-you';
+  cardType?: 'category-card' | 'tech-card' | 'bookmarked' | 'moreFor-you';
   imgUrl?: string;
   alt?: string;
   isTechDigestImg?: boolean;
@@ -18,7 +18,7 @@ interface CardBodyProps {
 const cardTypeClass = {
   'category-card': styles.categoryCard,
   'tech-card': styles.techCard,
-  bookmark: styles.bookmark,
+  bookmarked: styles.bookmarked,
   'moreFor-you': styles.moreForYou,
 };
 
