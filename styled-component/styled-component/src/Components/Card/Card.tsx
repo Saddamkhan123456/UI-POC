@@ -1,6 +1,6 @@
 import React from 'react';
 import Icon from '../../Assets/Icons/Icon';
-import { ICardOverlay, IMediaCard } from './constant';
+import { ICardOverlay, IMediaCard } from './styles';
 
 import {
   MediaCardC,
@@ -10,7 +10,7 @@ import {
   MediaCardParagraph,
   SolidCardOverlay,
   StyledParagraph,
-} from './constant';
+} from './styles';
 
 interface ICardOverlayCProps extends ICardOverlay, IMediaCard {
   backgroundImage?: string; // Merge conflicting property manually

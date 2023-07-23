@@ -15,6 +15,7 @@ export interface IMediaCard {
   mediaText?: string;
   centerAlign?: boolean;
 }
+
 export const SolidCardOverlay = styled.div<ICardOverlay>`
     border-radius: 12px;
     box-shadow: 0px 0px 10px 0px rgba(184, 188, 192, 0.25);
