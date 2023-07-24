@@ -1,7 +1,7 @@
 import React from 'react';
 import { BreadcrumbContainer, BreadcrumbItem, IBreadcrumb } from './styles';
 
-const Breadcrumb = ({ active, items }: IBreadcrumb) => {
+const Breadcrumb = ({ items }: IBreadcrumb) => {
   return (
     <BreadcrumbContainer>
       {items.map((item: any, index: number) => (
