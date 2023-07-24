@@ -5,6 +5,7 @@ body {
   font-weight: var(--kb-body-font-weight);
   line-height: var(--kb-body-line-height);
   color: var(--kb-gray);
+  background: var(--kb-body-bg);
 }
 :root {
   --kb-blue: #0b93df;
@@ -23,7 +24,7 @@ body {
   --kb-body-font-size: 1rem;
   --kb-body-font-weight: 400;
   --kb-body-line-height: 1.5;
-  --kb-body-bg: #fff;
+  --kb-body-bg: #f8f8f8;
   --kb-border-radius: 0.25rem; /*4px*/
   --kb-border-radius-sm: 0.375rem; /*6px*/
   --kb-border-radius-md: 0.75rem; /*12px*/
@@ -66,4 +67,8 @@ p {
   font-size: 1rem;
   line-height: 1.1;
   margin: 0;
+}
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
 }

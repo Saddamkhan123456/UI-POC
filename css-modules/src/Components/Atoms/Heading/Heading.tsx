@@ -8,7 +8,7 @@ interface HeadingProps {
 
 const Heading = ({ label, textCenterAlign }: HeadingProps) => {
   const headingClassName = textCenterAlign ? `${styles.heading} ${styles.textCenterAlign}` : styles.heading;
-  return <h2 className={headingClassName}>{label}</h2>;
+  return <h3 className={headingClassName}>{label}</h3>;
 };
 
 export default Heading;
