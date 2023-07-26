@@ -1,1 +1,20 @@
-@import "../../../Assets/Styles/Theme.module.css"
+.header {
+  display: flex;
+  flex-direction: row;
+  background: var(--kb-white);
+  padding: 0.625rem 1.875rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.leftHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.rightHeader {
+  display: flex;
+  min-width: 23.625rem;
+}
+.logo {
+  margin-inline-end: 3.125rem;
+}

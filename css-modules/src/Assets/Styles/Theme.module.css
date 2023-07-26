@@ -6,6 +6,7 @@ body {
   line-height: var(--kb-body-line-height);
   color: var(--kb-gray);
   background: var(--kb-body-bg);
+  box-sizing: border-box;
 }
 :root {
   --kb-blue: #0b93df;
@@ -19,6 +20,7 @@ body {
   --kb-gray-100: #666666;
   --kb-gray-200: #a5a5a5;
   --kb-gray-300: #b8bcc0;
+  --kb-gray-400: #dedeed;
   --kb-font-family: 'Ubuntu', sans-serif;
   --kb-body-font-family: var(--kb-font-family);
   --kb-body-font-size: 1rem;
@@ -71,4 +73,20 @@ p {
 .container {
   max-width: 1140px;
   margin: 0 auto;
+}
+
+input::placeholder {
+  color: var(--kb-gray-200);
+}
+
+input:-ms-input-placeholder {
+  color: var(--kb-gray-200);
+}
+
+input::-ms-input-placeholder {
+  color: var(--kb-gray-200);
+}
+input:focus-visible,
+button:focus-visible {
+  outline: none;
 }
