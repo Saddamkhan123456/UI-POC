@@ -13,3 +13,6 @@
   display: flex;
   gap: 3.75rem;
 }
+.moreForYouWrapper {
+  padding-block: 0.625rem 3.75rem;
+}
