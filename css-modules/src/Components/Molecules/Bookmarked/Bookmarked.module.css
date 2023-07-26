@@ -13,3 +13,9 @@
   display: flex;
   gap: 3.125rem;
 }
+
+.viewMoreAlignment {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
