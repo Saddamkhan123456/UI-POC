@@ -13,6 +13,7 @@ interface CardBodyProps {
   alt?: string;
   isTechDigestImg?: boolean;
   backgroundImgUrl?: string;
+  href: string;
 }
 
 const cardTypeClass = {
@@ -33,16 +34,17 @@ const CardBody = ({
   alt,
   isTechDigestImg,
   backgroundImgUrl,
+  href,
 }: CardBodyProps) => {
   const cardName = cardType ? cardTypeClass[cardType] : '';
   const cardBackgroundImg = backgroundImgUrl ? { backgroundImage: `url(${backgroundImgUrl})` } : {};
   return (
     <div className={`${cardName}`}>
-      <div className={styles.cardTopBox} style={cardBackgroundImg}>
+      <a href={href} className={styles.cardTopBox} style={cardBackgroundImg}>
         <Icon kind={categoryIcon} size={40} className={styles.cardIcon} />
         <h3>{title}</h3>
         {isTechDigestImg && <img src={imgUrl} alt={alt} />}
-      </div>
+      </a>
       {isCardBottomBox && (
         <div className={styles.cardBottomBox}>
           <h6 className={styles.cardTitle}>{cardSubHeading}</h6>

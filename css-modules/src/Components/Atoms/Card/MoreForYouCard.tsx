@@ -5,12 +5,13 @@ import CardBody from './CardBody';
 interface MoreForYouProps {
   backgroundImgUrl: string;
   title: string;
+  href: string;
 }
 
-const MoreForYouCard = ({ backgroundImgUrl, title }: MoreForYouProps) => {
+const MoreForYouCard = ({ backgroundImgUrl, title, href }: MoreForYouProps) => {
   return (
     <Card>
-      <CardBody backgroundImgUrl={backgroundImgUrl} title={title} cardType='moreFor-you' />
+      <CardBody href={href} backgroundImgUrl={backgroundImgUrl} title={title} cardType='moreFor-you' />
     </Card>
   );
 };

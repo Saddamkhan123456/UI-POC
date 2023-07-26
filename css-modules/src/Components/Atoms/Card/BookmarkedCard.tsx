@@ -6,9 +6,10 @@ interface BookmarkedCardProps {
   cardSubHeading: string;
   cardSubText: string;
   backgroundImgUrl: string;
+  href: string;
 }
 
-const BookmarkedCard = ({ cardSubHeading, cardSubText, backgroundImgUrl }: BookmarkedCardProps) => {
+const BookmarkedCard = ({ cardSubHeading, cardSubText, backgroundImgUrl, href }: BookmarkedCardProps) => {
   return (
     <Card>
       <CardBody
@@ -17,6 +18,7 @@ const BookmarkedCard = ({ cardSubHeading, cardSubText, backgroundImgUrl }: Bookm
         cardSubText={cardSubText}
         backgroundImgUrl={backgroundImgUrl}
         cardType='bookmarked'
+        href={href}
       />
     </Card>
   );

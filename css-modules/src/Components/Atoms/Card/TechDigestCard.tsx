@@ -6,9 +6,10 @@ interface TechDigestCardProps {
   imgUrl: string;
   alt?: string;
   techDigestName: string;
+  href: string;
 }
 
-const TechDigestCard = ({ imgUrl, alt, techDigestName }: TechDigestCardProps) => {
+const TechDigestCard = ({ imgUrl, alt, techDigestName, href }: TechDigestCardProps) => {
   return (
     <Card>
       <CardBody
@@ -18,6 +19,7 @@ const TechDigestCard = ({ imgUrl, alt, techDigestName }: TechDigestCardProps) =>
         imgUrl={imgUrl}
         alt={alt}
         cardSubHeading={techDigestName}
+        href={href}
       />
     </Card>
   );

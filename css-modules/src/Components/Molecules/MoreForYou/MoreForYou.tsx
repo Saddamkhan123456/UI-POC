@@ -11,7 +11,7 @@ const MoreForYou = () => {
       <div className={styles.row}>
         {moreForYouData.map((data, index) => (
           <div className={styles.moreForYouCard} key={index}>
-            <MoreForYouCard backgroundImgUrl={data.backgroundImgUrl} title={data.title} />
+            <MoreForYouCard backgroundImgUrl={data.backgroundImgUrl} title={data.title} href={data.href} />
           </div>
         ))}
       </div>

@@ -22,10 +22,10 @@ const useSwiperRef = <T extends HTMLElement>(): [T | null, React.Ref<T>] => {
 };
 
 interface CarouselProps {
-  children?: React.ReactNode;
+  techData: any;
 }
 
-const Carousel = ({ children }: CarouselProps) => {
+const Carousel = ({ techData }: CarouselProps) => {
   const [nextEl, nextElRef] = useSwiperRef<HTMLButtonElement>();
   const [prevEl, prevElRef] = useSwiperRef<HTMLButtonElement>();
   return (
@@ -40,9 +40,9 @@ const Carousel = ({ children }: CarouselProps) => {
         modules={[Navigation]}
         className={styles.techDigestCarousel}
       >
-        {techDigestData.map((item) => (
+        {techData.map((item: any) => (
           <SwiperSlide>
-            <TechDigestCard key={item.id} imgUrl={item.imgUrl} techDigestName={item.techDigestName} />
+            <TechDigestCard href={item.href} key={item.id} imgUrl={item.imgUrl} techDigestName={item.techDigestName} />
           </SwiperSlide>
         ))}
       </Swiper>

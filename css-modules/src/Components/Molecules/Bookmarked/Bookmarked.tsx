@@ -18,6 +18,7 @@ const Bookmarked = () => {
                 cardSubHeading={data.cardSubHeading}
                 cardSubText={data.cardSubText}
                 backgroundImgUrl={data.backgroundImgUrl}
+                href={data.href}
               />
             </div>
           ))}

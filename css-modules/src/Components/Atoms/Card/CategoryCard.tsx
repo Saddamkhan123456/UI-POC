@@ -5,12 +5,13 @@ import CardBody from './CardBody';
 interface CategoryCardProps {
   categoryIcon: string;
   title: string;
+  href: string;
 }
 
-const CategoryCard = ({ categoryIcon, title }: CategoryCardProps) => {
+const CategoryCard = ({ categoryIcon, title, href }: CategoryCardProps) => {
   return (
     <Card>
-      <CardBody categoryIcon={categoryIcon} title={title} cardType='category-card' />
+      <CardBody href={href} categoryIcon={categoryIcon} title={title} cardType='category-card' />
     </Card>
   );
 };

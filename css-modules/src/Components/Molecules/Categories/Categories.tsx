@@ -11,7 +11,7 @@ const Categories = () => {
         <div className={styles.row}>
           {categoryData.map((data, index) => (
             <div className={styles.categoryCard} key={index}>
-              <CategoryCard title={data.title} categoryIcon={data.categoryIcon} />
+              <CategoryCard title={data.title} categoryIcon={data.categoryIcon} href={data.href} />
             </div>
           ))}
         </div>

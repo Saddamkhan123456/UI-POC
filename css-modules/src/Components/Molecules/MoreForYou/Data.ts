@@ -6,13 +6,16 @@ export const moreForYouData = [
   {
     title: 'Recently Uploaded',
     backgroundImgUrl: RecentlyUploaded,
+    href: '',
   },
   {
     title: 'Trending',
     backgroundImgUrl: Trending,
+    href: '',
   },
   {
     title: 'Recommended',
     backgroundImgUrl: Recommended,
+    href: '',
   },
 ];

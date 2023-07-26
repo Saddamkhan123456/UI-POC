@@ -8,20 +8,24 @@ export const bookmarkedData = [
     cardSubHeading: 'How To Start Automation Issue With Cypress Quickly?',
     cardSubText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
     backgroundImgUrl: BookmarkedImg1,
+    href: '',
   },
   {
     cardSubHeading: 'How To Start Automation Issue With Cypress Quickly?',
     cardSubText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
     backgroundImgUrl: BookmarkedImg2,
+    href: '',
   },
   {
     cardSubHeading: 'How To Start Automation Issue With Cypress Quickly?',
     cardSubText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
     backgroundImgUrl: BookmarkedImg3,
+    href: '',
   },
   {
     cardSubHeading: 'How To Start Automation Issue With Cypress Quickly?',
     cardSubText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
     backgroundImgUrl: BookmarkedImg4,
+    href: '',
   },
 ];
