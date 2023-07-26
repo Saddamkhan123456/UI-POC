@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Breadcrumb.module.css';
+import { items } from './Data';
 
 interface BreadcrumbItem {
   label: string;
@@ -10,11 +11,10 @@ interface BreadcrumbProps {
   items: Array<BreadcrumbItem>;
 }
 
-const Breadcrumb = ({ items }: BreadcrumbProps) => {
+const Breadcrumb = () => {
   return (
     <nav className={styles.breadcrumb}>
       <ol className={styles.breadcrumbInner}>
-        sdf
         {items.map((item, index) => (
           <React.Fragment key={index}>
             {index > 0 && <li className={styles.breadcrumbSeparator}>&gt;</li>}
