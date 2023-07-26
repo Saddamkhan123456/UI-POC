@@ -87,6 +87,7 @@ input::-ms-input-placeholder {
   color: var(--kb-gray-200);
 }
 input:focus-visible,
-button:focus-visible {
+button:focus-visible,
+select:focus-visible {
   outline: none;
 }

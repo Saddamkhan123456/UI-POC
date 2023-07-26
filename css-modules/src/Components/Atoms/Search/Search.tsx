@@ -6,11 +6,12 @@ interface SearchProps {
   isSearchIcon?: boolean;
   searchVariant?: 'searchSm' | 'searchLg';
   isSearchText?: boolean;
+  className?: string;
 }
 
-const Search = ({ isSearchIcon, searchVariant, isSearchText }: SearchProps) => {
+const Search = ({ isSearchIcon, searchVariant, isSearchText, className }: SearchProps) => {
   return (
-    <form className={`${styles.search} ${styles[searchVariant || 'searchLg']}`}>
+    <form className={`${styles.search} ${styles[searchVariant || 'searchLg']} ${className}`}>
       <input
         type='text'
         className={styles.formControl}
