@@ -1,0 +1,43 @@
+.search {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.formControl {
+  border-radius: 0.375rem 0 0 0.375rem;
+  border: 1px solid var(--kb-gray-400);
+  background: var(--kb-white);
+  width: 100%;
+  font-weight: 400;
+  box-sizing: border-box;
+  color: var(--kb-gray);
+  font-family: var(--kb-font-family);
+}
+.searchPrimaryBtn {
+  border-radius: 0px 0.375rem 0.375rem 0px;
+  background: var(--kb-blue);
+  padding: 0.5rem 1.25rem;
+  border: 0;
+  color: var(--kb-white);
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.2;
+  max-height: 2.5rem;
+  display: flex;
+  align-items: center;
+}
+.searchSm .formControl {
+  max-height: 2.125rem;
+  font-size: 0.625rem;
+  padding: 0.75rem 1rem;
+}
+.searchSm .searchPrimaryBtn {
+  padding: 0.125rem 1.125rem;
+  max-height: 2.125rem;
+}
+.searchLg .formControl {
+  max-height: 2.5rem;
+  font-size: 0.875rem;
+  padding: 0.75rem 1rem;
+}
