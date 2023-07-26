@@ -6,16 +6,18 @@ import Divider from '../../Atoms/Divider/Divider';
 
 const Categories = () => {
   return (
-    <div className={styles.CategoriesWrapper}>
-      <div className={styles.row}>
-        {categoryData.map((data, index) => (
-          <div className={styles.categoryCard} key={index}>
-            <CategoryCard title={data.title} categoryIcon={data.categoryIcon} />
-          </div>
-        ))}
+    <>
+      <div className={styles.categoriesWrapper}>
+        <div className={styles.row}>
+          {categoryData.map((data, index) => (
+            <div className={styles.categoryCard} key={index}>
+              <CategoryCard title={data.title} categoryIcon={data.categoryIcon} />
+            </div>
+          ))}
+        </div>
       </div>
       <Divider />
-    </div>
+    </>
   );
 };
 

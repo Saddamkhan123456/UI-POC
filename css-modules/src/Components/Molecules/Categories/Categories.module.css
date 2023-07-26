@@ -13,3 +13,6 @@
   display: flex;
   gap: 3.75rem;
 }
+.categoriesWrapper {
+  padding-block-end: 1.875rem;
+}
