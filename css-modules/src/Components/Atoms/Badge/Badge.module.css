@@ -5,14 +5,34 @@
   text-transform: uppercase;
   padding: 0.25rem 0.625rem;
   border-radius: 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  line-height: 0.5;
 }
-.badge-warning {
+.badge > svg {
+  margin-right: 0.125rem;
+}
+.badgeWarning {
   background-color: var(--kb-yellow);
 }
-.badge-success {
+.badgeSuccess {
   background-color: var(--kb-green);
 }
-.badge-light {
+.badgeLight {
   background-color: var(--kb-blue-light);
   color: var(--kb-dark-gray);
+}
+.badgeTransparent {
+  background-color: transparent;
+  padding-inline: 0;
+  color: var(--kb-gray-100);
+  text-transform: capitalize;
+  font-size: 0.875rem;
+  padding: 0;
+}
+.hardProblem {
+  color: var(--kb-dark-blue);
+}
+.blogArticles {
+  color: var(--kb-pink);
 }
