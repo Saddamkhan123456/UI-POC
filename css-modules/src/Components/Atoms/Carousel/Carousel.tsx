@@ -6,7 +6,6 @@ import { Navigation } from 'swiper';
 import Icon from '../../Icons/Icons';
 import styles from './Carousel.module.css';
 import TechDigestCard from '../Card/TechDigestCard';
-import { techDigestData } from '../../Molecules/TechDigest/Data';
 
 const useSwiperRef = <T extends HTMLElement>(): [T | null, React.Ref<T>] => {
   const [wrapper, setWrapper] = useState<T | null>(null);

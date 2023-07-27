@@ -2,15 +2,6 @@ import React from 'react';
 import styles from './Breadcrumb.module.css';
 import { items } from './Data';
 
-interface BreadcrumbItem {
-  label: string;
-  link?: string;
-}
-
-interface BreadcrumbProps {
-  items: Array<BreadcrumbItem>;
-}
-
 const Breadcrumb = () => {
   return (
     <nav className={styles.breadcrumb}>
