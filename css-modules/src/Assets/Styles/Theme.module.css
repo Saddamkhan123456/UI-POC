@@ -9,18 +9,21 @@ body {
   box-sizing: border-box;
 }
 :root {
+  --kb-dark-blue: #4556af;
   --kb-blue: #0b93df;
   --kb-blue-light: #eaf5ff;
   --kb-yellow: #f0ad56;
   --kb-green: #10b857;
   --kb-black: #000;
   --kb-white: #fff;
+  --kb-pink: #af4585;
   --kb-gray: #343434;
   --kb-gray-dark: #222222;
   --kb-gray-100: #666666;
   --kb-gray-200: #a5a5a5;
   --kb-gray-300: #b8bcc0;
   --kb-gray-400: #dedeed;
+  --kb-gray-500: #bebebe;
   --kb-font-family: 'Ubuntu', sans-serif;
   --kb-body-font-family: var(--kb-font-family);
   --kb-body-font-size: 1rem;
