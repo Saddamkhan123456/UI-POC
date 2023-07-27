@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './Banner.module.css';
 import Search from '../../Atoms/Search/Search';
 import Dropdown from '../../Atoms/Dropdown/Dropdown';
-import Categories from '../Categories/Categories';
 import { categoriesData, productName, techData, tagData } from './Data';
 
 const Banner = () => {
