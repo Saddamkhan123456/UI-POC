@@ -6,6 +6,7 @@ import MoreForYou from '../../Components/Molecules/MoreForYou/MoreForYou';
 import TechDigest from '../../Components/Molecules/TechDigest/TechDigest';
 import Header from '../../Components/Molecules/Header/Header';
 import Banner from '../../Components/Molecules/Banner/Banner';
+import Container from '../../Components/Layout/Container/Container';
 
 const Home = () => {
   return (
@@ -13,12 +14,12 @@ const Home = () => {
       <Header />
       <Banner />
       <div className={styles.homeWrapper}>
-        <div className={styles.container}>
+        <Container>
           <Categories />
           <TechDigest />
           <Bookmarked />
           <MoreForYou />
-        </div>
+        </Container>
       </div>
     </>
   );
