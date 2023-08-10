@@ -1,0 +1,9 @@
+.sidebar {
+  background: var(--kb-white);
+  padding-block: 2.5rem;
+  border-radius: var(--kb-border-radius-sm);
+}
+.sidebarHeader,
+.sidebarBody {
+  padding-inline: 3.75rem;
+}
