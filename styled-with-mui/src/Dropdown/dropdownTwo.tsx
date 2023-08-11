@@ -3,15 +3,19 @@ import { Menu, MenuItem, IconButton } from '@mui/material';
 import styled from 'styled-components';
 import Icon from '../Icons/Icons';
 import { alpha } from '@mui/material/styles';
-import { ThemeProvider } from '@material-ui/core/styles';
+import { CssBaseline, ThemeProvider, Typography } from '@mui/material';
 import theme from '../theme';
-import { Typography } from '@material-ui/core';
 
+interface DropdownProps {
+    size?: "medium" | "small";
+    label?: string;
+    value?: string;
+    id?: string;
+    itemText?: string;
+}
 
 const StyledIconButton = styled(IconButton)`
     &&{
-        /* margin-right: -12px; */
-        /* margin-left: 6px; */
         border: 1px solid #DEDEED;
         color: #343434;
         font-size: 1rem;
@@ -34,14 +38,14 @@ const StyledMenuItem = styled(MenuItem)`
     &&{
         font-size: 14px;
         color: #444;
-        margin-top: ${(props) => props.theme.spacing * 1}px; // Use spacing as a plain number
+        margin-top: 0.25rem;
     }
 `;
 
 const StyledMenu = styled(Menu)`
   && .MuiPaper-root {
     border-radius: 6px;
-    margin-top: ${(props) => props.theme.spacing * 1}px;
+    margin-top: 0.25rem;
     min-width: 180px;
     color: ${(props) => props.theme.palette.grey[300]};
     box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px,
@@ -85,6 +89,7 @@ function CustomMenu() {
 
     return (
         <ThemeProvider theme={theme}>
+            <CssBaseline />
             <StyledIconButton
                 aria-controls="custom-menu"
                 aria-haspopup="true"
