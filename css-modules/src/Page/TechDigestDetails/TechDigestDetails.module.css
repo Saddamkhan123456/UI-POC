@@ -21,3 +21,25 @@
   padding-right: 15px;
   padding-left: 15px;
 }
+.submenu {
+  display: flex;
+  flex-direction: column;
+  margin-block-start: 0.625rem;
+  padding-inline-start: 1.25rem;
+}
+.submenu a {
+  color: var(--kb-gray);
+  margin-block-end: 1.375rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+.submenu a:hover {
+  color: var(--kb-blue);
+}
+.submenu a:last-child {
+  margin-block-end: 0;
+}
+.submenu a.active {
+  font-weight: 500;
+  color: var(--kb-blue);
+}

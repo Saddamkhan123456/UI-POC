@@ -1,0 +1,27 @@
+.accordionItem {
+  margin-bottom: 2rem;
+}
+.accordionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+.accordionItem.active .accordionHeader:before {
+  position: absolute;
+  content: "";
+  width: 0.25rem;
+  height: 2.375rem;
+  border-radius: 0.125rem;
+  left: -1rem;
+  background: var(--kb-blue);
+}
+.arrowUp {
+  transition: transform 0.3s ease-in-out;
+  transform: rotate(180deg);
+}
+.arrowDown {
+  transition: transform 0.3s ease-in-out;
+  transform: rotate(0deg);
+}
