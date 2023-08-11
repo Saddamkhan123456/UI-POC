@@ -7,13 +7,16 @@ const theme = createTheme({
       main: '#0B93DF', 
     },
     secondary: {
-      main: '#00ff00', // Example secondary color
+      main: '#898989', 
     },
     warning: {
       main: '#F0AD56',
     },
     success: {
       main: '#10B857',
+    },
+    info: {
+      main: '#4556AF',
     },
     common: {
       white: '#fff',
@@ -22,6 +25,7 @@ const theme = createTheme({
     typography: {
     fontFamily: ['Ubuntu', 'sans-serif'].join(','),
   },
+  spacing: (factor) => `${0.25 * factor}rem`, // (Bootstrap strategy)
   overrides: {
     MuiButton: {
       root: {
