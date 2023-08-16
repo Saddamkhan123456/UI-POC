@@ -27,16 +27,16 @@
   display: flex;
   align-items: center;
 }
-.searchSm .formControl {
+.sm .formControl {
   max-height: 2.125rem;
   font-size: 0.625rem;
   padding: 0.75rem 1rem;
 }
-.searchSm .searchPrimaryBtn {
+.sm .searchPrimaryBtn {
   padding: 0.125rem 1.125rem;
   max-height: 2.125rem;
 }
-.searchLg .formControl {
+.lg .formControl {
   max-height: 2.5rem;
   font-size: 0.875rem;
   padding: 0.75rem 1rem;
