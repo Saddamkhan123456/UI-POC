@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeProvider } from '@material-ui/core/styles';
-import theme from '../theme';
+import theme from '../../theme';
 import { KBChip } from './Chip';
 
 const meta = {

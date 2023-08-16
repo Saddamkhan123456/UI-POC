@@ -7,7 +7,7 @@ import styled from '@mui/system/styled';
 
 const KBreadcrumb = styled(Breadcrumbs)(({ theme }) => ({
     fontSize: '0.875rem',
-    fontFamily: 'ubuntu, sans-serif',
+    fontFamily: 'Ubuntu, sans-serif',
     "& .icon": {
         marginRight: theme.spacing(0.5),
     },

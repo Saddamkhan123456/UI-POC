@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Icon from '../Icons/Icons';
 import { alpha } from '@mui/material/styles';
 import { CssBaseline, ThemeProvider, Typography } from '@mui/material';
-import theme from '../theme';
+import theme from '../../theme';
 
 interface DropdownProps {
     size?: "medium" | "small";

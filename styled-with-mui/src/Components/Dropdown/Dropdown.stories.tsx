@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeProvider, CssBaseline } from '@mui/material';
-import theme from '../theme';
+import theme from '../../theme';
 import Dropdown from './Dropdown';
 import CustomMenu from './dropdownTwo';
 
