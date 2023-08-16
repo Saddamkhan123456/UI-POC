@@ -1,18 +1,18 @@
 import React from "react";
-import SidebarHeader from "../../Components/Molecules/Sidebar/SidebarHeader";
 import SidebarBody from "../../Components/Molecules/Sidebar/SidebarBody";
+import SidebarHeader from "../../Components/Molecules/Sidebar/SidebarHeader";
 
-const ArticalDetailedContent = () => {
+const BriefDetails = () => {
   return (
     <>
       <SidebarHeader title="Brief Details" variant="h1" />
       <SidebarBody>
-        About - Brief Details Purescript is a distributed streaming platform. What exactly does that mean? A streaming
-        platform has three key capabilities: Publish and subscribe to streams of records, similar to a message queue or
-        enterprise messaging system. Store streams of records in a fault-tolerant durable way. Process streams of
-        records as they occur. Purescript is generally used for two broad classes of applications: Building real-time
-        streaming applications that transform or react to the streams of data Building real-time streaming applications
-        that transform or react to the streams of data To understand how Purescript does these things, let's dive in and
+        <h6>Purescript is a distributed streaming platform. What exactly does that mean?</h6>A streaming platform has
+        three key capabilities: Publish and subscribe to streams of records, similar to a message queue or enterprise
+        messaging system. Store streams of records in a fault-tolerant durable way. Process streams of records as they
+        occur. Purescript is generally used for two broad classes of applications: Building real-time streaming
+        applications that transform or react to the streams of data Building real-time streaming applications that
+        transform or react to the streams of data To understand how Purescript does these things, let's dive in and
         explore Purescript's capabilities from the bottom up. First a few concepts: Purescript is run as a cluster on
         one or more servers that can span multiple data centers. The Purescript cluster stores stream of records in
         categories called topics. Each record consists of a key, a value, and a timestamp. The Streams API allows an
@@ -31,4 +31,4 @@ const ArticalDetailedContent = () => {
   );
 };
 
-export default ArticalDetailedContent;
+export default BriefDetails;

@@ -1,8 +1,8 @@
-import React from 'react';
-import styles from './List.module.css';
-import Badge from '../Badge/Badge';
-import Icon from '../../Icons/Icons';
-import ArticleDetails from '../../Molecules/ArticleDetails/ArticleDetails';
+import React from "react";
+import styles from "./List.module.css";
+import Badge from "../Badge/Badge";
+import Icon from "../../Icons/Icons";
+import ArticleDetails from "../../Molecules/ArticleDetails/ArticleDetails";
 
 interface ListItemProps {
   img: string;
@@ -13,18 +13,29 @@ interface ListItemProps {
   technology: string;
   author: string;
   impact: string;
+  imageSize: "sm" | "md";
 }
 
-const ListItem = ({ img, title, date, articleType, technology, author, articleIcon, impact }: ListItemProps) => {
+const ListItem = ({
+  img,
+  title,
+  date,
+  articleType,
+  technology,
+  author,
+  articleIcon,
+  impact,
+  imageSize,
+}: ListItemProps) => {
   return (
     <li className={styles.listItem}>
-      <div className={styles.listItemImg}>
+      <a href="/" className={`${styles.listItemImg} ${styles[imageSize]}`}>
         <img src={img} />
-      </div>
+      </a>
       <div className={styles.listItemDescription}>
         <div className={styles.listItemTopBox}>
-          <h5>{title}</h5>
-          <Icon kind='bookmark' size={16} />
+          <a href="/">{title}</a>
+          <Icon kind="bookmark" size={16} />
         </div>
         <div className={styles.listItemMedium}>
           <ArticleDetails articleType={articleType} articleIcon={articleIcon} technology={technology} author={author} />

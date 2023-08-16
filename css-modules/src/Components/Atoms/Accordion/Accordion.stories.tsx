@@ -10,6 +10,6 @@ const meta = {
 
 export default meta;
 
-export const TechDigestDetailsAccordion = () => {
+export const Default = () => {
   return <TechDigestAccordion />;
 };

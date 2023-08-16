@@ -1,5 +1,6 @@
 .mainContainer {
   width: 100%;
   display: flex;
-  padding-block-start: 1.625rem;
+  padding-block: 1.625rem 2.5rem;
+  height: 100%;
 }

@@ -24,7 +24,7 @@ body {
   --kb-gray-300: #b8bcc0;
   --kb-gray-400: #dedeed;
   --kb-gray-500: #bebebe;
-  --kb-font-family: 'Ubuntu', sans-serif;
+  --kb-font-family: "Ubuntu", sans-serif;
   --kb-body-font-family: var(--kb-font-family);
   --kb-body-font-size: 1rem;
   --kb-body-font-weight: 400;
@@ -90,4 +90,11 @@ input:focus-visible,
 button:focus-visible,
 select:focus-visible {
   outline: none;
+}
+html,
+body {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  box-sizing: border-box;
 }

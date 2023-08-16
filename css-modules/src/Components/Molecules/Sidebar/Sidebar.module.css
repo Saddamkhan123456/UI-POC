@@ -2,8 +2,17 @@
   background: var(--kb-white);
   padding-block: 2.5rem;
   border-radius: var(--kb-border-radius-sm);
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 250px);
 }
 .sidebarHeader,
 .sidebarBody {
   padding-inline: 3.75rem;
+  display: flex;
+  flex-direction: column;
+}
+.sidebarBody {
+  height: 100%;
+  overflow: auto;
 }
