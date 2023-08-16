@@ -1,6 +1,6 @@
 import React from "react";
-import SidebarHeader from "../../Components/Molecules/Sidebar.tsx/SidebarHeader";
-import SidebarBody from "../../Components/Molecules/Sidebar.tsx/SidebarBody";
+import SidebarHeader from "../../Components/Molecules/Sidebar/SidebarHeader";
+import SidebarBody from "../../Components/Molecules/Sidebar/SidebarBody";
 
 const ArticalDetailedContent = () => {
   return (

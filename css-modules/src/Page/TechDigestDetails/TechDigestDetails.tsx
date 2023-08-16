@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import Layout from "../../Components/Layout/Layout";
 import styles from "./TechDigestDetails.module.css";
-import Sidebar from "../../Components/Molecules/Sidebar.tsx/Sidebar";
+import Sidebar from "../../Components/Molecules/Sidebar/Sidebar";
 import Accordion from "../../Components/Atoms/Accordion/Accordion";
 import { accordionData } from "./Data";
-import SidebarHeader from "../../Components/Molecules/Sidebar.tsx/SidebarHeader";
-import SidebarBody from "../../Components/Molecules/Sidebar.tsx/SidebarBody";
+import SidebarHeader from "../../Components/Molecules/Sidebar/SidebarHeader";
+import SidebarBody from "../../Components/Molecules/Sidebar/SidebarBody";
 import ArticalDetailedContent from "./ArticalDetailedContent";
+import TechDigestAccordion from "../../Components/Atoms/Accordion/TechDigestAccordion";
 
 interface TechDigestDetailsProps {
   content?: React.ReactNode;
@@ -58,24 +59,7 @@ const TechDigestDetails = ({ content }: TechDigestDetailsProps) => {
           <Sidebar>
             <SidebarHeader title="Purescript" />
             <SidebarBody>
-              {accordionData.map((item, index) => (
-                <Accordion key={index} title={item.title} count={item.submenuItems.length.toString()}>
-                  <div className={styles.submenu}>
-                    {item.submenuItems.map((submenuItem, subIndex) => (
-                      <a
-                        key={subIndex}
-                        className={selectedSubMenu === submenuItem.label ? styles.active : ""}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          handleSubMenuClick(submenuItem.label);
-                        }}
-                      >
-                        {submenuItem.label}
-                      </a>
-                    ))}
-                  </div>
-                </Accordion>
-              ))}
+              <TechDigestAccordion />
             </SidebarBody>
           </Sidebar>
         </div>

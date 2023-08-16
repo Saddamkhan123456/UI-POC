@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Accordion from "./Accordion";
+import TechDigestAccordion from "./TechDigestAccordion";
 
 const meta = {
   title: "Molecules/Accordion",
@@ -8,12 +9,7 @@ const meta = {
 } satisfies Meta<typeof Accordion>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
-export const TechDigestAccordion: Story = {
-  args: {
-    title: "About",
-    children: "Accordion Details",
-    count: "2",
-  },
+export const TechDigestDetailsAccordion = () => {
+  return <TechDigestAccordion />;
 };
