@@ -1,4 +1,5 @@
 export const items = [
-  { label: 'Home', link: '#' },
-  { label: 'Bookmarked', link: '#' },
+  { label: "Home", link: "#" },
+  { label: "Languages", link: "#" },
+  { label: "Purescript", link: "#" },
 ];
