@@ -4,7 +4,7 @@ import ListItem from "./ListItem";
 import BookmarkedImg4 from "../../../Assets/Images/bookmarked-img4.png";
 
 const meta = {
-  title: "Page/List",
+  title: "Atoms/List",
   component: List,
 
   tags: ["autodocs"],
