@@ -5,7 +5,7 @@ import SidebarBody from "../../Components/Molecules/Sidebar.tsx/SidebarBody";
 const ArticalDetailedContent = () => {
   return (
     <>
-      <SidebarHeader title="Brief Details" />
+      <SidebarHeader title="Brief Details" variant="h1" />
       <SidebarBody>
         About - Brief Details Purescript is a distributed streaming platform. What exactly does that mean? A streaming
         platform has three key capabilities: Publish and subscribe to streams of records, similar to a message queue or

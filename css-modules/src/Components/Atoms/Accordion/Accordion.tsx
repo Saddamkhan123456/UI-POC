@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import styles from "./Accordion.module.css";
 import Icon from "../../Icons/Icons";
 interface AccordionProps {
-  title: string;
+  title?: string;
   count?: string;
   children?: React.ReactNode;
 }
 
 const Accordion = ({ title, children, count }: AccordionProps) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   const toggleAccordion = () => {
     setIsOpen(!isOpen);
