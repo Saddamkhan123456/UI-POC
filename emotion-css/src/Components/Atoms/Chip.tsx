@@ -7,7 +7,7 @@ const chipSmall = css`
   padding: 0.25rem 0.625rem;
   border-radius: 0.375rem;
   display: inline-flex;
-  align-items: centre;
+  align-items: center;
   gap: 2.5rem;
   font-size: 0.75rem;
   font-weight: 400;
@@ -16,7 +16,7 @@ const chipMedium = css`
   padding: 0.375rem 0.75rem;
   border-radius: 0.375rem;
   display: inline-flex;
-  align-items: centre;
+  align-items: center;
   gap: 2.5rem;
   font-size: 0.875rem;
   font-weight: 400;
@@ -25,7 +25,7 @@ const chipLarge = css`
   padding: 0.625rem 1rem;
   border-radius: 0.375rem;
   display: inline-flex;
-  align-items: centre;
+  align-items: center;
   gap: 2.5rem;
   font-size: 0.875rem;
   font-weight: 400;
