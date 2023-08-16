@@ -15,7 +15,6 @@
 }
 .listItem:last-child {
   border-bottom: 0;
-  margin-bottom: 0;
   padding-bottom: 0;
 }
 .listItemImg {
@@ -26,7 +25,7 @@
   width: 11.25rem;
   height: 8.125rem;
 }
-.listItemImg img {
+.listItemImg.md img {
   width: 16.688rem;
   height: 8.125rem;
   object-fit: cover;

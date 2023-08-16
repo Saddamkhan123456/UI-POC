@@ -43,6 +43,5 @@
 }
 .fullwidthContainer {
   max-width: 100%;
-  padding: 0.875rem 2.5rem;
-  /* height: calc(100vh - 9.5rem); */
+  padding-inline: 2.5rem;
 }

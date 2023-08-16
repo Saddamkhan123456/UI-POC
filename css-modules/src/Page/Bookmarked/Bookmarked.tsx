@@ -1,8 +1,8 @@
-import React from 'react';
-import Layout from '../../Components/Layout/Layout';
-import List from '../../Components/Atoms/List/List';
-import ListItem from '../../Components/Atoms/List/ListItem';
-import { bookmarkListData } from './Data';
+import React from "react";
+import Layout from "../../Components/Layout/Layout";
+import List from "../../Components/Atoms/List/List";
+import ListItem from "../../Components/Atoms/List/ListItem";
+import { bookmarkListData } from "./Data";
 
 const Bookmarked = () => {
   return (
@@ -19,6 +19,7 @@ const Bookmarked = () => {
             technology={data.technology}
             author={data.author}
             impact={data.impact}
+            imageSize={"md"}
           />
         ))}
       </List>
