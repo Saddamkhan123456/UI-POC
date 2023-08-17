@@ -1,6 +1,6 @@
-import React from 'react';
-import styles from './Card.module.css';
-import Icon from '../../Icons/Icons';
+import React from "react";
+import styles from "./Card.module.css";
+import Icon from "../../Icons/Icons";
 
 interface CardBodyProps {
   title?: string;
@@ -8,7 +8,7 @@ interface CardBodyProps {
   isCardBottomBox?: boolean;
   cardSubHeading?: string;
   cardSubText?: string;
-  cardType?: 'category-card' | 'tech-card' | 'bookmarked' | 'moreFor-you';
+  cardType?: "category-card" | "tech-card" | "bookmarked" | "moreFor-you";
   imgUrl?: string;
   alt?: string;
   isTechDigestImg?: boolean;
@@ -17,10 +17,10 @@ interface CardBodyProps {
 }
 
 const cardTypeClass = {
-  'category-card': styles.categoryCard,
-  'tech-card': styles.techCard,
+  "category-card": styles.categoryCard,
+  "tech-card": styles.techCard,
   bookmarked: styles.bookmarked,
-  'moreFor-you': styles.moreForYou,
+  "moreFor-you": styles.moreForYou,
 };
 
 const CardBody = ({
@@ -36,7 +36,7 @@ const CardBody = ({
   backgroundImgUrl,
   href,
 }: CardBodyProps) => {
-  const cardName = cardType ? cardTypeClass[cardType] : '';
+  const cardName = cardType ? cardTypeClass[cardType] : "";
   const cardBackgroundImg = backgroundImgUrl ? { backgroundImage: `url(${backgroundImgUrl})` } : {};
   return (
     <div className={`${cardName}`}>

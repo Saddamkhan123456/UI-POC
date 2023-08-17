@@ -1,6 +1,5 @@
-import React from 'react';
-import Card from './Card';
-import CardBody from './CardBody';
+import React from "react";
+import CardBody from "./CardBody";
 
 interface CategoryCardProps {
   categoryIcon: string;
@@ -9,11 +8,7 @@ interface CategoryCardProps {
 }
 
 const CategoryCard = ({ categoryIcon, title, href }: CategoryCardProps) => {
-  return (
-    <Card>
-      <CardBody href={href} categoryIcon={categoryIcon} title={title} cardType='category-card' />
-    </Card>
-  );
+  return <CardBody href={href} categoryIcon={categoryIcon} title={title} cardType="category-card" />;
 };
 
 export default CategoryCard;
