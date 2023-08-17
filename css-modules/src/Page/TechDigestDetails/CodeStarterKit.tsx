@@ -7,27 +7,55 @@ const CodeStarterKit = () => {
     <>
       <SidebarHeader title="Code starter kit" variant="h1" />
       <SidebarBody>
-        <h5> Type Annotations and Signatures:</h5>
-        Always provide explicit type annotations for your functions and values. This helps catch type errors early and
-        improves code readability. Additionally, use type signatures for your module exports to make your API more
-        understandable. Avoid Partial Functions: Strive to write total functions that are defined for all possible
-        inputs. Avoid partial functions like head or tail which can lead to runtime errors. Pattern Matching: Use
-        pattern matching extensively to destructure data types. This makes your code more expressive and helps avoid
-        nested if statements or complex conditional logic. Use Type Constructors and Records: Utilize algebraic data
-        types (sum types) and records (product types) to model your data effectively. This enhances type safety and
-        readability. Keep Functions Small and Composable: Write small, focused functions that do one thing well. Compose
-        these functions to build complex functionality. This improves maintainability and testability. Type-Driven
-        Development: Follow a type-driven development approach where you first design your types and then write
-        functions to match those types. This often leads to better design decisions and more robust code. Type Classes
-        and Type Constraints: Use type classes for writing polymorphic code that works across different data types. This
-        promotes code reusability and abstracts common behavior. Monad Transformers: When dealing with multiple monadic
-        effects (e.g., handling asynchronous and stateful computations), consider using monad transformers to compose
-        them in a clean and modular way. Leverage the Type System: Take advantage of the powerful type system to catch
-        errors at compile time. Use phantom types, newtypes, and type-level programming when appropriate. Testing: Write
-        property-based tests using libraries like QuickCheck to validate the behavior of your functions with a wide
-        range of inputs. This helps ensure correctness and reliability. Documentation and Comments: Write clear and
-        concise documentation for your code, including types and usage examples. This helps other developers (and future
-        you) understand your codebase.
+        <h6>Purescript is a distributed streaming platform. What exactly does that mean?</h6>
+        <p>A streaming platform has three key capabilities:</p>
+        <ul>
+          <li>
+            Publish and subscribe to streams of records, similar to a message queue or enterprise messaging system.
+          </li>
+          <li>Store streams of records in a fault-tolerant durable way.</li>
+          <li>Process streams of records as they occur.</li>
+        </ul>
+        <p>Purescript is generally used for two broad classes of applications:</p>
+        <ul>
+          <li> Building real-time streaming applications that transform or react to the streams of data</li>
+          <li> Building real-time streaming applications that transform or react to the streams of data</li>
+        </ul>
+
+        <p>
+          To understand how Purescript does these things, let's dive in and explore Purescript's capabilities from the
+          bottom up. First a few concepts:
+        </p>
+        <ul>
+          <li>
+            Purescript is run as a cluster on one or more servers that can span multiple data centers. The Purescript
+            cluster stores stream of records in categories called topics.
+          </li>
+          <li>Each record consists of a key, a value, and a timestamp.</li>
+          <li>
+            The Streams API allows an application to act as a stream processor, consuming an input stream from one or
+            more topics and producing an output stream to one or more output topics, effectively transforming the input
+            streams to output streams.
+          </li>
+          <li>
+            The Connector API allows building and running reusable producers or consumers that connect Purescript topics
+            to existing applications or data systems. For example, a connector to a relational database might capture
+            every change to a table.
+          </li>
+          <li>
+            Purescript is run as a cluster on one or more servers that can span multiple data centers. The Purescript
+            cluster stores stream of records in categories called topics.
+          </li>
+          <li>
+            The Connector API allows building and running reusable producers or consumers that connect Kafka topics to
+            existing applications or data systems. For example, a connector to a relational database might capture every
+            change to a table.
+          </li>
+          <li>
+            Purescript is run as a cluster on one or more servers that can span multiple data centers. The Purescript
+            cluster stores stream of records in categories called topics.
+          </li>
+        </ul>
       </SidebarBody>
     </>
   );

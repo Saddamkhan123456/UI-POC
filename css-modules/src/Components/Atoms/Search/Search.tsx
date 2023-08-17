@@ -8,13 +8,14 @@ interface SearchProps {
   isSearchText?: boolean;
   className?: string;
   placeholder?: string;
+  onClick?: () => void;
 }
 
-const Search = ({ isSearchIcon, searchVariant, isSearchText, className, placeholder }: SearchProps) => {
+const Search = ({ isSearchIcon, searchVariant, isSearchText, className, placeholder, onClick }: SearchProps) => {
   return (
     <form className={`${styles.search} ${styles[searchVariant || "lg"]} ${className}`}>
       <input type="text" className={styles.formControl} placeholder={placeholder} />
-      <button type="button" className={styles.searchPrimaryBtn}>
+      <button type="button" className={styles.searchPrimaryBtn} onClick={onClick}>
         {isSearchText && "Search"}
         {isSearchIcon && <Icon kind="search" size={18} />}
       </button>
