@@ -7,7 +7,7 @@
   border-radius: 0.25rem;
   display: inline-flex;
   align-items: center;
-  line-height: 0.5;
+  line-height: 1.2;
 }
 .badge > svg {
   margin-right: 0.125rem;
