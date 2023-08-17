@@ -1,10 +1,15 @@
-import React from 'react';
-import styles from './ViewMore.module.css';
+import React from "react";
+import styles from "./ViewMore.module.css";
 
-const ViewMore = () => {
+interface ViewMoreProps {
+  label: string;
+  href: string;
+}
+
+const ViewMore = ({ label, href }: ViewMoreProps) => {
   return (
-    <a href='/' className={styles.viewmore}>
-      view more
+    <a href={href} className={styles.viewmore}>
+      {label}
     </a>
   );
 };
