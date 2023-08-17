@@ -6,8 +6,11 @@ import theme from '../../theme';
 import { BookmarkCard } from './BookmarkCard';
 import dummyImage from '../../Assets/Images/blogImg.jpg';
 import dummyImage2 from '../../Assets/Images/dummy2.jpg';
+import purescript from '../../Assets/Images/purescript.jpg';
 import { MadeForYouCard } from './MadeForYouCard';
 import { BrowserRouter } from 'react-router-dom';
+import { CategoryCard } from './CategoryCard';
+import { TechDigestCard } from './TechDigestCard';
 
 
 const meta = {
@@ -46,6 +49,44 @@ export const MadeForYou = () => {
                             title="Recently Uploaded"
                             alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
                             src={dummyImage2}
+                        />
+                    </ScThemeProvider>
+                </ThemeProvider>
+            </StyledEngineProvider>
+        </BrowserRouter>
+    );
+};
+
+export const Category = () => {
+    return (
+        <BrowserRouter>
+            <StyledEngineProvider injectFirst>
+                <ThemeProvider theme={theme}>
+                    <ScThemeProvider theme={theme}>
+                        <CategoryCard
+                            link='/'
+                            alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+                            icon={'language'}
+                            categoryName="Display"
+                        />
+                    </ScThemeProvider>
+                </ThemeProvider>
+            </StyledEngineProvider>
+        </BrowserRouter>
+    );
+};
+
+export const TechDigest = () => {
+    return (
+        <BrowserRouter>
+            <StyledEngineProvider injectFirst>
+                <ThemeProvider theme={theme}>
+                    <ScThemeProvider theme={theme}>
+                        <TechDigestCard
+                            link='/'
+                            alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+                            src={purescript}
+                            title={'Purescript'}
                         />
                     </ScThemeProvider>
                 </ThemeProvider>
