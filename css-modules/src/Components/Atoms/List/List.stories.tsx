@@ -7,7 +7,7 @@ const meta = {
   title: "Atoms/List",
   component: List,
 
-  tags: ["autodocs"],
+  // tags: ["autodocs"],
 } satisfies Meta<typeof List>;
 
 export default meta;

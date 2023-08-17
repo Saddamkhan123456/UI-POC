@@ -8,7 +8,7 @@ import Recommended from "../../../Assets/Images/recommended.jpg";
 const meta = {
   title: "Atoms/Card",
   component: Card,
-  tags: ["autodocs"],
+  // tags: ["autodocs"],
 } satisfies Meta<typeof Card>;
 
 export default meta;

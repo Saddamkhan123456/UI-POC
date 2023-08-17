@@ -5,7 +5,7 @@ import { items } from "./Data";
 const meta = {
   title: "Atoms/Breadcrumb",
   component: Breadcrumb,
-  tags: ["autodocs"],
+  // tags: ["autodocs"],
 } satisfies Meta<typeof Breadcrumb>;
 
 export default meta;

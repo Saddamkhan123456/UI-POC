@@ -4,7 +4,7 @@ import Search from "./Search";
 const meta = {
   title: "Atoms/Search",
   component: Search,
-  tags: ["autodocs"],
+  // tags: ["autodocs"],
 } satisfies Meta<typeof Search>;
 
 export default meta;

@@ -4,7 +4,7 @@ import Header from "./Header";
 const meta = {
   title: "Molecules/Header",
   component: Header,
-  tags: ["autodocs"],
+  // tags: ["autodocs"],
 } satisfies Meta<typeof Header>;
 
 export default meta;

@@ -1,11 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Banner from "./Banner";
+
+import Categories from "./Categories";
 
 const meta = {
-  title: "Molecules/Banner",
-  component: Banner,
+  title: "Molecules/Categories Section",
+  component: Categories,
   // tags: ["autodocs"],
-} satisfies Meta<typeof Banner>;
+} satisfies Meta<typeof Categories>;
 
 export default meta;
 
