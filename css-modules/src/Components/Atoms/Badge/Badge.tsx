@@ -1,6 +1,6 @@
-import React from 'react';
-import styles from './Badge.module.css';
-import Icon from '../../Icons/Icons';
+import React from "react";
+import styles from "./Badge.module.css";
+import Icon from "../../Icons/Icons";
 
 interface BadgeProps {
   label: string;
@@ -13,15 +13,15 @@ const Badge = ({ label, icon, isIcon, size }: BadgeProps) => {
   const getBackgroundColor = (label: string) => {
     const badgeLabel = label.toLowerCase();
     switch (badgeLabel) {
-      case 'medium impact':
+      case "medium impact":
         return styles.badgeWarning;
-      case 'high impact':
+      case "high impact":
         return styles.badgeSuccess;
-      case 'low impact':
+      case "low impact":
         return styles.badgeLight;
-      case 'hard problem':
+      case "hard problem":
         return `${styles.badgeTransparent} ${styles.hardProblem}`;
-      case 'blogs & tl articles':
+      case "blogs & tl articles":
         return `${styles.badgeTransparent} ${styles.blogArticles}`;
       default:
         return styles.badgeTransparent;
