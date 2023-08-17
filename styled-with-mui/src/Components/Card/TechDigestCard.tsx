@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from '@mui/system';
-import { Box, Card, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 interface TechDigestProps {
     title?: string | null;

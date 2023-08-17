@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import type { Meta } from '@storybook/react';
+import { ThemeProvider } from "@mui/material/styles";
 import { StyledEngineProvider } from "@mui/material";
 import { ThemeProvider as ScThemeProvider } from "styled-components";
 import theme from '../../theme';
@@ -20,7 +20,7 @@ const meta = {
 } satisfies Meta<typeof BookmarkCard>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+// type Story = StoryObj<typeof meta>;
 
 export const CardBookmark = () => {
     return (
