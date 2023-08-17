@@ -15,15 +15,10 @@ const Banner = () => {
           placeholder="Search for Tech Digest, Hard Problems, Blogs, TL Articles…"
         />
         <div className={styles.dropdownGroup}>
-          <Dropdown
-            className={styles.dropdownWidth}
-            defaultLabel="Categories"
-            dropdownItems={categoriesData}
-            value=""
-          />
-          <Dropdown className={styles.dropdownWidth} defaultLabel="Tech" dropdownItems={techData} value="" />
-          <Dropdown className={styles.dropdownWidth} defaultLabel="Product Name" dropdownItems={productName} value="" />
-          <Dropdown className={styles.dropdownWidth} defaultLabel="Tags" dropdownItems={tagData} value="" />
+          <Dropdown className={styles.dropdownWidth} defaultLabel="Categories" dropdownItems={categoriesData} />
+          <Dropdown className={styles.dropdownWidth} defaultLabel="Tech" dropdownItems={techData} />
+          <Dropdown className={styles.dropdownWidth} defaultLabel="Product Name" dropdownItems={productName} />
+          <Dropdown className={styles.dropdownWidth} defaultLabel="Tags" dropdownItems={tagData} />
         </div>
       </div>
     </div>
