@@ -1,6 +1,14 @@
 import React from 'react';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { BiSearchAlt2 } from 'react-icons/bi';
+
+interface InputSearchProps {
+  value?: string;
+  onChange?: () => void;
+  onSubmit?: () => void;
+  isSearchIcon?: boolean;
+}
 
 const inputCss = css`
   padding: 0.75rem 1rem;
@@ -24,6 +32,12 @@ const buttonCss = css`
   background: #0b93df;
   border: 1px solid #0b93df;
   border-radius: 0 0.25rem 0.25rem 0;
+  &:hover {
+    opacity: 0.9;
+  }
+  &:active {
+    opacity: 1;
+  }
 `;
 
 const outerContainer = css`
@@ -43,11 +57,24 @@ const StyleContainer = styled.div`
   ${outerContainer}
 `;
 
-const InputSearch = () => {
+const InputSearch: React.FC<InputSearchProps> = ({
+  value,
+  onSubmit,
+  onChange,
+  isSearchIcon = false,
+}) => {
   return (
     <StyleContainer>
-      <StyledInput type='text' placeholder='Search here..' />
-      <StyledButton>Search</StyledButton>
+      <StyledInput
+        type='text'
+        placeholder='Search here..'
+        value={value}
+        onChange={onChange}
+        name='search'
+      />
+      <StyledButton type='submit' onClick={onSubmit}>
+        {isSearchIcon ? <BiSearchAlt2 /> : 'Search'}
+      </StyledButton>
     </StyleContainer>
   );
 };
