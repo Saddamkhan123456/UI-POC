@@ -1,12 +1,13 @@
 import React from "react";
 import SidebarHeader from "../../Components/Molecules/Sidebar/SidebarHeader";
 import SidebarBody from "../../Components/Molecules/Sidebar/SidebarBody";
+import styles from "./TechDigestDetails.module.css";
 
 const CodeStarterKit = () => {
   return (
     <>
       <SidebarHeader title="Code starter kit" variant="h1" />
-      <SidebarBody>
+      <SidebarBody className={styles.techDetails}>
         <h6>Purescript is a distributed streaming platform. What exactly does that mean?</h6>
         <p>A streaming platform has three key capabilities:</p>
         <ul>
