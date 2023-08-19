@@ -1,11 +1,15 @@
 import React from 'react';
-import { BreadcrumbContainer, BreadcrumbItem, IBreadcrumb } from './styles';
+import { BreadcrumbContainer, BreadcrumbItem } from './styles';
 
-const Breadcrumb = ({ items }: IBreadcrumb) => {
+interface IBreadcrumbProps {
+  items: any[];
+}
+
+const Breadcrumb: React.FC<IBreadcrumbProps> = ({ items }) => {
   return (
     <BreadcrumbContainer>
       {items.map((item: any, index: number) => (
-        <BreadcrumbItem key={index} active={index === items.length - 1}>
+        <BreadcrumbItem key={index} active={index === items.length - 1} items={items}>
           {item}
         </BreadcrumbItem>
       ))}

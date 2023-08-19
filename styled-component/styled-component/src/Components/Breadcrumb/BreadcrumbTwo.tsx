@@ -6,9 +6,11 @@ const BreadcrumbTypeTwo = ({ items }: IBreadcrumbTwo) => {
   return (
     <BreadcrumbTwoContainer>
       {items.map((item: any, index: number) => (
-        <BreadcrumbTwo>
+        <BreadcrumbTwo key={index} type={item.type} items={items}>
           <Icon kind={item.kind} width={20} height={20} />
-          <Text type={item.type}>{item.text}</Text>
+          <Text type={item.type} items={items}>
+            {item.text}
+          </Text>
         </BreadcrumbTwo>
       ))}
     </BreadcrumbTwoContainer>

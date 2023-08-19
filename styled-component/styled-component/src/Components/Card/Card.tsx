@@ -13,7 +13,7 @@ import {
 } from './styles';
 
 interface ICardOverlayCProps extends ICardOverlay, IMediaCard {
-  backgroundImage?: string; // Merge conflicting property manually
+  backgroundImage?: string;
 }
 
 const CardOverlayC: React.FC<ICardOverlayCProps> = ({
@@ -21,7 +21,7 @@ const CardOverlayC: React.FC<ICardOverlayCProps> = ({
   isIcon,
   text,
   isBackgroundImg,
-  backgroundImage, // Access merged property
+  backgroundImage,
   kind,
   mediaText,
   heading,
@@ -30,14 +30,14 @@ const CardOverlayC: React.FC<ICardOverlayCProps> = ({
   switch (variant) {
     case 'SolidCard':
       return (
-        <SolidCardOverlay variant={variant} isBackgroundImg={isBackgroundImg} backgroundImage={backgroundImage}>
+        <SolidCardOverlay isBackgroundImg={isBackgroundImg} backgroundImage={backgroundImage}>
           {isIcon && <Icon kind={kind} />}
           <StyledParagraph>{text}</StyledParagraph>
         </SolidCardOverlay>
       );
     case 'MediaCard':
       return (
-        <MediaCardC>
+        <MediaCardC backgroundImage={backgroundImage}>
           <MediaCardBanner backgroundImage={backgroundImage}></MediaCardBanner>
           <MediaCardContentWrapper centerAlign={centerAlign}>
             <MediaCardHeading>{heading}</MediaCardHeading>

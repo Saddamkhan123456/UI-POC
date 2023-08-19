@@ -12,7 +12,7 @@ export default {
 
 export const Default = () => {
   const breadcrumbItems = ['Home', 'Trending'];
-  return <Breadcrumb items={breadcrumbItems} active={false} />;
+  return <Breadcrumb items={breadcrumbItems} />;
 };
 
 export const BreadcrumbTwo = () => {

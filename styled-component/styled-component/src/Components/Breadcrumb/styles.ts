@@ -3,7 +3,7 @@ import { theme } from '../../theme';
 
 export interface IBreadcrumb {
   active: boolean;
-  items: any;
+  items: any[];
 }
 
 export interface IBreadcrumbTwo {
@@ -11,7 +11,7 @@ export interface IBreadcrumbTwo {
   text?: string;
   kind?: string;
   type?: 'blog' | 'hard-problem' | string;
-  items: any;
+  items: any[];
 }
 
 export const BreadcrumbContainer = styled.div`
