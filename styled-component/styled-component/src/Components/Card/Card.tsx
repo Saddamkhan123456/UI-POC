@@ -31,7 +31,7 @@ const CardOverlayC: React.FC<ICardOverlayCProps> = ({
     case 'SolidCard':
       return (
         <SolidCardOverlay isBackgroundImg={isBackgroundImg} backgroundImage={backgroundImage}>
-          {isIcon && <Icon kind={kind} />}
+          {isIcon && <Icon kind={kind} width={20} height={20} />}
           <StyledParagraph>{text}</StyledParagraph>
         </SolidCardOverlay>
       );

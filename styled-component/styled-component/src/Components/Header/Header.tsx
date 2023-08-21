@@ -1,15 +1,15 @@
 import React from 'react';
 import Icon from '../../Assets/Icons/Icon';
 import Breadcrumb from '../Breadcrumb/Breadcrumb';
-import { Header, HeaderLeft } from './styles';
+import { Header, HeaderLeft, IHeader } from './styles';
 
-const HeaderComponent = () => {
+const HeaderComponent = ({ isBreadcrumb }: IHeader) => {
   const breadcrumbItems = ['Home', 'Trending'];
   return (
     <Header>
       <HeaderLeft>
         <Icon kind='logo' width={72} height={50} />
-        <Breadcrumb items={breadcrumbItems} />
+        {isBreadcrumb && <Breadcrumb items={breadcrumbItems} />}
       </HeaderLeft>
       <div>search</div>
     </Header>

@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { theme } from '../../theme';
-
+export interface IHeader {
+  isBreadcrumb?: boolean;
+}
 export const Header = styled.div`
   display: flex;
   align-items: center;
