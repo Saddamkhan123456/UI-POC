@@ -40,6 +40,7 @@ const dropdownContentStyles = css`
   border: 1px solid rgba(184, 188, 192, 0.25);
   box-shadow: 0px 0px 10px 0px rgba(184, 188, 192, 0.25);
   z-index: 1;
+  background: #fff;
 `;
 
 const dropdownItemStyles = css`

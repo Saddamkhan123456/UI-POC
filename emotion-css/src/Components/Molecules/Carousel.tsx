@@ -1,11 +1,11 @@
-import React from 'react';
-import { css } from '@emotion/react';
-import styled from '@emotion/styled';
-import Carousel from 'react-multi-carousel';
-import { FaAngleLeft, FaAngleRight } from 'react-icons/fa6';
+import React from "react";
+import { css } from "@emotion/react";
+import styled from "@emotion/styled";
+import Carousel from "react-multi-carousel";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 
-import 'react-multi-carousel/lib/styles.css';
-import CardComponent from '../Atoms/Card';
+import "react-multi-carousel/lib/styles.css";
+import CardComponent from "../Atoms/Card";
 
 // Define your carousel item styles using Emotion Styled
 
@@ -126,14 +126,14 @@ const ItemsCarousel: React.FC<CarouselProps> = ({ items, itemCounts }) => {
       infinite={true}
       centerMode={true}
       keyBoardControl={true}
-      customTransition='transform 300ms ease-in-out'
+      customTransition="transform 300ms ease-in-out"
       transitionDuration={300}
-      containerClass='carousel-container'
-      itemClass='carousel-item-padding-40-px'
+      containerClass="carousel-container"
+      itemClass="carousel-item-padding-40-px"
       customLeftArrow={
         <CustomLeftArrow
           onClick={function (): void {
-            throw new Error('Function not implemented.');
+            throw new Error("Function not implemented.");
           }}
         />
       }

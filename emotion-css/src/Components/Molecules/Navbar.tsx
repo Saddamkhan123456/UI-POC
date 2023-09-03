@@ -1,12 +1,12 @@
-import React from 'react';
-import { css } from '@emotion/react';
-import styled from '@emotion/styled';
-import InputSearch from '../../Components/Atoms/InputSearch';
-import Breadcrumb from '../../Components/Atoms/Breadcrumb';
-import Logo from '../../Assets/svgs/logo';
+import React from "react";
+import { css } from "@emotion/react";
+import styled from "@emotion/styled";
+import InputSearch from "../../Components/Atoms/InputSearch";
+import Breadcrumb from "../../Components/Atoms/Breadcrumb";
+import Logo from "../../Assets/svgs/logo";
 
 interface NavbarProps {
-  options: string[];
+  options?: string[];
   showInput?: boolean;
   showBreadcrumb?: boolean;
 }

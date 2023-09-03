@@ -60,7 +60,7 @@ const items = [
   },
 ];
 
-export const DropdownComponent: Story = {
+export const CarouselComponent: Story = {
   args: {
     items: items,
     itemCounts: [{ desktop: 4, tablet: 2, mobile: 1 }],
