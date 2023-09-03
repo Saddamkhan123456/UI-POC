@@ -70,7 +70,7 @@ const StyledUL = styled.ul`
   ${unorderedList}
 `;
 
-const StyledListItem = styled.li`
+const StyledListItem = styled.div`
   ${listItem}
 `;
 
@@ -92,11 +92,9 @@ const Accordian: React.FC<AccordianProps> = ({ label, listItems }) => {
         </StyledAccordianHeader>
         {open ? (
           <StyledUL>
-            <>
-              {listItems?.map((item: string) => {
-                <StyledListItem>{item}</StyledListItem>;
-              })}
-            </>
+            {listItems?.map((item: string) => (
+              <StyledListItem key={item}>{item}</StyledListItem>
+            ))}
           </StyledUL>
         ) : null}
       </StyledAccordian>

@@ -34,7 +34,7 @@ const captionStyled = css`
 export interface TypographyProps {
   variant: 'h3' | 'h4' | 'h5' | 'h6' | 'subtitle' | 'body' | 'caption';
   color?: string;
-  text: string;
+  text: any;
   fontWeight?: 'normal' | 'bold' | 'bolder';
 }
 
@@ -73,22 +73,61 @@ const getFontWeight = (fontWeight: string) => {
   }
 };
 
-const Typography: React.FC<TypographyProps> = ({ variant, color, text, fontWeight = 'normal' }) => {
+const Typography: React.FC<TypographyProps> = ({
+  variant,
+  color,
+  text,
+  fontWeight = 'normal',
+}) => {
   switch (variant) {
     case 'h3':
-      return <H3Typo style={{ color: color, fontWeight: getFontWeight(fontWeight) }}>{text}</H3Typo>;
+      return (
+        <H3Typo style={{ color: color, fontWeight: getFontWeight(fontWeight) }}>
+          {text}
+        </H3Typo>
+      );
     case 'h4':
-      return <H4Typo style={{ color: color, fontWeight: getFontWeight(fontWeight) }}>{text}</H4Typo>;
+      return (
+        <H4Typo style={{ color: color, fontWeight: getFontWeight(fontWeight) }}>
+          {text}
+        </H4Typo>
+      );
     case 'h5':
-      return <H5Typo style={{ color: color, fontWeight: getFontWeight(fontWeight) }}>{text}</H5Typo>;
+      return (
+        <H5Typo style={{ color: color, fontWeight: getFontWeight(fontWeight) }}>
+          {text}
+        </H5Typo>
+      );
     case 'h6':
-      return <H6Typo style={{ color: color, fontWeight: getFontWeight(fontWeight) }}>{text}</H6Typo>;
+      return (
+        <H6Typo style={{ color: color, fontWeight: getFontWeight(fontWeight) }}>
+          {text}
+        </H6Typo>
+      );
     case 'subtitle':
-      return <SubtileTypo style={{ color: color, fontWeight: getFontWeight(fontWeight) }}>{text}</SubtileTypo>;
+      return (
+        <SubtileTypo
+          style={{ color: color, fontWeight: getFontWeight(fontWeight) }}
+        >
+          {text}
+        </SubtileTypo>
+      );
     case 'body':
-      return <BodyTypo style={{ color: color, fontWeight: getFontWeight(fontWeight) }}>{text}</BodyTypo>;
+      return (
+        <BodyTypo
+          style={{ color: color, fontWeight: getFontWeight(fontWeight) }}
+        >
+          {text}
+        </BodyTypo>
+      );
     case 'caption':
-      return <CaptionTypo style={{ color: color, fontWeight: getFontWeight(fontWeight) }}>{text}</CaptionTypo>;
+      return (
+        <CaptionTypo
+          style={{ color: color, fontWeight: getFontWeight(fontWeight) }}
+        >
+          {text}
+        </CaptionTypo>
+      );
     default:
       return <></>;
       break;

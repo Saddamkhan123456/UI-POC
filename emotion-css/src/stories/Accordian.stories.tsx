@@ -18,7 +18,7 @@ const list = ['Brief Details', 'Best Practices'];
 
 export const Default: Story = {
   args: {
-    label: 'About',
+    label: 'About123',
     listItems: list,
   },
 };

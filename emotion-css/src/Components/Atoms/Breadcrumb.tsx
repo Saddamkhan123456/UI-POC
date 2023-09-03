@@ -29,6 +29,10 @@ const active = css`
   font-weight: 500;
 `;
 
+const navbar = css`
+  height: 1.5rem;
+`;
+
 interface BreadcrumbProps {
   lists: React.ReactNode[];
 }
@@ -40,21 +44,28 @@ const StyledList = styled.li<{ isActive: boolean }>`
   ${liStyled}
   ${(props) => (props.isActive ? active : '')}
 `;
+const StyledNav = styled.nav`
+  ${navbar}
+`;
 const Breadcrumb: React.FC<BreadcrumbProps> = ({ lists }) => {
   const [selected, setSelected] = React.useState('');
   const selectedValue = (e: any) => {
     setSelected(e.target.innerText);
   };
   return (
-    <nav>
+    <StyledNav>
       <StyledOL>
         {lists?.map((list, index) => (
-          <StyledList key={index} isActive={selected === list} onClick={selectedValue}>
+          <StyledList
+            key={index}
+            isActive={selected === list}
+            onClick={selectedValue}
+          >
             {list}
           </StyledList>
         ))}
       </StyledOL>
-    </nav>
+    </StyledNav>
   );
 };
 
