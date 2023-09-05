@@ -18,7 +18,9 @@ const DropdownSelect = ({ value, onChange, options, label }: IDropdown) => {
           </option>
         ))}
       </Select>
-      <ArrowIcon>{/* <Icon kind='dropdown' /> */}</ArrowIcon>
+      <ArrowIcon>
+        <Icon kind='dropdown' width={14} height={8} />
+      </ArrowIcon>
     </SelectWrapper>
   );
 };

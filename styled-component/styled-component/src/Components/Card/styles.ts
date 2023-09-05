@@ -40,6 +40,7 @@ export const StyledParagraph = styled.p`
   font-size: 24px;
   font-weight: 500;
   font-family: sans-serif;
+  text-align: center;
 `;
 
 export const MediaCard = styled.div<ICardOverlay>`
