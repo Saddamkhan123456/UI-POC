@@ -1,4 +1,5 @@
-export const breadcrumbData = [
+export const breadcrumbData =
+  [
     {
     "position": 1, 
     "icon": 'hard-problem',

@@ -6,12 +6,9 @@ import { alpha } from '@mui/material/styles';
 import { CssBaseline, ThemeProvider, Typography } from '@mui/material';
 import theme from '../../theme';
 
-interface DropdownProps {
-    size?: "medium" | "small";
-    label?: string;
+interface IDropdownMenuProps {
     value?: string;
     id?: string;
-    itemText?: string;
 }
 
 const StyledIconButton = styled(IconButton)`
@@ -76,7 +73,7 @@ const StyledMenu = styled(Menu)`
 `;
 
 
-function CustomMenu() {
+const DropdownMenu = ({ value, id }: IDropdownMenuProps) => {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
     const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
@@ -96,7 +93,7 @@ function CustomMenu() {
                 onClick={handleMenuOpen}
             >
                 <Typography>
-                    Category
+                    {value}
                 </Typography>
                 <Icon width={14} kind={'caret-down'} />
             </StyledIconButton>
@@ -117,4 +114,4 @@ function CustomMenu() {
     );
 }
 
-export default CustomMenu;
+export default DropdownMenu;

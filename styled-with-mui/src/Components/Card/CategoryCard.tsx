@@ -34,13 +34,19 @@ const KbCategoryCard = styled(Link)(({ theme }) => ({
     flexDirection: 'column',
     textDecoration: 'none',
     alignItems: 'center',
-    '& .categoryCardInner': {
+    paddingBottom: '2.5rem',
+    paddingRight: '2rem',
+    '&:nth-child(4)': {
+        content: '""',
+        opacity: 0
+    },
+    '& .category-card-inner': {
         boxShdow: '0 0 0.625rem rgba(184, 188, 192, 0.25)',
         borderRadius: '0.75rem',
         border: 0,
         minHeight: '11.25rem',
         flexDirection: 'column',
-        width: '100%',
+        width: '15.625rem',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -53,7 +59,7 @@ const KbCategoryCard = styled(Link)(({ theme }) => ({
 export const CategoryCard = ({ categoryName, link, icon, alt }: CategoryProps) => {
     return (
         <KbCategoryCard to={link}>
-            <Card className='categoryCardInner'>
+            <Card className='category-card-inner'>
                 <CategoryIcon icon={icon} alt={alt} />
                 <CategoryName categoryName={categoryName} />
             </Card>
@@ -63,6 +69,6 @@ export const CategoryCard = ({ categoryName, link, icon, alt }: CategoryProps) =
 
 export const CategoryIcon = ({ icon, alt }: CategoryIconProps) => {
     return <>
-        <Icon kind={icon} size={40} />
+        <Icon kind={icon} size={38} />
     </>;
 };

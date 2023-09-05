@@ -63,6 +63,11 @@ const customTheme = createTheme({
   },
   spacing: (factor) => `${0.25 * factor}rem`, // (Bootstrap strategy)
   overrides: {
+    MuiContainer: {
+        root: {
+          maxWidth: '1200px', // Set your desired width here
+        },
+    },
     MuiButton: {
       root: {
         backgroundColor: 'red',

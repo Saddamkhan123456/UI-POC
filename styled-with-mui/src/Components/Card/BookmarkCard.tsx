@@ -2,6 +2,10 @@ import { Box, Card, CardMedia, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from '../../theme';
+import Breadcrumb from "../Breadcrumb/Breadcrumb";
+import { KBChip } from "../Chip/Chip";
+import { ImpactDateWrap, KbBookmarkCard, SearchResultCardTitle } from "./style";
+import Icon from "../Icons/Icons";
 
 
 interface BookmarkProps {
@@ -10,58 +14,43 @@ interface BookmarkProps {
   imageName?: string;
   image?: string;
   color?: string;
+  isBookmarkCard?: boolean;
+  impact?: string;
+  date?: string;
 }
-
-const KbBookmarkCard = styled(Card)(({ theme }) => ({
-  // color: theme.palette.primary.main,
-  boxShadow: "none",
-  flexDirection: "column",
-  border: "none",
-  marginBottom: "1.5rem",
-  backgroundColor: "transparent",
-  "& .img-wrap": {
-    position: 'relative',
-    overflow: 'hidden',
-    // maxWidth: '300px',
-    borderRadius: "0.375rem",
-    zIndex: 1,
-    "& :after": {
-      content: '" "',
-      position: 'absolute',
-      left: 0,
-      top: 0,
-      width: '100%',
-      height: '100%',
-      background: '#e5e5e5',
-      opacity: 0,
-      transition: '.5s ease all',
-    }
-  },
-  "& .card-img": {
-    transition: '.5s ease all',
-    objectFit: 'cover',
-    "&:hover": {
-      transform: "scale(1.1)",
-    }
-  },
-
-}));
 
 export const BookmarkCard = ({
   heading,
   description,
-  imageName,
   image,
+  imageName = image,
+  isBookmarkCard,
+  impact = 'High Impact',
+  date,
 }: BookmarkProps) => {
   return (
     <ThemeProvider theme={theme}>
-      <KbBookmarkCard>
+      <KbBookmarkCard className={isBookmarkCard ? 'card-bookmark' : 'card-search-result'}>
         <Box component="div" className="img-wrap">
           <CardMedia component="img" height="100" className="card-img" image={image} alt={imageName} />
         </Box>
-
-        <BookmarkHeading heading={heading} />
-        <BookmarkDescription description={description} />
+        {isBookmarkCard && <>
+          <BookmarkHeading heading={heading} />
+          <BookmarkDescription description={description} />
+        </>}
+        {!isBookmarkCard && <Box flexGrow={1} position={'relative'} paddingRight={'1rem'}>
+          <Typography className="bookmark-search-result-card">
+            <Icon kind={'bookmark-outlined'} />
+          </Typography>
+          <SearchResultCardTitle>{heading}</SearchResultCardTitle>
+          <Breadcrumb />
+          <ImpactDateWrap>
+            <KBChip
+              impact={impact}
+            />
+            <Typography color={'#343434'} fontSize={'1rem'}>{date}</Typography>
+          </ImpactDateWrap>
+        </Box>}
       </KbBookmarkCard>
     </ThemeProvider>
   );

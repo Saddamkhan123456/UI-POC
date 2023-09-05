@@ -25,6 +25,9 @@ const KbTechDigestCard = styled(Box)(({ theme }) => ({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        '&. card-img': {
+            width: '100%',
+        }
     },
     '& .tech-digest-title': {
         color: '#343434',

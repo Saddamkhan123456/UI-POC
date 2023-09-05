@@ -5,7 +5,7 @@ interface MadeForYouProps {
     link: string;
     title: string;
     src: string;
-    alt: string;
+
 }
 
 const KbMadeForYouCard = styled(Link)(({ theme }) => ({
@@ -23,6 +23,7 @@ const KbMadeForYouCard = styled(Link)(({ theme }) => ({
         position: 'relative',
         overflow: 'hidden',
         borderRadius: "0.375rem",
+        background: '#fff',
         zIndex: 1,
         "& :before": {
             content: '" "',
@@ -58,11 +59,11 @@ const KbMadeForYouCard = styled(Link)(({ theme }) => ({
     }
 }));
 
-export const MadeForYouCard = ({ link, title, src, alt }: MadeForYouProps) => {
+export const MadeForYouCard = ({ link, title, src }: MadeForYouProps) => {
     return (
-        <KbMadeForYouCard to={link}>
+        <KbMadeForYouCard to={link} target='_blank'>
             <Box className='img-wrap'>
-                <img className='card-img' src={src} alt={alt} />
+                <img className='card-img' src={src} alt={'descriptive background'} />
             </Box>
             <Typography variant='h6' className='heading'>
                 {title}

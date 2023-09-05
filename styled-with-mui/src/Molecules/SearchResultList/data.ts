@@ -1,0 +1,56 @@
+import BookmarkedImg1 from '../../Assets/Images/bookmarked-img1.png';
+import BookmarkedImg2 from '../../Assets/Images/bookmarked-img2.png';
+import BookmarkedImg3 from '../../Assets/Images/bookmarked-img3.png';
+import BookmarkedImg4 from '../../Assets/Images/dummy2.jpg';
+export const searchResultListData = [
+  {
+    image: BookmarkedImg1,
+    heading: 'Handling and lowering the Boot Up Process: Spot Termination Issue in ACE RTB Servers',
+    date: '26 Nov 22',
+    articleType: 'Hard Problem',
+    articleIcon: 'hard-problem',
+    technology: 'Apache Kafka',
+    author: 'Rahul',
+    impact: 'MEDIUM IMPACT',
+  },
+  {
+    image: BookmarkedImg2,
+    heading: 'Handling and lowering the Boot Up Process: Spot Termination Issue in ACE RTB Servers',
+    date: '26 Nov 22',
+    articleType: 'BLOGS & TL ARTICLES',
+    articleIcon: 'blogs-at-articles',
+    technology: 'Apache Kafka',
+    author: 'Rahul',
+    impact: 'HIGH IMPACT',
+  },
+  {
+    image: BookmarkedImg3,
+    heading: 'Handling and lowering the Boot Up Process: Spot Termination Issue in ACE RTB Servers',
+    date: '26 Nov 22',
+    articleType: 'BLOGS & TL ARTICLES',
+    articleIcon: 'blogs-at-articles',
+    technology: 'Apache Kafka',
+    author: 'Rahul',
+    impact: 'HIGH IMPACT',
+  },
+  {
+    image: BookmarkedImg4,
+    heading: 'Handling and lowering the Boot Up Process: Spot Termination Issue in ACE RTB Servers',
+    date: '26 Nov 22',
+    articleType: 'Hard Problem',
+    articleIcon: 'hard-problem',
+    technology: 'Apache Kafka',
+    author: 'Rahul',
+    impact: 'MEDIUM IMPACT',
+  },
+  {
+    image: BookmarkedImg1,
+    heading: 'Handling and lowering the Boot Up Process: Spot Termination Issue in ACE RTB Servers',
+    date: '26 Nov 22',
+    articleType: 'BLOGS & TL ARTICLES',
+    articleIcon: 'blogs-at-articles',
+    technology: 'Apache Kafka',
+    author: 'Rahul',
+    impact: 'LOW IMPACT',
+  },
+];

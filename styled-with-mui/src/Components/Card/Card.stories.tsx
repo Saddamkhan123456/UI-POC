@@ -28,6 +28,23 @@ export const CardBookmark = () => {
             <ThemeProvider theme={theme}>
                 <ScThemeProvider theme={theme}>
                     <BookmarkCard
+                        isBookmarkCard
+                        heading="How To Start Automation Issue With Cypress Quickly?"
+                        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+                        image={dummyImage}
+                    />
+                </ScThemeProvider>
+            </ThemeProvider>
+        </StyledEngineProvider>
+    );
+};
+
+export const CardSearchResult = () => {
+    return (
+        <StyledEngineProvider injectFirst>
+            <ThemeProvider theme={theme}>
+                <ScThemeProvider theme={theme}>
+                    <BookmarkCard
                         heading="How To Start Automation Issue With Cypress Quickly?"
                         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
                         image={dummyImage}
@@ -47,7 +64,6 @@ export const MadeForYou = () => {
                         <MadeForYouCard
                             link='/'
                             title="Recently Uploaded"
-                            alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
                             src={dummyImage2}
                         />
                     </ScThemeProvider>
