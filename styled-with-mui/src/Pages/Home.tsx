@@ -1,6 +1,6 @@
 import { Header } from '../Molecules/Header/Header';
 import { ThemeProvider } from "@mui/material/styles";
-import { StyledEngineProvider } from "@mui/material";
+import { Box, StyledEngineProvider } from "@mui/material";
 import { ThemeProvider as ScThemeProvider } from "styled-components";
 import theme from './../theme';
 import { MadeForYou } from '../Molecules/MadeForYou/MadeForYou';
@@ -25,12 +25,15 @@ export const HomePage = ({ }: HomePageProps) => {
         <StyledEngineProvider injectFirst>
             <ThemeProvider theme={theme}>
                 <ScThemeProvider theme={theme}>
-                    <Header />
-                    <Banner isTitle />
-                    <Catagories />
-                    <Carousel techData={techDigestData} />
-                    <Bookmarked />
-                    <MadeForYou />
+                    <Box sx={{ background: '#f8f8f8' }}>
+                        <Header />
+                        <Banner isTitle />
+                        <Catagories />
+                        <Carousel techData={techDigestData} />
+                        <Bookmarked />
+                        <MadeForYou />
+                    </Box>
+
                 </ScThemeProvider>
             </ThemeProvider>
         </StyledEngineProvider>

@@ -63,6 +63,13 @@ const customTheme = createTheme({
   },
   spacing: (factor) => `${0.25 * factor}rem`, // (Bootstrap strategy)
   overrides: {
+    MuiCssBaseline: {
+      '@global': {
+        body: {
+          backgroundColor: '#f8f8f8', // Replace with your desired background color
+        },
+      },
+    },
     MuiContainer: {
         root: {
           maxWidth: '1200px', // Set your desired width here
