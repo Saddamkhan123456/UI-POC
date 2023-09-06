@@ -1,6 +1,7 @@
 // routes
 export enum APP_PAGES {
   HOME_PAGE = '/',
+  BOOKMARKED = 'Bookmarked',
 }
 
 //TEXT_CONSTANTS = {
@@ -66,22 +67,22 @@ export const MoreForYouData = [
 ];
 export const PopularTechDigestData = [
   {
-    heading: 'Recently Uploaded',
+    heading: 'Purescript',
     backgroundImage: '../Assets/Images/kafka.png',
     isBackgroundImg: true,
   },
   {
-    heading: 'Trending',
+    heading: 'Apache Kafka',
     backgroundImage: '../Assets/Images/aerospike.png',
     isBackgroundImg: true,
   },
   {
-    heading: 'Recommended',
+    heading: 'Redis',
     backgroundImage: '../Assets/Images/purescript.png',
     isBackgroundImg: true,
   },
   {
-    heading: 'Recommended',
+    heading: 'Aerospike',
     backgroundImage: '../Assets/Images/redis.png',
     isBackgroundImg: true,
   },

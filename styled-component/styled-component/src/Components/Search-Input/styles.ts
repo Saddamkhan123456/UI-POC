@@ -12,8 +12,16 @@ export const SearchContainer = styled.div`
 `;
 
 export const SearchIcon = styled.span`
-  margin-right: 8px;
+  background-color: ${theme.primary};
+  color: white;
+  border: none;
+  border-radius: 0px 6px 6px 0px;
+  padding: 13px 16px;
+  cursor: pointer;
+  outline: none;
+  line-height: 1;
   font-size: 20px;
+  height: 100%;
 `;
 
 export const SearchInputGroup = styled.div`

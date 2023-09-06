@@ -9,10 +9,13 @@ export interface ISearchInput {
 const SearchInput = ({ isIcon }: ISearchInput) => {
   return (
     <SearchContainer>
-      {isIcon && <SearchIcon>{<Icon kind='search' />}</SearchIcon>}
       <SearchInputGroup>
         <SearchInputField type='text' placeholder='Search for Tech Digest, Hard Problems, Blogs, TL Articles…' />
-        <SearchButton type='submit'>Search</SearchButton>
+        {isIcon ? (
+          <SearchIcon>{<Icon kind='search' width={18} height={18} />}</SearchIcon>
+        ) : (
+          <SearchButton type='submit'>Search</SearchButton>
+        )}
       </SearchInputGroup>
     </SearchContainer>
   );

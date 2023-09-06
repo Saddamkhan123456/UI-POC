@@ -17,7 +17,7 @@ const HeaderTopSection = () => {
     <SubHeaderSection>
       <H1>{TEXT_CONSTANTS.HOME_PAGE_HEADING}</H1>
       <HeaderSearchSection>
-        <SearchInput isIcon={true} />
+        <SearchInput isIcon={false} />
       </HeaderSearchSection>
       <DropdownSection>
         {dropdownData.map((item) => (
