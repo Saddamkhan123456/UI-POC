@@ -6,6 +6,7 @@ export enum APP_PAGES {
 //TEXT_CONSTANTS = {
 export const TEXT_CONSTANTS = {
   HOME_PAGE_HEADING: 'Hello, how may I help you ?',
+  BOOKMARK_HEADING: 'Bookmarked',
 };
 
 export const teamCards = [

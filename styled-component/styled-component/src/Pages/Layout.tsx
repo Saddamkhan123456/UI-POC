@@ -1,4 +1,4 @@
-import React, { Children } from 'react';
+import React from 'react';
 import HeaderComponent from '../Components/Header/Header';
 import { Container, GlobalPageStyle } from './GlobalStyles';
 

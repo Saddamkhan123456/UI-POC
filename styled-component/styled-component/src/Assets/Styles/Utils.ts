@@ -8,3 +8,10 @@ export const H1 = styled.h1`
   margin-bottom:30px;
   color: ${theme.gray500};
 `;
+export const H2 = styled.h2`
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  margin-bottom: 30px;
+  color: ${theme.gray500};
+`;

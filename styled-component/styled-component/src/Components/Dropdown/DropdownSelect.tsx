@@ -5,7 +5,7 @@ interface IDropdown {
   value?: any;
   onChange?: any;
   options?: any;
-  label?: string;
+  label?: any;
 }
 
 const DropdownSelect = ({ value, onChange, options, label }: IDropdown) => {

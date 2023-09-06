@@ -14,11 +14,7 @@ const Dropdown = () => {
     setSelectedOption(e.target.value);
   };
 
-  return (
-    <div>
-      <DropdownSelect options={options} value={selectedOption} onChange={handleSelectChange} />
-    </div>
-  );
+  return <DropdownSelect options={options} value={selectedOption} onChange={handleSelectChange} />;
 };
 
 export default Dropdown;

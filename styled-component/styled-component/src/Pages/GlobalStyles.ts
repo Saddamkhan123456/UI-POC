@@ -1,14 +1,15 @@
 import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
+import { theme } from '../theme';
 
 export const GlobalPageStyle = styled.div`
   min-height: 100vh;
-  background-color: red;
-  color: white;
 `;
 export const Container = styled.div`
-  background: white;
-  height: 100%;
+  background: ${theme.white};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   /* Mobile Styles */
   @media (max-width: 767px) {
     padding: 0 30px;
@@ -30,4 +31,10 @@ export const GridContainer = styled.div`
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   width: 100%;
+`;
+
+export const H1 = styled.h1`
+  font-size: 32px;
+  font-weight: 500;
+  color: ${theme.gray500};
 `;

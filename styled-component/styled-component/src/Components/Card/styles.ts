@@ -33,6 +33,7 @@ export const SolidCardOverlay = styled.div<ICardOverlay>`
   background-position: center;
   background-size: cover;
   font-family: sans-serif;
+  padding: 10px;
 `;
 
 export const StyledParagraph = styled.p`
@@ -56,6 +57,7 @@ export const MediaCard = styled.div<ICardOverlay>`
   gap: 1rem;
   height: 180px;
   font-family: sans-serif;
+  padding: 10px;
 `;
 
 export const MediaCardC = styled.div<IMediaCard>`

@@ -1,8 +1,31 @@
 import React from 'react';
-import { HeaderSearchSection } from './styles';
+import { DropdownSection, HeaderSearchSection, SubHeaderSection } from './styles';
+import SearchInput from '../../Components/Search-Input/SearchInput';
+import { H1 } from '../GlobalStyles';
+import { TEXT_CONSTANTS } from '../../Utils/Constants';
+import Dropdown from '../../Components/Dropdown/Dropdown';
+
+const dropdownData = [
+  { id: 1, label: 'Categories' },
+  { id: 2, label: 'Tech' },
+  { id: 2, label: 'Product Name' },
+  { id: 2, label: 'Tags' },
+];
 
 const HeaderTopSection = () => {
-  return <HeaderSearchSection>search</HeaderSearchSection>;
+  return (
+    <SubHeaderSection>
+      <H1>{TEXT_CONSTANTS.HOME_PAGE_HEADING}</H1>
+      <HeaderSearchSection>
+        <SearchInput isIcon={true} />
+      </HeaderSearchSection>
+      <DropdownSection>
+        {dropdownData.map((item) => (
+          <Dropdown key={item.id} />
+        ))}
+      </DropdownSection>
+    </SubHeaderSection>
+  );
 };
 
 export default HeaderTopSection;

@@ -37,7 +37,7 @@ const CardOverlayC: React.FC<ICardOverlayCProps> = ({
       );
     case 'MediaCard':
       return (
-        <MediaCardC backgroundImage={backgroundImage}>
+        <MediaCardC>
           <MediaCardBanner backgroundImage={backgroundImage}></MediaCardBanner>
           <MediaCardContentWrapper centerAlign={centerAlign}>
             <MediaCardHeading>{heading}</MediaCardHeading>
