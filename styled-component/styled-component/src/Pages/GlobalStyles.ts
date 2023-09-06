@@ -1,15 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 import { theme } from '../theme';
-
+import { CSSProperties } from 'react';
+interface GridContainerProps {
+  columnCount?: number;
+}
 export const GlobalPageStyle = styled.div`
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 `;
 export const Container = styled.div`
   background: ${theme.white};
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: auto;
   /* Mobile Styles */
   @media (max-width: 767px) {
     padding: 0 30px;
@@ -25,16 +31,14 @@ export const Container = styled.div`
     padding: 0 120px;
   }
 `;
-
-export const GridContainer = styled.div`
+export const GridContainer = styled.div<GridContainerProps>`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   width: 100%;
+  grid-template-columns: ${(props) => `repeat(${props.columnCount || 4}, 1fr)`};
 `;
-
-export const H1 = styled.h1`
-  font-size: 32px;
-  font-weight: 500;
-  color: ${theme.gray500};
+export const AlignedLeft = styled.div`
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
 `;

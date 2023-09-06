@@ -7,7 +7,7 @@ import { Sections } from './styles';
 const TeamCardSection = () => {
   return (
     <Sections>
-      <GridContainer>
+      <GridContainer columnCount={4}>
         {teamCards.map((item, index) => (
           <Card
             variant='SolidCard'

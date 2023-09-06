@@ -1,9 +1,9 @@
 import React from 'react';
 import { DropdownSection, HeaderSearchSection, SubHeaderSection } from './styles';
 import SearchInput from '../../Components/Search-Input/SearchInput';
-import { H1 } from '../GlobalStyles';
 import { TEXT_CONSTANTS } from '../../Utils/Constants';
 import Dropdown from '../../Components/Dropdown/Dropdown';
+import { H1 } from '../../Assets/Styles/Utils';
 
 const dropdownData = [
   { id: 1, label: 'Categories' },

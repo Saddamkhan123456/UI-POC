@@ -4,8 +4,6 @@ import { theme } from '../../theme';
 
 export const HomePage = styled.div`
   min-height: 100vh;
-  background-color: red;
-  color: white;
 `;
 export const HeaderSearchSection = styled.div`
   display: flex;
@@ -14,11 +12,15 @@ export const HeaderSearchSection = styled.div`
   width: 100%;
 `;
 export const Sections = styled.div`
-  padding: 60px 0;
   display: flex;
   border-bottom: 1px solid ${theme.gray300};
+  margin-bottom: 60px;
+  padding-bottom: 80px;
+  width: 100%;
   &:last-child {
     border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 20px;
   }
 `;
 export const DropdownSection = styled.div`
@@ -33,4 +35,5 @@ export const SubHeaderSection = styled.div`
   align-items: center;
   flex-direction: column;
   max-width: 772px;
+  margin-bottom: 80px;
 `;

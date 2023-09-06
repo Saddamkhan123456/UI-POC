@@ -15,13 +15,14 @@ export interface IMediaCard {
   heading?: string;
   mediaText?: string;
   centerAlign?: boolean;
+  isBackgroundImg?: boolean;
 }
 
 export const SolidCardOverlay = styled.div<ICardOverlay>`
   border-radius: 12px;
   box-shadow: 0px 0px 10px 0px rgba(184, 188, 192, 0.25);
   color: ${(props) => (props.isBackgroundImg ? `${theme.white}` : `${theme.gray500}`)};
-  background-image: ${(props) => (props.isBackgroundImg ? `url(${props.backgroundImage})` : 'none')};
+  background-image: ${(props) => props.isBackgroundImg && `url(${props.backgroundImage})`};
   background-repeat: no-repeat;
   border: 0;
   display: flex;
@@ -62,7 +63,7 @@ export const MediaCard = styled.div<ICardOverlay>`
 
 export const MediaCardC = styled.div<IMediaCard>`
   border-radius: 12px;
-  background-image: ${(props) => (props.backgroundImage ? `url(${props.backgroundImage})` : 'none')};
+  background-image: ${(props) => props.isBackgroundImg && `url(${props.backgroundImage})`};
   background-repeat: no-repeat;
   border: 0;
   gap: 1rem;
@@ -88,9 +89,10 @@ export const MediaCardHeading = styled.p<IMediaCard>`
 `;
 
 export const MediaCardBanner = styled.div<IMediaCard>`
-  background-image: ${(props) => (props.backgroundImage ? `url(${props.backgroundImage})` : 'none')};
+  background-image: ${(props) => props.isBackgroundImg && `url(${props.backgroundImage}) !important`};
   background-repeat: no-repeat;
   background-position: center;
+  background-size: contain !important;
   height: 143px;
   margin-bottom: 24px;
   font-family: sans-serif;
