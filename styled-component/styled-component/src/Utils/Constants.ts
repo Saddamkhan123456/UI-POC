@@ -1,7 +1,7 @@
 // routes
 export enum APP_PAGES {
   HOME_PAGE = '/',
-  BOOKMARKED = 'Bookmarked',
+  BOOKMARKED = '/bookmarked',
 }
 
 //TEXT_CONSTANTS = {

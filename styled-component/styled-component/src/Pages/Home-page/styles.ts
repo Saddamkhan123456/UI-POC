@@ -16,6 +16,8 @@ export const Sections = styled.div`
   border-bottom: 1px solid ${theme.gray300};
   margin-bottom: 60px;
   padding-bottom: 80px;
+  position: relative;
+  flex-direction: column;
   width: 100%;
   &:last-child {
     border-bottom: none;

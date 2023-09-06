@@ -3,18 +3,21 @@ import Icon from '../../Assets/Icons/Icon';
 import Breadcrumb from '../Breadcrumb/Breadcrumb';
 import { Header, HeaderLeft, IHeader } from './styles';
 import SearchInput from '../Search-Input/SearchInput';
+import { Link, useLocation } from 'react-router-dom';
 
 const HeaderComponent = ({ isBreadcrumb }: IHeader) => {
-  const breadcrumbItems = ['Home', 'Bookmarked'];
+  const location = useLocation();
+  const pathname = location.pathname.split('/').filter(Boolean);
+  const breadcrumbItems = ['Home', ...pathname];
   return (
     <Header>
       <HeaderLeft>
-        <Icon kind='logo' width={72} height={50} />
+        <Link to='/'>
+          <Icon kind='logo' width={72} height={50} />
+        </Link>
         {isBreadcrumb && <Breadcrumb items={breadcrumbItems} />}
       </HeaderLeft>
-      <div>
-        <SearchInput isIcon={true} />
-      </div>
+      <div>{isBreadcrumb && <SearchInput isIcon={true} />}</div>
     </Header>
   );
 };

@@ -16,3 +16,14 @@ export const H2 = styled.h2`
   margin-top: 0;
   color: ${theme.gray500};
 `;
+export const CustomLink = styled.div`
+  position: absolute;
+  bottom: 30px;
+  right: 0;
+  a {
+    text-decoration: none;
+    color: ${theme.primary};
+    font-size: 16px;
+    line-height: 0.6;
+  }
+`;

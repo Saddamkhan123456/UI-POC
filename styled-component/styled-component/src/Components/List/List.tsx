@@ -13,7 +13,7 @@ const ListComponent: React.FC<IListComponent> = ({ items }) => {
   return (
     <ul>
       {Array.isArray(items) &&
-        items.map((item, index) => <ListContent key={index} index={index} heading={item.text} />)}
+        items.map((item, index) => <ListContent key={index} index={index} heading={item.text} data={item} />)}
     </ul>
   );
 };

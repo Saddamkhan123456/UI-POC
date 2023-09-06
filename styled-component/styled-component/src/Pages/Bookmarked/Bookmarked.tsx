@@ -1,7 +1,8 @@
 import React from 'react';
+import Layout from '../Layout';
 
 const Bookmarked = () => {
-  return <div>Bookmarked</div>;
+  return <Layout isBreadcrumbVisible={true} Children={'bookmark'} />;
 };
 
 export default Bookmarked;

@@ -7,11 +7,16 @@ interface IListContent {
   index: number;
   image?: string;
   heading?: string;
+  data: {
+    text: string;
+    kind: string;
+    type: string;
+  };
 }
 
-const ListContent: React.FC<IListContent> = ({ index, image, heading }) => {
-  const impact = ''; // Define impact
-  const label = ''; // Define label
+const ListContent: React.FC<IListContent> = ({ index, image, heading, data }) => {
+  const impact = 'High'; // Define impact
+  const label = 'High'; // Define label
 
   const items = [
     { text: 'hard problem', kind: 'hard-problem', type: 'hard-problem' },

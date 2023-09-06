@@ -3,7 +3,8 @@ import Card from '../../Components/Card/Card';
 import { BookMarkedCardData, TEXT_CONSTANTS } from '../../Utils/Constants';
 import { AlignedLeft, GridContainer } from '../GlobalStyles';
 import { Sections } from './styles';
-import { H2 } from '../../Assets/Styles/Utils';
+import { CustomLink, H2 } from '../../Assets/Styles/Utils';
+import { Link } from 'react-router-dom';
 
 const BookmarkedCardSection = () => {
   return (
@@ -24,6 +25,11 @@ const BookmarkedCardSection = () => {
             />
           ))}
         </GridContainer>
+        <CustomLink>
+          <Link to='/bookmarked' target='_blank'>
+            View All
+          </Link>
+        </CustomLink>
       </Sections>
     </>
   );

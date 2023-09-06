@@ -4,11 +4,12 @@ import { Container, GlobalPageStyle } from './GlobalStyles';
 
 interface ILayout {
   Children: any;
+  isBreadcrumbVisible: boolean;
 }
-const Layout = ({ Children }: ILayout) => {
+const Layout = ({ Children, isBreadcrumbVisible }: ILayout) => {
   return (
     <GlobalPageStyle>
-      <HeaderComponent />
+      <HeaderComponent isBreadcrumb={isBreadcrumbVisible} />
       <Container>{Children}</Container>
     </GlobalPageStyle>
   );

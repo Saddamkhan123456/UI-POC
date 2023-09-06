@@ -1,3 +1,4 @@
+import React from 'react';
 import { styled } from 'styled-components';
 import { theme } from '../../theme';
 
@@ -12,8 +13,8 @@ const getBackgroundColor = (props: IBadgeProps) => {
   return '#000';
 };
 
-export const BadgeC = styled.button<IBadgeProps>`
-  background-color: ${getBackgroundColor};
+const BadgeC = styled.button<IBadgeProps>`
+  background-color: ${(props) => getBackgroundColor(props)};
   padding: 4px 10px;
   color: ${theme.white};
   border-radius: 4px;
