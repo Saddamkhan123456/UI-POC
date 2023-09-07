@@ -1,20 +1,12 @@
-import React from 'react';
 import { styled } from 'styled-components';
 import { theme } from '../../theme';
-
 export interface IBadgeProps {
   impact: string;
   label: string;
 }
-
-const getBackgroundColor = (props: IBadgeProps) => {
-  if (props.impact === 'high') return theme.success;
-  if (props.impact === 'medium') return theme.warning;
-  return '#000';
-};
-
-const BadgeC = styled.button<IBadgeProps>`
-  background-color: ${(props) => getBackgroundColor(props)};
+export const BadgeC = styled.button<IBadgeProps>`
+  background-color: ${(props) =>
+    props.impact === 'high' ? theme.success : props.impact === 'medium' ? theme.warning : '#000'};
   padding: 4px 10px;
   color: ${theme.white};
   border-radius: 4px;
@@ -23,6 +15,4 @@ const BadgeC = styled.button<IBadgeProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-`;
-
-export default BadgeC;
+` as React.FC<IBadgeProps>;
