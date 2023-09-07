@@ -1,6 +1,6 @@
 import Breadcrumb from './Breadcrumb';
 import React from 'react';
-import BreadcrumbTypeTwo from './BreadcrumbTwo';
+import BreadcrumbCustom from './BreadcrumbCustom';
 export default {
   title: 'Component/Breadcrumb',
   component: Breadcrumb,
@@ -16,10 +16,15 @@ export const Default = () => {
 };
 
 export const BreadcrumbTwo = () => {
-  const items = [
-    { text: 'hard problem', kind: 'hard-problem', type: 'hard-problem' },
-    { text: 'BLOGS & TL ARTICLES', kind: 'blogs', type: 'blog' },
-    { text: 'Apache Kafka', kind: 'library-books', type: '' },
-  ];
-  return <BreadcrumbTypeTwo items={items} />;
+  return (
+    <BreadcrumbCustom
+      articleTypeIcon={'hard-problem'}
+      articleTypeText={'articleTypeText'}
+      techTypeText={'techTypeText'}
+      techTypeIcon={'library-books'}
+      viewsIcon={'profile'}
+      viewsText={'viewsText'}
+      articleType={'hard-problem'}
+    />
+  );
 };
