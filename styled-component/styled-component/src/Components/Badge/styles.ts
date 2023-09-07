@@ -1,8 +1,8 @@
 import { styled } from 'styled-components';
 import { theme } from '../../theme';
 export interface IBadgeProps {
-  impact: string;
-  label: string;
+  impact: any;
+  label: any;
 }
 export const BadgeC = styled.button<IBadgeProps>`
   background-color: ${(props) =>

@@ -2,17 +2,17 @@ import React from 'react';
 import { ArticleText, BreadcrumbTwoContainer, SubSectionDiv, Text } from './styles';
 import Icon from '../../Assets/Icons/Icon';
 
-export interface IBreadcrumbCustom {
-  articleTypeIcon: string;
-  articleTypeText: string;
-  techTypeText: string;
-  techTypeIcon: string;
-  viewsIcon: string;
-  viewsText: string;
-  articleType: 'blog' | 'hard-problem' | string;
+export interface IBreadcrumbCustomProps {
+  articleTypeIcon: 'blog' | 'hard-problem' | any;
+  articleTypeText: any;
+  techTypeText: any;
+  techTypeIcon: any;
+  viewsIcon: any;
+  viewsText: any;
+  articleType: 'blog' | 'hard-problem' | any;
 }
 
-const BreadcrumbCustom = ({
+const BreadcrumbCustom: React.FC<IBreadcrumbCustomProps> = ({
   articleTypeIcon,
   articleTypeText,
   techTypeText,
@@ -20,21 +20,23 @@ const BreadcrumbCustom = ({
   viewsIcon,
   viewsText,
   articleType,
-}: IBreadcrumbCustom) => {
+}: IBreadcrumbCustomProps) => {
   return (
     <>
       <BreadcrumbTwoContainer>
         <SubSectionDiv>
-          <Icon kind={articleTypeIcon} />
-          <ArticleText articleType={articleType}>{articleTypeText}</ArticleText>
+          <Icon kind={articleType === 'blog' ? 'blogs' : articleType === 'hard-problem' ? 'hard-problem' : ''} />
+          <ArticleText articleType={articleType}>
+            {articleType === 'blog' ? 'BLOGS & TL ARTICLES' : articleType === 'hard-problem' ? 'Hard Problem' : ''}
+          </ArticleText>
         </SubSectionDiv>
         <SubSectionDiv>
           <Icon kind={techTypeIcon} />
-          <Text articleType={articleType}>{techTypeText}</Text>
+          <Text>{techTypeText}</Text>
         </SubSectionDiv>
         <SubSectionDiv>
           <Icon kind={viewsIcon} />
-          <Text articleType={articleType}>{viewsText}</Text>
+          <Text>{viewsText}</Text>
         </SubSectionDiv>
       </BreadcrumbTwoContainer>
     </>

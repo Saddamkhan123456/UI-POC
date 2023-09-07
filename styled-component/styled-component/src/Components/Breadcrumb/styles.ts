@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 import { theme } from '../../theme';
-import { IBreadcrumbCustom } from './BreadcrumbCustom';
+import { IBreadcrumbCustomProps } from './BreadcrumbCustom';
 
 export interface IBreadcrumb {
   active: boolean;
@@ -51,22 +51,21 @@ export const BreadcrumbTwoContainer = styled.div`
   align-items: center;
 `;
 
-export const ArticleText = styled.p<IBreadcrumbCustom>`
+export const ArticleText = styled.p<IBreadcrumbCustomProps>`
   color: ${(props) =>
     props.articleType === 'blog' ? theme.danger : props.articleType === 'hard-problem' ? theme.purple : theme.success};
   margin: 0;
   font-size: 14px;
 `;
 
-export const Text = styled.p<IBreadcrumbCustom>`
+export const Text = styled.p`
   color: ${theme.gray400};
   margin: 0;
   font-size: 14px;
 `;
 
-export const SubSectionDiv = styled.div<IBreadcrumbCustom>`
+export const SubSectionDiv = styled.div`
   font-family: sans-serif;
-
   position: relative;
   text-transform: capitalize;
   display: flex;
@@ -74,12 +73,13 @@ export const SubSectionDiv = styled.div<IBreadcrumbCustom>`
   gap: 2px;
   &::before {
     content: '|';
-    color: ${theme.gray800};
+    color: ${theme.gray400};
     margin: 0 11px;
   }
   &:first-child {
     &::before {
       content: '';
+      display: none;
     }
   }
 `;

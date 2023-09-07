@@ -1,16 +1,22 @@
 import styled from 'styled-components';
 import { theme } from '../../theme';
 
-export const H1 = styled.h1`
+interface IUtility {
+  hasMargin: boolean;
+}
+
+export const H1 = styled.h1<IUtility>`
   font-size: 32px;
   font-weight: 500;
-  margin-bottom: 30px;
+  margin-bottom: ${(props) => (props.hasMargin ? '30px' : '0')};
+  margin-top: ${(props) => (props.hasMargin ? '0.67em;' : '0')};
   color: ${theme.gray500};
+  font-family: sans-serif;
 `;
 
 export const H2 = styled.h2`
+  font-family: sans-serif;
   font-size: 24px;
-  font-style: normal;
   font-weight: 500;
   margin-bottom: 24px;
   margin-top: 0;
@@ -26,4 +32,13 @@ export const CustomLink = styled.div`
     font-size: 16px;
     line-height: 0.6;
   }
+`;
+
+export const ListH1 = styled.p<IUtility>`
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: ${(props) => (props.hasMargin ? '30px' : '0')};
+  margin-top: ${(props) => (props.hasMargin ? '0.67em;' : '0')};
+  color: ${theme.secondary};
+  font-family: sans-serif;
 `;

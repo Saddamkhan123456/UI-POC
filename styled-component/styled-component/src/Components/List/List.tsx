@@ -1,20 +1,29 @@
 import React from 'react';
 import ListContent from './ListContent';
+import { IListComponent, ListContentWrapper } from './style';
+import { BookmarkedListItems } from '../../Utils/Constants';
 
-interface IListComponent {
-  items: {
-    text: string;
-    kind: string;
-    type: string;
-  }[];
-}
-
-const ListComponent: React.FC<IListComponent> = ({ items }) => {
+const ListComponent: React.FC<IListComponent> = () => {
   return (
-    <ul>
-      {Array.isArray(items) &&
-        items.map((item, index) => <ListContent key={index} index={index} heading={item.text} data={item} />)}
-    </ul>
+    <ListContentWrapper>
+      {BookmarkedListItems.map((items, index) => (
+        <ListContent
+          key={index}
+          index={index}
+          heading={items.heading}
+          articleTypeIcon={items.articleType}
+          articleTypeText={items.articleType}
+          techTypeText={items.techTypeText}
+          techTypeIcon={items.techTypeIcon}
+          viewsIcon={items.viewsIcon}
+          viewsText={items.viewsText}
+          articleType={items.articleType}
+          impact={items.impact}
+          label={items.label}
+          image={items.image}
+        />
+      ))}
+    </ListContentWrapper>
   );
 };
 

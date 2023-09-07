@@ -1,37 +1,50 @@
 import React from 'react';
 import Badge from '../Badge/Badge';
-import BreadcrumbTwo from '../Breadcrumb/BreadcrumbTwo';
-import { ListStyle, RightSection, RightDetailSection } from './style';
+import { ListStyle, RightSection, RightDetailSection, DateWrapper, ListFooterWrapper } from './style';
+import BreadcrumbCustom, { IBreadcrumbCustomProps } from '../Breadcrumb/BreadcrumbCustom';
+import { ListH1 } from '../../Assets/Styles/Utils';
 
-interface IListContent {
+interface IListContent extends IBreadcrumbCustomProps {
   index: number;
   image?: string;
   heading?: string;
-  data: {
-    text: string;
-    kind: string;
-    type: string;
-  };
+  impact?: string;
+  label?: string;
 }
 
-const ListContent: React.FC<IListContent> = ({ index, image, heading, data }) => {
-  const impact = 'High'; // Define impact
-  const label = 'High'; // Define label
-
-  const items = [
-    { text: 'hard problem', kind: 'hard-problem', type: 'hard-problem' },
-    { text: 'BLOGS & TL ARTICLES', kind: 'blogs', type: 'blog' },
-    { text: 'Apache Kafka', kind: 'library-books', type: '' },
-  ];
-
+const ListContent: React.FC<IListContent> = ({
+  index,
+  image,
+  heading,
+  impact,
+  label,
+  articleTypeIcon,
+  articleTypeText,
+  techTypeText,
+  techTypeIcon,
+  viewsIcon,
+  viewsText,
+  articleType,
+}) => {
   return (
     <ListStyle>
-      <img src={image} alt={heading || 'title'} className='item-image' />
+      <img src={image} alt={heading || 'title'} width={250} height={130} style={{ borderRadius: '6px' }} />
       <RightSection className='item-text'>
-        <h1>{heading}</h1>
+        <ListH1 hasMargin={false}>{heading}</ListH1>
         <RightDetailSection>
-          <BreadcrumbTwo items={items} />
-          <Badge impact={impact} label={label} />
+          <BreadcrumbCustom
+            articleTypeIcon={articleTypeIcon}
+            articleTypeText={articleTypeText}
+            techTypeText={techTypeText}
+            techTypeIcon={techTypeIcon}
+            viewsIcon={viewsIcon}
+            viewsText={viewsText}
+            articleType={articleType}
+          />
+          <ListFooterWrapper>
+            <Badge impact={impact} label={label} />
+            <DateWrapper></DateWrapper>
+          </ListFooterWrapper>
         </RightDetailSection>
       </RightSection>
     </ListStyle>
