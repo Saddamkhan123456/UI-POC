@@ -3,18 +3,16 @@ import { ArticleText, BreadcrumbTwoContainer, SubSectionDiv, Text } from './styl
 import Icon from '../../Assets/Icons/Icon';
 
 export interface IBreadcrumbCustomProps {
-  articleTypeIcon: 'blog' | 'hard-problem' | any;
-  articleTypeText: any;
-  techTypeText: any;
-  techTypeIcon: any;
-  viewsIcon: any;
-  viewsText: any;
-  articleType: 'blog' | 'hard-problem' | any;
+  articleTypeIcon?: 'blog' | 'hard-problem' | any;
+  articleTypeText?: any;
+  techTypeText?: any;
+  techTypeIcon?: any;
+  viewsIcon?: any;
+  viewsText?: any;
+  articleType?: 'blog' | 'hard-problem' | any;
 }
 
 const BreadcrumbCustom: React.FC<IBreadcrumbCustomProps> = ({
-  articleTypeIcon,
-  articleTypeText,
   techTypeText,
   techTypeIcon,
   viewsIcon,
