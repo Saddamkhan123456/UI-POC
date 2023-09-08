@@ -1,5 +1,5 @@
 import React from 'react';
-import { DropdownSection, HeaderSearchSection, SubHeaderSection } from './styles';
+import { DropdownSection, HeaderSearchSection, SubHeaderSection, SubHeaderInnerSection } from './styles';
 import SearchInput from '../../Components/Search-Input/SearchInput';
 import { TEXT_CONSTANTS } from '../../Utils/Constants';
 import Dropdown from '../../Components/Dropdown/Dropdown';
@@ -16,14 +16,16 @@ const HeaderTopSection = () => {
   return (
     <SubHeaderSection>
       <H1 hasMargin={true}>{TEXT_CONSTANTS.HOME_PAGE_HEADING}</H1>
-      <HeaderSearchSection>
-        <SearchInput isIcon={false} />
-      </HeaderSearchSection>
-      <DropdownSection>
-        {dropdownData.map((item) => (
-          <Dropdown key={item.id} />
-        ))}
-      </DropdownSection>
+      <SubHeaderInnerSection>
+        <HeaderSearchSection>
+          <SearchInput isIcon={false} />
+        </HeaderSearchSection>
+        <DropdownSection>
+          {dropdownData.map((item) => (
+            <Dropdown key={item.id} />
+          ))}
+        </DropdownSection>
+      </SubHeaderInnerSection>
     </SubHeaderSection>
   );
 };

@@ -37,5 +37,10 @@ export const SubHeaderSection = styled.div`
   align-items: center;
   flex-direction: column;
   max-width: 772px;
-  margin-bottom: 80px;
+  margin-bottom: 72px;
+`;
+export const SubHeaderInnerSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 `;

@@ -21,13 +21,14 @@ export const SearchIcon = styled.span`
   line-height: 1;
   font-size: 20px;
   height: 100%;
+  margin-right: -2px;
 `;
 
 export const SearchInputGroup = styled.div`
   display: flex;
   align-items: center;
   border: none;
-  width: 100%;
+  min-width: 372px;
   border-radius: 4px;
   width: 100%;
 `;

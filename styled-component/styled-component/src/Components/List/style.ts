@@ -17,6 +17,9 @@ export const ListStyle = styled.div<IListComponent>`
   &:last-child {
     border-bottom: 0;
   }
+  &:first-child {
+    padding-top: 0;
+  }
 `;
 
 export const RightSection = styled.div<IListComponent>`
@@ -35,6 +38,7 @@ export const ListContentWrapper = styled.div<IListComponent>`
   display: flex;
   flex-direction: column;
   width: 100%;
+  padding-top: 34px;
 `;
 export const ListFooterWrapper = styled.div`
   display: flex;
