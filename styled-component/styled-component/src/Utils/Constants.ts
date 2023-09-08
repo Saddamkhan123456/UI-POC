@@ -99,6 +99,7 @@ export const BookmarkedListItems = [
     impact: 'medium',
     label: 'MEDIUM IMPACT',
     image: 'https://www.talentica.com/wp-content/uploads/2022/01/blog-amit-kumar-.jpg',
+    date: '26 Nov ‘22',
   },
   {
     heading: 'Handling and lowering the Boot Up Process: Spot Termination Issue in ACE RTB Servers',
@@ -109,7 +110,8 @@ export const BookmarkedListItems = [
     articleType: 'blog',
     impact: 'high',
     label: 'HIGH IMPACT',
-    image: 'https://www.talentica.com/wp-content/uploads/2022/01/blog-amit-kumar-.jpg',
+    image: 'https://www.talentica.com/wp-content/uploads/2022/10/blog-fetaure-4.jpg',
+    date: '22 Nov ‘22',
   },
   {
     heading: 'Handling and lowering the Boot Up Process: Spot Termination Issue in ACE RTB Servers',
@@ -120,7 +122,8 @@ export const BookmarkedListItems = [
     articleType: 'hard-problem',
     impact: 'high',
     label: 'HIGH IMPACT',
-    image: 'https://www.talentica.com/wp-content/uploads/2022/01/blog-amit-kumar-.jpg',
+    image: 'https://www.talentica.com/wp-content/uploads/2021/04/prem-baranwal-cryptography-blockchain-blog-1.jpg',
+    date: '28 Nov ‘22',
   },
   {
     heading: 'Handling and lowering the Boot Up Process: Spot Termination Issue in ACE RTB Servers',
@@ -131,6 +134,7 @@ export const BookmarkedListItems = [
     articleType: 'blog',
     impact: 'medium',
     label: 'MEDIUM IMPACT',
-    image: 'https://www.talentica.com/wp-content/uploads/2022/01/blog-amit-kumar-.jpg',
+    image: 'https://www.talentica.com/wp-content/uploads/2022/10/Blog-Inserting-code-scaled-1.jpg',
+    date: '27 Nov ‘22',
   },
 ];

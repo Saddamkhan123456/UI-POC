@@ -81,7 +81,7 @@ export const MediaCardParagraph = styled.p<IMediaCard>`
 export const MediaCardHeading = styled.p<IMediaCard>`
   margin: 0;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.1;
   margin-bottom: 8px;
   color: ${theme.gray500};
@@ -99,7 +99,6 @@ export const MediaCardBanner = styled.div<IMediaCard>`
   border-radius: 6px;
   background: #fff;
   box-shadow: 0px 0px 10px 0px rgba(184, 188, 192, 0.25);
-  background-position: center;
   padding: 0 20px;
 `;
 

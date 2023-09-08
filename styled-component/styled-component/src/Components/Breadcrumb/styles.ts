@@ -21,7 +21,6 @@ export const BreadcrumbContainer = styled.div`
 `;
 
 export const BreadcrumbItem = styled.span<IBreadcrumb>`
-  font-family: sans-serif;
   color: ${theme.gray500};
   margin-right: 5px;
   cursor: ${(props) => (props.active ? 'default' : 'pointer')};
@@ -65,7 +64,6 @@ export const Text = styled.p`
 `;
 
 export const SubSectionDiv = styled.div`
-  font-family: sans-serif;
   position: relative;
   text-transform: capitalize;
   display: flex;

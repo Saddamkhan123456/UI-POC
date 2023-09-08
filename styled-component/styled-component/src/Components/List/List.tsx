@@ -21,6 +21,7 @@ const ListComponent: React.FC<IListComponent> = () => {
           impact={items.impact}
           label={items.label}
           image={items.image}
+          date={items.date}
         />
       ))}
     </ListContentWrapper>

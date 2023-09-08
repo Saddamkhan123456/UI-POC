@@ -15,7 +15,7 @@ const dropdownData = [
 const HeaderTopSection = () => {
   return (
     <SubHeaderSection>
-      <H1>{TEXT_CONSTANTS.HOME_PAGE_HEADING}</H1>
+      <H1 hasMargin={true}>{TEXT_CONSTANTS.HOME_PAGE_HEADING}</H1>
       <HeaderSearchSection>
         <SearchInput isIcon={false} />
       </HeaderSearchSection>

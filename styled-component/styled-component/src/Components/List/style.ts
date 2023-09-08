@@ -11,7 +11,9 @@ export interface IListComponent {
 export const ListStyle = styled.div<IListComponent>`
   display: flex;
   gap: 40px;
+  padding: 33px 0;
   border-bottom: 1px solid ${theme.gray300};
+  position: relative;
   &:last-child {
     border-bottom: 0;
   }
@@ -21,6 +23,7 @@ export const RightSection = styled.div<IListComponent>`
   display: flex;
   flex-direction: column;
   gap: 16px;
+  width: 100%;
 `;
 
 export const RightDetailSection = styled.div<IListComponent>`
@@ -31,15 +34,21 @@ export const RightDetailSection = styled.div<IListComponent>`
 export const ListContentWrapper = styled.div<IListComponent>`
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  width: 100%;
 `;
 export const ListFooterWrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: between;
+  justify-content: space-between;
 `;
 export const DateWrapper = styled.div`
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
+  color: ${theme.gray500};
+`;
+export const Bookmark = styled.div`
+  position: absolute;
+  top: 20px;
+  right: 0;
 `;

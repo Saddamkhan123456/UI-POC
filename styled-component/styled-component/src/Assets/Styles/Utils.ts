@@ -11,11 +11,9 @@ export const H1 = styled.h1<IUtility>`
   margin-bottom: ${(props) => (props.hasMargin ? '30px' : '0')};
   margin-top: ${(props) => (props.hasMargin ? '0.67em;' : '0')};
   color: ${theme.gray500};
-  font-family: sans-serif;
 `;
 
 export const H2 = styled.h2`
-  font-family: sans-serif;
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 24px;
@@ -40,5 +38,5 @@ export const ListH1 = styled.p<IUtility>`
   margin-bottom: ${(props) => (props.hasMargin ? '30px' : '0')};
   margin-top: ${(props) => (props.hasMargin ? '0.67em;' : '0')};
   color: ${theme.secondary};
-  font-family: sans-serif;
+  max-width: 640px;
 `;

@@ -1,8 +1,8 @@
 import { styled } from 'styled-components';
 import { theme } from '../../theme';
 export interface IBadgeProps {
-  impact: any;
-  label: any;
+  impact?: any;
+  label?: any;
 }
 export const BadgeC = styled.button<IBadgeProps>`
   background-color: ${(props) =>
@@ -15,4 +15,4 @@ export const BadgeC = styled.button<IBadgeProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-` as React.FC<IBadgeProps>;
+`;

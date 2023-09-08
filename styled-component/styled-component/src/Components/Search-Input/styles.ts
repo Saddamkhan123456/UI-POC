@@ -8,7 +8,6 @@ export const SearchContainer = styled.div`
   border: 1px solid ${theme.gray700};
   background: ${theme.white};
   width: 100%;
-  margin-bottom: 20px;
 `;
 
 export const SearchIcon = styled.span`

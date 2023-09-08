@@ -11,7 +11,6 @@ export const GlobalPageStyle = styled.div`
   flex-direction: column;
 `;
 export const Container = styled.div`
-  background: ${theme.white};
   display: flex;
   flex-direction: column;
   align-items: center;

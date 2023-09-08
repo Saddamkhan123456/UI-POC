@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Badge from '../Badge/Badge';
-import { ListStyle, RightSection, RightDetailSection, DateWrapper, ListFooterWrapper } from './style';
+import { ListStyle, RightSection, RightDetailSection, DateWrapper, ListFooterWrapper, Bookmark } from './style';
 import BreadcrumbCustom, { IBreadcrumbCustomProps } from '../Breadcrumb/BreadcrumbCustom';
 import { ListH1 } from '../../Assets/Styles/Utils';
+import Icon from '../../Assets/Icons/Icon';
 
 interface IListContent extends IBreadcrumbCustomProps {
   index: number;
@@ -10,6 +11,7 @@ interface IListContent extends IBreadcrumbCustomProps {
   heading?: string;
   impact?: string;
   label?: string;
+  date: string;
 }
 
 const ListContent: React.FC<IListContent> = ({
@@ -25,7 +27,12 @@ const ListContent: React.FC<IListContent> = ({
   viewsIcon,
   viewsText,
   articleType,
+  date,
 }) => {
+  const [isBookmarked, setIsBookmarked] = useState(false);
+  const toggleIcon = () => {
+    setIsBookmarked(!isBookmarked);
+  };
   return (
     <ListStyle>
       <img src={image} alt={heading || 'title'} width={250} height={130} style={{ borderRadius: '6px' }} />
@@ -43,10 +50,13 @@ const ListContent: React.FC<IListContent> = ({
           />
           <ListFooterWrapper>
             <Badge impact={impact} label={label} />
-            <DateWrapper></DateWrapper>
+            <DateWrapper>{date}</DateWrapper>
           </ListFooterWrapper>
         </RightDetailSection>
       </RightSection>
+      <Bookmark onClick={toggleIcon}>
+        <Icon kind={isBookmarked ? 'bookmark' : 'bookmarked'} width={16} height={20} />
+      </Bookmark>
     </ListStyle>
   );
 };

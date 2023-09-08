@@ -23,17 +23,21 @@ const BreadcrumbCustom: React.FC<IBreadcrumbCustomProps> = ({
     <>
       <BreadcrumbTwoContainer>
         <SubSectionDiv>
-          <Icon kind={articleType === 'blog' ? 'blogs' : articleType === 'hard-problem' ? 'hard-problem' : ''} />
+          <Icon
+            width={20}
+            height={20}
+            kind={articleType === 'blog' ? 'blogs' : articleType === 'hard-problem' ? 'hard-problem' : ''}
+          />
           <ArticleText articleType={articleType}>
             {articleType === 'blog' ? 'BLOGS & TL ARTICLES' : articleType === 'hard-problem' ? 'Hard Problem' : ''}
           </ArticleText>
         </SubSectionDiv>
         <SubSectionDiv>
-          <Icon kind={techTypeIcon} />
+          <Icon width={20} height={20} kind={techTypeIcon} />
           <Text>{techTypeText}</Text>
         </SubSectionDiv>
         <SubSectionDiv>
-          <Icon kind={viewsIcon} />
+          <Icon width={20} height={20} kind={viewsIcon} />
           <Text>{viewsText}</Text>
         </SubSectionDiv>
       </BreadcrumbTwoContainer>
