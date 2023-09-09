@@ -5,7 +5,7 @@ import { categoryCardData } from './data';
 
 export const Catagories = () => {
     return (
-        <Box style={{ position: 'relative', top: '-5.625rem', paddingBottom: '5rem', borderBottom: '1px solid #BEBEBE' }}>
+        <Box style={{ position: 'relative', marginTop: '-5.625rem', paddingBottom: '3.15rem', borderBottom: '1px solid #BEBEBE' }}>
             <Container sx={{ maxWidth: '1200px' }}>
                 <Grid container spacing={4} >
                     {categoryCardData.map((item, i) => (

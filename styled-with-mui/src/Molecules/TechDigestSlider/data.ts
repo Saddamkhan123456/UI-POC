@@ -34,4 +34,34 @@ export const techDigestData = [
     techDigestName: 'Aerospike',
     href: '',
   },
+  {
+    id: 6,
+    imgUrl: Aerospike,
+    techDigestName: 'Aerospike',
+    href: '',
+  },
+  {
+    id: 7,
+    imgUrl: ApacheKafka,
+    techDigestName: 'Apache - kafka',
+    href: '',
+  },
+  {
+    id: 8,
+    imgUrl: Purescript,
+    techDigestName: 'Purescript',
+    href: '',
+  },
+  {
+    id: 4,
+    imgUrl: Redis,
+    techDigestName: 'Redis',
+    href: '',
+  },
+  {
+    id: 9,
+    imgUrl: Aerospike,
+    techDigestName: 'Aerospike',
+    href: '',
+  },
 ];
