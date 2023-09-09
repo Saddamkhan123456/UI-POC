@@ -28,7 +28,7 @@ const inputCss = css`
 const buttonCss = css`
   padding: 0.5rem 1.5rem;
   font-size: 1.25rem;
-  line-height: 1.149;
+  line-height: 1;
   color: #fff;
   background: #0b93df;
   border: 1px solid #0b93df;

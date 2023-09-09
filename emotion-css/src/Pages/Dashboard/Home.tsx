@@ -26,6 +26,9 @@ import listImage1 from "../../Assets/Images/listImage1.png";
 import listImage2 from "../../Assets/Images/listImage2.png";
 import listImage3 from "../../Assets/Images/listImage3.png";
 import listImage4 from "../../Assets/Images/listImage4.png";
+import moreImage1 from "../../Assets/Images/moreImage1.png";
+import moreImage2 from "../../Assets/Images/moreImage2.png";
+import moreImage3 from "../../Assets/Images/moreImage3.png";
 import Carousel from "../../Components/Molecules/Carousel";
 
 interface DashboardProps {
@@ -37,6 +40,7 @@ const DashboardStyle = css`
   background: #f8f8f8;
   height: 100vh;
   overflow: auto;
+  padding-bottom: 3rem;
 `;
 
 const DashboardContentStyle = css`
@@ -111,6 +115,34 @@ const ListWrapperStyle = css`
     box-shadow: none;
     padding: 0;
     width: 15.625rem;
+  }
+`;
+
+const MoreListWrapperStyle = css`
+  padding: 2rem 0;
+
+  & > div > div {
+    background: #f8f8f8;
+    box-shadow: none;
+    padding: 0;
+    width: 21.75rem;
+    position: relative;
+
+    & p {
+      position: absolute;
+      top: 50%;
+      text-align: center;
+      width: 100%;
+      color: #fff;
+    }
+  }
+  & > div > div > div {
+    height: 11.25rem;
+    background-color: #000;
+    border-radius: 0.375rem;
+    img {
+      opacity: 0.6;
+    }
   }
 `;
 
@@ -215,7 +247,9 @@ const ViewMoreWrapper = styled.div`
 const ViewMore = styled.a`
   ${ViewMoreStyle}
 `;
-
+const MoreListWrapper = styled.div`
+  ${MoreListWrapperStyle}
+`;
 const Dashboard: React.FC<DashboardProps> = () => {
   const options = ["Option 1", "Option 2", "Option 3"];
 
@@ -450,7 +484,7 @@ const Dashboard: React.FC<DashboardProps> = () => {
           </ViewMoreWrapper>
         </ListWrapper>
         <Divider />
-        <ListWrapper>
+        <MoreListWrapper>
           <Typography
             variant="subtitle"
             fontWeight="bold"
@@ -460,26 +494,24 @@ const Dashboard: React.FC<DashboardProps> = () => {
           <ListItem>
             <CardComponent>
               <ListItemImageWrapper>
-                <ListItemImage src={listImage1} alt={listImage1} />
+                <ListItemImage src={moreImage1} alt={moreImage1} />
+                <Typography variant="subtitle" text="Recently Uploaded" />
               </ListItemImageWrapper>
             </CardComponent>
             <CardComponent>
               <ListItemImageWrapper>
-                <ListItemImage src={listImage2} alt={listImage2} />
+                <ListItemImage src={moreImage2} alt={moreImage2} />
+                <Typography variant="subtitle" text="Trending" />
               </ListItemImageWrapper>
             </CardComponent>
             <CardComponent>
               <ListItemImageWrapper>
-                <ListItemImage src={listImage3} alt={listImage3} />
-              </ListItemImageWrapper>
-            </CardComponent>
-            <CardComponent>
-              <ListItemImageWrapper>
-                <ListItemImage src={listImage4} alt={listImage4} />
+                <ListItemImage src={moreImage3} alt={moreImage3} />
+                <Typography variant="subtitle" text="Recommended" />
               </ListItemImageWrapper>
             </CardComponent>
           </ListItem>
-        </ListWrapper>
+        </MoreListWrapper>
       </DashboardContent>
     </DashboardWrapper>
   );

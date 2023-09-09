@@ -11,8 +11,18 @@ import CardComponent from "../Atoms/Card";
 
 const carouselItemStyle = css`
   padding: 0.2rem 0.675rem;
+  & > div {
+    border-radius: 0.375rem;
+    box-shadow: none;
+  }
 `;
-
+const carouselWrapperStyle = css`
+  position: relative;
+  & .carousel-container {
+    margin: 0 3rem;
+    position: static;
+  }
+`;
 const carouselItemCaption = css`
   padding-top: 1rem;
   color: #343434;
@@ -51,12 +61,17 @@ const carouselItemImageWrapperStyle = css`
   width: 100%;
   height: 94px;
   text-align: center;
+  box-shadow: 0px 0px 10px 0px rgba(184, 188, 192, 0.25);
 `;
 
 const carouselItemImageStyle = css`
   max-width: 100%;
   height: 100%;
   margin: 0 auto;
+`;
+
+const CarouselWrapper = styled.div`
+  ${carouselWrapperStyle}
 `;
 
 const CarouselItem = styled.div`
@@ -119,37 +134,39 @@ const ItemsCarousel: React.FC<CarouselProps> = ({ items, itemCounts }) => {
   };
 
   return (
-    <Carousel
-      responsive={responsive}
-      swipeable={true}
-      draggable={true}
-      infinite={true}
-      centerMode={true}
-      keyBoardControl={true}
-      customTransition="transform 300ms ease-in-out"
-      transitionDuration={300}
-      containerClass="carousel-container"
-      itemClass="carousel-item-padding-40-px"
-      customLeftArrow={
-        <CustomLeftArrow
-          onClick={function (): void {
-            throw new Error("Function not implemented.");
-          }}
-        />
-      }
-      customRightArrow={<CustomRightArrow />}
-    >
-      {items.map((item) => (
-        <CarouselItem key={item.id}>
-          <CardComponent style={{ padding: 0 }}>
-            <CarouselItemImageWrapper>
-              <CarouselItemImage src={item.image} alt={item.name} />
-            </CarouselItemImageWrapper>
-          </CardComponent>
-          <CarouselItemCaption>{item.name}</CarouselItemCaption>
-        </CarouselItem>
-      ))}
-    </Carousel>
+    <CarouselWrapper>
+      <Carousel
+        responsive={responsive}
+        swipeable={true}
+        draggable={true}
+        infinite={true}
+        centerMode={false}
+        keyBoardControl={true}
+        customTransition="transform 300ms ease-in-out"
+        transitionDuration={300}
+        containerClass="carousel-container"
+        itemClass="carousel-item-padding-40-px"
+        customLeftArrow={
+          <CustomLeftArrow
+            onClick={function (): void {
+              throw new Error("Function not implemented.");
+            }}
+          />
+        }
+        customRightArrow={<CustomRightArrow />}
+      >
+        {items.map((item) => (
+          <CarouselItem key={item.id}>
+            <CardComponent style={{ padding: 0 }}>
+              <CarouselItemImageWrapper>
+                <CarouselItemImage src={item.image} alt={item.name} />
+              </CarouselItemImageWrapper>
+            </CardComponent>
+            <CarouselItemCaption>{item.name}</CarouselItemCaption>
+          </CarouselItem>
+        ))}
+      </Carousel>
+    </CarouselWrapper>
   );
 };
 const CustomLeftArrow: React.FC<{ onClick?: () => void }> = ({ onClick }) => {
