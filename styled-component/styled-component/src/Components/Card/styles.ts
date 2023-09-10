@@ -8,6 +8,7 @@ export interface ICardOverlay {
   text?: string;
   isIcon?: boolean;
   kind?: string;
+  height?: string;
 }
 
 export interface IMediaCard {
@@ -16,6 +17,7 @@ export interface IMediaCard {
   mediaText?: string;
   centerAlign?: boolean;
   isBackgroundImg?: boolean;
+  height?: string;
 }
 
 export const SolidCardOverlay = styled.div<ICardOverlay>`
@@ -29,8 +31,8 @@ export const SolidCardOverlay = styled.div<ICardOverlay>`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 0.0625rem;
-  height: 11.25rem;
+  gap: 1rem;
+  height: ${(props) => props.height || '10rem'};
   background-position: center;
   background-size: cover;
   font-family: sans-serif;
@@ -55,8 +57,8 @@ export const MediaCard = styled.div<ICardOverlay>`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 0.0625rem;
-  height: 11.25rem;
+  gap: 1rem;
+  height: 10rem;
   font-family: sans-serif;
   padding: 0.625rem;
 `;
@@ -93,7 +95,7 @@ export const MediaCardBanner = styled.div<IMediaCard>`
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain !important;
-  height: 8.9375rem;
+  height: 6.43rem;
   margin-bottom: 1.5rem;
   font-family: sans-serif;
   border-radius: 0.375rem;

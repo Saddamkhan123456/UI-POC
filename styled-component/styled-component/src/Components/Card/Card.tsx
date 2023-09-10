@@ -26,6 +26,7 @@ const CardOverlayC: React.FC<ICardOverlayCProps> = ({
   mediaText,
   heading,
   centerAlign,
+  height,
 }) => {
   switch (variant) {
     case 'SolidCard':
@@ -38,7 +39,11 @@ const CardOverlayC: React.FC<ICardOverlayCProps> = ({
     case 'MediaCard':
       return (
         <MediaCardC>
-          <MediaCardBanner isBackgroundImg={isBackgroundImg} backgroundImage={backgroundImage}></MediaCardBanner>
+          <MediaCardBanner
+            height='100px'
+            isBackgroundImg={isBackgroundImg}
+            backgroundImage={backgroundImage}
+          ></MediaCardBanner>
           <MediaCardContentWrapper centerAlign={centerAlign}>
             <MediaCardHeading>{heading}</MediaCardHeading>
             {mediaText && <MediaCardParagraph>{mediaText}</MediaCardParagraph>}
