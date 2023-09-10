@@ -7,9 +7,9 @@ export interface IBadgeProps {
 export const BadgeC = styled.button<IBadgeProps>`
   background-color: ${(props) =>
     props.impact === 'high' ? theme.success : props.impact === 'medium' ? theme.warning : '#000'};
-  padding: 4px 10px;
+  padding: 0.25rem 0.625rem;
   color: ${theme.white};
-  border-radius: 4px;
+  border-radius: 0.625rem;
   text-transform: uppercase;
   border: 0;
   display: flex;

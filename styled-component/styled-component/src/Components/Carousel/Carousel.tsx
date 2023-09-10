@@ -14,11 +14,11 @@ const CarouselContent = styled.div`
   display: flex;
   transition: transform 0.3s ease-in-out;
   width: 100%;
-  gap: 30px;
+  gap: 1.875rem;
 `;
 
 const CarouselItem = styled.div`
-  flex: 0 0 calc(25% - 30px);
+  flex: 0 0 calc(25% - 1.875rem);
 `;
 
 const SliderButtonPrev = styled.button`
@@ -26,8 +26,8 @@ const SliderButtonPrev = styled.button`
   border: none;
   cursor: pointer;
   display: flex;
-  align-items: center; /* Vertically center the button */
-  transform: translateY(-50%); /* Vertically center the button */
+  align-items: center;
+  transform: translateY(-50%);
   z-index: 1;
 `;
 
@@ -35,18 +35,16 @@ const SliderButtonNext = styled.button`
   background: none;
   border: none;
   cursor: pointer;
-  height: 100%;
   display: flex;
-  align-items: center; /* Vertically center the button */
+  align-items: center;
   position: absolute;
   right: 0;
-  top: 50%; /* Adjust this value to vertically center the button */
-  transform: translateY(-50%); /* Vertically center the button */
+  transform: translateY(-50%);
   z-index: 1;
 `;
 
 interface CarouselProps {
-  items: JSX.Element[]; // Define the type of 'items' prop here
+  items: JSX.Element[];
 }
 
 const Carousel: React.FC<CarouselProps> = ({ items }) => {

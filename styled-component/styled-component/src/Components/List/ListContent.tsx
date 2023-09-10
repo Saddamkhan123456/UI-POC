@@ -35,7 +35,7 @@ const ListContent: React.FC<IListContent> = ({
   };
   return (
     <ListStyle>
-      <img src={image} alt={heading || 'title'} width={250} height={130} style={{ borderRadius: '6px' }} />
+      <img src={image} alt={heading || 'title'} width={250} height={130} style={{ borderRadius: '0.375rem' }} />
       <RightSection className='item-text'>
         <ListH1 hasMargin={false}>{heading}</ListH1>
         <RightDetailSection>

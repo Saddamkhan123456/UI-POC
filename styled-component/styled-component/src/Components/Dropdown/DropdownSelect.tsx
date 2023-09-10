@@ -1,6 +1,6 @@
 import React from 'react';
 import Icon from '../../Assets/Icons/Icon';
-import { ArrowIcon, Select, SelectWrapper } from './styles';
+import { Select, SelectWrapper } from './styles';
 interface IDropdown {
   value?: any;
   onChange?: any;
@@ -18,9 +18,9 @@ const DropdownSelect = ({ value, onChange, options, label }: IDropdown) => {
           </option>
         ))}
       </Select>
-      <ArrowIcon>
+      <span>
         <Icon kind='dropdown' width={14} height={8} />
-      </ArrowIcon>
+      </span>
     </SelectWrapper>
   );
 };

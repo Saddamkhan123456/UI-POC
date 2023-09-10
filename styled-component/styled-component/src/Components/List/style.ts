@@ -10,8 +10,8 @@ export interface IListComponent {
 
 export const ListStyle = styled.div<IListComponent>`
   display: flex;
-  gap: 40px;
-  padding: 33px 0;
+  gap: 2.5rem;
+  padding: 2.06rem 0;
   border-bottom: 1px solid ${theme.gray300};
   position: relative;
   &:last-child {
@@ -25,20 +25,20 @@ export const ListStyle = styled.div<IListComponent>`
 export const RightSection = styled.div<IListComponent>`
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1rem;
   width: 100%;
 `;
 
 export const RightDetailSection = styled.div<IListComponent>`
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1rem;
 `;
 export const ListContentWrapper = styled.div<IListComponent>`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding-top: 34px;
+  padding-top: 2.125rem;
 `;
 export const ListFooterWrapper = styled.div`
   display: flex;
@@ -46,13 +46,13 @@ export const ListFooterWrapper = styled.div`
   justify-content: space-between;
 `;
 export const DateWrapper = styled.div`
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   color: ${theme.gray500};
 `;
 export const Bookmark = styled.div`
   position: absolute;
-  top: 20px;
+  top: 1.25rem;
   right: 0;
 `;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArticleText, BreadcrumbTwoContainer, SubSectionDiv, Text } from './styles';
 import Icon from '../../Assets/Icons/Icon';
+import { Link } from 'react-router-dom';
 
 export interface IBreadcrumbCustomProps {
   articleTypeIcon?: 'blog' | 'hard-problem' | any;
@@ -38,7 +39,10 @@ const BreadcrumbCustom: React.FC<IBreadcrumbCustomProps> = ({
         </SubSectionDiv>
         <SubSectionDiv>
           <Icon width={20} height={20} kind={viewsIcon} />
-          <Text>{viewsText}</Text>
+          <Text>
+            {viewsText}
+            {<Link to='javascript:;'>{' +3 more'}</Link>}
+          </Text>
         </SubSectionDiv>
       </BreadcrumbTwoContainer>
     </>

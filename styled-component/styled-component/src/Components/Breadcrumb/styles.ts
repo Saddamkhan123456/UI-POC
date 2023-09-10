@@ -22,16 +22,16 @@ export const BreadcrumbContainer = styled.div`
 
 export const BreadcrumbItem = styled.span<IBreadcrumb>`
   color: ${theme.gray500};
-  margin-right: 5px;
+  margin-right: 0.3125rem;
   cursor: ${(props) => (props.active ? 'default' : 'pointer')};
   position: relative;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: ${(props) => (props.active ? '500' : '400')};
   text-transform: capitalize;
   &::before {
     content: '>';
     color: ${theme.gray500};
-    margin-right: 5px;
+    margin-right: 0.3125rem;
   }
 
   &:last-child {
@@ -54,13 +54,13 @@ export const ArticleText = styled.p<IBreadcrumbCustomProps>`
   color: ${(props) =>
     props.articleType === 'blog' ? theme.danger : props.articleType === 'hard-problem' ? theme.purple : theme.success};
   margin: 0;
-  font-size: 14px;
+  font-size: 0.875rem;
 `;
 
 export const Text = styled.p`
   color: ${theme.gray400};
   margin: 0;
-  font-size: 14px;
+  font-size: 0.875rem;
 `;
 
 export const SubSectionDiv = styled.div`
@@ -68,16 +68,20 @@ export const SubSectionDiv = styled.div`
   text-transform: capitalize;
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: 0.125rem;
   &::before {
     content: '|';
     color: ${theme.gray400};
-    margin: 0 11px;
+    margin: 0 0.6875rem;
   }
   &:first-child {
     &::before {
       content: '';
       display: none;
     }
+  }
+  a {
+    text-decoration: none;
+    color: ${theme.gray400};
   }
 `;
