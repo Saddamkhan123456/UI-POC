@@ -6,6 +6,7 @@ import { Meta } from "@storybook/react";
 import { HomePage } from "./Home";
 import { BrowserRouter } from "react-router-dom";
 import { RecommendedPage } from "./RecommendedList";
+// import { TechDigestDetailPage } from "./TechDigestDetails";
 
 
 
@@ -44,3 +45,18 @@ export const Recommended = () => {
         </StyledEngineProvider>
     );
 };
+
+
+// export const TechDigestDetail = () => {
+//     return (
+//         <StyledEngineProvider injectFirst>
+//             <ThemeProvider theme={theme}>
+//                 <ScThemeProvider theme={theme}>
+//                     <BrowserRouter>
+//                         <TechDigestDetailPage />
+//                     </BrowserRouter>
+//                 </ScThemeProvider>
+//             </ThemeProvider>
+//         </StyledEngineProvider>
+//     );
+// };

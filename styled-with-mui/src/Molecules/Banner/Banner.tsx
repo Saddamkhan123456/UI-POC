@@ -1,26 +1,14 @@
-import { Box, Typography, styled } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { SearchBox } from '../../Components/SearchBox/SearchBox';
 import { dropdownData } from './data';
 import CustomMenu from '../../Components/Dropdown/dropdownTwo';
 import { FilteredBy } from '../FilteredBy/FilteredBy';
+import { KBanner } from './style';
 
 interface BannerProps {
     isTitle?: boolean;
     isSearchResult?: boolean;
 }
-
-const KBanner = styled(Box)((isSearchResult) => ({
-    paddingTop: '4.56rem',
-    paddingBottom: '10rem',
-    background: '#fff',
-    '&.bg-transperant': {
-        background: 'transparent',
-    },
-    '& .logo': {
-        display: 'flex',
-        alignItems: 'center',
-    },
-}));
 
 export const Banner = ({ isTitle, isSearchResult }: BannerProps) => {
     return (

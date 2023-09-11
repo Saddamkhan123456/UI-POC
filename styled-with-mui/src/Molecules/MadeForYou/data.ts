@@ -16,6 +16,6 @@ export const madeForYouCardData = [
   }, {
     "id": 3,
     "title": 'Recommended',
-    "link": "/",
+    "link": "/recommended",
     "image": Recommended
   },];

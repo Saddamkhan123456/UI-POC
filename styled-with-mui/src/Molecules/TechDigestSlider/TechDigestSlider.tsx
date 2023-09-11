@@ -1,8 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Box, Container, Typography } from '@mui/material';
-// import Swiper core and required modules
-import { Pagination, Navigation } from 'swiper/modules';
-// Import Swiper styles
+import { Container, Typography } from '@mui/material';
+import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -10,16 +8,11 @@ import 'swiper/css/scrollbar';
 import { SwiperBox } from './style';
 import { techDigestData } from './data';
 import { TechDigestCard } from '../../Components/Card/TechDigestCard';
-import Aerospike from '../../Assets/Images/aerospike.png';
-import ApacheKafka from '../../Assets/Images/apache-kafka.png';
-import Purescript from '../../Assets/Images/purescript.png';
-import Redis from '../../Assets/Images/redis.png';
-
 interface CarouselProps {
-    techData: any;
+    techData?: any;
 }
 
-const Carousel = ({ }: CarouselProps) => {
+const Carousel = ({ techData }: CarouselProps) => {
     return (
         <SwiperBox>
             <Container sx={{ maxWidth: '1300px' }}>
