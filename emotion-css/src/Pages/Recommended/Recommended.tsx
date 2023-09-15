@@ -35,7 +35,7 @@ const StyledList = styled.div`
 const Recommended = () => {
   return (
     <>
-      <Navbar options={options} />
+      <Navbar options={options} showInput />
       <StyledRecommendedBody>
         <StyledList>
           <ListRow children={undefined} />

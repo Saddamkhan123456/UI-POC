@@ -1,7 +1,7 @@
-import React from "react";
-import { css } from "@emotion/react";
-import styled from "@emotion/styled";
-import { BiSearchAlt2 } from "react-icons/bi";
+import React from 'react';
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
+import { BiSearchAlt2 } from 'react-icons/bi';
 
 interface InputSearchProps {
   value?: string;
@@ -18,10 +18,13 @@ const inputCss = css`
   color: #343434;
   width: 100%;
   border: 1px solid #dedeed;
-  border-radius: 0.25rem 0 0 0.25rem;
+  border-radius: 0.5rem 0 0 0.5rem;
   border-right: none;
   &:active {
-    border-color: #0b93df;
+    border: 1px solid #0b93df;
+  }
+  &:focus {
+    border: 1px solid #0b93df;
   }
 `;
 
@@ -32,7 +35,7 @@ const buttonCss = css`
   color: #fff;
   background: #0b93df;
   border: 1px solid #0b93df;
-  border-radius: 0 0.25rem 0.25rem 0;
+  border-radius: 0 0.5rem 0.5rem 0;
   &:hover {
     opacity: 0.9;
   }
@@ -44,6 +47,7 @@ const buttonCss = css`
 const outerContainer = css`
   display: flex;
   align-items: center;
+  min-width: 20rem;
 `;
 
 const StyledInput = styled.input`
@@ -63,19 +67,19 @@ const InputSearch: React.FC<InputSearchProps> = ({
   onSubmit,
   onChange,
   isSearchIcon = false,
-  placeHolder = "Search here..",
+  placeHolder = 'Search here..',
 }) => {
   return (
     <StyleContainer>
       <StyledInput
-        type="text"
+        type='text'
         placeholder={placeHolder}
         value={value}
         onChange={onChange}
-        name="search"
+        name='search'
       />
-      <StyledButton type="submit" onClick={onSubmit}>
-        {isSearchIcon ? <BiSearchAlt2 /> : "Search"}
+      <StyledButton type='submit' onClick={onSubmit}>
+        {isSearchIcon ? <BiSearchAlt2 /> : 'Search'}
       </StyledButton>
     </StyleContainer>
   );

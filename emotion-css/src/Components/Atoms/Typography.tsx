@@ -1,6 +1,6 @@
-import React from "react";
-import { css } from "@emotion/react";
-import styled from "@emotion/styled";
+import React from 'react';
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 
 const h3Styled = css`
   font-size: 2.375rem;
@@ -16,7 +16,7 @@ const h5Styled = css`
 `;
 const h6Styled = css`
   font-size: 1.25rem;
-  line-height: 1.15;
+  line-height: 1.4;
 `;
 const subtitleStyled = css`
   font-size: 1rem;
@@ -32,10 +32,10 @@ const captionStyled = css`
 `;
 
 export interface TypographyProps {
-  variant: "h3" | "h4" | "h5" | "h6" | "subtitle" | "body" | "caption";
+  variant: 'h3' | 'h4' | 'h5' | 'h6' | 'subtitle' | 'body' | 'caption';
   color?: string;
   text: any;
-  fontWeight?: "normal" | "bold" | "bolder";
+  fontWeight?: 'normal' | 'bold' | 'bolder';
 }
 
 const H3Typo = styled.h3`
@@ -62,11 +62,11 @@ const CaptionTypo = styled.span`
 
 const getFontWeight = (fontWeight: string) => {
   switch (fontWeight) {
-    case "normal":
+    case 'normal':
       return 400;
-    case "bold":
+    case 'bold':
       return 500;
-    case "bolder":
+    case 'bolder':
       return 700;
     default:
       return 400;
@@ -77,34 +77,34 @@ const Typography: React.FC<TypographyProps> = ({
   variant,
   color,
   text,
-  fontWeight = "normal",
+  fontWeight = 'normal',
 }) => {
   switch (variant) {
-    case "h3":
+    case 'h3':
       return (
         <H3Typo style={{ color: color, fontWeight: getFontWeight(fontWeight) }}>
           {text}
         </H3Typo>
       );
-    case "h4":
+    case 'h4':
       return (
         <H4Typo style={{ color: color, fontWeight: getFontWeight(fontWeight) }}>
           {text}
         </H4Typo>
       );
-    case "h5":
+    case 'h5':
       return (
         <H5Typo style={{ color: color, fontWeight: getFontWeight(fontWeight) }}>
           {text}
         </H5Typo>
       );
-    case "h6":
+    case 'h6':
       return (
         <H6Typo style={{ color: color, fontWeight: getFontWeight(fontWeight) }}>
           {text}
         </H6Typo>
       );
-    case "subtitle":
+    case 'subtitle':
       return (
         <SubtileTypo
           style={{ color: color, fontWeight: getFontWeight(fontWeight) }}
@@ -112,7 +112,7 @@ const Typography: React.FC<TypographyProps> = ({
           {text}
         </SubtileTypo>
       );
-    case "body":
+    case 'body':
       return (
         <BodyTypo
           style={{ color: color, fontWeight: getFontWeight(fontWeight) }}
@@ -120,7 +120,7 @@ const Typography: React.FC<TypographyProps> = ({
           {text}
         </BodyTypo>
       );
-    case "caption":
+    case 'caption':
       return (
         <CaptionTypo
           style={{ color: color, fontWeight: getFontWeight(fontWeight) }}
