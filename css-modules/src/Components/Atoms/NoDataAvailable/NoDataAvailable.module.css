@@ -1,0 +1,18 @@
+.noDataIcon {
+  fill: var(--kb-white);
+  margin-bottom: 1.5rem;
+  opacity: 0.5;
+}
+.noDataAvailable {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--kb-gray-400);
+  border-radius: var(--kb-border-radius-sm);
+  color: var(--kb-gray-100);
+}
+.noDataAvailable h5 {
+  font-weight: normal;
+}

@@ -1,0 +1,28 @@
+import React from "react";
+import styles from "./Banner.module.css";
+import Search from "../../Atoms/Search/Search";
+import Dropdown from "../../Atoms/Dropdown/Dropdown";
+import { categoriesData, productName, techData, tagData } from "./Data";
+
+const Banner = () => {
+  return (
+    <div className={styles.banner}>
+      <div className={styles.bannerInner}>
+        <h2 className={styles.bannerTitle}>Hello, how may I help you ?</h2>
+        <Search
+          isSearchText={true}
+          className={styles.searchBox}
+          placeholder="Search for Tech Digest, Hard Problems, Blogs, TL Articles…"
+        />
+        <div className={styles.dropdownGroup}>
+          <Dropdown className={styles.dropdownWidth} defaultLabel="Categories" dropdownItems={categoriesData} />
+          <Dropdown className={styles.dropdownWidth} defaultLabel="Tech" dropdownItems={techData} />
+          <Dropdown className={styles.dropdownWidth} defaultLabel="Product Name" dropdownItems={productName} />
+          <Dropdown className={styles.dropdownWidth} defaultLabel="Tags" dropdownItems={tagData} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Banner;

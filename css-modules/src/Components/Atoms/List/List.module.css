@@ -1,0 +1,53 @@
+.list {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.listItem {
+  display: flex;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--kb-gray-500);
+  margin-bottom: 2.5rem;
+  width: 100%;
+}
+.listItem:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.listItemImg {
+  margin-inline-end: 2.5rem;
+  width: 25%;
+}
+.listItemImg.sm img {
+  width: 11.25rem;
+  height: 8.125rem;
+}
+.listItemImg.md img {
+  width: 16.688rem;
+  height: 8.125rem;
+  object-fit: cover;
+  border-radius: var(--kb-border-radius-sm);
+}
+.listItemTopBox,
+.listItemBottomBox {
+  display: flex;
+  justify-content: space-between;
+}
+.listItemTopBox a {
+  max-width: 40rem;
+  margin-block-end: 0.875rem;
+  font-size: 1.25rem;
+  line-height: 1.1;
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--kb-gray-dark);
+}
+.listItemMedium {
+  margin-block-end: 0.625rem;
+}
+.listItemDescription {
+  width: 75%;
+}

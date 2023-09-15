@@ -1,0 +1,28 @@
+.banner {
+  background: var(--kb-white);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-block-end: 11rem;
+}
+.bannerTitle {
+  font-weight: 500;
+}
+.searchBox {
+  margin-block: 1.875rem 1.25rem;
+}
+.bannerInner {
+  max-width: 48.25rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+}
+.dropdownGroup {
+  display: flex;
+  gap: 1rem;
+}
+.dropdownWidth {
+  width: 24%;
+}

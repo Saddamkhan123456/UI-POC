@@ -1,0 +1,7 @@
+.mainContainer {
+  width: 100%;
+  display: flex;
+  padding-block: 2.5rem;
+  height: 100%;
+  overflow: auto;
+}

@@ -1,0 +1,14 @@
+.moreForYouCard {
+  flex: 0 0 auto;
+  width: 29.8%;
+}
+.row {
+  flex-flow: wrap;
+  min-width: 0px;
+  box-sizing: border-box;
+  display: flex;
+  gap: 3.75rem;
+}
+.moreForYouWrapper {
+  padding-block: 0.625rem 3.75rem;
+}

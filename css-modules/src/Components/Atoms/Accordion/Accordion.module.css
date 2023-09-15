@@ -1,0 +1,53 @@
+.accordionItem {
+  margin-bottom: 2rem;
+}
+.accordionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+.accordionItem.active .accordionHeader:before {
+  position: absolute;
+  content: "";
+  width: 0.25rem;
+  height: 2.375rem;
+  border-radius: 0.125rem;
+  left: -1rem;
+  background: var(--kb-blue);
+}
+.arrowUp {
+  transition: transform 0.3s ease-in-out;
+  transform: rotate(180deg);
+}
+.arrowDown {
+  transition: transform 0.3s ease-in-out;
+  transform: rotate(0deg);
+}
+.accordionItem.active .accordionHeader {
+  font-weight: 500;
+}
+
+.submenu {
+  display: flex;
+  flex-direction: column;
+  margin-block-start: 0.625rem;
+  padding-inline-start: 1.25rem;
+}
+.submenu a {
+  color: var(--kb-gray);
+  margin-block-end: 1.375rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+.submenu a:hover {
+  color: var(--kb-blue);
+}
+.submenu a:last-child {
+  margin-block-end: 0;
+}
+.submenu a.active {
+  font-weight: 500;
+  color: var(--kb-blue);
+}

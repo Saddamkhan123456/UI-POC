@@ -1,0 +1,27 @@
+.swiperPrevButton {
+  position: absolute;
+  left: 0;
+  top: 1.875rem;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.swiperNextButton {
+  position: absolute;
+  right: 0;
+  top: 1.875rem;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.techDigestCarousel {
+  margin-inline: 5rem;
+}
+.carouselContainer {
+  position: relative;
+}
+.carouselContainer .swiper-button-disabled {
+  opacity: 0.5;
+}

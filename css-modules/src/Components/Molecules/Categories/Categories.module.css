@@ -1,0 +1,14 @@
+.categoryCard {
+  flex: 0 0 auto;
+  width: 21%;
+}
+.row {
+  flex-flow: wrap;
+  min-width: 0px;
+  box-sizing: border-box;
+  display: flex;
+  gap: 3.75rem;
+}
+.categoriesWrapper {
+  padding-block-end: 1.875rem;
+}
