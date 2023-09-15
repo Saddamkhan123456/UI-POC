@@ -1,10 +1,16 @@
 import styled from 'styled-components';
 import { theme } from '../theme';
 import { CSSProperties } from 'react';
+import { css } from 'styled-components';
 
 interface GridContainerProps {
   columnCount?: number;
 }
+
+const breakpoints = {
+  mobile: '768px',
+  tablet: '1024px',
+};
 
 export const GlobalPageStyle = styled.div`
   min-height: 100vh;
@@ -20,17 +26,17 @@ export const Container = styled.div`
   padding-top: 1.875rem;
 
   /* Mobile Styles */
-  @media (max-width: 767px) {
+  @media (max-width: ${breakpoints.mobile}) {
     padding: 1.875rem;
   }
 
   /* Tablet Styles */
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: ${breakpoints.mobile}) and (max-width: ${breakpoints.tablet}) {
     padding: 1.875rem;
   }
 
   /* Desktop Styles */
-  @media (min-width: 1024px) {
+  @media (min-width: ${breakpoints.tablet}) {
     padding: 1.875rem 7.5rem;
   }
 `;
