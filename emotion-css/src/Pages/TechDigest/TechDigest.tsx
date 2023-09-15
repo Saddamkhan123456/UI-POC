@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import Navbar from '../../Components/Molecules/Navbar';
 import Accordian from '../../Components/Molecules/Accordian';
 import Typography from '../../Components/Atoms/Typography';
+import { AccordianList } from '../../Constants/Accordian.contant';
 
 const options = ['Home', 'Languages', ' Purescript'];
 
@@ -26,6 +27,10 @@ const digestLeftSection = css`
   padding: 2.5rem;
   background: #fff;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow-y: auto;
 `;
 
 const digestRightSection = css`
@@ -58,7 +63,9 @@ const TechDigest = () => {
       <Navbar options={options} showInput />
       <StyledTechDigestBody>
         <StyledTechDigestLeftSection>
-          <Accordian label={'About'} />
+          {AccordianList.map((item) => {
+            return <Accordian label={item.label} listItems={item.listItems} />;
+          })}
         </StyledTechDigestLeftSection>
         <StyledTechDigestRightSection>
           <Typography variant={'h3'} text={'About - Brief Details'} />

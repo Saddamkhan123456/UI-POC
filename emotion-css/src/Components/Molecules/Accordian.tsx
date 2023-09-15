@@ -25,6 +25,7 @@ const accordianHeader = css`
   position: relative;
   padding: 0.5rem 0 0.5rem 1.5rem;
   justify-content: space-between;
+  cursor: pointer;
   &:before {
     content: '';
     position: absolute;
@@ -49,6 +50,7 @@ const listItem = css`
   font-size: 1rem;
   line-height: 1.148;
   color: #343434;
+  cursor: pointer;
 `;
 
 const label = css`
@@ -79,15 +81,17 @@ const StyledAccordianLabel = styled.p`
 `;
 
 const Accordian: React.FC<AccordianProps> = ({ label, listItems }) => {
-  const [open, setOpen] = React.useState<boolean>(false);
+  const [open, setOpen] = React.useState<boolean>(true);
   function handleOpen() {
     setOpen(!open);
   }
   return (
     <>
-      <StyledAccordian onClick={handleOpen}>
-        <StyledAccordianHeader>
-          <StyledAccordianLabel>{label}</StyledAccordianLabel>
+      <StyledAccordian>
+        <StyledAccordianHeader onClick={handleOpen}>
+          <StyledAccordianLabel>
+            {label} ({listItems?.length})
+          </StyledAccordianLabel>
           {open ? <FaAngleUp /> : <FaAngleDown />}
         </StyledAccordianHeader>
         {open ? (
