@@ -11,9 +11,9 @@ const BlogsAndTLArticles = () => {
       <SidebarHeader title="Blogs & TL Articles" variant="h1" />
       <SidebarBody>
         <List>
-          {bookmarkListData.map((data, index) => (
+          {bookmarkListData.map((data) => (
             <ListItem
-              key={index}
+              key={data.id}
               img={data.img}
               title={data.title}
               date={data.date}

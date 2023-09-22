@@ -8,9 +8,9 @@ const Bookmarked = () => {
   return (
     <Layout>
       <List>
-        {bookmarkListData.map((data, index) => (
+        {bookmarkListData.map((data) => (
           <ListItem
-            key={index}
+            key={data.id}
             img={data.img}
             title={data.title}
             date={data.date}

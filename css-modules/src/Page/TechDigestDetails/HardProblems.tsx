@@ -13,7 +13,7 @@ const HardProblems = () => {
         <List>
           {bookmarkListData.map((data, index) => (
             <ListItem
-              key={index}
+              key={data.id}
               img={data.img}
               title={data.title}
               date={data.date}
