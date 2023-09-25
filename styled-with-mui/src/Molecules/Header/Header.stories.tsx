@@ -8,7 +8,7 @@ import { StyledEngineProvider } from '@mui/material';
 
 
 const meta = {
-    title: 'Components/Header1',
+    title: 'Components/App Header',
     component: Header,
     tags: ['autodocs'],
 } satisfies Meta<typeof Header>;

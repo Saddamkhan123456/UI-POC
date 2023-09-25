@@ -5,7 +5,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { SwiperBox } from './style';
+import { SwiperBox, TechDigestHeader } from './style';
 import { techDigestData } from './data';
 import { TechDigestCard } from '../../Components/Card/TechDigestCard';
 interface CarouselProps {
@@ -16,8 +16,7 @@ const Carousel = ({ techData }: CarouselProps) => {
     return (
         <SwiperBox>
             <Container sx={{ maxWidth: '1300px' }}>
-                <Typography variant='h4' style={{ marginBottom: '1.5rem', textAlign: 'center' }}>Popular Tech Digest</Typography>
-
+                <TechDigestHeader variant='h4'>Popular Tech Digest</TechDigestHeader>
                 <>
                     <Swiper
                         slidesPerView={4}

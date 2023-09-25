@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from '../../theme';
 import { KBChip } from './Chip';
+import { Badge } from './Chip2';
 
 const meta = {
     title: 'Atoms/Chips',
@@ -46,8 +47,9 @@ export const Warning = () => {
 export const Low = () => {
     return (
         <ThemeProvider theme={theme}>
-            <KBChip
-                impact='Low Impact'
+            <Badge
+                label='Low Impact'
+                type='error'
             />
         </ThemeProvider>
     );

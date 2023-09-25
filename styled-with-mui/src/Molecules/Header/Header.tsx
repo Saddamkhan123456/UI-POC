@@ -4,7 +4,7 @@ import { SearchBox } from '../../Components/SearchBox/SearchBox';
 import Breadcrumb from '../../Components/Breadcrumb/Breadcrumb';
 import Icon from '../../Components/Icons/Icons';
 import * as React from 'react';
-import { KbHeader } from './style';
+import { HeaderWrapper, KbHeader, KbLogo } from './style';
 
 interface HeaderProps {
     isSearch?: boolean;
@@ -28,13 +28,13 @@ const breadcrumbs = [
 export const Header = ({ isSearch, isBreadcrumb }: HeaderProps) => {
     return (
         <KbHeader color='inherit' position='sticky'>
-            <Box className='headerWrapper'>
-                <Box className='logo'>
+            <HeaderWrapper>
+                <KbLogo>
                     <Link href='/'>
                         <Icon kind='logo' width={66} height={42} />
                     </Link>
                     {isBreadcrumb && <Breadcrumb isNavBreadcrumb breadcrumbs={breadcrumbs} />}
-                </Box>
+                </KbLogo>
                 {isSearch && (
                     <SearchBox
                         id='search'
@@ -44,7 +44,7 @@ export const Header = ({ isSearch, isBreadcrumb }: HeaderProps) => {
                     />
                 )
                 }
-            </Box>
+            </HeaderWrapper>
         </KbHeader>
     );
 };

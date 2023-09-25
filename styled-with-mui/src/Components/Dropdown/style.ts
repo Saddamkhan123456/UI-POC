@@ -44,21 +44,5 @@ export const StyledMenu = styled(Menu)`
     && .MuiMenu-list {
       padding: 4px 0;
     }
-
-    /* && .MuiMenuItem-root {
-      && .MuiSvgIcon-root {
-        font-size: 18px;
-        color: ${(props) => props.theme.palette.text.secondary};
-        margin-right: ${(props) => props.theme.spacing * 1.5}px
-      }
-
-      &&:active {
-        background-color: ${(props) =>
-        alpha(
-            props.theme.palette.primary.main,
-            props.theme.palette.action.selectedOpacity
-        )};
-      }
-    } */
   }
 `;

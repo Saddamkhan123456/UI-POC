@@ -1,4 +1,4 @@
-import { Box, styled } from '@mui/material';
+import { Box, Typography, styled } from '@mui/material';
 
 
 export const SwiperBox = styled(Box)(() => ({
@@ -21,4 +21,9 @@ export const SwiperBox = styled(Box)(() => ({
         }
         
     },
+}));
+
+export const TechDigestHeader = styled(Typography)(() => ({
+    marginBottom: '1.5rem',
+    textAlign: 'center'
 }));

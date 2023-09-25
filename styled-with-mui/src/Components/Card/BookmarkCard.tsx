@@ -4,7 +4,7 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import theme from '../../theme';
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
 import { KBChip } from "../Chip/Chip";
-import { ImpactDateWrap, KbBookmarkCard, SearchResultCardTitle } from "./style";
+import { BookmarkCardMedia, BookmarkDate, BookmarkIcon, BookmarkImageWrap, ImpactDateWrap, KbBookmarkCard, KbBookmarkDesc, KbBookmarkHeading, SearchResultCardTitle } from "./style";
 import Icon from "../Icons/Icons";
 
 
@@ -31,24 +31,24 @@ export const BookmarkCard = ({
   return (
     <ThemeProvider theme={theme}>
       <KbBookmarkCard className={isBookmarkCard ? 'card-bookmark' : 'card-search-result'}>
-        <Box component="div" className="img-wrap">
+        <BookmarkImageWrap component="div" className="img-wrap">
           <CardMedia component="img" height="100" className="card-img" image={image} alt={imageName} />
-        </Box>
+        </BookmarkImageWrap>
         {isBookmarkCard && <>
           <BookmarkHeading heading={heading} />
           <BookmarkDescription description={description} />
         </>}
         {!isBookmarkCard && <Box flexGrow={1} position={'relative'} paddingRight={'1rem'}>
-          <Typography className="bookmark-search-result-card">
+          <BookmarkIcon>
             <Icon kind={'bookmark-outlined'} />
-          </Typography>
+          </BookmarkIcon>
           <SearchResultCardTitle>{heading}</SearchResultCardTitle>
           <Breadcrumb />
           <ImpactDateWrap>
             <KBChip
               impact={impact}
             />
-            <Typography color={'#343434'} fontSize={'1rem'}>{date}</Typography>
+            <BookmarkDate>{date}</BookmarkDate>
           </ImpactDateWrap>
         </Box>}
       </KbBookmarkCard>
@@ -57,12 +57,12 @@ export const BookmarkCard = ({
 };
 
 
-const KbBookmarkHeading = styled(Typography)(({ theme }) => ({
-  color: theme.palette.primary.dark,
-  fontWeight: 500,
-  lineHeight: 1.37,
-  paddingTop: "1rem",
-}));
+// const KbBookmarkHeading = styled(Typography)(({ theme }) => ({
+//   color: theme.palette.primary.dark,
+//   fontWeight: 500,
+//   lineHeight: 1.37,
+//   paddingTop: "1rem",
+// }));
 
 export const BookmarkHeading = ({ heading }: BookmarkProps) => {
   return (
@@ -71,13 +71,6 @@ export const BookmarkHeading = ({ heading }: BookmarkProps) => {
     </KbBookmarkHeading>
   );
 };
-
-const KbBookmarkDesc = styled(Typography)(({ theme }) => ({
-  color: theme.palette.primary.dark,
-  fontWeight: 400,
-  lineHeight: 1.14,
-  marginTop: "0.5rem",
-}));
 
 export const BookmarkDescription = ({ description }: BookmarkProps) => {
   return (

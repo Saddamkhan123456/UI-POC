@@ -28,7 +28,32 @@ export const KbBookmarkCard = styled(Card)(({ theme }) => ({
             marginBottom: '0.5rem',
         }
   },
-  "& .img-wrap": {
+  "& .card-img": {
+    transition: '.5s ease all',
+    objectFit: 'cover',
+    height: '100%',
+    "&:hover": {
+      transform: "scale(1.1)",
+    }
+  },
+}));
+
+
+export const KbBookmarkHeading = styled(Typography)(({ theme }) => ({
+  color: theme.palette.primary.dark,
+  fontWeight: 500,
+  lineHeight: 1.37,
+  paddingTop: "1rem",
+}));
+
+export const KbBookmarkDesc = styled(Typography)(({ theme }) => ({
+  color: theme.palette.primary.dark,
+  fontWeight: 400,
+  lineHeight: 1.14,
+  marginTop: "0.5rem",
+}));
+
+export const BookmarkImageWrap = styled(Box)(({ theme }) => ({
     position: 'relative',
     overflow: 'hidden',
     borderRadius: "0.375rem",
@@ -45,20 +70,16 @@ export const KbBookmarkCard = styled(Card)(({ theme }) => ({
       opacity: 0,
       transition: '.5s ease all',
     }
-  },
-  "& .card-img": {
+}));
+
+
+export const BookmarkCardMedia = styled(CardMedia)(({ theme }) => ({
     transition: '.5s ease all',
     objectFit: 'cover',
     height: '100%',
     "&:hover": {
       transform: "scale(1.1)",
     }
-    },
-    "& .bookmark-search-result-card": {
-        position: 'absolute',
-        right: 0,
-  }
-
 }));
 
 export const SearchResultCardTitle = styled(Typography)(({ theme }) => ({
@@ -67,6 +88,15 @@ export const SearchResultCardTitle = styled(Typography)(({ theme }) => ({
     fontSize: '1.25rem',
     marginBottom: '0.75rem',
     maxWidth: '40rem',
+}));
+
+export const BookmarkIcon = styled(Box)(({ theme }) => ({
+    position: 'absolute',
+    right: 0,
+}));
+
+export const BookmarkDate = styled(Typography)(({ theme }) => ({
+    color:'#343434', fontSize:'1rem'
 }));
 
 export const KbTechDigestCard = styled(Box)(({ theme }) => ({
