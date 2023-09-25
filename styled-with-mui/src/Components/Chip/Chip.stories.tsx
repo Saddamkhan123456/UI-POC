@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from '../../theme';
 import { KBChip } from './Chip';
-import { Badge } from './Chip2';
 
 const meta = {
     title: 'Atoms/Chips',
@@ -17,8 +16,8 @@ export const Default = () => {
     return (
         <ThemeProvider theme={theme}>
             <KBChip
-                impact='Default Chip'
-                color='primary'
+                label='Default Chip'
+                type='info'
             />
         </ThemeProvider>
     );
@@ -28,7 +27,8 @@ export const Success = () => {
     return (
         <ThemeProvider theme={theme}>
             <KBChip
-                impact='High Impact'
+                label='High Impact'
+                type='success'
             />
         </ThemeProvider>
     );
@@ -38,7 +38,8 @@ export const Warning = () => {
     return (
         <ThemeProvider theme={theme}>
             <KBChip
-                impact='Medium Impact'
+                label='Medium Impact'
+                type='warning'
             />
         </ThemeProvider>
     );
@@ -47,7 +48,7 @@ export const Warning = () => {
 export const Low = () => {
     return (
         <ThemeProvider theme={theme}>
-            <Badge
+            <KBChip
                 label='Low Impact'
                 type='error'
             />

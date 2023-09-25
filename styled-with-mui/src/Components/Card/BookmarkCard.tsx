@@ -15,8 +15,9 @@ interface BookmarkProps {
   image?: string;
   color?: string;
   isBookmarkCard?: boolean;
-  impact?: string;
+  label?: string;
   date?: string;
+  type?: string;
 }
 
 export const BookmarkCard = ({
@@ -25,7 +26,8 @@ export const BookmarkCard = ({
   image,
   imageName = image,
   isBookmarkCard,
-  impact = 'High Impact',
+  label = 'High Impact',
+  type,
   date,
 }: BookmarkProps) => {
   return (
@@ -46,7 +48,8 @@ export const BookmarkCard = ({
           <Breadcrumb />
           <ImpactDateWrap>
             <KBChip
-              impact={impact}
+              label={label}
+              type={type}
             />
             <BookmarkDate>{date}</BookmarkDate>
           </ImpactDateWrap>

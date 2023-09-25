@@ -11,7 +11,8 @@ export const searchResultListData = [
     articleIcon: 'hard-problem',
     technology: 'Apache Kafka',
     author: 'Rahul',
-    impact: 'Medium Impact',
+    label: 'Medium Impact',
+    type: 'warning',
   },
   {
     image: BookmarkedImg2,
@@ -21,7 +22,8 @@ export const searchResultListData = [
     articleIcon: 'blogs-at-articles',
     technology: 'Apache Kafka',
     author: 'Rahul',
-    impact: 'High Impact',
+    label: 'High Impact',
+    type: 'success',
   },
   {
     image: BookmarkedImg3,
@@ -31,7 +33,8 @@ export const searchResultListData = [
     articleIcon: 'blogs-at-articles',
     technology: 'Apache Kafka',
     author: 'Rahul',
-    impact: 'Low Impact',
+    label: 'Low Impact',
+    type: 'error',
   },
   {
     image: BookmarkedImg4,
@@ -41,7 +44,8 @@ export const searchResultListData = [
     articleIcon: 'hard-problem',
     technology: 'Apache Kafka',
     author: 'Rahul',
-    impact: 'High Impact',
+    label: 'High Impact',
+    type: 'success',
   },
   {
     image: BookmarkedImg1,
@@ -51,6 +55,7 @@ export const searchResultListData = [
     articleIcon: 'blogs-at-articles',
     technology: 'Apache Kafka',
     author: 'Rahul',
-    impact: 'Low Impact',
+    label: 'Low Impact',
+    type: 'error',
   },
 ];

@@ -1,15 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import theme from '../../theme';
-import Dropdown from './Dropdown';
 import CustomMenu from './dropdownTwo';
 
 
 const meta = {
     title: 'Atoms/Dropdown',
-    component: Dropdown,
+    component: CustomMenu,
     tags: ['autodocs'],
-} satisfies Meta<typeof Dropdown>;
+} satisfies Meta<typeof CustomMenu>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -17,19 +16,8 @@ type Story = StoryObj<typeof meta>;
 export const Default = () => {
     return (
         <ThemeProvider theme={theme}>
-            <Dropdown value={'category'} />
+            <CssBaseline />
+            <CustomMenu value='Categories' />
         </ThemeProvider>
     );
 };
-
-export const Dropdown2 = () => {
-    return (
-        <>
-            <ThemeProvider theme={theme}>
-                <CssBaseline />
-                <CustomMenu />
-            </ThemeProvider>
-
-        </>
-    )
-}

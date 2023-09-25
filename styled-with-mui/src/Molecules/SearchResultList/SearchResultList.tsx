@@ -16,7 +16,7 @@ export const SearchList = ({
                 <List sx={{ width: '100%' }}>
                     {searchResultListData.map((data, index) => (
                         <ListItem sx={{ margin: 0, padding: 0, width: '100%' }}>
-                            <BookmarkCard date={data.date} heading={data.heading} image={data.image} impact={data.impact} />
+                            <BookmarkCard date={data.date} heading={data.heading} image={data.image} label={data.label} type={data.type} />
                         </ListItem>
                     ))}
                 </List>

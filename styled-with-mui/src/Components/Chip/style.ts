@@ -25,7 +25,7 @@ export const StyledChip = styled(Chip)(({ theme }) => ({
     }
 }));
 
-export const BadgeWrapper = styled(Chip)<{ type?: string, label?: React.ReactNode }>(({ type }) => ({
+export const ChipWrapper = styled(Chip)<{ type?: string, label?: React.ReactNode }>(({ type }) => ({
     display: 'inline-block',
     padding: '4px 8px',
     borderRadius: '4px',
