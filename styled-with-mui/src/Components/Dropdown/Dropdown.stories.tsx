@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import theme from '../../theme';
-import CustomMenu from './dropdownTwo';
+import CustomMenu from './Dropdown';
 
 
 const meta = {
