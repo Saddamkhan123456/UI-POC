@@ -9,7 +9,7 @@ export const BadgeC = styled.button<IBadgeProps>`
     props.impact === 'high' ? theme.success : props.impact === 'medium' ? theme.warning : '#000'};
   padding: 0.25rem 0.625rem;
   color: ${theme.white};
-  border-radius: 0.625rem;
+  border-radius: 0.25rem;
   text-transform: uppercase;
   border: 0;
   display: flex;
