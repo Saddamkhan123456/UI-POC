@@ -1,15 +1,10 @@
-import { Container, List, ListItem, Typography } from "@mui/material";
+import { Container, List, ListItem } from "@mui/material";
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from '../../theme';
 import { searchResultListData } from "./data";
 import { BookmarkCard } from "../../Components/Card/BookmarkCard";
 
-
-interface SearchListProps {
-}
-
-export const SearchList = ({
-}: SearchListProps) => {
+export const SearchList = () => {
     return (
         <ThemeProvider theme={theme}>
             <Container sx={{ maxWidth: '1200px' }}>

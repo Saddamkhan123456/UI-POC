@@ -1,4 +1,3 @@
-import { Box, Typography } from '@mui/material';
 import { SearchBox } from '../../Components/SearchBox/SearchBox';
 import { dropdownData } from './data';
 import CustomMenu from '../../Components/Dropdown/dropdownTwo';

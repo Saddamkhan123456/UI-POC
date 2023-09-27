@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, MenuItem, IconButton } from '@mui/material';
-import styled from 'styled-components';
 import Icon from '../Icons/Icons';
-import { alpha } from '@mui/material/styles';
 import { CssBaseline, ThemeProvider, Typography } from '@mui/material';
 import theme from '../../theme';
 import { StyledIconButton, StyledMenu, StyledMenuItem } from './style';

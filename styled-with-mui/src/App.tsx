@@ -1,11 +1,7 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-
-// import { StyledButton } from './Button/ButtonStyled';  
 import theme from './theme';
 import { ThemeProvider } from '@material-ui/core';
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { APP_PAGES } from './Utils/constants';
 import { HomePage } from './Pages/Home';
 import { RecommendedPage } from './Pages/RecommendedList';

@@ -1,10 +1,9 @@
-import { Box, Card, CardMedia, Typography } from "@mui/material";
-import { styled } from "@mui/material/styles";
+import { Box, CardMedia } from "@mui/material";
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from '../../theme';
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
 import { KBChip } from "../Chip/Chip";
-import { BookmarkCardMedia, BookmarkDate, BookmarkIcon, BookmarkImageWrap, ImpactDateWrap, KbBookmarkCard, KbBookmarkDesc, KbBookmarkHeading, SearchResultCardTitle } from "./style";
+import { BookmarkDate, BookmarkIcon, BookmarkImageWrap, ImpactDateWrap, KbBookmarkCard, KbBookmarkDesc, KbBookmarkHeading, SearchResultCardTitle } from "./style";
 import Icon from "../Icons/Icons";
 
 

@@ -1,7 +1,5 @@
 import { styled } from "@mui/material/styles";
 import { Box, Card, CardMedia, Typography } from "@mui/material";
-import theme from '../../theme';
-
 
 export const KbBookmarkCard = styled(Card)(({ theme }) => ({
   boxShadow: "none",

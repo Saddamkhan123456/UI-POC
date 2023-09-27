@@ -3,7 +3,7 @@ import { Chip } from "@mui/material";
 import theme from '../../theme';
 
 
-export const StyledBadge = styled(Chip)(({ }) => ({
+export const StyledBadge = styled(Chip)(() => ({
     padding: '0.56rem 0.75rem 0.56rem 1rem',
     borderRadius: '0.375rem',
     border: '1px solid #DEDEED',
