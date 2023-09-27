@@ -1,8 +1,8 @@
 import { SearchBox } from '../../Components/SearchBox/SearchBox';
 import { dropdownData } from './data';
-import CustomMenu from '../../Components/Dropdown/Dropdown';
 import { FilteredBy } from '../FilteredBy/FilteredBy';
 import { BannerBox, BannerHeader, DropdownWrapper, KBanner } from './style';
+import DropdownMenu from '../../Components/Dropdown/Dropdown';
 
 interface BannerProps {
     isTitle?: boolean;
@@ -17,7 +17,7 @@ export const Banner = ({ isTitle, isSearchResult }: BannerProps) => {
                 <SearchBox id={'seachIt'} labelText={'Search for Tech Digest, Hard Problems, Blogs, TL Articles…'} />
                 <DropdownWrapper>
                     {dropdownData.map((item, i) => (
-                        <CustomMenu value={item.value} />
+                        <DropdownMenu value={item.value} />
                     ))}
                 </DropdownWrapper>
                 {isSearchResult && <FilteredBy />}
