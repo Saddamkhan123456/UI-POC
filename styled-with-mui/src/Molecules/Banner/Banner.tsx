@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import { SearchBox } from '../../Components/SearchBox/SearchBox';
 import { dropdownData } from './data';
-import CustomMenu from '../../Components/Dropdown/dropdownTwo';
+import CustomMenu from '../../Components/Dropdown/Dropdown';
 import { FilteredBy } from '../FilteredBy/FilteredBy';
 import { BannerBox, BannerHeader, DropdownWrapper, KBanner } from './style';
 
