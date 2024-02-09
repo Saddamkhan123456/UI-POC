@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_go_docs_ucc_1s",
+  "info": {
+    "displayName": "UCC1",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "state": {
+      "type": "component",
+      "repeatable": true,
+      "component": "go-docs.state"
+    },
+    "isVisible": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "information": {
+      "type": "richtext"
+    }
+  }
+}

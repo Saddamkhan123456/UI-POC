@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_go_docs_construction_loan_agreements",
+  "info": {
+    "displayName": "ConstructionLoanAgreement",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "State": {
+      "type": "component",
+      "repeatable": true,
+      "component": "go-docs.state"
+    },
+    "isVisible": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "information": {
+      "type": "richtext"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

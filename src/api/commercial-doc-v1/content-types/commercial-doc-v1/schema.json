@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "commercial_doc_v1s",
+  "info": {
+    "singularName": "commercial-doc-v1",
+    "pluralName": "commercial-doc-v1s",
+    "displayName": "CommercialDocV1",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "construction_loan_agreements": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::construction-loan-agreement.construction-loan-agreement",
+      "inversedBy": "commercial_doc_v_1s"
+    },
+    "construction_loan_promissory_notes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::construction-loan-promissory-note.construction-loan-promissory-note",
+      "inversedBy": "commercial_doc_v_1s"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

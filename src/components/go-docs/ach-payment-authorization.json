@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_go_docs_ach_payment_authorizations",
+  "info": {
+    "displayName": "ACHPaymentAuthorization",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "state": {
+      "type": "component",
+      "repeatable": true,
+      "component": "go-docs.state"
+    },
+    "isVisible": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "information": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_go_docs_environmental_indemnity_agreements",
+  "info": {
+    "displayName": "EnvironmentalIndemnityAgreement",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "State": {
+      "type": "component",
+      "repeatable": true,
+      "component": "go-docs.state"
+    },
+    "isVisible": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "information": {
+      "type": "richtext"
+    }
+  }
+}

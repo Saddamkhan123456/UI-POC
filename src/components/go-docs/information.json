@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_go_docs_information",
+  "info": {
+    "displayName": "Information",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "information": {
+      "type": "richtext"
+    }
+  }
+}

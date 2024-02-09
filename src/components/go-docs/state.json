@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_go_docs_states",
+  "info": {
+    "displayName": "State",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "state": {
+      "type": "enumeration",
+      "enum": [
+        "All",
+        "California",
+        "Utah",
+        "Washington",
+        "Not Applicable"
+      ],
+      "default": "All",
+      "required": true
+    }
+  }
+}

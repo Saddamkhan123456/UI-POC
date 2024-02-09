@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "construction_loan_agreements",
+  "info": {
+    "singularName": "construction-loan-agreement",
+    "pluralName": "construction-loan-agreements",
+    "displayName": "ConstructionLoanAgreement",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "agreement": {
+      "type": "component",
+      "repeatable": true,
+      "component": "go-docs.construction-loan-agreement"
+    },
+    "commercial_doc_v_1s": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::commercial-doc-v1.commercial-doc-v1",
+      "mappedBy": "construction_loan_agreements"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "construction_loan_promissory_notes",
+  "info": {
+    "singularName": "construction-loan-promissory-note",
+    "pluralName": "construction-loan-promissory-notes",
+    "displayName": "ConstructionLoanPromissoryNote",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "constructionLoanPromissoryNote": {
+      "type": "component",
+      "repeatable": true,
+      "component": "go-docs.construction-loan-promissory-note"
+    },
+    "commercial_doc_v_1s": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::commercial-doc-v1.commercial-doc-v1",
+      "mappedBy": "construction_loan_promissory_notes"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

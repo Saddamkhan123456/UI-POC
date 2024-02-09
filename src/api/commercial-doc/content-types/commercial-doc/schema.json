@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "commercial_docs",
+  "info": {
+    "singularName": "commercial-doc",
+    "pluralName": "commercial-docs",
+    "displayName": "CommercialDoc",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "constructionLoanAgreement": {
+      "type": "component",
+      "repeatable": true,
+      "component": "go-docs.construction-loan-agreement"
+    },
+    "constructionLoanPromissoryNote": {
+      "type": "component",
+      "repeatable": true,
+      "component": "go-docs.construction-loan-promissory-note"
+    },
+    "constructionMortgage": {
+      "type": "component",
+      "repeatable": true,
+      "component": "go-docs.construction-mortgage"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
