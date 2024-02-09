@@ -163,6 +163,22 @@ export interface GoDocsLimitedPowerAttorney extends Schema.Component {
   };
 }
 
+export interface GoDocsSectionInformation extends Schema.Component {
+  collectionName: 'components_go_docs_section_informations';
+  info: {
+    displayName: 'sectionInformation';
+    icon: 'apps';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    state: Attribute.Component<'go-docs.state', true>;
+    information: Attribute.RichText & Attribute.Required;
+    isVisible: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<true>;
+  };
+}
+
 export interface GoDocsState extends Schema.Component {
   collectionName: 'components_go_docs_states';
   info: {
@@ -208,6 +224,7 @@ declare module '@strapi/types' {
       'go-docs.environmental-indemnity-agreement': GoDocsEnvironmentalIndemnityAgreement;
       'go-docs.information': GoDocsInformation;
       'go-docs.limited-power-attorney': GoDocsLimitedPowerAttorney;
+      'go-docs.section-information': GoDocsSectionInformation;
       'go-docs.state': GoDocsState;
       'go-docs.ucc-1': GoDocsUcc1;
     }

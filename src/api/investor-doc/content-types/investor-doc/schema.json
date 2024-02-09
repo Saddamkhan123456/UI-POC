@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "investor_docs",
+  "info": {
+    "singularName": "investor-doc",
+    "pluralName": "investor-docs",
+    "displayName": "InvestorDoc",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "loanAgreement": {
+      "type": "component",
+      "repeatable": true,
+      "component": "go-docs.section-information"
+    },
+    "promissoryNote": {
+      "type": "component",
+      "repeatable": true,
+      "component": "go-docs.section-information"
+    },
+    "mortgage": {
+      "type": "component",
+      "repeatable": true,
+      "component": "go-docs.section-information"
+    },
+    "limitedGuaranty": {
+      "type": "component",
+      "repeatable": true,
+      "component": "go-docs.section-information"
+    }
+  }
+}

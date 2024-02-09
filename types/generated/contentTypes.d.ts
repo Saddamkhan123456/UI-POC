@@ -841,6 +841,41 @@ export interface ApiConstructionLoanPromissoryNoteConstructionLoanPromissoryNote
   };
 }
 
+export interface ApiInvestorDocInvestorDoc extends Schema.CollectionType {
+  collectionName: 'investor_docs';
+  info: {
+    singularName: 'investor-doc';
+    pluralName: 'investor-docs';
+    displayName: 'InvestorDoc';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    loanAgreement: Attribute.Component<'go-docs.section-information', true>;
+    promissoryNote: Attribute.Component<'go-docs.section-information', true>;
+    mortgage: Attribute.Component<'go-docs.section-information', true>;
+    limitedGuaranty: Attribute.Component<'go-docs.section-information', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::investor-doc.investor-doc',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::investor-doc.investor-doc',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -861,6 +896,7 @@ declare module '@strapi/types' {
       'api::commercial-doc-v1.commercial-doc-v1': ApiCommercialDocV1CommercialDocV1;
       'api::construction-loan-agreement.construction-loan-agreement': ApiConstructionLoanAgreementConstructionLoanAgreement;
       'api::construction-loan-promissory-note.construction-loan-promissory-note': ApiConstructionLoanPromissoryNoteConstructionLoanPromissoryNote;
+      'api::investor-doc.investor-doc': ApiInvestorDocInvestorDoc;
     }
   }
 }

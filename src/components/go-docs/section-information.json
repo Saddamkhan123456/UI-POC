@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_go_docs_section_informations",
+  "info": {
+    "displayName": "sectionInformation",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "state": {
+      "type": "component",
+      "repeatable": true,
+      "component": "go-docs.state"
+    },
+    "information": {
+      "type": "richtext",
+      "required": true
+    },
+    "isVisible": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    }
+  }
+}
