@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { BarChart } from "./Charts/Bar";
 import { Card, CardBody, Container } from "react-bootstrap";
+import { LineChart, StackedLinesChart } from "./Charts/Line";
 
 function App() {
 	return (
