@@ -1,0 +1,14 @@
+{
+  "todos": [
+    {
+      "id": "e9d8b225-e2d5-4165-9f22-5994849c0171",
+      "completed": true,
+      "name": "Learn HTMX"
+    },
+    {
+      "id": "8605dbba-8b99-44d8-a5ad-de966c31600f",
+      "completed": false,
+      "name": "Learn HTML"
+    }
+  ]
+}
