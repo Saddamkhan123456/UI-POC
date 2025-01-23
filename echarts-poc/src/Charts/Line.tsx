@@ -115,7 +115,7 @@ export const StackedLinesChart = () => {
 	};
 
 	return (
-		<div style={{ width: "600px" }}>
+		<div style={{ width: "600px" }} className="">
 			<ReactECharts option={option} />
 		</div>
 	);

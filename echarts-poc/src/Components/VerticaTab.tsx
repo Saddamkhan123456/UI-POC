@@ -1,18 +1,29 @@
 import React, { useState } from "react";
 import { Tab, Nav, Row, Col, Container } from "react-bootstrap";
-
-// Example dynamic components for tab content
-const Tab1Content = () => <div>Content for Tab 1</div>;
-const Tab2Content = () => <div>Content for Tab 2</div>;
-const Tab3Content = () => <div>Content for Tab 3</div>;
-const Tab4Content = () => <div>Content for Tab 4</div>;
+import BarChart from "../Charts/Bar";
+import { LineChart, StackedLinesChart } from "../Charts/Line";
+import WaterfallChart from "../Charts/Waterfall";
+import StackedBarChart from "../Charts/StackedBar";
 
 // Array of tab items with corresponding component names
 const tabData = [
-	{ eventKey: "tab1", label: "Tab 1", component: <Tab1Content /> },
-	{ eventKey: "tab2", label: "Tab 2", component: <Tab2Content /> },
-	{ eventKey: "tab3", label: "Tab 3", component: <Tab3Content /> },
-	{ eventKey: "tab4", label: "Tab 4", component: <Tab4Content /> },
+	{ eventKey: "tab1", label: "Bar", component: <BarChart /> },
+	{ eventKey: "tab2", label: "Line", component: <LineChart /> },
+	{
+		eventKey: "tab3",
+		label: "Stacked Line",
+		component: (
+			<div className="py-5">
+				<StackedLinesChart />
+			</div>
+		),
+	},
+	{ eventKey: "tab4", label: "Waterfall", component: <WaterfallChart /> },
+	{
+		eventKey: "tab5",
+		label: "Stacked Bar",
+		component: <StackedBarChart />,
+	},
 ];
 
 const VerticalTabs = () => {
@@ -28,6 +39,9 @@ const VerticalTabs = () => {
 						className="chart-nav flex-column h-100 overflow-auto"
 						activeKey={key}
 						onSelect={(k) => setKey(k || "")}>
+						<Nav.Item className="d-flex justify-content-center py-3 text-white border-bottom border-light">
+							<h4>Charts</h4>
+						</Nav.Item>
 						{tabData.map((tab) => (
 							<Nav.Item key={tab.eventKey}>
 								<Nav.Link eventKey={tab.eventKey}>{tab.label}</Nav.Link>
