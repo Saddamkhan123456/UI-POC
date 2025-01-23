@@ -1,0 +1,12 @@
+.chart-nav {
+  background: linear-gradient(180deg, #11B868 -77.92%, #1AB7E7 100%);
+
+  .nav-link{
+    border-radius: 0 !important;
+    color: #fff !important;
+    &.active{
+      background-color: rgba(255, 255, 255, 0.2) !important;
+
+    }
+  }
+}
