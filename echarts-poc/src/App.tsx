@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "./logo.svg";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import { BarChart } from "./Charts/Bar";
 import { Card, CardBody, Container } from "react-bootstrap";
 import { LineChart, StackedLinesChart } from "./Charts/Line";
