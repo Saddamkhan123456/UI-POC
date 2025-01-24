@@ -24,8 +24,22 @@ export const BarChart = () => {
 	// Define chart options
 	const option = {
 		title: {
-			text: "Car Distribution by Model Year",
-			left: "center",
+			text: "Car Distribution by Model Year", // Main title text
+			subtext: "Data from 2020 to 2025", // Optional subtitle
+			left: "center", // Center the title horizontally
+			top: "top", // Position the title at the top (default is 'top')
+			textStyle: {
+				fontSize: 24, // Font size of the main title
+				fontWeight: "bold", // Font weight for the main title
+				color: "#333", // Font color for the main title
+				fontFamily: "Montserrat, sans-serif", // Custom font family
+			},
+			subtextStyle: {
+				fontSize: 14, // Font size for the subtitle
+				color: "#777", // Font color for the subtitle
+				fontFamily: "Arial, sans-serif", // Custom font family for subtitle
+			},
+			padding: [10, 0, 10, 0], // Padding around the title (top, right, bottom, left)
 		},
 		tooltip: {
 			trigger: "axis",
@@ -36,7 +50,7 @@ export const BarChart = () => {
 				const carCount = carCounts[params[0].dataIndex];
 
 				// Format tooltip text
-				return `<div><strong>Year: ${year}</strong></div>
+				return `<div class="tooltip-header"><strong>Year: ${year}</strong></div>
 						<div>Number of Cars: <span style="color: #FF5733;">${carCount}</span></div>`;
 			},
 		},
@@ -45,14 +59,32 @@ export const BarChart = () => {
 			data: years,
 			name: "Model Year",
 			nameLocation: "middle",
-			nameGap: 30,
+			nameGap: 40,
 			axisTick: {
 				alignWithLabel: alignWithXAxis,
+			},
+			nameTextStyle: {
+				align: "center", // Can be "center", "right", or "left"
+				verticalAlign: "top", // Can be "top", "middle", or "bottom"
+				fontFamily: "Montserrat, serif",
+				fontSize: 14,
+				fontWeight: "bold",
 			},
 		},
 		yAxis: {
 			type: "value",
 			name: "Number of Cars",
+			nameLocation: "middle", // Can also be "middle" or "end"
+			nameTextStyle: {
+				align: "center", // Can be "center", "right", or "left"
+				verticalAlign: "top", // Can be "top", "middle", or "bottom"
+				fontFamily: "Montserrat, serif",
+				fontSize: 14,
+				fontWeight: "bold",
+			},
+			// Use padding to shift the title
+			nameGap: 50, // You can adjust the gap between the axis and title
+			padding: [10, 0, 0, 20], // Example padding
 		},
 		series: [
 			{

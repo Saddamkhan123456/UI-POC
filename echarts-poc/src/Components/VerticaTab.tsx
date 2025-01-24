@@ -39,7 +39,7 @@ const VerticalTabs = () => {
 						className="chart-nav flex-column h-100 overflow-auto"
 						activeKey={key}
 						onSelect={(k) => setKey(k || "")}>
-						<Nav.Item className="d-flex justify-content-center py-3 text-white border-bottom border-light">
+						<Nav.Item className="d-flex justify-content-center py-3 text-white border-bottom border-light mb-3">
 							<h4>Charts</h4>
 						</Nav.Item>
 						{tabData.map((tab) => (
