@@ -40,6 +40,8 @@
 
 <script>
   function handleDuplicateError(event) { const errorMessage =
-  event.detail.xhr.responseText; // Get the error message from the server const
-  alert(errorMessage);}
+  event.detail.xhr.responseText; const inputField =
+  document.getElementById("todoInput"); // Display the error
+  alert(errorMessage); inputField.value = "";
+  document.getElementById("addTodoButton").disabled = true; }
 </script>
