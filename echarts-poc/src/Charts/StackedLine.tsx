@@ -49,76 +49,93 @@ export const StackedLinesChart = () => {
 		},
 		tooltip: {
 			trigger: "axis",
+			// Custom tooltip formatter (optional)
+			formatter: (params: any[]) => {
+				let tooltipContent = "";
+				params.forEach((param) => {
+					tooltipContent += `
+            <div style="font-weight: bold; color: ${param.color};">
+              ${param.seriesName}: ${param.value}
+            </div>
+          `;
+				});
+				return tooltipContent;
+			},
+			// Tooltip style customization
+			backgroundColor: "#fff", // Background color
+			borderColor: "#ccc", // Border color
+			borderWidth: 1, // Border width
+			padding: [10], // Padding inside the tooltip
+			textStyle: {
+				color: "#333", // Tooltip text color
+				fontSize: 12, // Tooltip font size
+				fontFamily: "Montserrat, serif", // Tooltip font family
+			},
+			// Custom tooltip width can be adjusted via the `formatter` content and `padding`
+			extraCssText: "max-width: 300px; word-wrap: break-word;", // Custom max-width for tooltip
 		},
 		legend: {
 			data: stockSymbols,
-			top: 40, // Distance from the top of the chart container
-			left: "center", // Center the legend horizontally
-			orient: "horizontal", // Horizontal orientation
+			top: 40,
+			left: "center",
+			orient: "horizontal",
 			textStyle: {
-				color: "#333", // Text color of the legend
-				fontSize: 14, // Font size of the legend labels
+				color: "#333",
+				fontSize: 14,
 			},
-			itemWidth: 20, // Width of the legend items
-			itemHeight: 10, // Height of the legend items
-			icon: "circle", // Custom shape for legend items (circle, rectangle, etc.)
-			formatter: (name: any) => `${name} Stock`, // Custom formatter for legend items
+			itemWidth: 20,
+			itemHeight: 10,
+			icon: "circle",
+			formatter: (name: any) => `${name} Stock`,
 		},
 		grid: {
-			left: "3%",
+			left: "8%",
 			right: "4%",
-			bottom: "0%",
+			bottom: "5%",
 			top: "35%",
 			containLabel: true,
 		},
 		xAxis: {
 			type: "category",
-			data: stockSymbols, // Use stock symbols as x-axis labels
+			data: stockSymbols,
 			name: "Stock Prices",
 			nameLocation: "middle",
 			nameGap: 40,
 			nameTextStyle: {
-				align: "center", // Can be "center", "right", or "left"
-				verticalAlign: "top", // Can be "top", "middle", or "bottom"
+				align: "center",
+				verticalAlign: "top",
 				fontFamily: "Montserrat, serif",
 				fontSize: 14,
 				fontWeight: "bold",
 			},
 			axisLabel: {
-				rotate: 45, // Rotate the x-axis labels by 45 degrees
+				rotate: 45,
 				fontWeight: "bold",
 			},
 		},
 		yAxis: {
 			type: "value",
 			name: "Ticker Symbol",
-			nameLocation: "middle", // Can also be "middle" or "end"
+			nameLocation: "middle",
 			nameTextStyle: {
-				align: "center", // Can be "center", "right", or "left"
-				verticalAlign: "top", // Can be "top", "middle", or "bottom"
+				align: "center",
+				verticalAlign: "top",
 				fontFamily: "Montserrat, serif",
 				fontSize: 14,
 				fontWeight: "bold",
 			},
-			// Use padding to shift the title
-			nameGap: 40, // You can adjust the gap between the axis and title
-			padding: [10, 0, 0, 20], // Example padding
+			nameGap: 50,
+			padding: [10, 0, 0, 20],
 			axisLabel: {
-				formatter: (value: number) => {
-					// Here you can format the y-axis values
-					if (value >= 1000) {
-						return `${value / 1000}k`; // Convert large values to 'k'
-					} else {
-						return value;
-					}
-				},
+				formatter: (value: number) =>
+					value >= 1000 ? `${value / 1000}k` : value,
 			},
 		},
 		series: series,
 	};
 
 	return (
-		<div style={{ width: "800px", height: "60vh" }} className="">
+		<div style={{ width: "700px", height: "60vh" }} className="stacked-line">
 			<ReactECharts option={option} />
 		</div>
 	);
