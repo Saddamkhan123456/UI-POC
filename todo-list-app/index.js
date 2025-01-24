@@ -75,11 +75,26 @@ app.get("/", (req, res) => {
 app.post("/todos", async (req, res) => {
   const { todo, selectedFilter = "All" } = req.body;
 
+  // Check if the todo already exists (case-insensitive)
+  const existingTodo = db.data.todos.find(
+    (item) => item.name.toLowerCase() === todo.trim().toLowerCase()
+  );
+
+  if (existingTodo) {
+    // Respond with an error message if duplicate is found
+    return res
+      .status(400)
+      .send("This todo already exists. Please enter a new one.");
+  }
+
+  // Add new todo if it's not a duplicate
   const newTodo = { id: uuid(), completed: false, name: todo };
   db.data.todos.push(newTodo);
   await db.write();
+
   const { todos } = db.data;
   const filteredTodos = todos.filter(FILTER_MAP[selectedFilter]);
+
   setTimeout(() => {
     res.render("index", {
       layouts: false,
