@@ -107,3 +107,7 @@ npm run build:css
 - **tailwindcss**: Utility-first CSS framework for styling
 
 ---
+
+## Learn More
+
+- **HTMX**:https://htmx.org/docs/
