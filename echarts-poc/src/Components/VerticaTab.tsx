@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Tab, Nav, Row, Col, Container } from "react-bootstrap";
 import BarChart from "../Charts/Bar";
-import { LineChart, StackedLinesChart } from "../Charts/Line";
+import { LineChart } from "../Charts/Line";
 import WaterfallChart from "../Charts/Waterfall";
 import StackedBarChart from "../Charts/StackedBar";
+import { StackedLinesChart } from "../Charts/StackedLine";
 
 // Array of tab items with corresponding component names
 const tabData = [
