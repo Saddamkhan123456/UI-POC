@@ -1,4 +1,9 @@
-<form hx-post="/todos" hx-target="body" hx-swap="innerHTML transition:true">
+<form
+  hx-post="/todos"
+  hx-target="body"
+  hx-swap="innerHTML transition:true"
+  oninput="document.getElementById('addTodoButton').disabled = !this.todo.value.trim()"
+>
   <input type="hidden" name="filter" value="{{this.selectedFilter}}" />
   <input
     type="text"
@@ -10,9 +15,11 @@
     autofocus
   />
   <button
+    id="addTodoButton"
     hx-disabled-elt="this"
     type="submit"
-    class="block w-1/2 mx-auto p-2 rounded-lg text-xl mt-5 bg-amber-500 uppercase font-bold hover:bg-amber-600 transition-all hover:shadow-lg hover:translate-y-1"
+    class="block w-1/2 mx-auto p-2 rounded-lg text-xl mt-5 bg-amber-500 uppercase font-bold hover:bg-amber-600 transition-all hover:shadow-lg hover:translate-y-1 disabled:bg-gray-400 disabled:cursor-not-allowed"
+    disabled
   >Add Todo</button>
   <div
     id="request-indicator"
