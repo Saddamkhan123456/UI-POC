@@ -3,56 +3,26 @@ import ReactECharts from "echarts-for-react"; // Import ECharts for React
 import { Card, Form } from "react-bootstrap";
 import WaterfallData from "../json/waterfallChart.json";
 
-// // Mock Data
-// const data = [
-//   {
-//     transaction_id: 1,
-//     revenue: 318511.69,
-//     cost: 33334.85,
-//     profit: 285176.84,
-//     date: "6/13/2021",
-//     product_category: "electronics",
-//     customer_age: 29,
-//   },
-//   {
-//     transaction_id: 2,
-//     revenue: 881182.24,
-//     cost: 159089.25,
-//     profit: 722092.99,
-//     date: "4/27/2021",
-//     product_category: "food",
-//     customer_age: 43,
-//   },
-//   {
-//     transaction_id: 3,
-//     revenue: 959021.82,
-//     cost: 264554.26,
-//     profit: 694467.56,
-//     date: "9/13/2021",
-//     product_category: "electronics",
-//     customer_age: 27,
-//   },
-// ];
-
 const WaterfallChart: React.FC = () => {
 	const data = WaterfallData;
 	const [showSplitLine, setSplitLine] = useState<boolean>(false);
+	const [showWaterfallData, setShowWaterfallData] = useState<boolean>(true); // State to toggle data visibility
 
 	// Prepare data for the waterfall chart
 	const waterfallData = useMemo(() => {
-		return [
-			{ name: "Start", value: 0 },
-			{ name: "Transaction 1 Revenue", value: data[0].revenue },
-			{ name: "Transaction 1 Cost", value: -data[0].cost },
-			{ name: "Transaction 1 Profit", value: data[0].profit },
-			{ name: "Transaction 2 Revenue", value: data[1].revenue },
-			{ name: "Transaction 2 Cost", value: -data[1].cost },
-			{ name: "Transaction 2 Profit", value: data[1].profit },
-			{ name: "Transaction 3 Revenue", value: data[2].revenue },
-			{ name: "Transaction 3 Cost", value: -data[2].cost },
-			{ name: "Transaction 3 Profit", value: data[2].profit },
-		];
-	}, []);
+		// Randomly pick 3 transactions and map their Revenue, Cost, and Profit values
+		const randomTransactions = Array.from({ length: 3 }, () =>
+			Math.floor(Math.random() * 50)
+		);
+
+		const selectedData = randomTransactions.flatMap((index) => [
+			{ name: `Transaction ${index + 1} Revenue`, value: data[index].revenue },
+			{ name: `Transaction ${index + 1} Cost`, value: -data[index].cost },
+			{ name: `Transaction ${index + 1} Profit`, value: data[index].profit },
+		]);
+
+		return [{ name: "Start", value: 0 }, ...selectedData];
+	}, [data]);
 
 	// Define chart options
 	const option = {
@@ -66,7 +36,10 @@ const WaterfallChart: React.FC = () => {
 				type: "shadow",
 			},
 			formatter: (params: any) => {
-				return `${params.name}: ${params.value}`;
+				// Display data based on the `showWaterfallData` state
+				return showWaterfallData
+					? `${params.name}: ${params.value}`
+					: `${params.name}`;
 			},
 		},
 		grid: {
@@ -113,6 +86,10 @@ const WaterfallChart: React.FC = () => {
 		setSplitLine((prev: any) => !prev);
 	};
 
+	const toggleWaterfallData = () => {
+		setShowWaterfallData((prev) => !prev);
+	};
+
 	return (
 		<div className="w-100">
 			<Card className="my-5 d-flex align-items-start" body>
@@ -122,6 +99,13 @@ const WaterfallChart: React.FC = () => {
 					className="d-inline-block"
 					id="showSplitLine"
 					onClick={toggleSplitLine}
+				/>
+				<Form.Check
+					checked={showWaterfallData}
+					label="Show Waterfall Data"
+					className="d-inline-block ms-3"
+					id="showWaterfallData"
+					onClick={toggleWaterfallData} // Toggle the waterfall data visibility
 				/>
 			</Card>
 			<div style={{ width: "600px" }}>

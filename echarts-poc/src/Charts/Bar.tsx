@@ -101,6 +101,12 @@ export const BarChart = () => {
 						return "#13B898";
 					},
 				},
+				label: {
+					show: true, // Display the label
+					position: "inside", // Position it inside the bar
+					// formatter: "{c}", // Display the value (c is the current data point)
+					color: "#fff", // Text color (you can change this to something else)
+				},
 			},
 		],
 	};
