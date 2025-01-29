@@ -93,7 +93,7 @@ const StackedBarChart = () => {
 		grid: {
 			left: "3%",
 			right: "4%",
-			bottom: "0%",
+			bottom: "10%",
 			top: "35%",
 			containLabel: true,
 		},
@@ -101,20 +101,37 @@ const StackedBarChart = () => {
 			type: "category",
 			data: dates.map((date: string) => formatDate(parseDate(date))), // Display formatted dates on the x-axis
 			name: "Date", // Label for x-axis
-			nameLocation: "middle", // Position the name in the middle of the axis
-			nameGap: 30, // Gap between axis name and axis
+			nameLocation: "middle",
+			nameGap: 30,
 			nameTextStyle: {
-				fontSize: 14, // Customize font size of the x-axis name
-				fontWeight: "bold", // Customize font weight
+				align: "center", // Can be "center", "right", or "left"
+				verticalAlign: "top", // Can be "top", "middle", or "bottom"
+				fontFamily: "Montserrat, serif",
+				fontSize: 14,
+				fontWeight: "bold",
 			},
 		},
 		yAxis: {
 			type: "value",
 			name: "Hours", // Label for y-axis
-			nameLocation: "middle",
+			nameLocation: "middle", // Can also be "middle" or "end"
 			nameTextStyle: {
-				fontSize: 14, // Customize font size of the y-axis name
-				fontWeight: "bold", // Customize font weight
+				align: "center", // Can be "center", "right", or "left"
+				verticalAlign: "top", // Can be "top", "middle", or "bottom"
+				fontFamily: "Montserrat, serif",
+				fontSize: 14,
+				fontWeight: "bold",
+			},
+			// Use padding to shift the title
+			nameGap: 50, // You can adjust the gap between the axis and title
+			padding: [10, 0, 0, 20], // Example padding
+			axisLabel: {
+				formatter: (value: number) => {
+					if (value >= 1000) {
+						return (value / 1000).toFixed(1) + "k"; // Format numbers > 999 as "1k", "2.3k", etc.
+					}
+					return value; // Return the value as it is if it's less than 1000
+				},
 			},
 		},
 		series: series,

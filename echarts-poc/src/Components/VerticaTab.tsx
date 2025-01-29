@@ -10,9 +10,14 @@ import PieChart from "../Charts/Pie";
 // Array of tab items with corresponding component names
 const tabData = [
 	{ eventKey: "tab1", label: "Bar", component: <BarChart /> },
-	{ eventKey: "tab2", label: "Line", component: <LineChart /> },
 	{
-		eventKey: "tab3",
+		eventKey: "tab2",
+		label: "Stacked Bar",
+		component: <StackedBarChart />,
+	},
+	{ eventKey: "tab3", label: "Line", component: <LineChart /> },
+	{
+		eventKey: "tab4",
 		label: "Stacked Line",
 		component: (
 			<div className="py-5">
@@ -20,12 +25,7 @@ const tabData = [
 			</div>
 		),
 	},
-	{ eventKey: "tab4", label: "Waterfall", component: <WaterfallChart /> },
-	{
-		eventKey: "tab5",
-		label: "Stacked Bar",
-		component: <StackedBarChart />,
-	},
+	{ eventKey: "tab5", label: "Waterfall", component: <WaterfallChart /> },
 	{ eventKey: "tab6", label: "Pie", component: <PieChart /> },
 ];
 
